@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dicionário CDP Adobe</title>
+  <style>
+    body{font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center}
+    .box{background:#fff;border:1px solid #e2e8f0;border-radius:18px;box-shadow:0 10px 30px rgba(15,23,42,.08);padding:32px;max-width:680px;margin:24px;text-align:center}
+    .logo{width:52px;height:52px;border-radius:16px;background:#dc2626;color:white;display:flex;align-items:center;justify-content:center;font-weight:800;margin:0 auto 16px}
+    .bar{height:8px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin-top:20px}
+    .bar span{display:block;height:100%;width:42%;background:#dc2626;animation:load 1.1s infinite alternate;border-radius:99px}
+    @keyframes load{from{transform:translateX(-70%)}to{transform:translateX(180%)}}
+    code{background:#f1f5f9;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="logo">CDP</div>
+    <h1>Dicionário CDP Adobe</h1>
+    <p>Carregando base completa...</p>
+    <div class="bar"><span></span></div>
+  </div>
+  <script>
+    async function boot(){
+      try{
+        const payload = await fetch('payload.b64',{cache:'no-store'}).then(r=>{
+          if(!r.ok) throw new Error('payload.b64 não encontrado');
+          return r.text();
+        });
+        const bin = Uint8Array.from(atob(payload.trim()), c => c.charCodeAt(0));
+        const stream = new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip'));
+        const html = await new Response(stream).text();
+        document.open();
+        document.write(html);
+        document.close();
+      }catch(e){
+        document.body.innerHTML = '<div style="font-family:Arial,sans-serif;padding:32px"><h1>Erro ao carregar o site</h1><p>Não foi possível abrir a base compactada.</p><pre style="white-space:pre-wrap;background:#f1f5f9;padding:16px;border-radius:12px">'+String(e)+'</pre></div>';
+      }
+    }
+    boot();
+  </script>
+</body>
+</html>
