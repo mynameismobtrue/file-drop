@@ -1,0 +1,15 @@
+[
+  {
+    "id": "STATUS",
+    "nome": "BASE_COMPLETA_PENDENTE",
+    "display_name": "Base completa pendente",
+    "significado": "O site foi criado, mas este arquivo precisa ser substituído pelo cdp_data.json completo gerado a partir do Excel do dicionário CDP.",
+    "origem": "Arquivo placeholder",
+    "campo_origem": "Substituir este arquivo pelo cdp_data.json completo",
+    "exemplo_query": "python extract_data.py",
+    "caso_uso": "Manter o site carregando enquanto a base completa não é publicada no repositório.",
+    "schema": "Setup",
+    "path": "cdp_data.json",
+    "tipo_pessoa": "PENDENTE"
+  }
+]
