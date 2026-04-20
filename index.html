@@ -9,144 +9,197 @@
     <style>
         .attribute-card { transition: all 0.3s ease; }
         .attribute-card:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
-        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; white-space: pre-wrap; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <header class="bg-red-600 text-white py-8 shadow-lg">
         <div class="container mx-auto px-4">
             <h1 class="text-3xl font-bold mb-2"><i class="fas fa-database mr-3"></i>Dicionário CDP Adobe</h1>
-            <p class="opacity-90">Pesquise atributos, significados, origens e exemplos de query.</p>
+            <p class="opacity-90">Pesquise atributos, significados, origens, campos e exemplos de query.</p>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-8">
         <div class="mb-8">
             <div class="relative">
-                <input type="text" id="searchInput" placeholder="Digite o nome do atributo, significado ou origem..." 
+                <input type="text" id="searchInput" placeholder="Digite o nome do atributo, significado, origem, campo ou schema..." 
                     class="w-full p-4 pl-12 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-lg">
                 <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
             </div>
             <div id="stats" class="mt-2 text-sm text-gray-600">Carregando dados...</div>
         </div>
 
-        <div id="results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Resultados serão inseridos aqui -->
-        </div>
+        <div id="results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
     <footer class="bg-white border-t py-6 mt-12">
         <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
-            &copy; 2024 Dicionário CDP Adobe - Santander Brasil
+            Dicionário CDP Adobe - Santander Brasil
         </div>
     </footer>
 
-    <!-- Modal para Detalhes -->
     <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             <div class="p-6 border-b flex justify-between items-center sticky top-0 bg-white">
                 <h2 id="modalTitle" class="text-2xl font-bold text-red-600"></h2>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl" aria-label="Fechar">&times;</button>
             </div>
-            <div id="modalBody" class="p-6 space-y-4">
-                <!-- Conteúdo do modal -->
-            </div>
+            <div id="modalBody" class="p-6 space-y-4"></div>
         </div>
     </div>
 
     <script>
         let cdpData = [];
+        let visibleData = [];
+
         const searchInput = document.getElementById('searchInput');
         const resultsContainer = document.getElementById('results');
         const stats = document.getElementById('stats');
         const modal = document.getElementById('modal');
 
-        // Carregar dados
+        function value(item, field) {
+            return item && item[field] !== undefined && item[field] !== null ? String(item[field]) : '';
+        }
+
+        function escapeHTML(text) {
+            return String(text || '')
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#039;');
+        }
+
+        function searchableText(item) {
+            return [
+                'nome',
+                'display_name',
+                'significado',
+                'origem',
+                'campo_origem',
+                'caso_uso',
+                'schema',
+                'path',
+                'tipo_pessoa',
+                'id'
+            ].map(field => value(item, field).toLowerCase()).join(' ');
+        }
+
         fetch('cdp_data.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) throw new Error('Arquivo cdp_data.json não encontrado.');
+                return response.json();
+            })
             .then(data => {
-                cdpData = data;
+                cdpData = Array.isArray(data) ? data : [];
                 stats.innerText = `${cdpData.length} atributos disponíveis.`;
-                renderResults(cdpData.slice(0, 12)); // Mostrar alguns inicialmente
+                renderResults(cdpData.slice(0, 12));
+            })
+            .catch(error => {
+                stats.innerText = 'Não foi possível carregar o cdp_data.json.';
+                resultsContainer.innerHTML = `
+                    <div class="bg-white p-6 rounded-xl border border-red-200 col-span-full">
+                        <h3 class="font-bold text-red-600 mb-2">Base de dados não carregada</h3>
+                        <p class="text-gray-600">${escapeHTML(error.message)}</p>
+                    </div>
+                `;
             });
 
         function renderResults(data) {
-            resultsContainer.innerHTML = data.map(item => `
-                <div class="attribute-card bg-white p-6 rounded-xl border border-gray-200 cursor-pointer" onclick="showDetails('${item.nome}')">
-                    <div class="flex justify-between items-start mb-3">
-                        <span class="text-xs font-semibold px-2 py-1 bg-red-100 text-red-700 rounded uppercase">${item.tipo_pessoa || 'CDP'}</span>
-                        <span class="text-xs text-gray-400">ID: ${item.id}</span>
+            visibleData = data;
+
+            if (!data.length) {
+                resultsContainer.innerHTML = `
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 col-span-full text-center text-gray-600">
+                        Nenhum resultado encontrado.
                     </div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 truncate" title="${item.nome}">${item.nome}</h3>
-                    <p class="text-gray-600 text-sm line-clamp-3 mb-4">${item.significado || 'Sem descrição disponível.'}</p>
+                `;
+                return;
+            }
+
+            resultsContainer.innerHTML = data.map((item, index) => `
+                <div class="attribute-card bg-white p-6 rounded-xl border border-gray-200 cursor-pointer" data-index="${index}">
+                    <div class="flex justify-between items-start mb-3 gap-3">
+                        <span class="text-xs font-semibold px-2 py-1 bg-red-100 text-red-700 rounded uppercase">${escapeHTML(value(item, 'tipo_pessoa') || 'CDP')}</span>
+                        <span class="text-xs text-gray-400">ID: ${escapeHTML(value(item, 'id') || 'N/A')}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 truncate" title="${escapeHTML(value(item, 'nome'))}">${escapeHTML(value(item, 'nome') || 'Sem nome')}</h3>
+                    <p class="text-gray-600 text-sm line-clamp-3 mb-4">${escapeHTML(value(item, 'significado') || 'Sem descrição disponível.')}</p>
                     <div class="flex items-center text-xs text-gray-500">
                         <i class="fas fa-link mr-1"></i>
-                        <span class="truncate">${item.origem || 'N/A'}</span>
+                        <span class="truncate">${escapeHTML(value(item, 'origem') || 'N/A')}</span>
                     </div>
                 </div>
             `).join('');
+
+            document.querySelectorAll('.attribute-card').forEach(card => {
+                card.addEventListener('click', () => showDetails(Number(card.dataset.index)));
+            });
         }
 
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
+        searchInput.addEventListener('input', (event) => {
+            const term = event.target.value.trim().toLowerCase();
+
             if (term.length < 2) {
                 renderResults(cdpData.slice(0, 12));
                 stats.innerText = `${cdpData.length} atributos disponíveis.`;
                 return;
             }
-            const filtered = cdpData.filter(item => 
-                item.nome.toLowerCase().includes(term) || 
-                item.significado.toLowerCase().includes(term) ||
-                item.display_name.toLowerCase().includes(term) ||
-                item.origem.toLowerCase().includes(term)
-            );
+
+            const filtered = cdpData.filter(item => searchableText(item).includes(term));
             renderResults(filtered);
             stats.innerText = `${filtered.length} resultados encontrados.`;
         });
 
-        function showDetails(nome) {
-            const item = cdpData.find(i => i.nome === nome);
+        function showDetails(index) {
+            const item = visibleData[index];
             if (!item) return;
 
-            document.getElementById('modalTitle').innerText = item.display_name || item.nome;
+            document.getElementById('modalTitle').innerText = value(item, 'display_name') || value(item, 'nome') || 'Detalhes do atributo';
             document.getElementById('modalBody').innerHTML = `
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <h4 class="font-bold text-gray-700">Nome Técnico</h4>
-                        <p class="text-gray-600 bg-gray-50 p-2 rounded border font-mono text-sm">${item.nome}</p>
+                        <h4 class="font-bold text-gray-700">Nome técnico</h4>
+                        <p class="text-gray-600 bg-gray-50 p-2 rounded border font-mono text-sm break-all">${escapeHTML(value(item, 'nome') || 'N/A')}</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-gray-700">Tipo</h4>
-                        <p class="text-gray-600">${item.tipo_pessoa || 'N/A'}</p>
+                        <h4 class="font-bold text-gray-700">Tipo pessoa</h4>
+                        <p class="text-gray-600">${escapeHTML(value(item, 'tipo_pessoa') || 'N/A')}</p>
                     </div>
                 </div>
                 <div>
                     <h4 class="font-bold text-gray-700">Significado / Variável</h4>
-                    <p class="text-gray-600">${item.significado || 'N/A'}</p>
+                    <p class="text-gray-600">${escapeHTML(value(item, 'significado') || 'N/A')}</p>
                 </div>
                 <div>
-                    <h4 class="font-bold text-gray-700">Caso de Uso</h4>
-                    <p class="text-gray-600 italic text-sm">${item.caso_uso || 'N/A'}</p>
+                    <h4 class="font-bold text-gray-700">Caso de uso</h4>
+                    <p class="text-gray-600 italic text-sm">${escapeHTML(value(item, 'caso_uso') || 'N/A')}</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <h4 class="font-bold text-gray-700">Origem C360</h4>
-                        <p class="text-gray-600 text-sm">${item.origem || 'N/A'}</p>
+                        <p class="text-gray-600 text-sm break-all">${escapeHTML(value(item, 'origem') || 'N/A')}</p>
                     </div>
                     <div>
                         <h4 class="font-bold text-gray-700">Campo C360</h4>
-                        <p class="text-gray-600 text-sm font-mono">${item.campo_origem || 'N/A'}</p>
+                        <p class="text-gray-600 text-sm font-mono break-all">${escapeHTML(value(item, 'campo_origem') || 'N/A')}</p>
                     </div>
                 </div>
                 <div>
+                    <h4 class="font-bold text-gray-700">Schema</h4>
+                    <p class="text-gray-600 text-sm">${escapeHTML(value(item, 'schema') || 'N/A')}</p>
+                </div>
+                <div>
                     <h4 class="font-bold text-gray-700">Path na CDP</h4>
-                    <p class="text-gray-400 text-xs font-mono break-all">${item.path || 'N/A'}</p>
+                    <p class="text-gray-400 text-xs font-mono break-all">${escapeHTML(value(item, 'path') || 'N/A')}</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-gray-700 mb-2">Exemplo de Query / Regra</h4>
-                    ${item.exemplo_query && item.exemplo_query !== 'nan' && item.exemplo_query !== 'None' ? 
-                        `<pre class="text-xs"><code>${item.exemplo_query}</code></pre>` : 
-                        `<p class="text-gray-400 italic">Nenhum exemplo disponível.</p>`}
+                    ${value(item, 'exemplo_query') && value(item, 'exemplo_query') !== 'nan' && value(item, 'exemplo_query') !== 'None'
+                        ? `<pre class="text-xs"><code>${escapeHTML(value(item, 'exemplo_query'))}</code></pre>`
+                        : `<p class="text-gray-400 italic">Nenhum exemplo disponível.</p>`}
                 </div>
             `;
             modal.classList.remove('hidden');
@@ -156,10 +209,13 @@
             modal.classList.add('hidden');
         }
 
-        // Fechar modal ao clicar fora
         window.onclick = function(event) {
-            if (event.target == modal) closeModal();
-        }
+            if (event.target === modal) closeModal();
+        };
+
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeModal();
+        });
     </script>
 </body>
 </html>
