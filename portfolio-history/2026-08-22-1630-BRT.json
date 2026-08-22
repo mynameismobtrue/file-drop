@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "PORTFOLIO_TRACKER_ONLY",
+  "not_for_research_reference": true,
+  "source": "MERCADO_BITCOIN",
+  "pair": "BTC-BRL",
+  "target_date": "2026-08-22",
+  "cutoff_local": "2026-08-22T16:30:00-03:00",
+  "cutoff_utc": "2026-08-22T19:30:00Z",
+  "generated_at": "2026-08-22T23:36:39.719711Z",
+  "position_btc_confirmed": 0.00015382,
+  "display_baseline_brl": 47.52,
+  "mark_status": "AVAILABLE",
+  "mark": {
+    "status": "AVAILABLE",
+    "method": "MB_HISTORICAL_LAST_TRADE",
+    "price_brl": 398718.0,
+    "source_timestamp": "2026-08-22T19:29:51Z",
+    "age_seconds_at_cutoff": 9,
+    "trade_id": 22415030,
+    "raw_url": "https://api.mercadobitcoin.net/api/v4/BTC-BRL/trades?from=1787426880&to=1787427000&limit=1000"
+  },
+  "portfolio": {
+    "value_brl": 61.33,
+    "value_brl_raw": 61.33080276,
+    "gain_since_2026_06_11_brl": 13.81,
+    "gain_since_2026_06_11_pct": 29.063137,
+    "direction_since_2026_06_11": "AUMENTOU",
+    "baseline_is_display_estimate": true
+  },
+  "previous_archive": {
+    "target_date": "2026-08-21",
+    "value_brl": 61.28,
+    "value_brl_raw": 61.27896542,
+    "delta_brl": 0.05,
+    "delta_pct": 0.084592,
+    "direction": "AUMENTOU"
+  },
+  "retrieval": {
+    "trades": {
+      "ok": true,
+      "attempts": 1,
+      "error": null
+    },
+    "candles": null
+  }
+}
