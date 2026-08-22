@@ -1,6 +1,11 @@
 name: Update Mercado Bitcoin snapshot
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - "mb-data-bridge/fetch_mb_snapshot.py"
+      - ".github/workflows/mb-data-bridge.yml"
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
