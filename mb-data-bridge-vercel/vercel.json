@@ -1,0 +1,1 @@
+{"rewrites":[{"source":"/mb-snapshot","destination":"/api/mb"},{"source":"/mb-snapshot.json","destination":"/api/mb?format=json"}],"functions":{"api/mb.js":{"maxDuration":10}}}
