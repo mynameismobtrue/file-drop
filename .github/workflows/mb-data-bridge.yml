@@ -1,0 +1,48 @@
+name: Update Mercado Bitcoin snapshot
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "mb-data-bridge/fetch_mb_snapshot.py"
+      - ".github/workflows/mb-data-bridge.yml"
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mb-data-bridge
+  cancel-in-progress: true
+
+jobs:
+  update-snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch Mercado Bitcoin data
+        run: python3 mb-data-bridge/fetch_mb_snapshot.py
+
+      - name: Validate generated files
+        run: |
+          test -s mb-data-bridge/snapshot.txt
+          test -s mb-data-bridge/snapshot.json
+          grep -q '^SOURCE=MERCADO_BITCOIN$' mb-data-bridge/snapshot.txt
+          grep -q '^PAIR=BTC-BRL$' mb-data-bridge/snapshot.txt
+
+      - name: Commit snapshot when changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mb-data-bridge/snapshot.txt mb-data-bridge/snapshot.json
+          if git diff --cached --quiet; then
+            echo "No snapshot changes."
+            exit 0
+          fi
+          git commit -m "Update MB BTC-BRL snapshot"
+          git push
