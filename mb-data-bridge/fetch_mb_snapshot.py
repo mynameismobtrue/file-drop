@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Validation touch: V2.3 live-window test, 2026-08-22.
 import json
 import math
 import os
