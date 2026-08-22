@@ -8,6 +8,10 @@ on:
       - ".github/workflows/mb-data-bridge.yml"
   schedule:
     - cron: "*/5 * * * *"
+    # Snapshots extras antes da execução oficial das 08:30 BRT (11:30 UTC).
+    - cron: "27 11 * * *"
+    - cron: "28 11 * * *"
+    - cron: "29 11 * * *"
   workflow_dispatch:
 
 permissions:
@@ -34,6 +38,7 @@ jobs:
           test -s mb-data-bridge/snapshot.json
           grep -q '^SOURCE=MERCADO_BITCOIN$' mb-data-bridge/snapshot.txt
           grep -q '^PAIR=BTC-BRL$' mb-data-bridge/snapshot.txt
+          grep -q '^BOOK_VALID=true$' mb-data-bridge/snapshot.txt || true
 
       - name: Commit snapshot when changed
         run: |
