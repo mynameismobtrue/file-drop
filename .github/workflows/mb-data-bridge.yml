@@ -1,3 +1,4 @@
+# V3.6 protocol audit trigger — comment-only, no logic change
 name: Update Mercado Bitcoin snapshot
 
 on:
