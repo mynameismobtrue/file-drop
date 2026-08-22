@@ -1,4 +1,3 @@
-# V3.6 protocol audit trigger — comment-only, no logic change
 name: Update Mercado Bitcoin snapshot
 
 on:
@@ -6,14 +5,17 @@ on:
     branches: ["main"]
     paths:
       - "mb-data-bridge/fetch_mb_snapshot.py"
+      - "mb-data-bridge/archive_portfolio_mark.py"
       - ".github/workflows/mb-data-bridge.yml"
   schedule:
     # Snapshot regular para auditoria/fallback.
     - cron: "*/5 * * * *"
-    # Janelas redundantes que mantêm o branch mb-live fresco ao redor de 08:30 BRT = 11:30 UTC.
-    - cron: "5 11 * * *"
-    - cron: "15 11 * * *"
-    - cron: "25 11 * * *"
+    # Janelas redundantes ao redor de 16:30 BRT = 19:30 UTC.
+    - cron: "5 19 * * *"
+    - cron: "15 19 * * *"
+    - cron: "25 19 * * *"
+    # Arquivo diário do Portfolio Tracker após o cutoff exato de 16:30 BRT.
+    - cron: "32 19 * * *"
   workflow_dispatch:
 
 permissions:
@@ -51,10 +53,17 @@ jobs:
             exit 0
           fi
           git commit -m "Update MB BTC-BRL snapshot"
+          git pull --rebase origin main
           git push
 
   live-burst:
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && github.event.schedule != '*/5 * * * *')
+    if: >-
+      github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' &&
+        (github.event.schedule == '5 19 * * *' ||
+         github.event.schedule == '15 19 * * *' ||
+         github.event.schedule == '25 19 * * *'))
     runs-on: ubuntu-latest
     timeout-minutes: 35
     concurrency:
@@ -75,13 +84,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Keep MB live snapshot fresh
+      - name: Keep MB live snapshot fresh around 16h30 BRT
         shell: bash
         run: |
           # Push/manual changes create a 10-minute validation window.
-          # Scheduled bursts last 30 minutes. With redundant starts at 11:05/11:15/11:25 UTC
-          # and cancel-in-progress, the final scheduled runner should cover roughly 08:25–08:55 BRT,
-          # leaving enough room for research, final execution refresh, materiality check and publication.
+          # Scheduled bursts last 30 minutes. Redundant starts at 19:05/19:15/19:25 UTC
+          # plus cancel-in-progress make the final runner cover roughly 16:25-16:55 BRT,
+          # supporting research, final execution refresh, materiality check and publication.
           if [ "${{ github.event_name }}" = "schedule" ]; then
             DURATION=1800
           else
@@ -103,9 +112,67 @@ jobs:
             grep -q '^PAIR=BTC-BRL$' mb-data-bridge/snapshot.txt
             git add mb-data-bridge/snapshot.txt mb-data-bridge/snapshot.json
 
-            # mb-live é branch técnico descartável. Amenda sempre o mesmo commit para não poluir histórico.
+            # mb-live is a disposable technical branch. Amend the same commit to avoid history noise.
             git commit --amend --no-edit --allow-empty
             git push --force origin HEAD:mb-live
 
             sleep 20
           done
+
+  portfolio-archive:
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '32 19 * * *') ||
+      github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: mb-portfolio-archive
+      cancel-in-progress: false
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Select target date and archive official MB historical mark
+        shell: bash
+        run: |
+          NOW_LOCAL=$(TZ=America/Sao_Paulo date +%H%M)
+          TODAY_LOCAL=$(TZ=America/Sao_Paulo date +%F)
+          YESTERDAY_LOCAL=$(TZ=America/Sao_Paulo date -d 'yesterday' +%F)
+
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            TARGET_DATE="$TODAY_LOCAL"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            # One-time safe backfill behavior for a code change: archive yesterday only if absent.
+            TARGET_DATE="$YESTERDAY_LOCAL"
+            if [ -f "portfolio-history/${TARGET_DATE}-1630-BRT.json" ]; then
+              echo "Historical seed already exists for ${TARGET_DATE}; nothing to do."
+              exit 0
+            fi
+          else
+            if [ "$NOW_LOCAL" -ge 1630 ]; then TARGET_DATE="$TODAY_LOCAL"; else TARGET_DATE="$YESTERDAY_LOCAL"; fi
+          fi
+
+          echo "Archiving Portfolio Tracker mark for ${TARGET_DATE} at the fixed 16:30 BRT cutoff."
+          python3 mb-data-bridge/archive_portfolio_mark.py --date "$TARGET_DATE"
+
+          test -s "portfolio-history/${TARGET_DATE}-1630-BRT.json"
+          test -s portfolio-history/latest.json
+          grep -q '"source": "MERCADO_BITCOIN"' "portfolio-history/${TARGET_DATE}-1630-BRT.json"
+          grep -q '"not_for_research_reference": true' "portfolio-history/${TARGET_DATE}-1630-BRT.json"
+
+      - name: Commit portfolio archive when changed
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio-history
+          if git diff --cached --quiet; then
+            echo "No portfolio archive changes."
+            exit 0
+          fi
+          git commit -m "Archive 16h30 MB portfolio mark"
+          git pull --rebase origin main
+          git push
