@@ -7,26 +7,27 @@ on:
       - "mb-data-bridge/fetch_mb_snapshot.py"
       - ".github/workflows/mb-data-bridge.yml"
   schedule:
+    # Snapshot regular para auditoria/fallback.
     - cron: "*/5 * * * *"
-    # Snapshots extras antes da execução oficial das 08:30 BRT (11:30 UTC).
-    - cron: "27 11 * * *"
-    - cron: "28 11 * * *"
-    - cron: "29 11 * * *"
+    # Janelas redundantes que mantêm o branch mb-live fresco ao redor de 08:30 BRT = 11:30 UTC.
+    - cron: "5 11 * * *"
+    - cron: "15 11 * * *"
+    - cron: "25 11 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
-concurrency:
-  group: mb-data-bridge
-  cancel-in-progress: true
-
 jobs:
-  update-snapshot:
+  regular-snapshot:
+    if: github.event_name != 'schedule' || github.event.schedule == '*/5 * * * *'
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    concurrency:
+      group: mb-regular-snapshot
+      cancel-in-progress: true
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
 
       - name: Fetch Mercado Bitcoin data
@@ -38,9 +39,8 @@ jobs:
           test -s mb-data-bridge/snapshot.json
           grep -q '^SOURCE=MERCADO_BITCOIN$' mb-data-bridge/snapshot.txt
           grep -q '^PAIR=BTC-BRL$' mb-data-bridge/snapshot.txt
-          grep -q '^BOOK_VALID=true$' mb-data-bridge/snapshot.txt || true
 
-      - name: Commit snapshot when changed
+      - name: Commit regular snapshot when changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -51,3 +51,59 @@ jobs:
           fi
           git commit -m "Update MB BTC-BRL snapshot"
           git push
+
+  live-burst:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && github.event.schedule != '*/5 * * * *')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: mb-live-burst
+      cancel-in-progress: true
+    steps:
+      - name: Checkout main with branch history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepare dedicated mb-live worktree
+        run: |
+          git fetch origin mb-live
+          git worktree add /tmp/mb-live origin/mb-live
+          cd /tmp/mb-live
+          git checkout -B mb-live origin/mb-live
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Keep MB live snapshot fresh
+        shell: bash
+        run: |
+          # Push/manual changes create a 10-minute validation window.
+          # Scheduled bursts last 15 minutes. Three redundant starts (11:05/11:15/11:25 UTC)
+          # make it much more likely that at least one runner is active through 11:30 UTC.
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            DURATION=900
+          else
+            DURATION=600
+          fi
+          END=$(( $(date +%s) + DURATION ))
+
+          while [ "$(date +%s)" -lt "$END" ]; do
+            cd "$GITHUB_WORKSPACE"
+            python3 mb-data-bridge/fetch_mb_snapshot.py
+
+            mkdir -p /tmp/mb-live/mb-data-bridge
+            cp mb-data-bridge/snapshot.txt /tmp/mb-live/mb-data-bridge/snapshot.txt
+            cp mb-data-bridge/snapshot.json /tmp/mb-live/mb-data-bridge/snapshot.json
+
+            cd /tmp/mb-live
+            test -s mb-data-bridge/snapshot.txt
+            grep -q '^SOURCE=MERCADO_BITCOIN$' mb-data-bridge/snapshot.txt
+            grep -q '^PAIR=BTC-BRL$' mb-data-bridge/snapshot.txt
+            git add mb-data-bridge/snapshot.txt mb-data-bridge/snapshot.json
+
+            # mb-live é branch técnico descartável. Amenda sempre o mesmo commit para não poluir histórico.
+            git commit --amend --no-edit --allow-empty
+            git push --force origin HEAD:mb-live
+
+            sleep 20
+          done
