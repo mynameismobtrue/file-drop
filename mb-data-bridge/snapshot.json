@@ -1,0 +1,93 @@
+{
+  "service": "mb-data-bridge-github",
+  "version": "1.0.0",
+  "status": "OK",
+  "source": "MERCADO_BITCOIN",
+  "pair": "BTC-BRL",
+  "fetched_at": "2026-08-22T17:13:48.782769Z",
+  "source_timestamp": "2026-08-22T17:13:30Z",
+  "age_seconds_at_fetch": 19,
+  "ticker": {
+    "valid": true,
+    "attempts": 1,
+    "http_status": 200,
+    "last_brl": 398874.0,
+    "high_brl": 407133.0,
+    "low_brl": 394796.0,
+    "open_brl": 400201.0,
+    "volume_btc": 27.7053729,
+    "timestamp": "2026-08-22T17:13:30Z",
+    "error": null
+  },
+  "orderbook": {
+    "valid": true,
+    "attempts": 1,
+    "http_status": 200,
+    "validation_error": null,
+    "best_bid_brl": 398873.0,
+    "best_ask_brl": 398874.0,
+    "spread_brl": 1.0,
+    "spread_pct": 0.0002507060509158919,
+    "bid_levels": 694,
+    "ask_levels": 1453,
+    "error": null
+  },
+  "execution": {
+    "vwap_buy": {
+      "50": {
+        "amount_brl": 50,
+        "sufficient_depth": true,
+        "vwap_brl": 398874.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000125352868
+      },
+      "100": {
+        "amount_brl": 100,
+        "sufficient_depth": true,
+        "vwap_brl": 398874.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000250705737
+      },
+      "150": {
+        "amount_brl": 150,
+        "sufficient_depth": true,
+        "vwap_brl": 398874.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000376058605
+      },
+      "200": {
+        "amount_brl": 200,
+        "sufficient_depth": true,
+        "vwap_brl": 398874.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000501411473
+      },
+      "300": {
+        "amount_brl": 300,
+        "sufficient_depth": true,
+        "vwap_brl": 398874.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.00075211721
+      },
+      "400": {
+        "amount_brl": 400,
+        "sufficient_depth": true,
+        "vwap_brl": 398874.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.001002822947
+      },
+      "500": {
+        "amount_brl": 500,
+        "sufficient_depth": true,
+        "vwap_brl": 398874.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.001253528683
+      }
+    }
+  },
+  "integrity": {
+    "execution_data_ready": true,
+    "read_only": true,
+    "no_trading_credentials": true
+  }
+}
