@@ -55,7 +55,7 @@ jobs:
   live-burst:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && github.event.schedule != '*/5 * * * *')
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     concurrency:
       group: mb-live-burst
       cancel-in-progress: true
@@ -78,10 +78,11 @@ jobs:
         shell: bash
         run: |
           # Push/manual changes create a 10-minute validation window.
-          # Scheduled bursts last 15 minutes. Three redundant starts (11:05/11:15/11:25 UTC)
-          # make it much more likely that at least one runner is active through 11:30 UTC.
+          # Scheduled bursts last 30 minutes. With redundant starts at 11:05/11:15/11:25 UTC
+          # and cancel-in-progress, the final scheduled runner should cover roughly 08:25–08:55 BRT,
+          # leaving enough room for research, final execution refresh, materiality check and publication.
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            DURATION=900
+            DURATION=1800
           else
             DURATION=600
           fi
