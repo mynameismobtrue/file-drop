@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-# Validation touch: V2.3 live-window test, 2026-08-22.
 import json
-import math
-import os
 import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+VERSION = "1.1.0"
 TICKER_URL = "https://api.mercadobitcoin.net/api/v4/tickers?symbols=BTC-BRL"
-BOOK_URL = "https://api.mercadobitcoin.net/api/v4/BTC-BRL/orderbook"
+BOOK_LIMIT_REQUESTED = 1000
+BOOK_URL = f"https://api.mercadobitcoin.net/api/v4/BTC-BRL/orderbook?limit={BOOK_LIMIT_REQUESTED}"
 AMOUNTS = [50, 100, 150, 200, 300, 400, 500]
 OUT_DIR = Path(__file__).resolve().parent
 
@@ -24,10 +23,7 @@ def get_json(url, attempts=3):
     for i in range(attempts):
         if i:
             time.sleep([0, 0.4, 1.0][min(i, 2)])
-        req = urllib.request.Request(
-            url,
-            headers={"Accept": "application/json", "User-Agent": "mb-data-bridge-github/1.0"},
-        )
+        req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "mb-data-bridge-github/1.1"})
         try:
             with urllib.request.urlopen(req, timeout=10) as r:
                 last_status = getattr(r, "status", 200)
@@ -202,19 +198,24 @@ def main():
     ticker_valid = bool(ticker and ticker.get("last") and ticker["last"] > 0)
     book_valid, book_reason = validate_book(book)
 
+    ticker_ts = ticker.get("timestamp") if ticker_valid else None
+    book_ts = book.get("timestamp") if book_valid else None
     bid = book["best_bid"] if book_valid else None
     ask = book["best_ask"] if book_valid else None
     spread_brl = ask - bid if book_valid else None
     mid = (ask + bid) / 2 if book_valid else None
     spread_pct = (spread_brl / mid) * 100 if mid else None
-    source_ts = (book.get("timestamp") if book_valid else None) or (ticker.get("timestamp") if ticker_valid else None) or fetched_at
+    source_ts = book_ts or ticker_ts or fetched_at
+    bid_levels = len(book["bids"]) if book_valid else 0
+    ask_levels = len(book["asks"]) if book_valid else 0
 
-    vwaps = {str(x): vwap_buy(book["asks"], x, ask) if book_valid else {"amount_brl": x, "sufficient_depth": False, "vwap_brl": None, "slippage_pct_vs_best_ask": None, "btc_acquired": None} for x in AMOUNTS}
+    empty_vwap = lambda x: {"amount_brl": x, "sufficient_depth": False, "vwap_brl": None, "slippage_pct_vs_best_ask": None, "btc_acquired": None}
+    vwaps = {str(x): vwap_buy(book["asks"], x, ask) if book_valid else empty_vwap(x) for x in AMOUNTS}
 
     status = "OK" if ticker_valid and book_valid else ("DEGRADED" if ticker_valid or book_valid else "ERROR")
     snapshot = {
         "service": "mb-data-bridge-github",
-        "version": "1.0.0",
+        "version": VERSION,
         "status": status,
         "source": "MERCADO_BITCOIN",
         "pair": "BTC-BRL",
@@ -222,32 +223,19 @@ def main():
         "source_timestamp": source_ts,
         "age_seconds_at_fetch": age_seconds(source_ts),
         "ticker": {
-            "valid": ticker_valid,
-            "attempts": ticker_raw["attempts"],
-            "http_status": ticker_raw["status"],
-            "last_brl": ticker.get("last") if ticker_valid else None,
-            "high_brl": ticker.get("high") if ticker_valid else None,
-            "low_brl": ticker.get("low") if ticker_valid else None,
-            "open_brl": ticker.get("open") if ticker_valid else None,
-            "volume_btc": ticker.get("volume") if ticker_valid else None,
-            "timestamp": ticker.get("timestamp") if ticker_valid else None,
-            "error": ticker_raw.get("error"),
+            "valid": ticker_valid, "attempts": ticker_raw["attempts"], "http_status": ticker_raw["status"],
+            "last_brl": ticker.get("last") if ticker_valid else None, "high_brl": ticker.get("high") if ticker_valid else None,
+            "low_brl": ticker.get("low") if ticker_valid else None, "open_brl": ticker.get("open") if ticker_valid else None,
+            "volume_btc": ticker.get("volume") if ticker_valid else None, "timestamp": ticker_ts, "error": ticker_raw.get("error"),
         },
         "orderbook": {
-            "valid": book_valid,
-            "attempts": book_raw["attempts"],
-            "http_status": book_raw["status"],
-            "validation_error": book_reason,
-            "best_bid_brl": bid,
-            "best_ask_brl": ask,
-            "spread_brl": spread_brl,
-            "spread_pct": spread_pct,
-            "bid_levels": len(book["bids"]) if book_valid else 0,
-            "ask_levels": len(book["asks"]) if book_valid else 0,
-            "error": book_raw.get("error"),
+            "valid": book_valid, "attempts": book_raw["attempts"], "http_status": book_raw["status"],
+            "validation_error": book_reason, "timestamp": book_ts, "limit_requested": BOOK_LIMIT_REQUESTED,
+            "best_bid_brl": bid, "best_ask_brl": ask, "spread_brl": spread_brl, "spread_pct": spread_pct,
+            "bid_levels": bid_levels, "ask_levels": ask_levels, "error": book_raw.get("error"),
         },
         "execution": {"vwap_buy": vwaps},
-        "integrity": {"execution_data_ready": book_valid, "read_only": True, "no_trading_credentials": True},
+        "integrity": {"execution_book_ready": book_valid, "read_only": True, "no_trading_credentials": True},
     }
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -255,20 +243,21 @@ def main():
 
     lines = []
     def put(k, v): lines.append(f"{k}={fmt(v)}")
-    put("SERVICE", snapshot["service"]); put("VERSION", snapshot["version"]); put("STATUS", status)
+    put("SERVICE", snapshot["service"]); put("VERSION", VERSION); put("STATUS", status)
     put("SOURCE", "MERCADO_BITCOIN"); put("PAIR", "BTC-BRL"); put("FETCHED_AT", fetched_at); put("SOURCE_TIMESTAMP", source_ts)
-    put("TICKER_VALID", ticker_valid); put("TICKER_ATTEMPTS", ticker_raw["attempts"]); put("LAST_BRL", snapshot["ticker"]["last_brl"])
-    put("HIGH_BRL", snapshot["ticker"]["high_brl"]); put("LOW_BRL", snapshot["ticker"]["low_brl"]); put("OPEN_BRL", snapshot["ticker"]["open_brl"]); put("VOLUME_BTC", snapshot["ticker"]["volume_btc"])
-    put("BOOK_VALID", book_valid); put("BOOK_ATTEMPTS", book_raw["attempts"]); put("BOOK_VALIDATION_ERROR", book_reason)
+    put("TICKER_VALID", ticker_valid); put("TICKER_ATTEMPTS", ticker_raw["attempts"]); put("TICKER_TIMESTAMP", ticker_ts)
+    put("LAST_BRL", snapshot["ticker"]["last_brl"]); put("HIGH_BRL", snapshot["ticker"]["high_brl"]); put("LOW_BRL", snapshot["ticker"]["low_brl"]); put("OPEN_BRL", snapshot["ticker"]["open_brl"]); put("VOLUME_BTC", snapshot["ticker"]["volume_btc"])
+    put("BOOK_VALID", book_valid); put("BOOK_ATTEMPTS", book_raw["attempts"]); put("BOOK_TIMESTAMP", book_ts); put("BOOK_LIMIT_REQUESTED", BOOK_LIMIT_REQUESTED)
+    put("BOOK_BID_LEVELS", bid_levels); put("BOOK_ASK_LEVELS", ask_levels); put("BOOK_VALIDATION_ERROR", book_reason)
     put("BEST_BID_BRL", bid); put("BEST_ASK_BRL", ask); put("SPREAD_BRL", spread_brl); put("SPREAD_PCT", spread_pct)
     for x in AMOUNTS:
         r = vwaps[str(x)]
         put(f"VWAP_BUY_R{x}", r["vwap_brl"]); put(f"SLIPPAGE_R{x}_PCT", r["slippage_pct_vs_best_ask"]); put(f"DEPTH_OK_R{x}", r["sufficient_depth"])
-    put("EXECUTION_DATA_READY", book_valid); put("READ_ONLY", True); put("NO_TRADING_CREDENTIALS", True)
+    put("EXECUTION_BOOK_READY", book_valid); put("EXECUTION_DATA_READY", book_valid); put("READ_ONLY", True); put("NO_TRADING_CREDENTIALS", True)
     if ticker_raw.get("error"): put("TICKER_ERROR", ticker_raw["error"])
     if book_raw.get("error"): put("BOOK_ERROR", book_raw["error"])
     (OUT_DIR / "snapshot.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"snapshot status={status} ticker={ticker_valid} book={book_valid}")
+    print(f"snapshot version={VERSION} status={status} ticker={ticker_valid} book={book_valid} levels={bid_levels}/{ask_levels}")
 
 
 if __name__ == "__main__":
