@@ -1,92 +1,97 @@
 {
   "service": "mb-data-bridge-github",
-  "version": "1.0.0",
-  "status": "OK",
+  "version": "1.2.0",
+  "status": "ERROR",
   "source": "MERCADO_BITCOIN",
   "pair": "BTC-BRL",
-  "fetched_at": "2026-08-22T17:16:39.101129Z",
-  "source_timestamp": "2026-08-22T17:16:37Z",
-  "age_seconds_at_fetch": 2,
+  "fetched_at": "2026-11-14T00:53:46.377426Z",
+  "source_timestamp": "2026-11-14T00:53:46.377426Z",
   "ticker": {
-    "valid": true,
-    "attempts": 1,
-    "http_status": 200,
-    "last_brl": 399039.0,
-    "high_brl": 407133.0,
-    "low_brl": 394796.0,
-    "open_brl": 399585.0,
-    "volume_btc": 27.76708017,
-    "timestamp": "2026-08-22T17:16:37Z",
-    "error": null
+    "valid": false,
+    "attempts": 2,
+    "http_status": null,
+    "last_brl": null,
+    "high_brl": null,
+    "low_brl": null,
+    "open_brl": null,
+    "volume_btc": null,
+    "timestamp": null,
+    "error": "HTTPError:HTTP Error 403: Forbidden"
   },
   "orderbook": {
-    "valid": true,
-    "attempts": 1,
-    "http_status": 200,
-    "validation_error": null,
-    "best_bid_brl": 398983.0,
-    "best_ask_brl": 398984.0,
-    "spread_brl": 1.0,
-    "spread_pct": 0.00025063693110116084,
-    "bid_levels": 696,
-    "ask_levels": 1451,
-    "error": null
+    "valid": false,
+    "attempts": 3,
+    "http_status": null,
+    "validation_error": "BOOK_NOT_FOUND",
+    "timestamp": null,
+    "freshness_timestamp": null,
+    "time_basis": null,
+    "limit_requested": 1000,
+    "bid_levels": 0,
+    "ask_levels": 0,
+    "bid_limit_reached": false,
+    "ask_limit_reached": false,
+    "best_bid_brl": null,
+    "best_ask_brl": null,
+    "spread_brl": null,
+    "spread_pct": null,
+    "error": "HTTPError:HTTP Error 403: Forbidden"
   },
   "execution": {
     "vwap_buy": {
       "50": {
         "amount_brl": 50,
-        "sufficient_depth": true,
-        "vwap_brl": 398984.0,
-        "slippage_pct_vs_best_ask": -0.0,
-        "btc_acquired": 0.000125318309
+        "sufficient_depth": false,
+        "vwap_brl": null,
+        "slippage_pct_vs_best_ask": null,
+        "btc_acquired": null
       },
       "100": {
         "amount_brl": 100,
-        "sufficient_depth": true,
-        "vwap_brl": 398984.0,
-        "slippage_pct_vs_best_ask": -0.0,
-        "btc_acquired": 0.000250636617
+        "sufficient_depth": false,
+        "vwap_brl": null,
+        "slippage_pct_vs_best_ask": null,
+        "btc_acquired": null
       },
       "150": {
         "amount_brl": 150,
-        "sufficient_depth": true,
-        "vwap_brl": 398984.0,
-        "slippage_pct_vs_best_ask": 0.0,
-        "btc_acquired": 0.000375954926
+        "sufficient_depth": false,
+        "vwap_brl": null,
+        "slippage_pct_vs_best_ask": null,
+        "btc_acquired": null
       },
       "200": {
         "amount_brl": 200,
-        "sufficient_depth": true,
-        "vwap_brl": 398984.0,
-        "slippage_pct_vs_best_ask": -0.0,
-        "btc_acquired": 0.000501273234
+        "sufficient_depth": false,
+        "vwap_brl": null,
+        "slippage_pct_vs_best_ask": null,
+        "btc_acquired": null
       },
       "300": {
         "amount_brl": 300,
-        "sufficient_depth": true,
-        "vwap_brl": 398984.0,
-        "slippage_pct_vs_best_ask": 0.0,
-        "btc_acquired": 0.000751909851
+        "sufficient_depth": false,
+        "vwap_brl": null,
+        "slippage_pct_vs_best_ask": null,
+        "btc_acquired": null
       },
       "400": {
         "amount_brl": 400,
-        "sufficient_depth": true,
-        "vwap_brl": 398984.0,
-        "slippage_pct_vs_best_ask": -0.0,
-        "btc_acquired": 0.001002546468
+        "sufficient_depth": false,
+        "vwap_brl": null,
+        "slippage_pct_vs_best_ask": null,
+        "btc_acquired": null
       },
       "500": {
         "amount_brl": 500,
-        "sufficient_depth": true,
-        "vwap_brl": 398984.0,
-        "slippage_pct_vs_best_ask": 0.0,
-        "btc_acquired": 0.001253183085
+        "sufficient_depth": false,
+        "vwap_brl": null,
+        "slippage_pct_vs_best_ask": null,
+        "btc_acquired": null
       }
     }
   },
   "integrity": {
-    "execution_data_ready": true,
+    "execution_book_ready": false,
     "read_only": true,
     "no_trading_credentials": true
   }
