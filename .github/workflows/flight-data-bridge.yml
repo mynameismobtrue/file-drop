@@ -1,0 +1,69 @@
+name: Flight Data Bridge CI
+
+on:
+  push:
+    branches: ["main", "flight-data-bridge-v1"]
+    paths:
+      - "flight-data-bridge/**"
+      - ".github/workflows/flight-data-bridge.yml"
+  pull_request:
+    paths:
+      - "flight-data-bridge/**"
+      - ".github/workflows/flight-data-bridge.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: flight-data-bridge-ci-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r flight-data-bridge/requirements.txt
+      - name: Compile
+        run: python -m py_compile flight-data-bridge/flight_bridge/*.py flight-data-bridge/flight_bridge/providers/*.py
+      - name: Regression suite
+        working-directory: flight-data-bridge
+        env:
+          PYTHONPATH: .
+        run: pytest -q
+      - name: Validate protocol version isolation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('flight-data-bridge/config/protocol_v2_2.json'))
+          assert d['data_bridge_version']=='1.1.3'
+          assert d['protocol_version']=='LISBOA_V2.2'
+          assert d['ui_version']=='1.0.0'
+          assert d['state']=='PRE_PRODUCTION'
+          assert d['alert_price_brl_strict_lt']==4500.0
+          assert d['expected_queries_per_complete_provider']==12
+          assert d['schedule_times_brt']==['06:00','11:00','16:00','21:00']
+          PY
+      - name: Enforce public repository privacy isolation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text=Path('.github/workflows/flight-data-bridge.yml').read_text()
+          forbidden=[
+              'IGNAV_'+'API_KEY',
+              'SKYSCANNER_'+'API_KEY',
+              'DUFFEL_'+'ACCESS_TOKEN',
+              'secrets'+'.',
+              'sche'+'dule:',
+              'flight-data-bridge/'+'snapshot.json',
+              'flight-data-bridge/'+'history',
+          ]
+          found=[x for x in forbidden if x in text]
+          assert not found, f'public workflow must be CI-only; found {found}'
+          PY

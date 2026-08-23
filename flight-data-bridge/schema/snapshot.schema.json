@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/flight-data-bridge/snapshot.schema.json",
+  "title": "Flight Data Bridge V1.1.3 Snapshot",
+  "type": "object",
+  "required": [
+    "DATA_BRIDGE_VERSION","PROTOCOL_VERSION","UI_VERSION","STATE","SEARCH_METADATA",
+    "PRIMARY_STATUS","ACTIVE_DISCOVERY_PROVIDER","PROVIDERS_REQUESTED","PROVIDER_RESULTS",
+    "SOURCE_HEALTH","VALID_OFFERS","REJECTED_OFFERS","NON_VALIDATABLE_OFFERS",
+    "ALERT_CANDIDATES","VALIDATION_RESULTS","PRICE_HISTORY","COUNTS"
+  ],
+  "properties": {
+    "DATA_BRIDGE_VERSION": {"type":"string","const":"1.1.3"},
+    "PROTOCOL_VERSION": {"type":"string","const":"LISBOA_V2.2"},
+    "UI_VERSION": {"type":"string","const":"1.0.0"},
+    "STATE": {"type":"string","enum":["PRE_PRODUCTION","PRODUCTION_VALIDATED"]},
+    "SEARCH_METADATA": {
+      "type":"object",
+      "required":["SEARCH_ID","SEARCH_STARTED_AT","SEARCH_COMPLETED_AT","SEARCH_STATUS","IS_COMPLETE","FETCHED_AT","TTL_STATUS","FLIGHT_SEARCH_TTL_MIN","QUERY_PARAMETERS","ERROR_CODES"],
+      "properties": {
+        "SEARCH_ID":{"type":"string"},
+        "SCHEDULED_FOR":{"type":["string","null"]},
+        "SEARCH_STARTED_AT":{"type":"string"},
+        "SEARCH_COMPLETED_AT":{"type":["string","null"]},
+        "ACTUAL_DELAY_SECONDS":{"type":["integer","null"],"minimum":0},
+        "SEARCH_STATUS":{"type":"string","enum":["STARTED","PARTIAL","COMPLETE","COMPLETE_WITH_SOURCE_ERRORS","INCOMPLETE","FAILED","TIMED_OUT"]},
+        "IS_COMPLETE":{"type":"boolean"},
+        "FETCHED_AT":{"type":"string"},
+        "SOURCE_TIMESTAMP":{"type":["string","null"]},
+        "TTL_STATUS":{"type":"string","enum":["LIVE","STALE","UNAVAILABLE"]},
+        "FLIGHT_SEARCH_TTL_MIN":{"type":"integer","const":90},
+        "QUERY_PARAMETERS":{"type":"object"},
+        "ERROR_CODES":{"type":"array","items":{"type":"string"}}
+      }
+    },
+    "PRIMARY_STATUS":{"type":["string","null"]},
+    "ACTIVE_DISCOVERY_PROVIDER":{"type":["string","null"]},
+    "ACTIVE_DISCOVERY_ROLE":{"type":["string","null"]},
+    "COVERAGE_EQUIVALENCE_NOT_ASSERTED":{"type":"boolean"},
+    "PROVIDERS_REQUESTED":{"type":"array","items":{"type":"string"}},
+    "PROVIDER_RESULTS":{"type":"array","items":{"$ref":"#/$defs/providerResult"}},
+    "PROVIDER_USAGE":{"type":"object"},
+    "PROVIDER_CONTRACT_AUDIT":{"type":["object","null"]},
+    "SOURCE_HEALTH":{"type":"string","enum":["LIVE","DEGRADED","UNAVAILABLE","AUTH_REQUIRED","RATE_LIMITED","BILLING_REQUIRED","ERROR"]},
+    "LATEST_ATTEMPT":{"type":["string","null"]},
+    "LAST_COMPLETE_SNAPSHOT":{"type":["object","null"]},
+    "VALID_OFFERS":{"type":"array","items":{"$ref":"#/$defs/offer"}},
+    "REJECTED_OFFERS":{"type":"array","items":{"$ref":"#/$defs/offer"}},
+    "NON_VALIDATABLE_OFFERS":{"type":"array","items":{"$ref":"#/$defs/offer"}},
+    "ALERT_CANDIDATES":{"type":"array","items":{"$ref":"#/$defs/offer"}},
+    "VALIDATION_RESULTS":{"type":"array","items":{"type":"object"}},
+    "PRICE_HISTORY":{"type":"object"},
+    "COUNTS":{"type":"object"}
+  },
+  "$defs": {
+    "providerResult": {
+      "type":"object",
+      "required":["provider","role","PROVIDER_QUERIES_EXPECTED","PROVIDER_QUERIES_STARTED","PROVIDER_QUERIES_COMPLETE","PROVIDER_QUERIES_FAILED","PROVIDER_QUERIES_TIMED_OUT","PROVIDER_SEARCH_STATUS","SOURCE_HEALTH","ERROR_CODES","queries"],
+      "properties": {
+        "provider":{"type":"string"},"role":{"type":"string"},
+        "PROVIDER_QUERIES_EXPECTED":{"type":"integer","const":12},
+        "PROVIDER_QUERIES_STARTED":{"type":"integer","minimum":0,"maximum":12},
+        "PROVIDER_QUERIES_COMPLETE":{"type":"integer","minimum":0,"maximum":12},
+        "PROVIDER_QUERIES_FAILED":{"type":"integer","minimum":0,"maximum":12},
+        "PROVIDER_QUERIES_TIMED_OUT":{"type":"integer","minimum":0,"maximum":12},
+        "PROVIDER_SEARCH_STATUS":{"type":"string","enum":["COMPLETE","INCOMPLETE","FAILED","TIMED_OUT"]},
+        "QUERY_GRID_VALID":{"type":"boolean"},
+        "SOURCE_HEALTH":{"type":"string","enum":["LIVE","DEGRADED","UNAVAILABLE","AUTH_REQUIRED","RATE_LIMITED","BILLING_REQUIRED","ERROR"]},
+        "ERROR_CODES":{"type":"array","items":{"type":"string"}},
+        "queries":{"type":"array","items":{"type":"object"}}
+      }
+    },
+    "segment": {
+      "type":"object",
+      "required":["segment_id","origin","destination","departure_local","arrival_local","marketing_carrier","operating_carrier","flight_number"],
+      "properties": {
+        "segment_id":{"type":"string"},"origin":{"type":"string"},"destination":{"type":"string"},
+        "departure_local":{"type":"string"},"arrival_local":{"type":"string"},
+        "departure_utc":{"type":["string","null"]},"arrival_utc":{"type":["string","null"]},
+        "marketing_carrier":{"type":["string","null"]},"operating_carrier":{"type":["string","null"]},
+        "marketing_carrier_name":{"type":["string","null"]},"operating_carrier_name":{"type":["string","null"]},
+        "flight_number":{"type":["string","null"]},"aircraft":{"type":["string","null"]},"duration_min":{"type":["integer","null"]}
+      }
+    },
+    "connection": {
+      "type":"object",
+      "required":["connection_airport","connection_country","connection_duration_min","transfer_type","airport_change","self_transfer"],
+      "properties": {
+        "connection_airport":{"type":"string"},"connection_country":{"type":["string","null"]},
+        "connection_duration_min":{"type":["integer","null"]},"transfer_type":{"type":["string","null"]},
+        "airport_change":{"type":["boolean","null"]},"self_transfer":{"type":["boolean","null"]}
+      }
+    },
+    "direction": {
+      "type":["object","null"],
+      "properties": {
+        "origin":{"type":"string"},"destination":{"type":"string"},"departure_local":{"type":"string"},"arrival_local":{"type":"string"},
+        "arrival_date_local":{"type":"string"},"total_duration_min":{"type":["integer","null"]},"connection_count":{"type":["integer","null"]},
+        "departure_utc":{"type":["string","null"]},"arrival_utc":{"type":["string","null"]},
+        "segments":{"type":"array","items":{"$ref":"#/$defs/segment"}},"connections":{"type":"array","items":{"$ref":"#/$defs/connection"}}
+      }
+    },
+    "offer": {
+      "type":"object",
+      "required":["offer_id","commercial_offer_id","source_offer_id","source","search_id","itinerary_fingerprint","price","currency","price_brl","total_price_confirmed","cabin_class","booking_agent","booking_url","offer_expires_at","discovered_at","last_validated_at","validation_status","outbound","inbound","derived"],
+      "properties": {
+        "offer_id":{"type":["string","null"]},"commercial_offer_id":{"type":["string","null"]},"source_offer_id":{"type":["string","null"]},"itinerary_id":{"type":["string","null"]},
+        "source":{"type":"string"},"search_id":{"type":["string","null"]},"itinerary_fingerprint":{"type":["string","null"]},
+        "price":{"type":["number","null"]},"currency":{"type":["string","null"]},"price_brl":{"type":["number","null"]},
+        "fx_source":{"type":["string","null"]},"fx_timestamp":{"type":["string","null"]},"total_price_confirmed":{"type":"boolean"},"taxes_included":{"type":["boolean","null"]},
+        "cabin_class":{"type":["string","null"]},"personal_item":{},"carry_on":{},"checked_bag":{},
+        "booking_source":{"type":["string","null"]},"booking_agent":{"type":["string","null"]},"booking_url":{"type":["string","null"]},
+        "offer_expires_at":{"type":["string","null"]},"discovered_at":{"type":["string","null"]},"last_validated_at":{"type":["string","null"]},
+        "validation_status":{"type":"string"},"outbound":{"$ref":"#/$defs/direction"},"inbound":{"$ref":"#/$defs/direction"},
+        "transfer_type":{"type":["string","null"]},"booking_option_count":{"type":"integer"},"source_payload_ref":{"type":["string","null"]},"derived":{"type":"object"}
+      }
+    }
+  }
+}

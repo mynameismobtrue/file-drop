@@ -1,0 +1,14 @@
+{
+  "legs": [
+    {"origin":"GRU","destination":"LIS","departure_date":"2026-10-27"},
+    {"origin":"LIS","destination":"VCP","departure_date":"2026-11-03"}
+  ],
+  "itineraries": [{
+    "price":{"amount":4300,"currency":"BRL","status":"verified"},
+    "legs":[
+      {"carrier":"TAP Air Portugal","duration_minutes":600,"segments":[{"marketing_carrier_code":"TP","flight_number":"1","operating_carrier_name":"TAP Air Portugal","departure_airport":"GRU","departure_time_local":"2026-10-27T20:00:00","departure_timezone":"America/Sao_Paulo","departure_time_utc":"2026-10-27T23:00:00Z","arrival_airport":"LIS","arrival_time_local":"2026-10-28T06:00:00","arrival_timezone":"Europe/Lisbon","arrival_time_utc":"2026-10-28T05:00:00Z","duration_minutes":600,"aircraft":"A330"}]},
+      {"carrier":"TAP Air Portugal","duration_minutes":600,"segments":[{"marketing_carrier_code":"TP","flight_number":"2","operating_carrier_name":"TAP Air Portugal","departure_airport":"LIS","departure_time_local":"2026-11-03T10:00:00","departure_timezone":"Europe/Lisbon","departure_time_utc":"2026-11-03T10:00:00Z","arrival_airport":"VCP","arrival_time_local":"2026-11-03T20:00:00","arrival_timezone":"America/Sao_Paulo","arrival_time_utc":"2026-11-03T23:00:00Z","duration_minutes":600,"aircraft":"A330"}]}
+    ],
+    "cabin_class":"economy","bags":{"carry_on":1,"checked":null},"requires_self_transfer":false,"ignav_id":"fixture-ignav-id"
+  }]
+}
