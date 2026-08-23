@@ -1,0 +1,120 @@
+name: Flight Data Bridge Monitor PRE-PRODUCTION DISABLED
+
+on:
+  workflow_dispatch:
+  # Production activation only after the formal Production Gate:
+  # schedule:
+  #   - cron: "0 0,9,14,19 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: flight-data-bridge-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      IGNAV_API_KEY: ${{ secrets.IGNAV_API_KEY }}
+      FLIGHT_BRIDGE_CODE_DIR: ${{ github.workspace }}/_code/flight-data-bridge
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enforce private production-approved repository
+        shell: bash
+        run: |
+          if [ "${{ github.event.repository.private }}" != "true" ]; then
+            echo "PRIVACY_GATE_FAILED"
+            exit 41
+          fi
+          python - <<'PY'
+          import json
+          d=json.load(open('config/live-validation.json'))
+          if d['state'] != 'PRODUCTION_VALIDATED':
+              raise SystemExit('PRE_PRODUCTION: automatic monitoring is disabled')
+          if d.get('paid_usage_authorized') not in (False, True):
+              raise SystemExit('QUOTA_GATE_BLOCKED: paid usage state invalid')
+          PY
+
+      - name: Read pinned production code SHA
+        id: cfg
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          d=json.load(open('config/live-validation.json'))
+          sha=d['approved_code_sha']
+          if not sha or sha.startswith('__'):
+              raise SystemExit('CODE_SHA_MISMATCH')
+          print('repo='+d['approved_code_repo'])
+          print('sha='+sha)
+          PY
+
+      - name: Require Ignav secret without printing it
+        run: |
+          if [ -z "${IGNAV_API_KEY:-}" ]; then echo "AUTH_REQUIRED"; exit 44; fi
+
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.cfg.outputs.repo }}
+          ref: ${{ steps.cfg.outputs.sha }}
+          path: _code
+          persist-credentials: false
+
+      - name: Verify exact production code SHA
+        run: |
+          ACTUAL=$(git -C _code rev-parse HEAD)
+          test "$ACTUAL" = "${{ steps.cfg.outputs.sha }}" || { echo CODE_SHA_MISMATCH; exit 45; }
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r _code/flight-data-bridge/requirements.txt
+      - run: python -m py_compile _code/flight-data-bridge/flight_bridge/*.py _code/flight-data-bridge/flight_bridge/providers/*.py
+
+      - name: Free-tier quota gate before provider calls
+        run: python scripts/private_runtime.py quota-check
+
+      - name: Build Ignav-only runtime config
+        run: python scripts/private_runtime.py runtime-config --output "$RUNNER_TEMP/live-runtime.json"
+
+      - name: Execute 12-query cycle
+        id: bridge
+        shell: bash
+        run: |
+          set +e
+          PYTHONPATH="$FLIGHT_BRIDGE_CODE_DIR" python -m flight_bridge.bridge \
+            --out-dir "$RUNNER_TEMP/flight-output" \
+            --config "$RUNNER_TEMP/live-runtime.json"
+          CODE=$?
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Persist sanitized private result
+        if: always() && steps.bridge.outcome == 'success'
+        run: |
+          python scripts/private_runtime.py persist \
+            --output-dir "$RUNNER_TEMP/flight-output" \
+            --health-file "$RUNNER_TEMP/no-health.json"
+          python scripts/private_runtime.py scan
+
+      - name: Commit append-only private audit state
+        if: always() && steps.bridge.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add live history price-history audit
+          if ! git diff --cached --quiet; then
+            git commit -m "Record Flight Data Bridge monitor cycle"
+            git push
+          fi
+
+      - name: Propagate non-conclusive cycle
+        if: steps.bridge.outputs.exit_code != '0'
+        run: exit 46
