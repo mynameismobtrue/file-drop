@@ -14,6 +14,7 @@ import jsonschema
 
 from .models import ProviderCycleResult
 from .hard_filters import evaluate_offer
+from .contract_observer import merge_observations
 from .providers.skyscanner import SkyscannerAdapter
 from .providers.ignav import IgnavAdapter
 
@@ -65,9 +66,7 @@ def scheduled_slot(started: datetime, cfg: dict | None = None):
         day = (local + timedelta(days=day_offset)).date()
         for raw in times:
             hour, minute = map(int, raw.split(":"))
-            candidate = datetime(
-                day.year, day.month, day.day, hour, minute, tzinfo=BRT
-            )
+            candidate = datetime(day.year, day.month, day.day, hour, minute, tzinfo=BRT)
             if candidate <= local:
                 candidates.append(candidate)
     if not candidates:
@@ -172,6 +171,7 @@ def cycle_dict(c):
                 "raw_offers_count": q.raw_offers_count,
                 "error_codes": q.error_codes,
                 "response_sha256": q.response_sha256,
+                "provider_metadata": q.provider_metadata,
             }
             for q in sorted(c.query_results, key=lambda row: row.query_id)
         ],
@@ -279,6 +279,30 @@ def provider_map(cfg):
     }
 
 
+def _provider_usage(providers):
+    result = {}
+    for name, adapter in providers.items():
+        if hasattr(adapter, "usage_stats"):
+            result[name] = adapter.usage_stats()
+    return result
+
+
+def _contract_audit(selected, validations):
+    if not selected or selected.provider != "IGNAV":
+        return None
+    observations = []
+    for q in selected.query_results:
+        obs = (q.provider_metadata or {}).get("CONTRACT_OBSERVATION")
+        if obs:
+            observations.append(obs)
+    for row in validations:
+        if row.get("second_search_contract_observation"):
+            observations.append(row["second_search_contract_observation"])
+        if row.get("booking_contract_observation"):
+            observations.append(row["booking_contract_observation"])
+    return merge_observations(observations) if observations else None
+
+
 def _last_complete(out_dir):
     p = out_dir / "snapshot.json"
     if not p.exists():
@@ -325,6 +349,8 @@ def build_base(cfg, search_id, started, jobs, scheduled_for):
         "COVERAGE_EQUIVALENCE_NOT_ASSERTED": False,
         "PROVIDERS_REQUESTED": [],
         "PROVIDER_RESULTS": [],
+        "PROVIDER_USAGE": {},
+        "PROVIDER_CONTRACT_AUDIT": None,
         "SOURCE_HEALTH": "UNAVAILABLE",
         "LATEST_ATTEMPT": search_id,
         "LAST_COMPLETE_SNAPSHOT": None,
@@ -400,6 +426,7 @@ def run(out_dir: Path, cfg: dict, providers=None, event_name=None):
 
     doc["PROVIDER_RESULTS"] = [cycle_dict(c) for c in cycles]
     doc["PRIMARY_STATUS"] = cycles[0].search_status if cycles else "FAILED"
+    doc["PROVIDER_USAGE"] = _provider_usage(providers)
 
     if not selected:
         completed = now_iso()
@@ -490,6 +517,8 @@ def run(out_dir: Path, cfg: dict, providers=None, event_name=None):
     doc["NON_VALIDATABLE_OFFERS"] = nonvalid
     doc["ALERT_CANDIDATES"] = alerts
     doc["VALIDATION_RESULTS"] = validations
+    doc["PROVIDER_USAGE"] = _provider_usage(providers)
+    doc["PROVIDER_CONTRACT_AUDIT"] = _contract_audit(selected, validations)
     doc["COUNTS"] = {
         "RAW_OFFERS_COUNT": sum(q.raw_offers_count for q in selected.query_results),
         "NORMALIZED_OFFERS_COUNT": len(offers),
