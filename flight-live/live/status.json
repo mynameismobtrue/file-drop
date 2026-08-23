@@ -1,0 +1,17 @@
+{
+  "live_env_version": "1.0.0",
+  "data_bridge_version": "1.1.1",
+  "protocol_version": "LISBOA_V2.2",
+  "state": "PRE_PRODUCTION",
+  "approved_code_sha": "c1007258ece8c55a2736b117eef75ade10ee8d03",
+  "source_health": "UNAVAILABLE",
+  "search_status": "NOT_RUN",
+  "contract_smoke_test": false,
+  "live_provider_validation": false,
+  "production_validated": false,
+  "alert_delivery_enabled": false,
+  "schedule_enabled": false,
+  "public_live_data_authorized": true,
+  "last_updated_at": null,
+  "error_codes": ["IGNAV_API_KEY_NOT_CONFIGURED"]
+}
