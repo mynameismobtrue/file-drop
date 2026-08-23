@@ -134,9 +134,12 @@ def test_booking_price_change():
     a=adapter(Resp(data=search_response([itinerary(4300,"ig-2")])),Resp(data=booking_response(4200))); fresh,_=a.revalidate(initial_offer(a),JOB)
     assert fresh.validation_status=="PRICE_CHANGED" and fresh.price_brl==4200 and fresh.total_price_confirmed is True
 
-def test_second_search_never_min_price():
+def test_second_search_never_min_price_and_ambiguous_is_nonvalidatable():
     second=search_response([itinerary(4400,"first"),itinerary(4000,"cheaper")]); a=adapter(Resp(data=second),Resp(data=booking_response(4400))); fresh,meta=a.revalidate(initial_offer(a),JOB)
-    assert fresh.price_brl==4400 and meta["price_based_selection"] is False
+    assert fresh.validation_status=="NON_VALIDATABLE" and fresh.price_brl==4300 and fresh.total_price_confirmed is False
+    assert meta["price_based_selection"] is False and meta["second_search_exact_matches"]==2
+    assert "REVALIDATION_AMBIGUOUS_EXACT_MATCH" in fresh.derived["SOURCE_NON_VALIDATABLE_REASONS"]
+    assert len(a.http.calls)==1
 
 def test_booking_unverified_price_not_confirmed():
     b=booking_response(4200); b["booking_options"][0]["links"][0]["price"]["status"]="unverified"
