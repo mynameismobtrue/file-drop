@@ -1,0 +1,21 @@
+{
+  "live_env_version": "1.0.0",
+  "state": "PRE_PRODUCTION",
+  "approved_code_repo": "mynameismobtrue/file-drop",
+  "approved_code_sha": "__SET_TO_FINAL_VALIDATED_PR_HEAD_WHEN_COPIED_PRIVATE__",
+  "data_bridge_version": "1.1.1",
+  "protocol_version": "LISBOA_V2.2",
+  "ui_version": "1.0.0",
+  "validation_provider": "IGNAV",
+  "alert_delivery_enabled": false,
+  "paid_usage_authorized": false,
+  "ignav_free_requests_initial": 1000,
+  "free_tier_warning_threshold": 150,
+  "free_tier_hard_stop_buffer": 50,
+  "base_search_requests_per_cycle": 12,
+  "revalidation_request_reserve": 2,
+  "cycles_per_day": 4,
+  "times_brt": ["06:00", "11:00", "16:00", "21:00"],
+  "github_cron_utc": "0 0,9,14,19 * * *",
+  "timezone": "America/Sao_Paulo"
+}
