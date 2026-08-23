@@ -11,6 +11,7 @@ from flight_bridge.providers.base import ProviderAdapter
 from flight_bridge.providers.ignav import IgnavAdapter
 
 CFG = json.loads((Path(__file__).parents[1] / "config/protocol_v2_2.json").read_text())
+ROOT = Path(__file__).parents[1]
 
 
 def _segment(dep_local, arr_local, dep_utc, arr_utc):
@@ -108,6 +109,16 @@ def test_lisbon_arrival_mismatch_fail_closed_even_when_utc_date_allowed():
     assert "NON_VALIDATABLE_LIS_ARRIVAL_TIMEZONE_MISMATCH" in o.derived["NON_VALIDATABLE_REASON_CODES"]
 
 
+def test_string_price_fails_closed():
+    o = _offer("2026-10-27T20:00:00", "2026-10-27T20:00:00Z", price=4300)
+    o.price = "4499.99"
+    o.price_brl = "4499.99"
+    evaluate_offer(o, CFG, datetime(2026, 8, 22, 20, tzinfo=timezone.utc))
+    assert o.derived["ELIGIBILITY_STATE"] == "NON_VALIDATABLE"
+    assert o.derived["ALERT_PRICE_PASS"] is False
+    assert "NON_VALIDATABLE_PRICE_UNCONFIRMED" in o.derived["NON_VALIDATABLE_REASON_CODES"]
+
+
 def test_quota_gate_reserves_full_cycle_revalidation_and_50_buffer():
     assert quota_gate(936)["QUOTA_GATE_ALLOWED"] is True
     blocked = quota_gate(937)
@@ -167,6 +178,18 @@ def test_alert_dedupe_realerts_on_quality_improvement():
     assert alert_dedupe_decision(previous, current)["REASON"] == "QUALITY_IMPROVED"
 
 
+def test_alert_dedupe_does_not_treat_arbitrary_condition_signature_change_as_improvement():
+    previous = {"offer_id":"x","price_brl":4300,"derived":{"QUALITY_CLASS":"B","CONDITION_SIGNATURE":"old"}}
+    current = {"offer_id":"x","price_brl":4300,"derived":{"QUALITY_CLASS":"B","CONDITION_SIGNATURE":"new"}}
+    assert alert_dedupe_decision(previous, current)["SHOULD_ALERT"] is False
+
+
+def test_alert_dedupe_explicit_condition_improvement_can_realert():
+    previous = {"offer_id":"x","price_brl":4300,"derived":{"QUALITY_CLASS":"B"}}
+    current = {"offer_id":"x","price_brl":4300,"derived":{"QUALITY_CLASS":"B","CONDITION_IMPROVED":True}}
+    assert alert_dedupe_decision(previous, current)["REASON"] == "CONDITION_IMPROVED"
+
+
 def test_contract_observer_marks_operating_code_undocumented_even_if_present():
     payload = {
         "itineraries": [{
@@ -187,6 +210,28 @@ def test_contract_observer_marks_operating_code_undocumented_even_if_present():
     assert rows["operating_carrier_code"]["REAL_PRESENT"] is True
     assert rows["operating_carrier_name"]["OPENAPI_EXPECTED"] == "DOCUMENTED"
     assert rows["operating_carrier_name"]["REAL_PRESENT"] is True
+
+
+def test_private_template_stays_preproduction_and_manual_only():
+    live = (ROOT / "private-env-template/.github/workflows/live-provider-validation.yml").read_text()
+    monitor = (ROOT / "private-env-template/.github/workflows/flight-monitor.yml").read_text()
+    private_cfg = json.loads((ROOT / "private-env-template/config/live-validation.json").read_text())
+    assert "workflow_dispatch:" in live
+    assert "schedule:" not in live
+    assert "workflow_dispatch:" in monitor
+    assert "  schedule:" not in monitor
+    assert private_cfg["state"] == "PRE_PRODUCTION"
+    assert private_cfg["paid_usage_authorized"] is False
+    assert private_cfg["alert_delivery_enabled"] is False
+    assert private_cfg["approved_code_sha"].startswith("__SET_TO_FINAL_VALIDATED_PR_HEAD")
+
+
+def test_public_workflow_is_ci_only_and_has_no_provider_secret_refs():
+    text = (ROOT.parent / ".github/workflows/flight-data-bridge.yml").read_text()
+    assert "\n  schedule:" not in text
+    assert "secrets." not in text
+    assert "IGNAV_API_KEY" not in text
+    assert "SKYSCANNER_API_KEY" not in text
 
 
 def test_protocol_version_is_frozen_while_bridge_is_1_1_1():
