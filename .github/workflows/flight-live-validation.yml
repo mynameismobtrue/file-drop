@@ -123,7 +123,7 @@ jobs:
           import json
           public=json.load(open('_code/flight-data-bridge/config/protocol_v2_2.json'))
           live=json.load(open('flight-live/config/live-validation.json'))
-          assert public['data_bridge_version']==live['data_bridge_version']=='1.1.1'
+          assert public['data_bridge_version']==live['data_bridge_version']=='1.1.2'
           assert public['protocol_version']==live['protocol_version']=='LISBOA_V2.2'
           assert public['ui_version']==live['ui_version']=='1.0.0'
           assert live['live_env_version']=='1.0.0'
