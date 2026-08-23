@@ -14,290 +14,9 @@
   "COVERAGE_EQUIVALENCE_NOT_ASSERTED": false,
   "DATA_BRIDGE_VERSION": "1.1.3",
   "LAST_COMPLETE_SNAPSHOT": null,
-  "LATEST_ATTEMPT": "fd-20260823T041702Z-7e3b5976",
+  "LATEST_ATTEMPT": "fd-20260823T042133Z-3be8ee8c",
   "LIVE_ENV_VERSION": "1.0.0",
   "NON_VALIDATABLE_OFFERS": [
-    {
-      "booking_agent": null,
-      "booking_option_count": 0,
-      "booking_source": "IGNAV",
-      "booking_url": null,
-      "cabin_class": "economy",
-      "carry_on": 1,
-      "checked_bag": null,
-      "commercial_offer_id": "86ceaeef29dcd5e562f22efec2450ea8f4917a71",
-      "currency": "BRL",
-      "derived": {
-        "AFRICA_CONNECTION_PRESENT": false,
-        "AIRPORT_CHANGE_PRESENT": false,
-        "ALERT_BLOCK_REASON_CODES": [],
-        "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": "2026-08-23T04:27:30.993177+00:00",
-        "COMMERCIAL_OFFER_ID": "86ceaeef29dcd5e562f22efec2450ea8f4917a71",
-        "DESTINATION_VALID": true,
-        "ELIGIBILITY_STATE": "NON_VALIDATABLE",
-        "HARD_FILTER_PASS": false,
-        "HARD_REJECTED": false,
-        "ITINERARY_FINGERPRINT": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
-        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
-        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
-        "LIS_ARRIVAL_DATE_VALID": true,
-        "MAX_CONNECTIONS": 0,
-        "MAX_CONNECTION_MIN": 0,
-        "MAX_DIRECTION_DURATION_MIN": 615,
-        "NON_VALIDATABLE": true,
-        "NON_VALIDATABLE_REASON_CODES": [
-          "NON_VALIDATABLE_PRICE_UNCONFIRMED"
-        ],
-        "OPERATING_CARRIER_CONFIRMED": true,
-        "ORIGIN_VALID": true,
-        "OUTBOUND_DATE_VALID": true,
-        "QUALITY_CLASS": null,
-        "REJECTION_REASON_CODES": [],
-        "RETURN_DATE_VALID": true,
-        "RETURN_DESTINATION_VALID": true,
-        "SELF_TRANSFER_PRESENT": false,
-        "SOURCE_NON_VALIDATABLE_REASONS": [
-          "BOOKING_FULL_JOURNEY_UNAVAILABLE"
-        ],
-        "TAAG_PRESENT": false,
-        "VALIDATION_FRESH": false,
-        "VALIDATION_STATUS": "NON_VALIDATABLE",
-        "VERIFIED_ALERT_CANDIDATE": false
-      },
-      "discovered_at": "2026-08-23T04:17:30.993104+00:00",
-      "fx_source": null,
-      "fx_timestamp": null,
-      "inbound": {
-        "arrival_date_local": "2026-11-03",
-        "arrival_local": "2026-11-03T21:05:00",
-        "arrival_utc": "2026-11-04T00:05:00Z",
-        "connection_count": 0,
-        "connections": [],
-        "departure_local": "2026-11-03T13:50:00",
-        "departure_utc": "2026-11-03T13:50:00Z",
-        "destination": "GRU",
-        "origin": "LIS",
-        "segments": [
-          {
-            "aircraft": "Boeing 787",
-            "arrival_local": "2026-11-03T21:05:00",
-            "arrival_utc": "2026-11-04T00:05:00Z",
-            "departure_local": "2026-11-03T13:50:00",
-            "departure_utc": "2026-11-03T13:50:00Z",
-            "destination": "GRU",
-            "duration_min": 615,
-            "flight_number": "8149",
-            "marketing_carrier": "LA",
-            "marketing_carrier_name": "LATAM",
-            "operating_carrier": null,
-            "operating_carrier_name": "LATAM",
-            "origin": "LIS",
-            "segment_id": "1-0"
-          }
-        ],
-        "total_duration_min": 615
-      },
-      "itinerary_fingerprint": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
-      "itinerary_id": "cb608f1d82064fa3b53ecabc816ca147",
-      "last_validated_at": "2026-08-23T04:17:30.993177+00:00",
-      "offer_expires_at": null,
-      "offer_id": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
-      "outbound": {
-        "arrival_date_local": "2026-10-27",
-        "arrival_local": "2026-10-27T05:15:00",
-        "arrival_utc": "2026-10-27T05:15:00Z",
-        "connection_count": 0,
-        "connections": [],
-        "departure_local": "2026-10-26T16:20:00",
-        "departure_utc": "2026-10-26T19:20:00Z",
-        "destination": "LIS",
-        "origin": "GRU",
-        "segments": [
-          {
-            "aircraft": "Airbus A330-900neo",
-            "arrival_local": "2026-10-27T05:15:00",
-            "arrival_utc": "2026-10-27T05:15:00Z",
-            "departure_local": "2026-10-26T16:20:00",
-            "departure_utc": "2026-10-26T19:20:00Z",
-            "destination": "LIS",
-            "duration_min": 595,
-            "flight_number": "82",
-            "marketing_carrier": "TP",
-            "marketing_carrier_name": "Tap Air Portugal",
-            "operating_carrier": null,
-            "operating_carrier_name": "Tap Air Portugal",
-            "origin": "GRU",
-            "segment_id": "0-0"
-          }
-        ],
-        "total_duration_min": 595
-      },
-      "personal_item": null,
-      "price": 4447.0,
-      "price_brl": 4447.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976-booking",
-      "source": "IGNAV",
-      "source_offer_id": "cb608f1d82064fa3b53ecabc816ca147",
-      "source_payload_ref": null,
-      "taxes_included": null,
-      "total_price_confirmed": false,
-      "transfer_type": "MANAGED",
-      "validation_status": "NON_VALIDATABLE"
-    },
-    {
-      "booking_agent": null,
-      "booking_option_count": 0,
-      "booking_source": "IGNAV",
-      "booking_url": null,
-      "cabin_class": "economy",
-      "carry_on": 1,
-      "checked_bag": null,
-      "commercial_offer_id": "5a64e732875d49a07b420e033e5374f968330ff0",
-      "currency": "BRL",
-      "derived": {
-        "AFRICA_CONNECTION_PRESENT": false,
-        "AIRPORT_CHANGE_PRESENT": false,
-        "ALERT_BLOCK_REASON_CODES": [],
-        "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": "2026-08-23T04:28:32.131701+00:00",
-        "COMMERCIAL_OFFER_ID": "5a64e732875d49a07b420e033e5374f968330ff0",
-        "DESTINATION_VALID": true,
-        "ELIGIBILITY_STATE": "NON_VALIDATABLE",
-        "HARD_FILTER_PASS": false,
-        "HARD_REJECTED": false,
-        "ITINERARY_FINGERPRINT": "4526d58848352c70585bd8c6856584f32308caf7",
-        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
-        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
-        "LIS_ARRIVAL_DATE_VALID": true,
-        "MAX_CONNECTIONS": 1,
-        "MAX_CONNECTION_MIN": 170,
-        "MAX_DIRECTION_DURATION_MIN": 880,
-        "NON_VALIDATABLE": true,
-        "NON_VALIDATABLE_REASON_CODES": [
-          "NON_VALIDATABLE_PRICE_UNCONFIRMED"
-        ],
-        "OPERATING_CARRIER_CONFIRMED": true,
-        "ORIGIN_VALID": true,
-        "OUTBOUND_DATE_VALID": true,
-        "QUALITY_CLASS": null,
-        "REJECTION_REASON_CODES": [],
-        "RETURN_DATE_VALID": true,
-        "RETURN_DESTINATION_VALID": true,
-        "SELF_TRANSFER_PRESENT": false,
-        "SOURCE_NON_VALIDATABLE_REASONS": [
-          "BOOKING_FULL_JOURNEY_UNAVAILABLE"
-        ],
-        "TAAG_PRESENT": false,
-        "VALIDATION_FRESH": false,
-        "VALIDATION_STATUS": "NON_VALIDATABLE",
-        "VERIFIED_ALERT_CANDIDATE": false
-      },
-      "discovered_at": "2026-08-23T04:18:32.131612+00:00",
-      "fx_source": null,
-      "fx_timestamp": null,
-      "inbound": {
-        "arrival_date_local": "2026-11-03",
-        "arrival_local": "2026-11-03T21:40:00",
-        "arrival_utc": "2026-11-04T00:40:00Z",
-        "connection_count": 1,
-        "connections": [
-          {
-            "airport_change": false,
-            "connection_airport": "OPO",
-            "connection_country": "PT",
-            "connection_duration_min": 170,
-            "self_transfer": false,
-            "transfer_type": "MANAGED"
-          }
-        ],
-        "departure_local": "2026-11-03T10:00:00",
-        "departure_utc": "2026-11-03T10:00:00Z",
-        "destination": "GRU",
-        "origin": "LIS",
-        "segments": [
-          {
-            "aircraft": "Airbus A320neo",
-            "arrival_local": "2026-11-03T11:00:00",
-            "arrival_utc": "2026-11-03T11:00:00Z",
-            "departure_local": "2026-11-03T10:00:00",
-            "departure_utc": "2026-11-03T10:00:00Z",
-            "destination": "OPO",
-            "duration_min": 60,
-            "flight_number": "1924",
-            "marketing_carrier": "TP",
-            "marketing_carrier_name": "Tap Air Portugal",
-            "operating_carrier": null,
-            "operating_carrier_name": "Tap Air Portugal",
-            "origin": "LIS",
-            "segment_id": "1-0"
-          },
-          {
-            "aircraft": "Airbus A330-900neo",
-            "arrival_local": "2026-11-03T21:40:00",
-            "arrival_utc": "2026-11-04T00:40:00Z",
-            "departure_local": "2026-11-03T13:50:00",
-            "departure_utc": "2026-11-03T13:50:00Z",
-            "destination": "GRU",
-            "duration_min": 650,
-            "flight_number": "93",
-            "marketing_carrier": "TP",
-            "marketing_carrier_name": "Tap Air Portugal",
-            "operating_carrier": null,
-            "operating_carrier_name": "Tap Air Portugal",
-            "origin": "OPO",
-            "segment_id": "1-1"
-          }
-        ],
-        "total_duration_min": 880
-      },
-      "itinerary_fingerprint": "4526d58848352c70585bd8c6856584f32308caf7",
-      "itinerary_id": "257f31528286491292724f691f0a4313",
-      "last_validated_at": "2026-08-23T04:18:32.131701+00:00",
-      "offer_expires_at": null,
-      "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
-      "outbound": {
-        "arrival_date_local": "2026-10-27",
-        "arrival_local": "2026-10-27T12:10:00",
-        "arrival_utc": "2026-10-27T12:10:00Z",
-        "connection_count": 0,
-        "connections": [],
-        "departure_local": "2026-10-26T23:15:00",
-        "departure_utc": "2026-10-27T02:15:00Z",
-        "destination": "LIS",
-        "origin": "GRU",
-        "segments": [
-          {
-            "aircraft": "Airbus A330-900neo",
-            "arrival_local": "2026-10-27T12:10:00",
-            "arrival_utc": "2026-10-27T12:10:00Z",
-            "departure_local": "2026-10-26T23:15:00",
-            "departure_utc": "2026-10-27T02:15:00Z",
-            "destination": "LIS",
-            "duration_min": 595,
-            "flight_number": "88",
-            "marketing_carrier": "TP",
-            "marketing_carrier_name": "Tap Air Portugal",
-            "operating_carrier": null,
-            "operating_carrier_name": "Tap Air Portugal",
-            "origin": "GRU",
-            "segment_id": "0-0"
-          }
-        ],
-        "total_duration_min": 595
-      },
-      "personal_item": null,
-      "price": 4447.0,
-      "price_brl": 4447.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976-booking",
-      "source": "IGNAV",
-      "source_offer_id": "257f31528286491292724f691f0a4313",
-      "source_payload_ref": null,
-      "taxes_included": null,
-      "total_price_confirmed": false,
-      "transfer_type": "MANAGED",
-      "validation_status": "NON_VALIDATABLE"
-    },
     {
       "booking_agent": null,
       "booking_option_count": 0,
@@ -313,7 +32,7 @@
         "AIRPORT_CHANGE_PRESENT": false,
         "ALERT_BLOCK_REASON_CODES": [],
         "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": "2026-08-23T04:28:53.859752+00:00",
+        "ALERT_VALID_UNTIL": "2026-08-23T04:31:59.807573+00:00",
         "COMMERCIAL_OFFER_ID": "a95a933ea52291c684e860af181eb479880a759c",
         "DESTINATION_VALID": true,
         "ELIGIBILITY_STATE": "NON_VALIDATABLE",
@@ -346,7 +65,7 @@
         "VALIDATION_STATUS": "NON_VALIDATABLE",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:18:53.859684+00:00",
+      "discovered_at": "2026-08-23T04:21:59.807494+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -381,7 +100,7 @@
       },
       "itinerary_fingerprint": "1fecd0b72ddc29199bb57fa7966182afb38bbac9",
       "itinerary_id": "03a6ef1875e94fe88ff1516505a44161",
-      "last_validated_at": "2026-08-23T04:18:53.859752+00:00",
+      "last_validated_at": "2026-08-23T04:21:59.807573+00:00",
       "offer_expires_at": null,
       "offer_id": "1fecd0b72ddc29199bb57fa7966182afb38bbac9",
       "outbound": {
@@ -417,7 +136,7 @@
       "personal_item": null,
       "price": 4447.0,
       "price_brl": 4447.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976-booking",
+      "search_id": "fd-20260823T042133Z-3be8ee8c-booking",
       "source": "IGNAV",
       "source_offer_id": "03a6ef1875e94fe88ff1516505a44161",
       "source_payload_ref": null,
@@ -441,7 +160,7 @@
         "AIRPORT_CHANGE_PRESENT": false,
         "ALERT_BLOCK_REASON_CODES": [],
         "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": "2026-08-23T04:29:16.283790+00:00",
+        "ALERT_VALID_UNTIL": "2026-08-23T04:32:25.157721+00:00",
         "COMMERCIAL_OFFER_ID": "1021dea4a06a29776fffc78d4a13304065755eee",
         "DESTINATION_VALID": true,
         "ELIGIBILITY_STATE": "NON_VALIDATABLE",
@@ -474,7 +193,7 @@
         "VALIDATION_STATUS": "NON_VALIDATABLE",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:19:16.283715+00:00",
+      "discovered_at": "2026-08-23T04:22:25.157655+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -509,7 +228,7 @@
       },
       "itinerary_fingerprint": "5a7d6f32dfc017e16a45a5f1218a4e0a0eb7d2c3",
       "itinerary_id": "60b09075041a434ab64d9e31940c0ef4",
-      "last_validated_at": "2026-08-23T04:19:16.283790+00:00",
+      "last_validated_at": "2026-08-23T04:22:25.157721+00:00",
       "offer_expires_at": null,
       "offer_id": "5a7d6f32dfc017e16a45a5f1218a4e0a0eb7d2c3",
       "outbound": {
@@ -545,7 +264,7 @@
       "personal_item": null,
       "price": 4447.0,
       "price_brl": 4447.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976-booking",
+      "search_id": "fd-20260823T042133Z-3be8ee8c-booking",
       "source": "IGNAV",
       "source_offer_id": "60b09075041a434ab64d9e31940c0ef4",
       "source_payload_ref": null,
@@ -569,7 +288,7 @@
         "AIRPORT_CHANGE_PRESENT": false,
         "ALERT_BLOCK_REASON_CODES": [],
         "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": "2026-08-23T04:29:41.777956+00:00",
+        "ALERT_VALID_UNTIL": "2026-08-23T04:32:49.985257+00:00",
         "COMMERCIAL_OFFER_ID": "97a15f0cdc298c1b9941322a6bcabac151fb9d03",
         "DESTINATION_VALID": true,
         "ELIGIBILITY_STATE": "NON_VALIDATABLE",
@@ -602,7 +321,7 @@
         "VALIDATION_STATUS": "NON_VALIDATABLE",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:19:41.777881+00:00",
+      "discovered_at": "2026-08-23T04:22:49.985188+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -662,7 +381,7 @@
       },
       "itinerary_fingerprint": "1f459734195a98c3c4e024dd3d52d1d5727495da",
       "itinerary_id": "c96fe0b34d9f42dd86273757b7898c80",
-      "last_validated_at": "2026-08-23T04:19:41.777956+00:00",
+      "last_validated_at": "2026-08-23T04:22:49.985257+00:00",
       "offer_expires_at": null,
       "offer_id": "1f459734195a98c3c4e024dd3d52d1d5727495da",
       "outbound": {
@@ -698,9 +417,290 @@
       "personal_item": null,
       "price": 4447.0,
       "price_brl": 4447.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976-booking",
+      "search_id": "fd-20260823T042133Z-3be8ee8c-booking",
       "source": "IGNAV",
       "source_offer_id": "c96fe0b34d9f42dd86273757b7898c80",
+      "source_payload_ref": null,
+      "taxes_included": null,
+      "total_price_confirmed": false,
+      "transfer_type": "MANAGED",
+      "validation_status": "NON_VALIDATABLE"
+    },
+    {
+      "booking_agent": null,
+      "booking_option_count": 0,
+      "booking_source": "IGNAV",
+      "booking_url": null,
+      "cabin_class": "economy",
+      "carry_on": 1,
+      "checked_bag": null,
+      "commercial_offer_id": "86ceaeef29dcd5e562f22efec2450ea8f4917a71",
+      "currency": "BRL",
+      "derived": {
+        "AFRICA_CONNECTION_PRESENT": false,
+        "AIRPORT_CHANGE_PRESENT": false,
+        "ALERT_BLOCK_REASON_CODES": [],
+        "ALERT_PRICE_PASS": false,
+        "ALERT_VALID_UNTIL": "2026-08-23T04:33:47.302996+00:00",
+        "COMMERCIAL_OFFER_ID": "86ceaeef29dcd5e562f22efec2450ea8f4917a71",
+        "DESTINATION_VALID": true,
+        "ELIGIBILITY_STATE": "NON_VALIDATABLE",
+        "HARD_FILTER_PASS": false,
+        "HARD_REJECTED": false,
+        "ITINERARY_FINGERPRINT": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
+        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
+        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
+        "LIS_ARRIVAL_DATE_VALID": true,
+        "MAX_CONNECTIONS": 0,
+        "MAX_CONNECTION_MIN": 0,
+        "MAX_DIRECTION_DURATION_MIN": 615,
+        "NON_VALIDATABLE": true,
+        "NON_VALIDATABLE_REASON_CODES": [
+          "NON_VALIDATABLE_PRICE_UNCONFIRMED"
+        ],
+        "OPERATING_CARRIER_CONFIRMED": true,
+        "ORIGIN_VALID": true,
+        "OUTBOUND_DATE_VALID": true,
+        "QUALITY_CLASS": null,
+        "REJECTION_REASON_CODES": [],
+        "RETURN_DATE_VALID": true,
+        "RETURN_DESTINATION_VALID": true,
+        "SELF_TRANSFER_PRESENT": false,
+        "SOURCE_NON_VALIDATABLE_REASONS": [
+          "BOOKING_FULL_JOURNEY_UNAVAILABLE"
+        ],
+        "TAAG_PRESENT": false,
+        "VALIDATION_FRESH": false,
+        "VALIDATION_STATUS": "NON_VALIDATABLE",
+        "VERIFIED_ALERT_CANDIDATE": false
+      },
+      "discovered_at": "2026-08-23T04:23:47.302931+00:00",
+      "fx_source": null,
+      "fx_timestamp": null,
+      "inbound": {
+        "arrival_date_local": "2026-11-03",
+        "arrival_local": "2026-11-03T21:05:00",
+        "arrival_utc": "2026-11-04T00:05:00Z",
+        "connection_count": 0,
+        "connections": [],
+        "departure_local": "2026-11-03T13:50:00",
+        "departure_utc": "2026-11-03T13:50:00Z",
+        "destination": "GRU",
+        "origin": "LIS",
+        "segments": [
+          {
+            "aircraft": "Boeing 787",
+            "arrival_local": "2026-11-03T21:05:00",
+            "arrival_utc": "2026-11-04T00:05:00Z",
+            "departure_local": "2026-11-03T13:50:00",
+            "departure_utc": "2026-11-03T13:50:00Z",
+            "destination": "GRU",
+            "duration_min": 615,
+            "flight_number": "8149",
+            "marketing_carrier": "LA",
+            "marketing_carrier_name": "LATAM",
+            "operating_carrier": null,
+            "operating_carrier_name": "LATAM",
+            "origin": "LIS",
+            "segment_id": "1-0"
+          }
+        ],
+        "total_duration_min": 615
+      },
+      "itinerary_fingerprint": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
+      "itinerary_id": "cb608f1d82064fa3b53ecabc816ca147",
+      "last_validated_at": "2026-08-23T04:23:47.302996+00:00",
+      "offer_expires_at": null,
+      "offer_id": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
+      "outbound": {
+        "arrival_date_local": "2026-10-27",
+        "arrival_local": "2026-10-27T05:15:00",
+        "arrival_utc": "2026-10-27T05:15:00Z",
+        "connection_count": 0,
+        "connections": [],
+        "departure_local": "2026-10-26T16:20:00",
+        "departure_utc": "2026-10-26T19:20:00Z",
+        "destination": "LIS",
+        "origin": "GRU",
+        "segments": [
+          {
+            "aircraft": "Airbus A330-900neo",
+            "arrival_local": "2026-10-27T05:15:00",
+            "arrival_utc": "2026-10-27T05:15:00Z",
+            "departure_local": "2026-10-26T16:20:00",
+            "departure_utc": "2026-10-26T19:20:00Z",
+            "destination": "LIS",
+            "duration_min": 595,
+            "flight_number": "82",
+            "marketing_carrier": "TP",
+            "marketing_carrier_name": "Tap Air Portugal",
+            "operating_carrier": null,
+            "operating_carrier_name": "Tap Air Portugal",
+            "origin": "GRU",
+            "segment_id": "0-0"
+          }
+        ],
+        "total_duration_min": 595
+      },
+      "personal_item": null,
+      "price": 4447.0,
+      "price_brl": 4447.0,
+      "search_id": "fd-20260823T042133Z-3be8ee8c-booking",
+      "source": "IGNAV",
+      "source_offer_id": "cb608f1d82064fa3b53ecabc816ca147",
+      "source_payload_ref": null,
+      "taxes_included": null,
+      "total_price_confirmed": false,
+      "transfer_type": "MANAGED",
+      "validation_status": "NON_VALIDATABLE"
+    },
+    {
+      "booking_agent": null,
+      "booking_option_count": 0,
+      "booking_source": "IGNAV",
+      "booking_url": null,
+      "cabin_class": "economy",
+      "carry_on": 1,
+      "checked_bag": null,
+      "commercial_offer_id": "5a64e732875d49a07b420e033e5374f968330ff0",
+      "currency": "BRL",
+      "derived": {
+        "AFRICA_CONNECTION_PRESENT": false,
+        "AIRPORT_CHANGE_PRESENT": false,
+        "ALERT_BLOCK_REASON_CODES": [],
+        "ALERT_PRICE_PASS": false,
+        "ALERT_VALID_UNTIL": "2026-08-23T04:34:14.680663+00:00",
+        "COMMERCIAL_OFFER_ID": "5a64e732875d49a07b420e033e5374f968330ff0",
+        "DESTINATION_VALID": true,
+        "ELIGIBILITY_STATE": "NON_VALIDATABLE",
+        "HARD_FILTER_PASS": false,
+        "HARD_REJECTED": false,
+        "ITINERARY_FINGERPRINT": "4526d58848352c70585bd8c6856584f32308caf7",
+        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
+        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
+        "LIS_ARRIVAL_DATE_VALID": true,
+        "MAX_CONNECTIONS": 1,
+        "MAX_CONNECTION_MIN": 170,
+        "MAX_DIRECTION_DURATION_MIN": 880,
+        "NON_VALIDATABLE": true,
+        "NON_VALIDATABLE_REASON_CODES": [
+          "NON_VALIDATABLE_PRICE_UNCONFIRMED"
+        ],
+        "OPERATING_CARRIER_CONFIRMED": true,
+        "ORIGIN_VALID": true,
+        "OUTBOUND_DATE_VALID": true,
+        "QUALITY_CLASS": null,
+        "REJECTION_REASON_CODES": [],
+        "RETURN_DATE_VALID": true,
+        "RETURN_DESTINATION_VALID": true,
+        "SELF_TRANSFER_PRESENT": false,
+        "SOURCE_NON_VALIDATABLE_REASONS": [
+          "BOOKING_FULL_JOURNEY_UNAVAILABLE"
+        ],
+        "TAAG_PRESENT": false,
+        "VALIDATION_FRESH": false,
+        "VALIDATION_STATUS": "NON_VALIDATABLE",
+        "VERIFIED_ALERT_CANDIDATE": false
+      },
+      "discovered_at": "2026-08-23T04:24:14.680595+00:00",
+      "fx_source": null,
+      "fx_timestamp": null,
+      "inbound": {
+        "arrival_date_local": "2026-11-03",
+        "arrival_local": "2026-11-03T21:40:00",
+        "arrival_utc": "2026-11-04T00:40:00Z",
+        "connection_count": 1,
+        "connections": [
+          {
+            "airport_change": false,
+            "connection_airport": "OPO",
+            "connection_country": "PT",
+            "connection_duration_min": 170,
+            "self_transfer": false,
+            "transfer_type": "MANAGED"
+          }
+        ],
+        "departure_local": "2026-11-03T10:00:00",
+        "departure_utc": "2026-11-03T10:00:00Z",
+        "destination": "GRU",
+        "origin": "LIS",
+        "segments": [
+          {
+            "aircraft": "Airbus A320neo",
+            "arrival_local": "2026-11-03T11:00:00",
+            "arrival_utc": "2026-11-03T11:00:00Z",
+            "departure_local": "2026-11-03T10:00:00",
+            "departure_utc": "2026-11-03T10:00:00Z",
+            "destination": "OPO",
+            "duration_min": 60,
+            "flight_number": "1924",
+            "marketing_carrier": "TP",
+            "marketing_carrier_name": "Tap Air Portugal",
+            "operating_carrier": null,
+            "operating_carrier_name": "Tap Air Portugal",
+            "origin": "LIS",
+            "segment_id": "1-0"
+          },
+          {
+            "aircraft": "Airbus A330-900neo",
+            "arrival_local": "2026-11-03T21:40:00",
+            "arrival_utc": "2026-11-04T00:40:00Z",
+            "departure_local": "2026-11-03T13:50:00",
+            "departure_utc": "2026-11-03T13:50:00Z",
+            "destination": "GRU",
+            "duration_min": 650,
+            "flight_number": "93",
+            "marketing_carrier": "TP",
+            "marketing_carrier_name": "Tap Air Portugal",
+            "operating_carrier": null,
+            "operating_carrier_name": "Tap Air Portugal",
+            "origin": "OPO",
+            "segment_id": "1-1"
+          }
+        ],
+        "total_duration_min": 880
+      },
+      "itinerary_fingerprint": "4526d58848352c70585bd8c6856584f32308caf7",
+      "itinerary_id": "257f31528286491292724f691f0a4313",
+      "last_validated_at": "2026-08-23T04:24:14.680663+00:00",
+      "offer_expires_at": null,
+      "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
+      "outbound": {
+        "arrival_date_local": "2026-10-27",
+        "arrival_local": "2026-10-27T12:10:00",
+        "arrival_utc": "2026-10-27T12:10:00Z",
+        "connection_count": 0,
+        "connections": [],
+        "departure_local": "2026-10-26T23:15:00",
+        "departure_utc": "2026-10-27T02:15:00Z",
+        "destination": "LIS",
+        "origin": "GRU",
+        "segments": [
+          {
+            "aircraft": "Airbus A330-900neo",
+            "arrival_local": "2026-10-27T12:10:00",
+            "arrival_utc": "2026-10-27T12:10:00Z",
+            "departure_local": "2026-10-26T23:15:00",
+            "departure_utc": "2026-10-27T02:15:00Z",
+            "destination": "LIS",
+            "duration_min": 595,
+            "flight_number": "88",
+            "marketing_carrier": "TP",
+            "marketing_carrier_name": "Tap Air Portugal",
+            "operating_carrier": null,
+            "operating_carrier_name": "Tap Air Portugal",
+            "origin": "GRU",
+            "segment_id": "0-0"
+          }
+        ],
+        "total_duration_min": 595
+      },
+      "personal_item": null,
+      "price": 4447.0,
+      "price_brl": 4447.0,
+      "search_id": "fd-20260823T042133Z-3be8ee8c-booking",
+      "source": "IGNAV",
+      "source_offer_id": "257f31528286491292724f691f0a4313",
       "source_payload_ref": null,
       "taxes_included": null,
       "total_price_confirmed": false,
@@ -718,9 +718,9 @@
     "DELTA_PREVIOUS": null,
     "MEDIAN": 6325.0,
     "MIN_24H": {
-      "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
-      "observed_at": "2026-08-23T04:19:41.780103+00:00",
-      "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
+      "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
+      "observed_at": "2026-08-23T04:24:14.683520+00:00",
+      "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
       "operating_carriers": [
         "LATAM"
       ],
@@ -729,9 +729,9 @@
       "quality_class": "B"
     },
     "MIN_7D": {
-      "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
-      "observed_at": "2026-08-23T04:19:41.780103+00:00",
-      "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
+      "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
+      "observed_at": "2026-08-23T04:24:14.683520+00:00",
+      "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
       "operating_carriers": [
         "LATAM"
       ],
@@ -740,9 +740,9 @@
       "quality_class": "B"
     },
     "MIN_CONNECTION": {
-      "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
-      "observed_at": "2026-08-23T04:19:41.780103+00:00",
-      "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
+      "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
+      "observed_at": "2026-08-23T04:24:14.683520+00:00",
+      "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
       "operating_carriers": [
         "LATAM"
       ],
@@ -751,9 +751,9 @@
       "quality_class": "B"
     },
     "MIN_CYCLE": {
-      "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
-      "observed_at": "2026-08-23T04:19:41.780103+00:00",
-      "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
+      "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
+      "observed_at": "2026-08-23T04:24:14.683520+00:00",
+      "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
       "operating_carriers": [
         "LATAM"
       ],
@@ -762,9 +762,9 @@
       "quality_class": "B"
     },
     "MIN_DAY": {
-      "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
-      "observed_at": "2026-08-23T04:19:41.780103+00:00",
-      "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
+      "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
+      "observed_at": "2026-08-23T04:24:14.683520+00:00",
+      "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
       "operating_carriers": [
         "LATAM"
       ],
@@ -774,7 +774,7 @@
     },
     "MIN_DIRECT": {
       "commercial_offer_id": "ed4243055ca0b4b34e1a9f35b216caa24480b215",
-      "observed_at": "2026-08-23T04:19:41.780103+00:00",
+      "observed_at": "2026-08-23T04:24:14.683520+00:00",
       "offer_id": "0c394e77bdb4fa8a1e0ce54918a5f8b242cdc0ba",
       "operating_carriers": [
         "Azul"
@@ -784,9 +784,9 @@
       "quality_class": "A"
     },
     "MIN_SINCE_START": {
-      "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
-      "observed_at": "2026-08-23T04:19:41.780103+00:00",
-      "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
+      "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
+      "observed_at": "2026-08-23T04:24:14.683520+00:00",
+      "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
       "operating_carriers": [
         "LATAM"
       ],
@@ -929,8 +929,8 @@
           "AD",
           "LA",
           "AT",
-          "KL",
-          "UX"
+          "UX",
+          "KL"
         ]
       },
       {
@@ -971,8 +971,8 @@
           "Azul",
           "LATAM",
           "Royal Air Maroc",
-          "KLM",
-          "Air Europa"
+          "Air Europa",
+          "KLM"
         ]
       },
       {
@@ -1122,7 +1122,7 @@
       "provider": "IGNAV",
       "queries": [
         {
-          "completed_at": "2026-08-23T04:17:03.108991+00:00",
+          "completed_at": "2026-08-23T04:21:33.874781+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -1431,11 +1431,11 @@
           "query_id": "GRU-2026-10-26-LIS-2026-11-03-GRU",
           "raw_offers_count": 7,
           "response_sha256": "1cb34e988f476b4f3951e4b8fd84eb2129e2e304a3618d85b1710fa02eeda057",
-          "started_at": "2026-08-23T04:17:02.852327+00:00",
+          "started_at": "2026-08-23T04:21:33.448927+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.095268+00:00",
+          "completed_at": "2026-08-23T04:21:33.826789+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -1738,11 +1738,11 @@
           "query_id": "GRU-2026-10-26-LIS-2026-11-03-VCP",
           "raw_offers_count": 2,
           "response_sha256": "5a171c23ba45f40157037b25df2ca1ec1dc638cbb084f4fbf8d0f1233c5c34b1",
-          "started_at": "2026-08-23T04:17:02.852742+00:00",
+          "started_at": "2026-08-23T04:21:33.449516+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.117706+00:00",
+          "completed_at": "2026-08-23T04:21:33.836021+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -2049,11 +2049,11 @@
           "query_id": "GRU-2026-10-27-LIS-2026-11-03-GRU",
           "raw_offers_count": 7,
           "response_sha256": "2b1b7ae7c5d9108f0ced0faaa98df19e3f4edc37199eae28a1a07a8d8a9a93c1",
-          "started_at": "2026-08-23T04:17:02.853089+00:00",
+          "started_at": "2026-08-23T04:21:33.449788+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.138242+00:00",
+          "completed_at": "2026-08-23T04:21:33.841993+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -2356,11 +2356,11 @@
           "query_id": "GRU-2026-10-27-LIS-2026-11-03-VCP",
           "raw_offers_count": 2,
           "response_sha256": "4b0c54d1b7ebcbfe103d0391dc33918b1036f4e8d6249f5ca51815e3e89548ee",
-          "started_at": "2026-08-23T04:17:02.853304+00:00",
+          "started_at": "2026-08-23T04:21:33.452414+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.167189+00:00",
+          "completed_at": "2026-08-23T04:21:33.921216+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -2667,11 +2667,11 @@
           "query_id": "GRU-2026-10-28-LIS-2026-11-03-GRU",
           "raw_offers_count": 6,
           "response_sha256": "c50c2e10ae5cca21d975174f0b947fd575a70f1ae0ec787ffe25ea833b6c17b7",
-          "started_at": "2026-08-23T04:17:03.095320+00:00",
+          "started_at": "2026-08-23T04:21:33.826847+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.189080+00:00",
+          "completed_at": "2026-08-23T04:21:33.930799+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -2974,11 +2974,11 @@
           "query_id": "GRU-2026-10-28-LIS-2026-11-03-VCP",
           "raw_offers_count": 2,
           "response_sha256": "966e9240f5356463f2a9842c9a402a78fd0a00d9917eca90c6d32bc4a0c57d85",
-          "started_at": "2026-08-23T04:17:03.109043+00:00",
+          "started_at": "2026-08-23T04:21:33.836070+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.197214+00:00",
+          "completed_at": "2026-08-23T04:21:33.940688+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -3283,11 +3283,11 @@
           "query_id": "VCP-2026-10-26-LIS-2026-11-03-GRU",
           "raw_offers_count": 3,
           "response_sha256": "764bcf78f74769db4a2a17aa852233b591a73cf93cd1c6c0cc0d3eceb7e912bb",
-          "started_at": "2026-08-23T04:17:03.117751+00:00",
+          "started_at": "2026-08-23T04:21:33.842024+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.218995+00:00",
+          "completed_at": "2026-08-23T04:21:33.961337+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -3588,11 +3588,11 @@
           "query_id": "VCP-2026-10-26-LIS-2026-11-03-VCP",
           "raw_offers_count": 2,
           "response_sha256": "cf2436055b4a04a51699b18f6a26117a1210e2c6a1a70bfcb8c3ef347be11c22",
-          "started_at": "2026-08-23T04:17:03.138281+00:00",
+          "started_at": "2026-08-23T04:21:33.874838+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.239340+00:00",
+          "completed_at": "2026-08-23T04:21:34.012833+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -3893,11 +3893,11 @@
           "query_id": "VCP-2026-10-27-LIS-2026-11-03-GRU",
           "raw_offers_count": 2,
           "response_sha256": "6c792df252e157af8e1e04385a230bfe6244508d8b6cc103f80e8360b0202c05",
-          "started_at": "2026-08-23T04:17:03.167240+00:00",
+          "started_at": "2026-08-23T04:21:33.921273+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.269108+00:00",
+          "completed_at": "2026-08-23T04:21:34.026141+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -4196,11 +4196,11 @@
           "query_id": "VCP-2026-10-27-LIS-2026-11-03-VCP",
           "raw_offers_count": 2,
           "response_sha256": "2014c38b4ef2b359b18bd9be7d8e28a4d68276aded9c3f234cc6e1f681744580",
-          "started_at": "2026-08-23T04:17:03.189115+00:00",
+          "started_at": "2026-08-23T04:21:33.930834+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.277366+00:00",
+          "completed_at": "2026-08-23T04:21:34.038580+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -4503,11 +4503,11 @@
           "query_id": "VCP-2026-10-28-LIS-2026-11-03-GRU",
           "raw_offers_count": 1,
           "response_sha256": "3d85b8a1e875c182005da12b097c58afab98fdb1becd54621a17e57e0c39f88c",
-          "started_at": "2026-08-23T04:17:03.197246+00:00",
+          "started_at": "2026-08-23T04:21:33.940736+00:00",
           "status": "COMPLETE"
         },
         {
-          "completed_at": "2026-08-23T04:17:03.296360+00:00",
+          "completed_at": "2026-08-23T04:21:34.056306+00:00",
           "error_codes": [],
           "provider_metadata": {
             "CONTRACT_OBSERVATION": {
@@ -4808,7 +4808,7 @@
           "query_id": "VCP-2026-10-28-LIS-2026-11-03-VCP",
           "raw_offers_count": 1,
           "response_sha256": "a12f626efac9c618e6fddb5b2b2141fbcc3f2f872615c6bd0f5a7dd803460ef3",
-          "started_at": "2026-08-23T04:17:03.219033+00:00",
+          "started_at": "2026-08-23T04:21:33.961386+00:00",
           "status": "COMPLETE"
         }
       ],
@@ -4875,7 +4875,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.095184+00:00",
+      "discovered_at": "2026-08-23T04:21:33.826695+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -4946,643 +4946,9 @@
       "personal_item": null,
       "price": 6531.0,
       "price_brl": 6531.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "9b9502621bfb4099968116e801923296",
-      "source_payload_ref": null,
-      "taxes_included": null,
-      "total_price_confirmed": true,
-      "transfer_type": "MANAGED",
-      "validation_status": "NOT_REQUIRED"
-    },
-    {
-      "booking_agent": null,
-      "booking_option_count": 0,
-      "booking_source": "IGNAV",
-      "booking_url": null,
-      "cabin_class": "economy",
-      "carry_on": 1,
-      "checked_bag": null,
-      "commercial_offer_id": "8abf6fc7d88b25d4c908c0fd4d0dabed368b8940",
-      "currency": "BRL",
-      "derived": {
-        "AFRICA_CONNECTION_PRESENT": false,
-        "AIRPORT_CHANGE_PRESENT": false,
-        "ALERT_BLOCK_REASON_CODES": [],
-        "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": null,
-        "COMMERCIAL_OFFER_ID": "8abf6fc7d88b25d4c908c0fd4d0dabed368b8940",
-        "DESTINATION_VALID": true,
-        "ELIGIBILITY_STATE": "HARD_REJECTED",
-        "HARD_FILTER_PASS": false,
-        "HARD_REJECTED": true,
-        "ITINERARY_FINGERPRINT": "861705593eb8c55a98b4381419fe8fb0bed9cc84",
-        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-26",
-        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-26",
-        "LIS_ARRIVAL_DATE_VALID": false,
-        "MAX_CONNECTIONS": 0,
-        "MAX_CONNECTION_MIN": 0,
-        "MAX_DIRECTION_DURATION_MIN": 610,
-        "NON_VALIDATABLE": false,
-        "NON_VALIDATABLE_REASON_CODES": [],
-        "OPERATING_CARRIER_CONFIRMED": true,
-        "ORIGIN_VALID": true,
-        "OUTBOUND_DATE_VALID": true,
-        "QUALITY_CLASS": null,
-        "REJECTION_REASON_CODES": [
-          "REJECT_WRONG_ARRIVAL_DATE"
-        ],
-        "RETURN_DATE_VALID": true,
-        "RETURN_DESTINATION_VALID": true,
-        "SELF_TRANSFER_PRESENT": false,
-        "TAAG_PRESENT": false,
-        "VALIDATION_FRESH": false,
-        "VALIDATION_STATUS": "NOT_REQUIRED",
-        "VERIFIED_ALERT_CANDIDATE": false
-      },
-      "discovered_at": "2026-08-23T04:17:03.108424+00:00",
-      "fx_source": null,
-      "fx_timestamp": null,
-      "inbound": {
-        "arrival_date_local": "2026-11-03",
-        "arrival_local": "2026-11-03T16:00:00",
-        "arrival_utc": "2026-11-03T19:00:00Z",
-        "connection_count": 0,
-        "connections": [],
-        "departure_local": "2026-11-03T08:50:00",
-        "departure_utc": "2026-11-03T08:50:00Z",
-        "destination": "GRU",
-        "origin": "LIS",
-        "segments": [
-          {
-            "aircraft": "Boeing 777",
-            "arrival_local": "2026-11-03T16:00:00",
-            "arrival_utc": "2026-11-03T19:00:00Z",
-            "departure_local": "2026-11-03T08:50:00",
-            "departure_utc": "2026-11-03T08:50:00Z",
-            "destination": "GRU",
-            "duration_min": 610,
-            "flight_number": "8147",
-            "marketing_carrier": "LA",
-            "marketing_carrier_name": "LATAM",
-            "operating_carrier": null,
-            "operating_carrier_name": "LATAM",
-            "origin": "LIS",
-            "segment_id": "1-0"
-          }
-        ],
-        "total_duration_min": 610
-      },
-      "itinerary_fingerprint": "861705593eb8c55a98b4381419fe8fb0bed9cc84",
-      "itinerary_id": "12b727b7871346fcb6697079cef14f97",
-      "last_validated_at": null,
-      "offer_expires_at": null,
-      "offer_id": "861705593eb8c55a98b4381419fe8fb0bed9cc84",
-      "outbound": {
-        "arrival_date_local": "2026-10-26",
-        "arrival_local": "2026-10-26T14:25:00",
-        "arrival_utc": "2026-10-26T14:25:00Z",
-        "connection_count": 0,
-        "connections": [],
-        "departure_local": "2026-10-26T01:30:00",
-        "departure_utc": "2026-10-26T04:30:00Z",
-        "destination": "LIS",
-        "origin": "GRU",
-        "segments": [
-          {
-            "aircraft": "Airbus A330-900neo",
-            "arrival_local": "2026-10-26T14:25:00",
-            "arrival_utc": "2026-10-26T14:25:00Z",
-            "departure_local": "2026-10-26T01:30:00",
-            "departure_utc": "2026-10-26T04:30:00Z",
-            "destination": "LIS",
-            "duration_min": 595,
-            "flight_number": "84",
-            "marketing_carrier": "TP",
-            "marketing_carrier_name": "Tap Air Portugal",
-            "operating_carrier": null,
-            "operating_carrier_name": "Tap Air Portugal",
-            "origin": "GRU",
-            "segment_id": "0-0"
-          }
-        ],
-        "total_duration_min": 595
-      },
-      "personal_item": null,
-      "price": 4447.0,
-      "price_brl": 4447.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
-      "source": "IGNAV",
-      "source_offer_id": "12b727b7871346fcb6697079cef14f97",
-      "source_payload_ref": null,
-      "taxes_included": null,
-      "total_price_confirmed": true,
-      "transfer_type": "MANAGED",
-      "validation_status": "NOT_REQUIRED"
-    },
-    {
-      "booking_agent": null,
-      "booking_option_count": 0,
-      "booking_source": "IGNAV",
-      "booking_url": null,
-      "cabin_class": "economy",
-      "carry_on": 1,
-      "checked_bag": null,
-      "commercial_offer_id": "3fbd57fe7bfbb0dde2270a63443d7603ad865fc5",
-      "currency": "BRL",
-      "derived": {
-        "AFRICA_CONNECTION_PRESENT": true,
-        "AIRPORT_CHANGE_PRESENT": false,
-        "ALERT_BLOCK_REASON_CODES": [
-          "REJECT_PRICE_LIMIT"
-        ],
-        "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": null,
-        "COMMERCIAL_OFFER_ID": "3fbd57fe7bfbb0dde2270a63443d7603ad865fc5",
-        "DESTINATION_VALID": true,
-        "ELIGIBILITY_STATE": "HARD_REJECTED",
-        "HARD_FILTER_PASS": false,
-        "HARD_REJECTED": true,
-        "ITINERARY_FINGERPRINT": "aa1160b6f52913435d11144e2f7f0233a57b63f7",
-        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
-        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
-        "LIS_ARRIVAL_DATE_VALID": true,
-        "MAX_CONNECTIONS": 1,
-        "MAX_CONNECTION_MIN": 1215,
-        "MAX_DIRECTION_DURATION_MIN": 1890,
-        "NON_VALIDATABLE": false,
-        "NON_VALIDATABLE_REASON_CODES": [],
-        "OPERATING_CARRIER_CONFIRMED": true,
-        "ORIGIN_VALID": true,
-        "OUTBOUND_DATE_VALID": true,
-        "QUALITY_CLASS": null,
-        "REJECTION_REASON_CODES": [
-          "REJECT_CONNECTION_TOO_LONG",
-          "REJECT_FORBIDDEN_CONNECTION",
-          "REJECT_TOTAL_DURATION"
-        ],
-        "RETURN_DATE_VALID": true,
-        "RETURN_DESTINATION_VALID": true,
-        "SELF_TRANSFER_PRESENT": false,
-        "TAAG_PRESENT": false,
-        "VALIDATION_FRESH": false,
-        "VALIDATION_STATUS": "NOT_REQUIRED",
-        "VERIFIED_ALERT_CANDIDATE": false
-      },
-      "discovered_at": "2026-08-23T04:17:03.108630+00:00",
-      "fx_source": null,
-      "fx_timestamp": null,
-      "inbound": {
-        "arrival_date_local": "2026-11-04",
-        "arrival_local": "2026-11-04T22:25:00",
-        "arrival_utc": "2026-11-05T01:25:00Z",
-        "connection_count": 1,
-        "connections": [
-          {
-            "airport_change": false,
-            "connection_airport": "CMN",
-            "connection_country": "MA",
-            "connection_duration_min": 1215,
-            "self_transfer": false,
-            "transfer_type": "MANAGED"
-          }
-        ],
-        "departure_local": "2026-11-03T17:55:00",
-        "departure_utc": "2026-11-03T17:55:00Z",
-        "destination": "GRU",
-        "origin": "LIS",
-        "segments": [
-          {
-            "aircraft": "Boeing 737",
-            "arrival_local": "2026-11-03T19:20:00",
-            "arrival_utc": "2026-11-03T18:20:00Z",
-            "departure_local": "2026-11-03T17:55:00",
-            "departure_utc": "2026-11-03T17:55:00Z",
-            "destination": "CMN",
-            "duration_min": 85,
-            "flight_number": "983",
-            "marketing_carrier": "AT",
-            "marketing_carrier_name": "Royal Air Maroc",
-            "operating_carrier": null,
-            "operating_carrier_name": "Royal Air Maroc",
-            "origin": "LIS",
-            "segment_id": "1-0"
-          },
-          {
-            "aircraft": "Boeing 787",
-            "arrival_local": "2026-11-04T22:25:00",
-            "arrival_utc": "2026-11-05T01:25:00Z",
-            "departure_local": "2026-11-04T15:35:00",
-            "departure_utc": "2026-11-04T14:35:00Z",
-            "destination": "GRU",
-            "duration_min": 590,
-            "flight_number": "215",
-            "marketing_carrier": "AT",
-            "marketing_carrier_name": "Royal Air Maroc",
-            "operating_carrier": null,
-            "operating_carrier_name": "Royal Air Maroc",
-            "origin": "CMN",
-            "segment_id": "1-1"
-          }
-        ],
-        "total_duration_min": 1890
-      },
-      "itinerary_fingerprint": "aa1160b6f52913435d11144e2f7f0233a57b63f7",
-      "itinerary_id": "52b9889eec5c48a3a7fa1d47ba481c37",
-      "last_validated_at": null,
-      "offer_expires_at": null,
-      "offer_id": "aa1160b6f52913435d11144e2f7f0233a57b63f7",
-      "outbound": {
-        "arrival_date_local": "2026-10-27",
-        "arrival_local": "2026-10-27T11:20:00",
-        "arrival_utc": "2026-10-27T11:20:00Z",
-        "connection_count": 0,
-        "connections": [],
-        "departure_local": "2026-10-26T22:40:00",
-        "departure_utc": "2026-10-27T01:40:00Z",
-        "destination": "LIS",
-        "origin": "GRU",
-        "segments": [
-          {
-            "aircraft": "Boeing 787",
-            "arrival_local": "2026-10-27T11:20:00",
-            "arrival_utc": "2026-10-27T11:20:00Z",
-            "departure_local": "2026-10-26T22:40:00",
-            "departure_utc": "2026-10-27T01:40:00Z",
-            "destination": "LIS",
-            "duration_min": 580,
-            "flight_number": "8148",
-            "marketing_carrier": "LA",
-            "marketing_carrier_name": "LATAM",
-            "operating_carrier": null,
-            "operating_carrier_name": "LATAM",
-            "origin": "GRU",
-            "segment_id": "0-0"
-          }
-        ],
-        "total_duration_min": 580
-      },
-      "personal_item": null,
-      "price": 4674.0,
-      "price_brl": 4674.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
-      "source": "IGNAV",
-      "source_offer_id": "52b9889eec5c48a3a7fa1d47ba481c37",
-      "source_payload_ref": null,
-      "taxes_included": null,
-      "total_price_confirmed": true,
-      "transfer_type": "MANAGED",
-      "validation_status": "NOT_REQUIRED"
-    },
-    {
-      "booking_agent": null,
-      "booking_option_count": 0,
-      "booking_source": "IGNAV",
-      "booking_url": null,
-      "cabin_class": "economy",
-      "carry_on": 1,
-      "checked_bag": null,
-      "commercial_offer_id": "6479e76571df075b1442310a8acd5ad20068cfa3",
-      "currency": "BRL",
-      "derived": {
-        "AFRICA_CONNECTION_PRESENT": true,
-        "AIRPORT_CHANGE_PRESENT": false,
-        "ALERT_BLOCK_REASON_CODES": [
-          "REJECT_PRICE_LIMIT"
-        ],
-        "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": null,
-        "COMMERCIAL_OFFER_ID": "6479e76571df075b1442310a8acd5ad20068cfa3",
-        "DESTINATION_VALID": true,
-        "ELIGIBILITY_STATE": "HARD_REJECTED",
-        "HARD_FILTER_PASS": false,
-        "HARD_REJECTED": true,
-        "ITINERARY_FINGERPRINT": "81772a171b4cc5516d6317e5c66c6572475e6f89",
-        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
-        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
-        "LIS_ARRIVAL_DATE_VALID": true,
-        "MAX_CONNECTIONS": 1,
-        "MAX_CONNECTION_MIN": 185,
-        "MAX_DIRECTION_DURATION_MIN": 1055,
-        "NON_VALIDATABLE": false,
-        "NON_VALIDATABLE_REASON_CODES": [],
-        "OPERATING_CARRIER_CONFIRMED": true,
-        "ORIGIN_VALID": true,
-        "OUTBOUND_DATE_VALID": true,
-        "QUALITY_CLASS": null,
-        "REJECTION_REASON_CODES": [
-          "REJECT_FORBIDDEN_CONNECTION"
-        ],
-        "RETURN_DATE_VALID": true,
-        "RETURN_DESTINATION_VALID": true,
-        "SELF_TRANSFER_PRESENT": false,
-        "TAAG_PRESENT": false,
-        "VALIDATION_FRESH": false,
-        "VALIDATION_STATUS": "NOT_REQUIRED",
-        "VERIFIED_ALERT_CANDIDATE": false
-      },
-      "discovered_at": "2026-08-23T04:17:03.108799+00:00",
-      "fx_source": null,
-      "fx_timestamp": null,
-      "inbound": {
-        "arrival_date_local": "2026-11-03",
-        "arrival_local": "2026-11-03T22:25:00",
-        "arrival_utc": "2026-11-04T01:25:00Z",
-        "connection_count": 1,
-        "connections": [
-          {
-            "airport_change": false,
-            "connection_airport": "CMN",
-            "connection_country": "MA",
-            "connection_duration_min": 95,
-            "self_transfer": false,
-            "transfer_type": "MANAGED"
-          }
-        ],
-        "departure_local": "2026-11-03T12:35:00",
-        "departure_utc": "2026-11-03T12:35:00Z",
-        "destination": "GRU",
-        "origin": "LIS",
-        "segments": [
-          {
-            "aircraft": "Boeing 737",
-            "arrival_local": "2026-11-03T14:00:00",
-            "arrival_utc": "2026-11-03T13:00:00Z",
-            "departure_local": "2026-11-03T12:35:00",
-            "departure_utc": "2026-11-03T12:35:00Z",
-            "destination": "CMN",
-            "duration_min": 85,
-            "flight_number": "981",
-            "marketing_carrier": "AT",
-            "marketing_carrier_name": "Royal Air Maroc",
-            "operating_carrier": null,
-            "operating_carrier_name": "Royal Air Maroc",
-            "origin": "LIS",
-            "segment_id": "1-0"
-          },
-          {
-            "aircraft": "Boeing 787",
-            "arrival_local": "2026-11-03T22:25:00",
-            "arrival_utc": "2026-11-04T01:25:00Z",
-            "departure_local": "2026-11-03T15:35:00",
-            "departure_utc": "2026-11-03T14:35:00Z",
-            "destination": "GRU",
-            "duration_min": 590,
-            "flight_number": "215",
-            "marketing_carrier": "AT",
-            "marketing_carrier_name": "Royal Air Maroc",
-            "operating_carrier": null,
-            "operating_carrier_name": "Royal Air Maroc",
-            "origin": "CMN",
-            "segment_id": "1-1"
-          }
-        ],
-        "total_duration_min": 770
-      },
-      "itinerary_fingerprint": "81772a171b4cc5516d6317e5c66c6572475e6f89",
-      "itinerary_id": "7317f6b599f4463eb9f89f561946ed90",
-      "last_validated_at": null,
-      "offer_expires_at": null,
-      "offer_id": "81772a171b4cc5516d6317e5c66c6572475e6f89",
-      "outbound": {
-        "arrival_date_local": "2026-10-27",
-        "arrival_local": "2026-10-27T10:30:00",
-        "arrival_utc": "2026-10-27T10:30:00Z",
-        "connection_count": 1,
-        "connections": [
-          {
-            "airport_change": false,
-            "connection_airport": "AMS",
-            "connection_country": "NL",
-            "connection_duration_min": 185,
-            "self_transfer": false,
-            "transfer_type": "MANAGED"
-          }
-        ],
-        "departure_local": "2026-10-26T13:55:00",
-        "departure_utc": "2026-10-26T16:55:00Z",
-        "destination": "LIS",
-        "origin": "GRU",
-        "segments": [
-          {
-            "aircraft": "Boeing 787",
-            "arrival_local": "2026-10-27T05:25:00",
-            "arrival_utc": "2026-10-27T04:25:00Z",
-            "departure_local": "2026-10-26T13:55:00",
-            "departure_utc": "2026-10-26T16:55:00Z",
-            "destination": "AMS",
-            "duration_min": 690,
-            "flight_number": "794",
-            "marketing_carrier": "KL",
-            "marketing_carrier_name": "KLM",
-            "operating_carrier": null,
-            "operating_carrier_name": "KLM",
-            "origin": "GRU",
-            "segment_id": "0-0"
-          },
-          {
-            "aircraft": "Airbus A321neo",
-            "arrival_local": "2026-10-27T10:30:00",
-            "arrival_utc": "2026-10-27T10:30:00Z",
-            "departure_local": "2026-10-27T08:30:00",
-            "departure_utc": "2026-10-27T07:30:00Z",
-            "destination": "LIS",
-            "duration_min": 180,
-            "flight_number": "1579",
-            "marketing_carrier": "KL",
-            "marketing_carrier_name": "KLM",
-            "operating_carrier": null,
-            "operating_carrier_name": "KLM",
-            "origin": "AMS",
-            "segment_id": "0-1"
-          }
-        ],
-        "total_duration_min": 1055
-      },
-      "personal_item": null,
-      "price": 4932.0,
-      "price_brl": 4932.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
-      "source": "IGNAV",
-      "source_offer_id": "7317f6b599f4463eb9f89f561946ed90",
-      "source_payload_ref": null,
-      "taxes_included": null,
-      "total_price_confirmed": true,
-      "transfer_type": "MANAGED",
-      "validation_status": "NOT_REQUIRED"
-    },
-    {
-      "booking_agent": null,
-      "booking_option_count": 0,
-      "booking_source": "IGNAV",
-      "booking_url": null,
-      "cabin_class": "economy",
-      "carry_on": 1,
-      "checked_bag": 1,
-      "commercial_offer_id": "6708abc9cdc7fb6df865b7044a0751ba32de0a83",
-      "currency": "BRL",
-      "derived": {
-        "AFRICA_CONNECTION_PRESENT": false,
-        "AIRPORT_CHANGE_PRESENT": false,
-        "ALERT_BLOCK_REASON_CODES": [
-          "REJECT_PRICE_LIMIT"
-        ],
-        "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": null,
-        "COMMERCIAL_OFFER_ID": "6708abc9cdc7fb6df865b7044a0751ba32de0a83",
-        "DESTINATION_VALID": true,
-        "ELIGIBILITY_STATE": "HARD_REJECTED",
-        "HARD_FILTER_PASS": false,
-        "HARD_REJECTED": true,
-        "ITINERARY_FINGERPRINT": "0f67dde40a6497de815e30b2e8ce517edf70fbc8",
-        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
-        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
-        "LIS_ARRIVAL_DATE_VALID": true,
-        "MAX_CONNECTIONS": 1,
-        "MAX_CONNECTION_MIN": 1135,
-        "MAX_DIRECTION_DURATION_MIN": 1800,
-        "NON_VALIDATABLE": false,
-        "NON_VALIDATABLE_REASON_CODES": [],
-        "OPERATING_CARRIER_CONFIRMED": true,
-        "ORIGIN_VALID": true,
-        "OUTBOUND_DATE_VALID": true,
-        "QUALITY_CLASS": null,
-        "REJECTION_REASON_CODES": [
-          "REJECT_CONNECTION_TOO_LONG",
-          "REJECT_TOTAL_DURATION"
-        ],
-        "RETURN_DATE_VALID": true,
-        "RETURN_DESTINATION_VALID": true,
-        "SELF_TRANSFER_PRESENT": false,
-        "TAAG_PRESENT": false,
-        "VALIDATION_FRESH": false,
-        "VALIDATION_STATUS": "NOT_REQUIRED",
-        "VERIFIED_ALERT_CANDIDATE": false
-      },
-      "discovered_at": "2026-08-23T04:17:03.108852+00:00",
-      "fx_source": null,
-      "fx_timestamp": null,
-      "inbound": {
-        "arrival_date_local": "2026-11-04",
-        "arrival_local": "2026-11-04T21:35:00",
-        "arrival_utc": "2026-11-05T00:35:00Z",
-        "connection_count": 1,
-        "connections": [
-          {
-            "airport_change": false,
-            "connection_airport": "FOR",
-            "connection_country": "BR",
-            "connection_duration_min": 1135,
-            "self_transfer": false,
-            "transfer_type": "MANAGED"
-          }
-        ],
-        "departure_local": "2026-11-03T18:35:00",
-        "departure_utc": "2026-11-03T18:35:00Z",
-        "destination": "GRU",
-        "origin": "LIS",
-        "segments": [
-          {
-            "aircraft": "Boeing 787",
-            "arrival_local": "2026-11-03T23:05:00",
-            "arrival_utc": "2026-11-04T02:05:00Z",
-            "departure_local": "2026-11-03T18:35:00",
-            "departure_utc": "2026-11-03T18:35:00Z",
-            "destination": "FOR",
-            "duration_min": 450,
-            "flight_number": "8151",
-            "marketing_carrier": "LA",
-            "marketing_carrier_name": "LATAM",
-            "operating_carrier": null,
-            "operating_carrier_name": "LATAM",
-            "origin": "LIS",
-            "segment_id": "1-0"
-          },
-          {
-            "aircraft": "Airbus A321",
-            "arrival_local": "2026-11-04T21:35:00",
-            "arrival_utc": "2026-11-05T00:35:00Z",
-            "departure_local": "2026-11-04T18:00:00",
-            "departure_utc": "2026-11-04T21:00:00Z",
-            "destination": "GRU",
-            "duration_min": 215,
-            "flight_number": "3321",
-            "marketing_carrier": "LA",
-            "marketing_carrier_name": "LATAM",
-            "operating_carrier": null,
-            "operating_carrier_name": "LATAM",
-            "origin": "FOR",
-            "segment_id": "1-1"
-          }
-        ],
-        "total_duration_min": 1800
-      },
-      "itinerary_fingerprint": "0f67dde40a6497de815e30b2e8ce517edf70fbc8",
-      "itinerary_id": "ecb57a8c3240434d98030c5fd5bb2bf5",
-      "last_validated_at": null,
-      "offer_expires_at": null,
-      "offer_id": "0f67dde40a6497de815e30b2e8ce517edf70fbc8",
-      "outbound": {
-        "arrival_date_local": "2026-10-27",
-        "arrival_local": "2026-10-27T06:50:00",
-        "arrival_utc": "2026-10-27T06:50:00Z",
-        "connection_count": 1,
-        "connections": [
-          {
-            "airport_change": false,
-            "connection_airport": "MAD",
-            "connection_country": "ES",
-            "connection_duration_min": 80,
-            "self_transfer": false,
-            "transfer_type": "MANAGED"
-          }
-        ],
-        "departure_local": "2026-10-26T15:05:00",
-        "departure_utc": "2026-10-26T18:05:00Z",
-        "destination": "LIS",
-        "origin": "GRU",
-        "segments": [
-          {
-            "aircraft": "Boeing 787",
-            "arrival_local": "2026-10-27T05:10:00",
-            "arrival_utc": "2026-10-27T04:10:00Z",
-            "departure_local": "2026-10-26T15:05:00",
-            "departure_utc": "2026-10-26T18:05:00Z",
-            "destination": "MAD",
-            "duration_min": 605,
-            "flight_number": "58",
-            "marketing_carrier": "UX",
-            "marketing_carrier_name": "Air Europa",
-            "operating_carrier": null,
-            "operating_carrier_name": "Air Europa",
-            "origin": "GRU",
-            "segment_id": "0-0"
-          },
-          {
-            "aircraft": "Boeing 737",
-            "arrival_local": "2026-10-27T06:50:00",
-            "arrival_utc": "2026-10-27T06:50:00Z",
-            "departure_local": "2026-10-27T06:30:00",
-            "departure_utc": "2026-10-27T05:30:00Z",
-            "destination": "LIS",
-            "duration_min": 80,
-            "flight_number": "1159",
-            "marketing_carrier": "UX",
-            "marketing_carrier_name": "Air Europa",
-            "operating_carrier": null,
-            "operating_carrier_name": "Air Europa",
-            "origin": "MAD",
-            "segment_id": "0-1"
-          }
-        ],
-        "total_duration_min": 765
-      },
-      "personal_item": null,
-      "price": 5204.0,
-      "price_brl": 5204.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
-      "source": "IGNAV",
-      "source_offer_id": "ecb57a8c3240434d98030c5fd5bb2bf5",
       "source_payload_ref": null,
       "taxes_included": null,
       "total_price_confirmed": true,
@@ -5636,7 +5002,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.117425+00:00",
+      "discovered_at": "2026-08-23T04:21:33.835635+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -5757,7 +5123,7 @@
       "personal_item": null,
       "price": 4540.0,
       "price_brl": 4540.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "513c2ac03956457bb686ad2a58d31d04",
       "source_payload_ref": null,
@@ -5815,7 +5181,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.117505+00:00",
+      "discovered_at": "2026-08-23T04:21:33.835822+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -5911,7 +5277,7 @@
       "personal_item": null,
       "price": 4674.0,
       "price_brl": 4674.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "8592806bdd9648c79d497b20a9b083c7",
       "source_payload_ref": null,
@@ -5968,7 +5334,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.117543+00:00",
+      "discovered_at": "2026-08-23T04:21:33.835877+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -6089,9 +5455,643 @@
       "personal_item": null,
       "price": 4946.0,
       "price_brl": 4946.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "5f5041ed9a994d8fa6ac2a1490181c2c",
+      "source_payload_ref": null,
+      "taxes_included": null,
+      "total_price_confirmed": true,
+      "transfer_type": "MANAGED",
+      "validation_status": "NOT_REQUIRED"
+    },
+    {
+      "booking_agent": null,
+      "booking_option_count": 0,
+      "booking_source": "IGNAV",
+      "booking_url": null,
+      "cabin_class": "economy",
+      "carry_on": 1,
+      "checked_bag": null,
+      "commercial_offer_id": "8abf6fc7d88b25d4c908c0fd4d0dabed368b8940",
+      "currency": "BRL",
+      "derived": {
+        "AFRICA_CONNECTION_PRESENT": false,
+        "AIRPORT_CHANGE_PRESENT": false,
+        "ALERT_BLOCK_REASON_CODES": [],
+        "ALERT_PRICE_PASS": false,
+        "ALERT_VALID_UNTIL": null,
+        "COMMERCIAL_OFFER_ID": "8abf6fc7d88b25d4c908c0fd4d0dabed368b8940",
+        "DESTINATION_VALID": true,
+        "ELIGIBILITY_STATE": "HARD_REJECTED",
+        "HARD_FILTER_PASS": false,
+        "HARD_REJECTED": true,
+        "ITINERARY_FINGERPRINT": "861705593eb8c55a98b4381419fe8fb0bed9cc84",
+        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-26",
+        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-26",
+        "LIS_ARRIVAL_DATE_VALID": false,
+        "MAX_CONNECTIONS": 0,
+        "MAX_CONNECTION_MIN": 0,
+        "MAX_DIRECTION_DURATION_MIN": 610,
+        "NON_VALIDATABLE": false,
+        "NON_VALIDATABLE_REASON_CODES": [],
+        "OPERATING_CARRIER_CONFIRMED": true,
+        "ORIGIN_VALID": true,
+        "OUTBOUND_DATE_VALID": true,
+        "QUALITY_CLASS": null,
+        "REJECTION_REASON_CODES": [
+          "REJECT_WRONG_ARRIVAL_DATE"
+        ],
+        "RETURN_DATE_VALID": true,
+        "RETURN_DESTINATION_VALID": true,
+        "SELF_TRANSFER_PRESENT": false,
+        "TAAG_PRESENT": false,
+        "VALIDATION_FRESH": false,
+        "VALIDATION_STATUS": "NOT_REQUIRED",
+        "VERIFIED_ALERT_CANDIDATE": false
+      },
+      "discovered_at": "2026-08-23T04:21:33.874263+00:00",
+      "fx_source": null,
+      "fx_timestamp": null,
+      "inbound": {
+        "arrival_date_local": "2026-11-03",
+        "arrival_local": "2026-11-03T16:00:00",
+        "arrival_utc": "2026-11-03T19:00:00Z",
+        "connection_count": 0,
+        "connections": [],
+        "departure_local": "2026-11-03T08:50:00",
+        "departure_utc": "2026-11-03T08:50:00Z",
+        "destination": "GRU",
+        "origin": "LIS",
+        "segments": [
+          {
+            "aircraft": "Boeing 777",
+            "arrival_local": "2026-11-03T16:00:00",
+            "arrival_utc": "2026-11-03T19:00:00Z",
+            "departure_local": "2026-11-03T08:50:00",
+            "departure_utc": "2026-11-03T08:50:00Z",
+            "destination": "GRU",
+            "duration_min": 610,
+            "flight_number": "8147",
+            "marketing_carrier": "LA",
+            "marketing_carrier_name": "LATAM",
+            "operating_carrier": null,
+            "operating_carrier_name": "LATAM",
+            "origin": "LIS",
+            "segment_id": "1-0"
+          }
+        ],
+        "total_duration_min": 610
+      },
+      "itinerary_fingerprint": "861705593eb8c55a98b4381419fe8fb0bed9cc84",
+      "itinerary_id": "12b727b7871346fcb6697079cef14f97",
+      "last_validated_at": null,
+      "offer_expires_at": null,
+      "offer_id": "861705593eb8c55a98b4381419fe8fb0bed9cc84",
+      "outbound": {
+        "arrival_date_local": "2026-10-26",
+        "arrival_local": "2026-10-26T14:25:00",
+        "arrival_utc": "2026-10-26T14:25:00Z",
+        "connection_count": 0,
+        "connections": [],
+        "departure_local": "2026-10-26T01:30:00",
+        "departure_utc": "2026-10-26T04:30:00Z",
+        "destination": "LIS",
+        "origin": "GRU",
+        "segments": [
+          {
+            "aircraft": "Airbus A330-900neo",
+            "arrival_local": "2026-10-26T14:25:00",
+            "arrival_utc": "2026-10-26T14:25:00Z",
+            "departure_local": "2026-10-26T01:30:00",
+            "departure_utc": "2026-10-26T04:30:00Z",
+            "destination": "LIS",
+            "duration_min": 595,
+            "flight_number": "84",
+            "marketing_carrier": "TP",
+            "marketing_carrier_name": "Tap Air Portugal",
+            "operating_carrier": null,
+            "operating_carrier_name": "Tap Air Portugal",
+            "origin": "GRU",
+            "segment_id": "0-0"
+          }
+        ],
+        "total_duration_min": 595
+      },
+      "personal_item": null,
+      "price": 4447.0,
+      "price_brl": 4447.0,
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
+      "source": "IGNAV",
+      "source_offer_id": "12b727b7871346fcb6697079cef14f97",
+      "source_payload_ref": null,
+      "taxes_included": null,
+      "total_price_confirmed": true,
+      "transfer_type": "MANAGED",
+      "validation_status": "NOT_REQUIRED"
+    },
+    {
+      "booking_agent": null,
+      "booking_option_count": 0,
+      "booking_source": "IGNAV",
+      "booking_url": null,
+      "cabin_class": "economy",
+      "carry_on": 1,
+      "checked_bag": null,
+      "commercial_offer_id": "3fbd57fe7bfbb0dde2270a63443d7603ad865fc5",
+      "currency": "BRL",
+      "derived": {
+        "AFRICA_CONNECTION_PRESENT": true,
+        "AIRPORT_CHANGE_PRESENT": false,
+        "ALERT_BLOCK_REASON_CODES": [
+          "REJECT_PRICE_LIMIT"
+        ],
+        "ALERT_PRICE_PASS": false,
+        "ALERT_VALID_UNTIL": null,
+        "COMMERCIAL_OFFER_ID": "3fbd57fe7bfbb0dde2270a63443d7603ad865fc5",
+        "DESTINATION_VALID": true,
+        "ELIGIBILITY_STATE": "HARD_REJECTED",
+        "HARD_FILTER_PASS": false,
+        "HARD_REJECTED": true,
+        "ITINERARY_FINGERPRINT": "aa1160b6f52913435d11144e2f7f0233a57b63f7",
+        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
+        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
+        "LIS_ARRIVAL_DATE_VALID": true,
+        "MAX_CONNECTIONS": 1,
+        "MAX_CONNECTION_MIN": 1215,
+        "MAX_DIRECTION_DURATION_MIN": 1890,
+        "NON_VALIDATABLE": false,
+        "NON_VALIDATABLE_REASON_CODES": [],
+        "OPERATING_CARRIER_CONFIRMED": true,
+        "ORIGIN_VALID": true,
+        "OUTBOUND_DATE_VALID": true,
+        "QUALITY_CLASS": null,
+        "REJECTION_REASON_CODES": [
+          "REJECT_CONNECTION_TOO_LONG",
+          "REJECT_FORBIDDEN_CONNECTION",
+          "REJECT_TOTAL_DURATION"
+        ],
+        "RETURN_DATE_VALID": true,
+        "RETURN_DESTINATION_VALID": true,
+        "SELF_TRANSFER_PRESENT": false,
+        "TAAG_PRESENT": false,
+        "VALIDATION_FRESH": false,
+        "VALIDATION_STATUS": "NOT_REQUIRED",
+        "VERIFIED_ALERT_CANDIDATE": false
+      },
+      "discovered_at": "2026-08-23T04:21:33.874518+00:00",
+      "fx_source": null,
+      "fx_timestamp": null,
+      "inbound": {
+        "arrival_date_local": "2026-11-04",
+        "arrival_local": "2026-11-04T22:25:00",
+        "arrival_utc": "2026-11-05T01:25:00Z",
+        "connection_count": 1,
+        "connections": [
+          {
+            "airport_change": false,
+            "connection_airport": "CMN",
+            "connection_country": "MA",
+            "connection_duration_min": 1215,
+            "self_transfer": false,
+            "transfer_type": "MANAGED"
+          }
+        ],
+        "departure_local": "2026-11-03T17:55:00",
+        "departure_utc": "2026-11-03T17:55:00Z",
+        "destination": "GRU",
+        "origin": "LIS",
+        "segments": [
+          {
+            "aircraft": "Boeing 737",
+            "arrival_local": "2026-11-03T19:20:00",
+            "arrival_utc": "2026-11-03T18:20:00Z",
+            "departure_local": "2026-11-03T17:55:00",
+            "departure_utc": "2026-11-03T17:55:00Z",
+            "destination": "CMN",
+            "duration_min": 85,
+            "flight_number": "983",
+            "marketing_carrier": "AT",
+            "marketing_carrier_name": "Royal Air Maroc",
+            "operating_carrier": null,
+            "operating_carrier_name": "Royal Air Maroc",
+            "origin": "LIS",
+            "segment_id": "1-0"
+          },
+          {
+            "aircraft": "Boeing 787",
+            "arrival_local": "2026-11-04T22:25:00",
+            "arrival_utc": "2026-11-05T01:25:00Z",
+            "departure_local": "2026-11-04T15:35:00",
+            "departure_utc": "2026-11-04T14:35:00Z",
+            "destination": "GRU",
+            "duration_min": 590,
+            "flight_number": "215",
+            "marketing_carrier": "AT",
+            "marketing_carrier_name": "Royal Air Maroc",
+            "operating_carrier": null,
+            "operating_carrier_name": "Royal Air Maroc",
+            "origin": "CMN",
+            "segment_id": "1-1"
+          }
+        ],
+        "total_duration_min": 1890
+      },
+      "itinerary_fingerprint": "aa1160b6f52913435d11144e2f7f0233a57b63f7",
+      "itinerary_id": "52b9889eec5c48a3a7fa1d47ba481c37",
+      "last_validated_at": null,
+      "offer_expires_at": null,
+      "offer_id": "aa1160b6f52913435d11144e2f7f0233a57b63f7",
+      "outbound": {
+        "arrival_date_local": "2026-10-27",
+        "arrival_local": "2026-10-27T11:20:00",
+        "arrival_utc": "2026-10-27T11:20:00Z",
+        "connection_count": 0,
+        "connections": [],
+        "departure_local": "2026-10-26T22:40:00",
+        "departure_utc": "2026-10-27T01:40:00Z",
+        "destination": "LIS",
+        "origin": "GRU",
+        "segments": [
+          {
+            "aircraft": "Boeing 787",
+            "arrival_local": "2026-10-27T11:20:00",
+            "arrival_utc": "2026-10-27T11:20:00Z",
+            "departure_local": "2026-10-26T22:40:00",
+            "departure_utc": "2026-10-27T01:40:00Z",
+            "destination": "LIS",
+            "duration_min": 580,
+            "flight_number": "8148",
+            "marketing_carrier": "LA",
+            "marketing_carrier_name": "LATAM",
+            "operating_carrier": null,
+            "operating_carrier_name": "LATAM",
+            "origin": "GRU",
+            "segment_id": "0-0"
+          }
+        ],
+        "total_duration_min": 580
+      },
+      "personal_item": null,
+      "price": 4674.0,
+      "price_brl": 4674.0,
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
+      "source": "IGNAV",
+      "source_offer_id": "52b9889eec5c48a3a7fa1d47ba481c37",
+      "source_payload_ref": null,
+      "taxes_included": null,
+      "total_price_confirmed": true,
+      "transfer_type": "MANAGED",
+      "validation_status": "NOT_REQUIRED"
+    },
+    {
+      "booking_agent": null,
+      "booking_option_count": 0,
+      "booking_source": "IGNAV",
+      "booking_url": null,
+      "cabin_class": "economy",
+      "carry_on": 1,
+      "checked_bag": null,
+      "commercial_offer_id": "6479e76571df075b1442310a8acd5ad20068cfa3",
+      "currency": "BRL",
+      "derived": {
+        "AFRICA_CONNECTION_PRESENT": true,
+        "AIRPORT_CHANGE_PRESENT": false,
+        "ALERT_BLOCK_REASON_CODES": [
+          "REJECT_PRICE_LIMIT"
+        ],
+        "ALERT_PRICE_PASS": false,
+        "ALERT_VALID_UNTIL": null,
+        "COMMERCIAL_OFFER_ID": "6479e76571df075b1442310a8acd5ad20068cfa3",
+        "DESTINATION_VALID": true,
+        "ELIGIBILITY_STATE": "HARD_REJECTED",
+        "HARD_FILTER_PASS": false,
+        "HARD_REJECTED": true,
+        "ITINERARY_FINGERPRINT": "81772a171b4cc5516d6317e5c66c6572475e6f89",
+        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
+        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
+        "LIS_ARRIVAL_DATE_VALID": true,
+        "MAX_CONNECTIONS": 1,
+        "MAX_CONNECTION_MIN": 185,
+        "MAX_DIRECTION_DURATION_MIN": 1055,
+        "NON_VALIDATABLE": false,
+        "NON_VALIDATABLE_REASON_CODES": [],
+        "OPERATING_CARRIER_CONFIRMED": true,
+        "ORIGIN_VALID": true,
+        "OUTBOUND_DATE_VALID": true,
+        "QUALITY_CLASS": null,
+        "REJECTION_REASON_CODES": [
+          "REJECT_FORBIDDEN_CONNECTION"
+        ],
+        "RETURN_DATE_VALID": true,
+        "RETURN_DESTINATION_VALID": true,
+        "SELF_TRANSFER_PRESENT": false,
+        "TAAG_PRESENT": false,
+        "VALIDATION_FRESH": false,
+        "VALIDATION_STATUS": "NOT_REQUIRED",
+        "VERIFIED_ALERT_CANDIDATE": false
+      },
+      "discovered_at": "2026-08-23T04:21:33.874578+00:00",
+      "fx_source": null,
+      "fx_timestamp": null,
+      "inbound": {
+        "arrival_date_local": "2026-11-03",
+        "arrival_local": "2026-11-03T22:25:00",
+        "arrival_utc": "2026-11-04T01:25:00Z",
+        "connection_count": 1,
+        "connections": [
+          {
+            "airport_change": false,
+            "connection_airport": "CMN",
+            "connection_country": "MA",
+            "connection_duration_min": 95,
+            "self_transfer": false,
+            "transfer_type": "MANAGED"
+          }
+        ],
+        "departure_local": "2026-11-03T12:35:00",
+        "departure_utc": "2026-11-03T12:35:00Z",
+        "destination": "GRU",
+        "origin": "LIS",
+        "segments": [
+          {
+            "aircraft": "Boeing 737",
+            "arrival_local": "2026-11-03T14:00:00",
+            "arrival_utc": "2026-11-03T13:00:00Z",
+            "departure_local": "2026-11-03T12:35:00",
+            "departure_utc": "2026-11-03T12:35:00Z",
+            "destination": "CMN",
+            "duration_min": 85,
+            "flight_number": "981",
+            "marketing_carrier": "AT",
+            "marketing_carrier_name": "Royal Air Maroc",
+            "operating_carrier": null,
+            "operating_carrier_name": "Royal Air Maroc",
+            "origin": "LIS",
+            "segment_id": "1-0"
+          },
+          {
+            "aircraft": "Boeing 787",
+            "arrival_local": "2026-11-03T22:25:00",
+            "arrival_utc": "2026-11-04T01:25:00Z",
+            "departure_local": "2026-11-03T15:35:00",
+            "departure_utc": "2026-11-03T14:35:00Z",
+            "destination": "GRU",
+            "duration_min": 590,
+            "flight_number": "215",
+            "marketing_carrier": "AT",
+            "marketing_carrier_name": "Royal Air Maroc",
+            "operating_carrier": null,
+            "operating_carrier_name": "Royal Air Maroc",
+            "origin": "CMN",
+            "segment_id": "1-1"
+          }
+        ],
+        "total_duration_min": 770
+      },
+      "itinerary_fingerprint": "81772a171b4cc5516d6317e5c66c6572475e6f89",
+      "itinerary_id": "7317f6b599f4463eb9f89f561946ed90",
+      "last_validated_at": null,
+      "offer_expires_at": null,
+      "offer_id": "81772a171b4cc5516d6317e5c66c6572475e6f89",
+      "outbound": {
+        "arrival_date_local": "2026-10-27",
+        "arrival_local": "2026-10-27T10:30:00",
+        "arrival_utc": "2026-10-27T10:30:00Z",
+        "connection_count": 1,
+        "connections": [
+          {
+            "airport_change": false,
+            "connection_airport": "AMS",
+            "connection_country": "NL",
+            "connection_duration_min": 185,
+            "self_transfer": false,
+            "transfer_type": "MANAGED"
+          }
+        ],
+        "departure_local": "2026-10-26T13:55:00",
+        "departure_utc": "2026-10-26T16:55:00Z",
+        "destination": "LIS",
+        "origin": "GRU",
+        "segments": [
+          {
+            "aircraft": "Boeing 787",
+            "arrival_local": "2026-10-27T05:25:00",
+            "arrival_utc": "2026-10-27T04:25:00Z",
+            "departure_local": "2026-10-26T13:55:00",
+            "departure_utc": "2026-10-26T16:55:00Z",
+            "destination": "AMS",
+            "duration_min": 690,
+            "flight_number": "794",
+            "marketing_carrier": "KL",
+            "marketing_carrier_name": "KLM",
+            "operating_carrier": null,
+            "operating_carrier_name": "KLM",
+            "origin": "GRU",
+            "segment_id": "0-0"
+          },
+          {
+            "aircraft": "Airbus A321neo",
+            "arrival_local": "2026-10-27T10:30:00",
+            "arrival_utc": "2026-10-27T10:30:00Z",
+            "departure_local": "2026-10-27T08:30:00",
+            "departure_utc": "2026-10-27T07:30:00Z",
+            "destination": "LIS",
+            "duration_min": 180,
+            "flight_number": "1579",
+            "marketing_carrier": "KL",
+            "marketing_carrier_name": "KLM",
+            "operating_carrier": null,
+            "operating_carrier_name": "KLM",
+            "origin": "AMS",
+            "segment_id": "0-1"
+          }
+        ],
+        "total_duration_min": 1055
+      },
+      "personal_item": null,
+      "price": 4932.0,
+      "price_brl": 4932.0,
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
+      "source": "IGNAV",
+      "source_offer_id": "7317f6b599f4463eb9f89f561946ed90",
+      "source_payload_ref": null,
+      "taxes_included": null,
+      "total_price_confirmed": true,
+      "transfer_type": "MANAGED",
+      "validation_status": "NOT_REQUIRED"
+    },
+    {
+      "booking_agent": null,
+      "booking_option_count": 0,
+      "booking_source": "IGNAV",
+      "booking_url": null,
+      "cabin_class": "economy",
+      "carry_on": 1,
+      "checked_bag": 1,
+      "commercial_offer_id": "6708abc9cdc7fb6df865b7044a0751ba32de0a83",
+      "currency": "BRL",
+      "derived": {
+        "AFRICA_CONNECTION_PRESENT": false,
+        "AIRPORT_CHANGE_PRESENT": false,
+        "ALERT_BLOCK_REASON_CODES": [
+          "REJECT_PRICE_LIMIT"
+        ],
+        "ALERT_PRICE_PASS": false,
+        "ALERT_VALID_UNTIL": null,
+        "COMMERCIAL_OFFER_ID": "6708abc9cdc7fb6df865b7044a0751ba32de0a83",
+        "DESTINATION_VALID": true,
+        "ELIGIBILITY_STATE": "HARD_REJECTED",
+        "HARD_FILTER_PASS": false,
+        "HARD_REJECTED": true,
+        "ITINERARY_FINGERPRINT": "0f67dde40a6497de815e30b2e8ce517edf70fbc8",
+        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
+        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
+        "LIS_ARRIVAL_DATE_VALID": true,
+        "MAX_CONNECTIONS": 1,
+        "MAX_CONNECTION_MIN": 1135,
+        "MAX_DIRECTION_DURATION_MIN": 1800,
+        "NON_VALIDATABLE": false,
+        "NON_VALIDATABLE_REASON_CODES": [],
+        "OPERATING_CARRIER_CONFIRMED": true,
+        "ORIGIN_VALID": true,
+        "OUTBOUND_DATE_VALID": true,
+        "QUALITY_CLASS": null,
+        "REJECTION_REASON_CODES": [
+          "REJECT_CONNECTION_TOO_LONG",
+          "REJECT_TOTAL_DURATION"
+        ],
+        "RETURN_DATE_VALID": true,
+        "RETURN_DESTINATION_VALID": true,
+        "SELF_TRANSFER_PRESENT": false,
+        "TAAG_PRESENT": false,
+        "VALIDATION_FRESH": false,
+        "VALIDATION_STATUS": "NOT_REQUIRED",
+        "VERIFIED_ALERT_CANDIDATE": false
+      },
+      "discovered_at": "2026-08-23T04:21:33.874629+00:00",
+      "fx_source": null,
+      "fx_timestamp": null,
+      "inbound": {
+        "arrival_date_local": "2026-11-04",
+        "arrival_local": "2026-11-04T21:35:00",
+        "arrival_utc": "2026-11-05T00:35:00Z",
+        "connection_count": 1,
+        "connections": [
+          {
+            "airport_change": false,
+            "connection_airport": "FOR",
+            "connection_country": "BR",
+            "connection_duration_min": 1135,
+            "self_transfer": false,
+            "transfer_type": "MANAGED"
+          }
+        ],
+        "departure_local": "2026-11-03T18:35:00",
+        "departure_utc": "2026-11-03T18:35:00Z",
+        "destination": "GRU",
+        "origin": "LIS",
+        "segments": [
+          {
+            "aircraft": "Boeing 787",
+            "arrival_local": "2026-11-03T23:05:00",
+            "arrival_utc": "2026-11-04T02:05:00Z",
+            "departure_local": "2026-11-03T18:35:00",
+            "departure_utc": "2026-11-03T18:35:00Z",
+            "destination": "FOR",
+            "duration_min": 450,
+            "flight_number": "8151",
+            "marketing_carrier": "LA",
+            "marketing_carrier_name": "LATAM",
+            "operating_carrier": null,
+            "operating_carrier_name": "LATAM",
+            "origin": "LIS",
+            "segment_id": "1-0"
+          },
+          {
+            "aircraft": "Airbus A321",
+            "arrival_local": "2026-11-04T21:35:00",
+            "arrival_utc": "2026-11-05T00:35:00Z",
+            "departure_local": "2026-11-04T18:00:00",
+            "departure_utc": "2026-11-04T21:00:00Z",
+            "destination": "GRU",
+            "duration_min": 215,
+            "flight_number": "3321",
+            "marketing_carrier": "LA",
+            "marketing_carrier_name": "LATAM",
+            "operating_carrier": null,
+            "operating_carrier_name": "LATAM",
+            "origin": "FOR",
+            "segment_id": "1-1"
+          }
+        ],
+        "total_duration_min": 1800
+      },
+      "itinerary_fingerprint": "0f67dde40a6497de815e30b2e8ce517edf70fbc8",
+      "itinerary_id": "ecb57a8c3240434d98030c5fd5bb2bf5",
+      "last_validated_at": null,
+      "offer_expires_at": null,
+      "offer_id": "0f67dde40a6497de815e30b2e8ce517edf70fbc8",
+      "outbound": {
+        "arrival_date_local": "2026-10-27",
+        "arrival_local": "2026-10-27T06:50:00",
+        "arrival_utc": "2026-10-27T06:50:00Z",
+        "connection_count": 1,
+        "connections": [
+          {
+            "airport_change": false,
+            "connection_airport": "MAD",
+            "connection_country": "ES",
+            "connection_duration_min": 80,
+            "self_transfer": false,
+            "transfer_type": "MANAGED"
+          }
+        ],
+        "departure_local": "2026-10-26T15:05:00",
+        "departure_utc": "2026-10-26T18:05:00Z",
+        "destination": "LIS",
+        "origin": "GRU",
+        "segments": [
+          {
+            "aircraft": "Boeing 787",
+            "arrival_local": "2026-10-27T05:10:00",
+            "arrival_utc": "2026-10-27T04:10:00Z",
+            "departure_local": "2026-10-26T15:05:00",
+            "departure_utc": "2026-10-26T18:05:00Z",
+            "destination": "MAD",
+            "duration_min": 605,
+            "flight_number": "58",
+            "marketing_carrier": "UX",
+            "marketing_carrier_name": "Air Europa",
+            "operating_carrier": null,
+            "operating_carrier_name": "Air Europa",
+            "origin": "GRU",
+            "segment_id": "0-0"
+          },
+          {
+            "aircraft": "Boeing 737",
+            "arrival_local": "2026-10-27T06:50:00",
+            "arrival_utc": "2026-10-27T06:50:00Z",
+            "departure_local": "2026-10-27T06:30:00",
+            "departure_utc": "2026-10-27T05:30:00Z",
+            "destination": "LIS",
+            "duration_min": 80,
+            "flight_number": "1159",
+            "marketing_carrier": "UX",
+            "marketing_carrier_name": "Air Europa",
+            "operating_carrier": null,
+            "operating_carrier_name": "Air Europa",
+            "origin": "MAD",
+            "segment_id": "0-1"
+          }
+        ],
+        "total_duration_min": 765
+      },
+      "personal_item": null,
+      "price": 5204.0,
+      "price_brl": 5204.0,
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
+      "source": "IGNAV",
+      "source_offer_id": "ecb57a8c3240434d98030c5fd5bb2bf5",
       "source_payload_ref": null,
       "taxes_included": null,
       "total_price_confirmed": true,
@@ -6143,7 +6143,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.166833+00:00",
+      "discovered_at": "2026-08-23T04:21:33.920764+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -6239,7 +6239,7 @@
       "personal_item": null,
       "price": 4370.0,
       "price_brl": 4370.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "7fe896b125fe44de826d1b43f1922b93",
       "source_payload_ref": null,
@@ -6293,7 +6293,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.166906+00:00",
+      "discovered_at": "2026-08-23T04:21:33.920876+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -6364,7 +6364,7 @@
       "personal_item": null,
       "price": 4447.0,
       "price_brl": 4447.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "3283f55d47e444468f6b3343bcc3111a",
       "source_payload_ref": null,
@@ -6418,7 +6418,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.166944+00:00",
+      "discovered_at": "2026-08-23T04:21:33.920939+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -6489,7 +6489,7 @@
       "personal_item": null,
       "price": 4447.0,
       "price_brl": 4447.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "8086e9a3e31e49659910c90552adf214",
       "source_payload_ref": null,
@@ -6546,7 +6546,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.166981+00:00",
+      "discovered_at": "2026-08-23T04:21:33.920986+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -6642,7 +6642,7 @@
       "personal_item": null,
       "price": 4674.0,
       "price_brl": 4674.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "c807996b76ac4471b60edd10929ae9dd",
       "source_payload_ref": null,
@@ -6701,7 +6701,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.167019+00:00",
+      "discovered_at": "2026-08-23T04:21:33.921036+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -6797,7 +6797,7 @@
       "personal_item": null,
       "price": 4674.0,
       "price_brl": 4674.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "aab03aa22aea4c4298e2460c5a16e294",
       "source_payload_ref": null,
@@ -6855,7 +6855,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.167063+00:00",
+      "discovered_at": "2026-08-23T04:21:33.921086+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -6976,7 +6976,7 @@
       "personal_item": null,
       "price": 4946.0,
       "price_brl": 4946.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "6a9a84f8e7e2427f8f6732373819e48b",
       "source_payload_ref": null,
@@ -7032,7 +7032,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.188953+00:00",
+      "discovered_at": "2026-08-23T04:21:33.930678+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -7103,7 +7103,7 @@
       "personal_item": null,
       "price": 6531.0,
       "price_brl": 6531.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "457aa77867c24c7187449daf658d0df8",
       "source_payload_ref": null,
@@ -7159,7 +7159,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.189016+00:00",
+      "discovered_at": "2026-08-23T04:21:33.930733+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -7230,7 +7230,7 @@
       "personal_item": null,
       "price": 6531.0,
       "price_brl": 6531.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "a243e2cbbcf04d69b8889c7e284d962a",
       "source_payload_ref": null,
@@ -7286,7 +7286,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.197106+00:00",
+      "discovered_at": "2026-08-23T04:21:33.940505+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -7357,7 +7357,7 @@
       "personal_item": null,
       "price": 6325.0,
       "price_brl": 6325.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "2bd07c94d5c0477fafc8d7d10a15e450",
       "source_payload_ref": null,
@@ -7413,7 +7413,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.218929+00:00",
+      "discovered_at": "2026-08-23T04:21:33.961270+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -7484,7 +7484,7 @@
       "personal_item": null,
       "price": 4814.0,
       "price_brl": 4814.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "ddc7c33a0e13440c827803b455aad3cb",
       "source_payload_ref": null,
@@ -7540,7 +7540,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.277293+00:00",
+      "discovered_at": "2026-08-23T04:21:34.038484+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -7611,7 +7611,7 @@
       "personal_item": null,
       "price": 6325.0,
       "price_brl": 6325.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "8938bbc7e2124be1a23433d7d4d4bfc9",
       "source_payload_ref": null,
@@ -7667,7 +7667,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.296287+00:00",
+      "discovered_at": "2026-08-23T04:21:34.056217+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -7738,7 +7738,7 @@
       "personal_item": null,
       "price": 4814.0,
       "price_brl": 4814.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "8a6119e0d3b34a708af5b6643c2ce36f",
       "source_payload_ref": null,
@@ -7751,7 +7751,7 @@
   "SEARCH_METADATA": {
     "ACTUAL_DELAY_SECONDS": null,
     "ERROR_CODES": [],
-    "FETCHED_AT": "2026-08-23T04:19:41.780103+00:00",
+    "FETCHED_AT": "2026-08-23T04:24:14.683520+00:00",
     "FLIGHT_SEARCH_TTL_MIN": 90,
     "IS_COMPLETE": true,
     "QUERY_PARAMETERS": {
@@ -7831,11 +7831,11 @@
       ]
     },
     "SCHEDULED_FOR": null,
-    "SEARCH_COMPLETED_AT": "2026-08-23T04:19:41.780103+00:00",
-    "SEARCH_ID": "fd-20260823T041702Z-7e3b5976",
-    "SEARCH_STARTED_AT": "2026-08-23T04:17:02.649957+00:00",
+    "SEARCH_COMPLETED_AT": "2026-08-23T04:24:14.683520+00:00",
+    "SEARCH_ID": "fd-20260823T042133Z-3be8ee8c",
+    "SEARCH_STARTED_AT": "2026-08-23T04:21:33.249773+00:00",
     "SEARCH_STATUS": "COMPLETE",
-    "SOURCE_TIMESTAMP": "2026-08-23T04:19:41.780103+00:00",
+    "SOURCE_TIMESTAMP": "2026-08-23T04:24:14.683520+00:00",
     "TTL_STATUS": "LIVE"
   },
   "SOURCE_HEALTH": "LIVE",
@@ -8140,11 +8140,11 @@
       },
       "booking_links_refresh": true,
       "booking_option_count": 0,
-      "commercial_offer_id": "86ceaeef29dcd5e562f22efec2450ea8f4917a71",
+      "commercial_offer_id": "a95a933ea52291c684e860af181eb479880a759c",
       "full_journey_option_count": 0,
       "independent_source_corroboration": false,
-      "itinerary_fingerprint": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
-      "offer_id": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
+      "itinerary_fingerprint": "1fecd0b72ddc29199bb57fa7966182afb38bbac9",
+      "offer_id": "1fecd0b72ddc29199bb57fa7966182afb38bbac9",
       "price_based_selection": false,
       "revalidation_provider": "IGNAV",
       "same_provider_revalidation": true,
@@ -8272,7 +8272,6 @@
               "TP",
               "LA",
               "AT",
-              "KL",
               "UX"
             ]
           },
@@ -8313,7 +8312,6 @@
               "Tap Air Portugal",
               "LATAM",
               "Royal Air Maroc",
-              "KLM",
               "Air Europa"
             ]
           },
@@ -8462,7 +8460,627 @@
         "REQUEST_ATTEMPTS": 2,
         "SUCCESSFUL_PROVIDER_REQUESTS": 2
       },
-      "validated_at": "2026-08-23T04:17:30.993177+00:00"
+      "validated_at": "2026-08-23T04:21:59.807573+00:00"
+    },
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "TP",
+              "LA"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "Tap Air Portugal",
+              "LATAM"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "integer": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "1021dea4a06a29776fffc78d4a13304065755eee",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "5a7d6f32dfc017e16a45a5f1218a4e0a0eb7d2c3",
+      "offer_id": "5a7d6f32dfc017e16a45a5f1218a4e0a0eb7d2c3",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "number": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "boolean": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "array": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 14,
+            "REAL_PRESENT": true,
+            "SAMPLES": 14,
+            "TYPES": {
+              "array": 14
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": [
+              "TP",
+              "LA",
+              "AT",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 21,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 21,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": [
+              "Tap Air Portugal",
+              "LATAM",
+              "Royal Air Maroc",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "integer": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "object": 7
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 2,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 2,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-23T04:22:25.157721+00:00"
     },
     {
       "booking_contract_observation": {
@@ -8760,11 +9378,631 @@
       },
       "booking_links_refresh": true,
       "booking_option_count": 0,
-      "commercial_offer_id": "5a64e732875d49a07b420e033e5374f968330ff0",
+      "commercial_offer_id": "97a15f0cdc298c1b9941322a6bcabac151fb9d03",
       "full_journey_option_count": 0,
       "independent_source_corroboration": false,
-      "itinerary_fingerprint": "4526d58848352c70585bd8c6856584f32308caf7",
-      "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
+      "itinerary_fingerprint": "1f459734195a98c3c4e024dd3d52d1d5727495da",
+      "offer_id": "1f459734195a98c3c4e024dd3d52d1d5727495da",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "number": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "boolean": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "array": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 14,
+            "REAL_PRESENT": true,
+            "SAMPLES": 14,
+            "TYPES": {
+              "array": 14
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": [
+              "TP",
+              "LA",
+              "AT",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 21,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 21,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": [
+              "Tap Air Portugal",
+              "LATAM",
+              "Royal Air Maroc",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "integer": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 21,
+            "REAL_PRESENT": true,
+            "SAMPLES": 21,
+            "TYPES": {
+              "string": 21
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "object": 7
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 2,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 2,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-23T04:22:49.985257+00:00"
+    },
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "TP",
+              "LA"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "Tap Air Portugal",
+              "LATAM"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "integer": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "86ceaeef29dcd5e562f22efec2450ea8f4917a71",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
+      "offer_id": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
       "price_based_selection": false,
       "revalidation_provider": "IGNAV",
       "same_provider_revalidation": true,
@@ -9082,1247 +10320,7 @@
         "REQUEST_ATTEMPTS": 3,
         "SUCCESSFUL_PROVIDER_REQUESTS": 2
       },
-      "validated_at": "2026-08-23T04:18:32.131701+00:00"
-    },
-    {
-      "booking_contract_observation": {
-        "BOOKING_OPTIONS_COUNT": 0,
-        "BOOKING_OPTIONS_PRESENT": true,
-        "FIELDS": [
-          {
-            "FIELD": "ignav_id",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 1,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.amount",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "number": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.currency",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "string": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.status",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "string": 1
-            },
-            "VALUES": [
-              "verified"
-            ]
-          },
-          {
-            "FIELD": "cabin_class",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "string": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "requires_self_transfer",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "boolean": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "legs",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "array": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "segments",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "array": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "marketing_carrier_code",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": [
-              "TP",
-              "LA"
-            ]
-          },
-          {
-            "FIELD": "marketing_carrier_name",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "UNDOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 2,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "operating_carrier_code",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "UNDOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 2,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "operating_carrier_name",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": [
-              "Tap Air Portugal",
-              "LATAM"
-            ]
-          },
-          {
-            "FIELD": "flight_number",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_airport",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_airport",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_time_local",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_time_local",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_time_utc",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_time_utc",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "duration_minutes",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "integer": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "aircraft",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "bags",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "object": 1
-            },
-            "VALUES": []
-          }
-        ],
-        "FULL_JOURNEY_OPTIONS": 0
-      },
-      "booking_links_refresh": true,
-      "booking_option_count": 0,
-      "commercial_offer_id": "a95a933ea52291c684e860af181eb479880a759c",
-      "full_journey_option_count": 0,
-      "independent_source_corroboration": false,
-      "itinerary_fingerprint": "1fecd0b72ddc29199bb57fa7966182afb38bbac9",
-      "offer_id": "1fecd0b72ddc29199bb57fa7966182afb38bbac9",
-      "price_based_selection": false,
-      "revalidation_provider": "IGNAV",
-      "same_provider_revalidation": true,
-      "second_full_search": true,
-      "second_search_contract_observation": {
-        "FIELDS": [
-          {
-            "FIELD": "ignav_id",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "string": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.amount",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "number": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.currency",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "string": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.status",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "string": 7
-            },
-            "VALUES": [
-              "verified"
-            ]
-          },
-          {
-            "FIELD": "cabin_class",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "string": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "requires_self_transfer",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "boolean": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "legs",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "array": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "segments",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 14,
-            "REAL_PRESENT": true,
-            "SAMPLES": 14,
-            "TYPES": {
-              "array": 14
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "marketing_carrier_code",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": [
-              "TP",
-              "LA",
-              "AT",
-              "UX"
-            ]
-          },
-          {
-            "FIELD": "marketing_carrier_name",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "UNDOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 21,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "operating_carrier_code",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "UNDOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 21,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "operating_carrier_name",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": [
-              "Tap Air Portugal",
-              "LATAM",
-              "Royal Air Maroc",
-              "Air Europa"
-            ]
-          },
-          {
-            "FIELD": "flight_number",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_airport",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_airport",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_time_local",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_time_local",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_time_utc",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_time_utc",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "duration_minutes",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "integer": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "aircraft",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "bags",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "object": 7
-            },
-            "VALUES": []
-          }
-        ]
-      },
-      "second_search_exact_matches": 1,
-      "source_offer_id_changed": false,
-      "status": "NON_VALIDATABLE",
-      "usage_delta": {
-        "IGNAV_HEALTH_REQUESTS": 0,
-        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
-        "IGNAV_REVALIDATION_REQUESTS": 2,
-        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 2,
-        "IGNAV_SEARCH_REQUESTS": 0,
-        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
-        "REQUEST_ATTEMPTS": 2,
-        "SUCCESSFUL_PROVIDER_REQUESTS": 2
-      },
-      "validated_at": "2026-08-23T04:18:53.859752+00:00"
-    },
-    {
-      "booking_contract_observation": {
-        "BOOKING_OPTIONS_COUNT": 0,
-        "BOOKING_OPTIONS_PRESENT": true,
-        "FIELDS": [
-          {
-            "FIELD": "ignav_id",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 1,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.amount",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "number": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.currency",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "string": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.status",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "string": 1
-            },
-            "VALUES": [
-              "verified"
-            ]
-          },
-          {
-            "FIELD": "cabin_class",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "string": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "requires_self_transfer",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "boolean": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "legs",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "array": 1
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "segments",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "array": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "marketing_carrier_code",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": [
-              "TP",
-              "LA"
-            ]
-          },
-          {
-            "FIELD": "marketing_carrier_name",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "UNDOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 2,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "operating_carrier_code",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "UNDOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 2,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "operating_carrier_name",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": [
-              "Tap Air Portugal",
-              "LATAM"
-            ]
-          },
-          {
-            "FIELD": "flight_number",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_airport",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_airport",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_time_local",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_time_local",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_time_utc",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_time_utc",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "duration_minutes",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "integer": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "aircraft",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 2,
-            "REAL_PRESENT": true,
-            "SAMPLES": 2,
-            "TYPES": {
-              "string": 2
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "bags",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
-            "PRESENT_COUNT": 1,
-            "REAL_PRESENT": true,
-            "SAMPLES": 1,
-            "TYPES": {
-              "object": 1
-            },
-            "VALUES": []
-          }
-        ],
-        "FULL_JOURNEY_OPTIONS": 0
-      },
-      "booking_links_refresh": true,
-      "booking_option_count": 0,
-      "commercial_offer_id": "1021dea4a06a29776fffc78d4a13304065755eee",
-      "full_journey_option_count": 0,
-      "independent_source_corroboration": false,
-      "itinerary_fingerprint": "5a7d6f32dfc017e16a45a5f1218a4e0a0eb7d2c3",
-      "offer_id": "5a7d6f32dfc017e16a45a5f1218a4e0a0eb7d2c3",
-      "price_based_selection": false,
-      "revalidation_provider": "IGNAV",
-      "same_provider_revalidation": true,
-      "second_full_search": true,
-      "second_search_contract_observation": {
-        "FIELDS": [
-          {
-            "FIELD": "ignav_id",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "string": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.amount",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "number": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.currency",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "string": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "price.status",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "string": 7
-            },
-            "VALUES": [
-              "verified"
-            ]
-          },
-          {
-            "FIELD": "cabin_class",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "string": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "requires_self_transfer",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "boolean": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "legs",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "array": 7
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "segments",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 14,
-            "REAL_PRESENT": true,
-            "SAMPLES": 14,
-            "TYPES": {
-              "array": 14
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "marketing_carrier_code",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": [
-              "TP",
-              "LA",
-              "AT",
-              "UX"
-            ]
-          },
-          {
-            "FIELD": "marketing_carrier_name",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "UNDOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 21,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "operating_carrier_code",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "UNDOCUMENTED",
-            "PRESENT_COUNT": 0,
-            "REAL_PRESENT": false,
-            "SAMPLES": 21,
-            "TYPES": {},
-            "VALUES": []
-          },
-          {
-            "FIELD": "operating_carrier_name",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": [
-              "Tap Air Portugal",
-              "LATAM",
-              "Royal Air Maroc",
-              "Air Europa"
-            ]
-          },
-          {
-            "FIELD": "flight_number",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_airport",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_airport",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_time_local",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_time_local",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "departure_time_utc",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "arrival_time_utc",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "duration_minutes",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "integer": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "aircraft",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED",
-            "PRESENT_COUNT": 21,
-            "REAL_PRESENT": true,
-            "SAMPLES": 21,
-            "TYPES": {
-              "string": 21
-            },
-            "VALUES": []
-          },
-          {
-            "FIELD": "bags",
-            "NULL_COUNT": 0,
-            "NULL_RATE": 0.0,
-            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
-            "PRESENT_COUNT": 7,
-            "REAL_PRESENT": true,
-            "SAMPLES": 7,
-            "TYPES": {
-              "object": 7
-            },
-            "VALUES": []
-          }
-        ]
-      },
-      "second_search_exact_matches": 1,
-      "source_offer_id_changed": false,
-      "status": "NON_VALIDATABLE",
-      "usage_delta": {
-        "IGNAV_HEALTH_REQUESTS": 0,
-        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
-        "IGNAV_REVALIDATION_REQUESTS": 2,
-        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 2,
-        "IGNAV_SEARCH_REQUESTS": 0,
-        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
-        "REQUEST_ATTEMPTS": 2,
-        "SUCCESSFUL_PROVIDER_REQUESTS": 2
-      },
-      "validated_at": "2026-08-23T04:19:16.283790+00:00"
+      "validated_at": "2026-08-23T04:23:47.302996+00:00"
     },
     {
       "booking_contract_observation": {
@@ -10620,11 +10618,11 @@
       },
       "booking_links_refresh": true,
       "booking_option_count": 0,
-      "commercial_offer_id": "97a15f0cdc298c1b9941322a6bcabac151fb9d03",
+      "commercial_offer_id": "5a64e732875d49a07b420e033e5374f968330ff0",
       "full_journey_option_count": 0,
       "independent_source_corroboration": false,
-      "itinerary_fingerprint": "1f459734195a98c3c4e024dd3d52d1d5727495da",
-      "offer_id": "1f459734195a98c3c4e024dd3d52d1d5727495da",
+      "itinerary_fingerprint": "4526d58848352c70585bd8c6856584f32308caf7",
+      "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
       "price_based_selection": false,
       "revalidation_provider": "IGNAV",
       "same_provider_revalidation": true,
@@ -10752,6 +10750,7 @@
               "TP",
               "LA",
               "AT",
+              "KL",
               "UX"
             ]
           },
@@ -10792,6 +10791,7 @@
               "Tap Air Portugal",
               "LATAM",
               "Royal Air Maroc",
+              "KLM",
               "Air Europa"
             ]
           },
@@ -10940,7 +10940,7 @@
         "REQUEST_ATTEMPTS": 2,
         "SUCCESSFUL_PROVIDER_REQUESTS": 2
       },
-      "validated_at": "2026-08-23T04:19:41.777956+00:00"
+      "validated_at": "2026-08-23T04:24:14.680663+00:00"
     }
   ],
   "VALID_OFFERS": [
@@ -10989,7 +10989,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.095084+00:00",
+      "discovered_at": "2026-08-23T04:21:33.826577+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -11060,159 +11060,9 @@
       "personal_item": null,
       "price": 6531.0,
       "price_brl": 6531.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "dff2c3165f3148da9dd5b97c25f6965c",
-      "source_payload_ref": null,
-      "taxes_included": null,
-      "total_price_confirmed": true,
-      "transfer_type": "MANAGED",
-      "validation_status": "NOT_REQUIRED"
-    },
-    {
-      "booking_agent": null,
-      "booking_option_count": 0,
-      "booking_source": "IGNAV",
-      "booking_url": null,
-      "cabin_class": "economy",
-      "carry_on": 1,
-      "checked_bag": null,
-      "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
-      "currency": "BRL",
-      "derived": {
-        "AFRICA_CONNECTION_PRESENT": false,
-        "AIRPORT_CHANGE_PRESENT": false,
-        "ALERT_BLOCK_REASON_CODES": [
-          "REJECT_PRICE_LIMIT"
-        ],
-        "ALERT_PRICE_PASS": false,
-        "ALERT_VALID_UNTIL": null,
-        "COMMERCIAL_OFFER_ID": "eba8d419c69b574474be1ef4d2af1996c9811085",
-        "DESTINATION_VALID": true,
-        "ELIGIBILITY_STATE": "ELIGIBLE",
-        "HARD_FILTER_PASS": true,
-        "HARD_REJECTED": false,
-        "ITINERARY_FINGERPRINT": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
-        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
-        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
-        "LIS_ARRIVAL_DATE_VALID": true,
-        "MAX_CONNECTIONS": 1,
-        "MAX_CONNECTION_MIN": 185,
-        "MAX_DIRECTION_DURATION_MIN": 835,
-        "NON_VALIDATABLE": false,
-        "NON_VALIDATABLE_REASON_CODES": [],
-        "OPERATING_CARRIER_CONFIRMED": true,
-        "ORIGIN_VALID": true,
-        "OUTBOUND_DATE_VALID": true,
-        "QUALITY_CLASS": "B",
-        "REJECTION_REASON_CODES": [],
-        "RETURN_DATE_VALID": true,
-        "RETURN_DESTINATION_VALID": true,
-        "SELF_TRANSFER_PRESENT": false,
-        "TAAG_PRESENT": false,
-        "VALIDATION_FRESH": false,
-        "VALIDATION_STATUS": "NOT_REQUIRED",
-        "VERIFIED_ALERT_CANDIDATE": false
-      },
-      "discovered_at": "2026-08-23T04:17:03.108589+00:00",
-      "fx_source": null,
-      "fx_timestamp": null,
-      "inbound": {
-        "arrival_date_local": "2026-11-04",
-        "arrival_local": "2026-11-04T05:30:00",
-        "arrival_utc": "2026-11-04T08:30:00Z",
-        "connection_count": 1,
-        "connections": [
-          {
-            "airport_change": false,
-            "connection_airport": "FOR",
-            "connection_country": "BR",
-            "connection_duration_min": 185,
-            "self_transfer": false,
-            "transfer_type": "MANAGED"
-          }
-        ],
-        "departure_local": "2026-11-03T18:35:00",
-        "departure_utc": "2026-11-03T18:35:00Z",
-        "destination": "GRU",
-        "origin": "LIS",
-        "segments": [
-          {
-            "aircraft": "Boeing 787",
-            "arrival_local": "2026-11-03T23:05:00",
-            "arrival_utc": "2026-11-04T02:05:00Z",
-            "departure_local": "2026-11-03T18:35:00",
-            "departure_utc": "2026-11-03T18:35:00Z",
-            "destination": "FOR",
-            "duration_min": 450,
-            "flight_number": "8151",
-            "marketing_carrier": "LA",
-            "marketing_carrier_name": "LATAM",
-            "operating_carrier": null,
-            "operating_carrier_name": "LATAM",
-            "origin": "LIS",
-            "segment_id": "1-0"
-          },
-          {
-            "aircraft": "Boeing 787",
-            "arrival_local": "2026-11-04T05:30:00",
-            "arrival_utc": "2026-11-04T08:30:00Z",
-            "departure_local": "2026-11-04T02:10:00",
-            "departure_utc": "2026-11-04T05:10:00Z",
-            "destination": "GRU",
-            "duration_min": 200,
-            "flight_number": "4777",
-            "marketing_carrier": "LA",
-            "marketing_carrier_name": "LATAM",
-            "operating_carrier": null,
-            "operating_carrier_name": "LATAM",
-            "origin": "FOR",
-            "segment_id": "1-1"
-          }
-        ],
-        "total_duration_min": 835
-      },
-      "itinerary_fingerprint": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
-      "itinerary_id": "336e806166e742858e4ece45d7cd2657",
-      "last_validated_at": null,
-      "offer_expires_at": null,
-      "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
-      "outbound": {
-        "arrival_date_local": "2026-10-27",
-        "arrival_local": "2026-10-27T06:20:00",
-        "arrival_utc": "2026-10-27T06:20:00Z",
-        "connection_count": 0,
-        "connections": [],
-        "departure_local": "2026-10-26T17:40:00",
-        "departure_utc": "2026-10-26T20:40:00Z",
-        "destination": "LIS",
-        "origin": "GRU",
-        "segments": [
-          {
-            "aircraft": "Boeing 777",
-            "arrival_local": "2026-10-27T06:20:00",
-            "arrival_utc": "2026-10-27T06:20:00Z",
-            "departure_local": "2026-10-26T17:40:00",
-            "departure_utc": "2026-10-26T20:40:00Z",
-            "destination": "LIS",
-            "duration_min": 580,
-            "flight_number": "8146",
-            "marketing_carrier": "LA",
-            "marketing_carrier_name": "LATAM",
-            "operating_carrier": null,
-            "operating_carrier_name": "LATAM",
-            "origin": "GRU",
-            "segment_id": "0-0"
-          }
-        ],
-        "total_duration_min": 580
-      },
-      "personal_item": null,
-      "price": 4674.0,
-      "price_brl": 4674.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
-      "source": "IGNAV",
-      "source_offer_id": "336e806166e742858e4ece45d7cd2657",
       "source_payload_ref": null,
       "taxes_included": null,
       "total_price_confirmed": true,
@@ -11264,7 +11114,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.117468+00:00",
+      "discovered_at": "2026-08-23T04:21:33.835690+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -11360,7 +11210,7 @@
       "personal_item": null,
       "price": 4674.0,
       "price_brl": 4674.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "bd2189cdfa794609ae94bc21b2d23e3e",
       "source_payload_ref": null,
@@ -11414,7 +11264,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.138117+00:00",
+      "discovered_at": "2026-08-23T04:21:33.841871+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -11485,7 +11335,7 @@
       "personal_item": null,
       "price": 6531.0,
       "price_brl": 6531.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "88fd1da1e5274f58b8598905f85cc1bb",
       "source_payload_ref": null,
@@ -11539,7 +11389,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.138177+00:00",
+      "discovered_at": "2026-08-23T04:21:33.841930+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -11610,9 +11460,159 @@
       "personal_item": null,
       "price": 6531.0,
       "price_brl": 6531.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "be2486197b0c4e71945fc46624f46604",
+      "source_payload_ref": null,
+      "taxes_included": null,
+      "total_price_confirmed": true,
+      "transfer_type": "MANAGED",
+      "validation_status": "NOT_REQUIRED"
+    },
+    {
+      "booking_agent": null,
+      "booking_option_count": 0,
+      "booking_source": "IGNAV",
+      "booking_url": null,
+      "cabin_class": "economy",
+      "carry_on": 1,
+      "checked_bag": null,
+      "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
+      "currency": "BRL",
+      "derived": {
+        "AFRICA_CONNECTION_PRESENT": false,
+        "AIRPORT_CHANGE_PRESENT": false,
+        "ALERT_BLOCK_REASON_CODES": [
+          "REJECT_PRICE_LIMIT"
+        ],
+        "ALERT_PRICE_PASS": false,
+        "ALERT_VALID_UNTIL": null,
+        "COMMERCIAL_OFFER_ID": "eba8d419c69b574474be1ef4d2af1996c9811085",
+        "DESTINATION_VALID": true,
+        "ELIGIBILITY_STATE": "ELIGIBLE",
+        "HARD_FILTER_PASS": true,
+        "HARD_REJECTED": false,
+        "ITINERARY_FINGERPRINT": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
+        "LIS_ARRIVAL_DATE_EFFECTIVE": "2026-10-27",
+        "LIS_ARRIVAL_DATE_FROM_UTC": "2026-10-27",
+        "LIS_ARRIVAL_DATE_VALID": true,
+        "MAX_CONNECTIONS": 1,
+        "MAX_CONNECTION_MIN": 185,
+        "MAX_DIRECTION_DURATION_MIN": 835,
+        "NON_VALIDATABLE": false,
+        "NON_VALIDATABLE_REASON_CODES": [],
+        "OPERATING_CARRIER_CONFIRMED": true,
+        "ORIGIN_VALID": true,
+        "OUTBOUND_DATE_VALID": true,
+        "QUALITY_CLASS": "B",
+        "REJECTION_REASON_CODES": [],
+        "RETURN_DATE_VALID": true,
+        "RETURN_DESTINATION_VALID": true,
+        "SELF_TRANSFER_PRESENT": false,
+        "TAAG_PRESENT": false,
+        "VALIDATION_FRESH": false,
+        "VALIDATION_STATUS": "NOT_REQUIRED",
+        "VERIFIED_ALERT_CANDIDATE": false
+      },
+      "discovered_at": "2026-08-23T04:21:33.874467+00:00",
+      "fx_source": null,
+      "fx_timestamp": null,
+      "inbound": {
+        "arrival_date_local": "2026-11-04",
+        "arrival_local": "2026-11-04T05:30:00",
+        "arrival_utc": "2026-11-04T08:30:00Z",
+        "connection_count": 1,
+        "connections": [
+          {
+            "airport_change": false,
+            "connection_airport": "FOR",
+            "connection_country": "BR",
+            "connection_duration_min": 185,
+            "self_transfer": false,
+            "transfer_type": "MANAGED"
+          }
+        ],
+        "departure_local": "2026-11-03T18:35:00",
+        "departure_utc": "2026-11-03T18:35:00Z",
+        "destination": "GRU",
+        "origin": "LIS",
+        "segments": [
+          {
+            "aircraft": "Boeing 787",
+            "arrival_local": "2026-11-03T23:05:00",
+            "arrival_utc": "2026-11-04T02:05:00Z",
+            "departure_local": "2026-11-03T18:35:00",
+            "departure_utc": "2026-11-03T18:35:00Z",
+            "destination": "FOR",
+            "duration_min": 450,
+            "flight_number": "8151",
+            "marketing_carrier": "LA",
+            "marketing_carrier_name": "LATAM",
+            "operating_carrier": null,
+            "operating_carrier_name": "LATAM",
+            "origin": "LIS",
+            "segment_id": "1-0"
+          },
+          {
+            "aircraft": "Boeing 787",
+            "arrival_local": "2026-11-04T05:30:00",
+            "arrival_utc": "2026-11-04T08:30:00Z",
+            "departure_local": "2026-11-04T02:10:00",
+            "departure_utc": "2026-11-04T05:10:00Z",
+            "destination": "GRU",
+            "duration_min": 200,
+            "flight_number": "4777",
+            "marketing_carrier": "LA",
+            "marketing_carrier_name": "LATAM",
+            "operating_carrier": null,
+            "operating_carrier_name": "LATAM",
+            "origin": "FOR",
+            "segment_id": "1-1"
+          }
+        ],
+        "total_duration_min": 835
+      },
+      "itinerary_fingerprint": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
+      "itinerary_id": "336e806166e742858e4ece45d7cd2657",
+      "last_validated_at": null,
+      "offer_expires_at": null,
+      "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
+      "outbound": {
+        "arrival_date_local": "2026-10-27",
+        "arrival_local": "2026-10-27T06:20:00",
+        "arrival_utc": "2026-10-27T06:20:00Z",
+        "connection_count": 0,
+        "connections": [],
+        "departure_local": "2026-10-26T17:40:00",
+        "departure_utc": "2026-10-26T20:40:00Z",
+        "destination": "LIS",
+        "origin": "GRU",
+        "segments": [
+          {
+            "aircraft": "Boeing 777",
+            "arrival_local": "2026-10-27T06:20:00",
+            "arrival_utc": "2026-10-27T06:20:00Z",
+            "departure_local": "2026-10-26T17:40:00",
+            "departure_utc": "2026-10-26T20:40:00Z",
+            "destination": "LIS",
+            "duration_min": 580,
+            "flight_number": "8146",
+            "marketing_carrier": "LA",
+            "marketing_carrier_name": "LATAM",
+            "operating_carrier": null,
+            "operating_carrier_name": "LATAM",
+            "origin": "GRU",
+            "segment_id": "0-0"
+          }
+        ],
+        "total_duration_min": 580
+      },
+      "personal_item": null,
+      "price": 4674.0,
+      "price_brl": 4674.0,
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
+      "source": "IGNAV",
+      "source_offer_id": "336e806166e742858e4ece45d7cd2657",
       "source_payload_ref": null,
       "taxes_included": null,
       "total_price_confirmed": true,
@@ -11664,7 +11664,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.197041+00:00",
+      "discovered_at": "2026-08-23T04:21:33.940388+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -11735,7 +11735,7 @@
       "personal_item": null,
       "price": 6325.0,
       "price_brl": 6325.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "b12a2bf68c4d49579f988241d11a547a",
       "source_payload_ref": null,
@@ -11789,7 +11789,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.197143+00:00",
+      "discovered_at": "2026-08-23T04:21:33.940570+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -11860,7 +11860,7 @@
       "personal_item": null,
       "price": 6643.0,
       "price_brl": 6643.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "99e85ce1dd864ce2a1e2975175719423",
       "source_payload_ref": null,
@@ -11914,7 +11914,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.218866+00:00",
+      "discovered_at": "2026-08-23T04:21:33.961189+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -11985,7 +11985,7 @@
       "personal_item": null,
       "price": 4814.0,
       "price_brl": 4814.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "fd030743240d406ea26818ba79afdeb3",
       "source_payload_ref": null,
@@ -12039,7 +12039,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.239209+00:00",
+      "discovered_at": "2026-08-23T04:21:34.012687+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -12110,7 +12110,7 @@
       "personal_item": null,
       "price": 6325.0,
       "price_brl": 6325.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "9fece0e9936a4e9fa11a7a54070f5be4",
       "source_payload_ref": null,
@@ -12164,7 +12164,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.239272+00:00",
+      "discovered_at": "2026-08-23T04:21:34.012765+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -12235,7 +12235,7 @@
       "personal_item": null,
       "price": 6325.0,
       "price_brl": 6325.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "07fe0d69b2cd4e83ae7fe1bfd9ebf30b",
       "source_payload_ref": null,
@@ -12289,7 +12289,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.268983+00:00",
+      "discovered_at": "2026-08-23T04:21:34.025984+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -12360,7 +12360,7 @@
       "personal_item": null,
       "price": 4814.0,
       "price_brl": 4814.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "569221d0f6a64615beaef4ad7899d90d",
       "source_payload_ref": null,
@@ -12414,7 +12414,7 @@
         "VALIDATION_STATUS": "NOT_REQUIRED",
         "VERIFIED_ALERT_CANDIDATE": false
       },
-      "discovered_at": "2026-08-23T04:17:03.269045+00:00",
+      "discovered_at": "2026-08-23T04:21:34.026062+00:00",
       "fx_source": null,
       "fx_timestamp": null,
       "inbound": {
@@ -12485,7 +12485,7 @@
       "personal_item": null,
       "price": 4814.0,
       "price_brl": 4814.0,
-      "search_id": "fd-20260823T041702Z-7e3b5976",
+      "search_id": "fd-20260823T042133Z-3be8ee8c",
       "source": "IGNAV",
       "source_offer_id": "b162b3deb2f94adc985c84da10c24e0d",
       "source_payload_ref": null,
