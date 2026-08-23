@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.invalid/flight-data-bridge/snapshot.schema.json",
-  "title": "Flight Data Bridge V1.0 Snapshot",
+  "title": "Flight Data Bridge V1.1 Snapshot",
   "type": "object",
   "required": [
     "DATA_BRIDGE_VERSION","PROTOCOL_VERSION","UI_VERSION","STATE","SEARCH_METADATA",
@@ -10,7 +10,7 @@
     "ALERT_CANDIDATES","VALIDATION_RESULTS","PRICE_HISTORY","COUNTS"
   ],
   "properties": {
-    "DATA_BRIDGE_VERSION": {"type":"string","const":"1.0.0"},
+    "DATA_BRIDGE_VERSION": {"type":"string","const":"1.1.0"},
     "PROTOCOL_VERSION": {"type":"string","const":"LISBOA_V2.2"},
     "UI_VERSION": {"type":"string"},
     "STATE": {"type":"string","enum":["PRE_PRODUCTION","PRODUCTION_VALIDATED"]},
