@@ -116,6 +116,7 @@ def test_second_search_two_exact_matches_with_different_source_ids_is_nonvalidat
     fresh,meta=a.revalidate(initial_offer(a),JOB)
     assert fresh.validation_status=="NON_VALIDATABLE"
     assert fresh.booking_url is None
+    assert fresh.total_price_confirmed is False
     assert "REVALIDATION_AMBIGUOUS_EXACT_MATCH" in fresh.derived["SOURCE_NON_VALIDATABLE_REASONS"]
     assert meta["second_search_exact_matches"]==2
     assert meta["second_search_source_offer_ids"]==["fresh-a","fresh-b"]
@@ -141,23 +142,24 @@ def test_booking_link_without_own_price_is_nonvalidatable():
     assert "BOOKING_PRICE_MISSING" in fresh.derived["SOURCE_NON_VALIDATABLE_REASONS"]
 
 
-def test_booking_link_missing_verified_status_is_nonvalidatable():
+def test_booking_link_missing_verified_status_fails_schema_closed():
     a=adapter(search_response([itinerary("fresh")]),booking_response(link_price_marker="missing_status"))
-    fresh,_=a.revalidate(initial_offer(a),JOB)
-    assert fresh.validation_status=="NON_VALIDATABLE"
+    fresh,meta=a.revalidate(initial_offer(a),JOB)
+    assert fresh.validation_status=="ERROR"
     assert fresh.booking_url is None
     assert fresh.total_price_confirmed is False
-    assert "BOOKING_PRICE_UNVERIFIED" in fresh.derived["SOURCE_NON_VALIDATABLE_REASONS"]
+    assert meta.get("error")=="SCHEMA_INVALID"
+    assert "SCHEMA_INVALID" in fresh.derived["SOURCE_NON_VALIDATABLE_REASONS"]
 
 
-def test_booking_link_string_amount_fails_closed():
+def test_booking_link_string_amount_fails_schema_closed():
     a=adapter(search_response([itinerary("fresh")]),booking_response(link_price_marker="string_amount"))
     fresh,meta=a.revalidate(initial_offer(a),JOB)
+    assert fresh.validation_status=="ERROR"
     assert fresh.booking_url is None
     assert fresh.total_price_confirmed is False
-    assert fresh.validation_status in {"NON_VALIDATABLE","ERROR"}
-    reasons=set(fresh.derived.get("SOURCE_NON_VALIDATABLE_REASONS",[]))
-    assert "BOOKING_PRICE_INVALID" in reasons or meta.get("error")=="SCHEMA_INVALID"
+    assert meta.get("error")=="SCHEMA_INVALID"
+    assert "SCHEMA_INVALID" in fresh.derived["SOURCE_NON_VALIDATABLE_REASONS"]
 
 
 def test_operating_name_taag_is_hard_rejected_even_without_trusted_operating_code():
