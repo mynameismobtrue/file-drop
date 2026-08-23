@@ -28,7 +28,9 @@ def _date(v):
 
 
 def _money(v):
-    if v is None or isinstance(v, bool):
+    if v is None or isinstance(v, (bool, str)):
+        return None
+    if not isinstance(v, (int, float, Decimal)):
         return None
     try:
         return Decimal(str(v))
