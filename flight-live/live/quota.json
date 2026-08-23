@@ -1,0 +1,16 @@
+{
+  "provider": "IGNAV",
+  "paid_usage_authorized": false,
+  "free_requests_initial": 1000,
+  "request_attempts": 0,
+  "successful_provider_requests": 0,
+  "ignav_search_requests": 0,
+  "ignav_revalidation_requests": 0,
+  "ignav_health_requests": 0,
+  "estimated_free_remaining": 1000,
+  "warning_threshold": 150,
+  "hard_stop_buffer": 50,
+  "free_tier_warning": false,
+  "quota_gate_status": "BLOCKED_AUTH_NOT_CONFIGURED",
+  "updated_at": null
+}
