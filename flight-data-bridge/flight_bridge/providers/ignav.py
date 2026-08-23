@@ -490,6 +490,16 @@ class IgnavAdapter(ProviderAdapter):
             return {0 if x == "outbound" else 1 for x in opt["legs"] if x in {"outbound", "inbound"}}
         return set()
 
+    @staticmethod
+    def _invalidate(offer, status: str, reason: str | None = None):
+        offer.validation_status = status
+        offer.last_validated_at = now_iso()
+        offer.booking_url = None
+        offer.total_price_confirmed = False
+        if reason:
+            offer.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append(reason)
+        return offer
+
     def revalidate(self, offer, job):
         usage_before = self.usage_stats()
         meta = {
@@ -501,10 +511,7 @@ class IgnavAdapter(ProviderAdapter):
             "price_based_selection": False,
         }
         if not job:
-            offer.validation_status = "NON_VALIDATABLE"
-            offer.last_validated_at = now_iso()
-            offer.booking_url = None
-            offer.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append("REVALIDATION_JOB_UNKNOWN")
+            self._invalidate(offer, "NON_VALIDATABLE", "REVALIDATION_JOB_UNKNOWN")
             return offer, meta
         try:
             data = self._request("POST", "/fares/search", usage_role="REVALIDATION", json=self.build_query(job)).json()
@@ -518,9 +525,7 @@ class IgnavAdapter(ProviderAdapter):
                 "second_search_contract_observation": second_observation,
             })
             if not exact:
-                offer.validation_status = "DISAPPEARED"
-                offer.last_validated_at = now_iso()
-                offer.booking_url = None
+                self._invalidate(offer, "DISAPPEARED")
                 return offer, meta
             if len(exact) > 1:
                 signatures = {
@@ -531,21 +536,14 @@ class IgnavAdapter(ProviderAdapter):
                     {x.source_offer_id for x in exact if x.source_offer_id}
                 )
                 if len(signatures) != 1 or not next(iter(signatures))[0]:
-                    offer.validation_status = "NON_VALIDATABLE"
-                    offer.last_validated_at = now_iso()
-                    offer.booking_url = None
-                    offer.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append(
-                        "REVALIDATION_AMBIGUOUS_EXACT_MATCH"
-                    )
+                    self._invalidate(offer, "NON_VALIDATABLE", "REVALIDATION_AMBIGUOUS_EXACT_MATCH")
                     return offer, meta
                 meta["second_search_duplicate_matches_collapsed"] = len(exact) - 1
             fresh = exact[0]
             meta["source_offer_id_changed"] = fresh.source_offer_id != offer.source_offer_id
             ignav_id = fresh.runtime.get("IGNAV_ID")
             if not ignav_id:
-                fresh.validation_status = "NON_VALIDATABLE"
-                fresh.last_validated_at = now_iso()
-                fresh.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append("IGNAV_ID_UNKNOWN")
+                self._invalidate(fresh, "NON_VALIDATABLE", "IGNAV_ID_UNKNOWN")
                 return fresh, meta
 
             data = self._request("POST", "/fares/booking-links", usage_role="REVALIDATION", json={"ignav_id": ignav_id}).json()
@@ -555,10 +553,7 @@ class IgnavAdapter(ProviderAdapter):
             meta["booking_contract_observation"] = booking_observation
             booked = self._normalize_itinerary(data["itinerary"], (offer.search_id or "search") + "-booking", job, forced_ignav_id=ignav_id)
             if not exact_itinerary_match(fresh, booked):
-                fresh.validation_status = "CHANGED"
-                fresh.last_validated_at = now_iso()
-                fresh.booking_url = None
-                fresh.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append("BOOKING_ITINERARY_CHANGED")
+                self._invalidate(fresh, "CHANGED", "BOOKING_ITINERARY_CHANGED")
                 return fresh, meta
 
             options = data.get("booking_options") or []
@@ -566,9 +561,7 @@ class IgnavAdapter(ProviderAdapter):
             meta.update({"booking_option_count": len(options), "full_journey_option_count": len(full)})
             if not full:
                 coverage = set().union(*(self._coverage(o) for o in options)) if options else set()
-                booked.validation_status = "NON_VALIDATABLE"
-                booked.last_validated_at = now_iso()
-                booked.booking_url = None
+                self._invalidate(booked, "NON_VALIDATABLE")
                 if coverage == {0, 1} and len(options) > 1:
                     booked.booking_option_count = 2
                     booked.derived.setdefault("SOURCE_HARD_REJECTION_REASONS", []).append("MULTIPLE_BOOKING_REQUIRED")
@@ -580,35 +573,20 @@ class IgnavAdapter(ProviderAdapter):
             selected = full[0]
             link = next((x for x in (selected.get("links") or []) if isinstance(x, dict) and x.get("url")), None)
             if not link:
-                booked.validation_status = "NON_VALIDATABLE"
-                booked.last_validated_at = now_iso()
-                booked.booking_url = None
-                booked.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append("BOOKING_URL_MISSING")
+                self._invalidate(booked, "NON_VALIDATABLE", "BOOKING_URL_MISSING")
                 return booked, meta
 
             lp = link.get("price")
             if not isinstance(lp, dict):
-                booked.validation_status = "NON_VALIDATABLE"
-                booked.last_validated_at = now_iso()
-                booked.booking_url = None
-                booked.total_price_confirmed = False
-                booked.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append("BOOKING_PRICE_MISSING")
+                self._invalidate(booked, "NON_VALIDATABLE", "BOOKING_PRICE_MISSING")
                 return booked, meta
             amount = lp.get("amount")
             currency = lp.get("currency")
             if not isinstance(amount, (int, float)) or isinstance(amount, bool) or not isinstance(currency, str):
-                booked.validation_status = "NON_VALIDATABLE"
-                booked.last_validated_at = now_iso()
-                booked.booking_url = None
-                booked.total_price_confirmed = False
-                booked.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append("BOOKING_PRICE_INVALID")
+                self._invalidate(booked, "NON_VALIDATABLE", "BOOKING_PRICE_INVALID")
                 return booked, meta
             if lp.get("status") != "verified":
-                booked.validation_status = "NON_VALIDATABLE"
-                booked.last_validated_at = now_iso()
-                booked.booking_url = None
-                booked.total_price_confirmed = False
-                booked.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append("BOOKING_PRICE_UNVERIFIED")
+                self._invalidate(booked, "NON_VALIDATABLE", "BOOKING_PRICE_UNVERIFIED")
                 return booked, meta
 
             booked.booking_option_count = 1
@@ -624,17 +602,11 @@ class IgnavAdapter(ProviderAdapter):
             booked.validation_status = "PRICE_CHANGED" if (booked.price_brl != offer.price_brl or booked.currency != offer.currency) else "VALIDATED"
             return booked, meta
         except IgnavContractError as e:
-            offer.validation_status = "ERROR"
-            offer.last_validated_at = now_iso()
-            offer.booking_url = None
-            offer.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append("SCHEMA_INVALID")
+            self._invalidate(offer, "ERROR", "SCHEMA_INVALID")
             meta.update({"error": "SCHEMA_INVALID", "contract_detail": e.detail})
             return offer, meta
         except IgnavError as e:
-            offer.validation_status = "ERROR"
-            offer.last_validated_at = now_iso()
-            offer.booking_url = None
-            offer.derived.setdefault("SOURCE_NON_VALIDATABLE_REASONS", []).append(e.code)
+            self._invalidate(offer, "ERROR", e.code)
             meta.update({"error": e.code, "http_status": e.http_status, "provider_error_code": e.provider_error_code})
             return offer, meta
         finally:
