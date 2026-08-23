@@ -1,0 +1,222 @@
+name: Flight Data Bridge Live Audit
+
+on:
+  push:
+    branches: ["flight-live-data"]
+    paths:
+      - ".github/workflows/flight-live-audit.yml"
+      - "flight-live/live/last-complete.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: flight-data-bridge-live-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: flight-live-data
+          fetch-depth: 0
+
+      - name: Build deterministic audit summary without provider calls
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+
+          src = Path('flight-live/live/last-complete.json')
+          if not src.exists():
+              raise SystemExit('LIVE_SNAPSHOT_MISSING')
+          d = json.loads(src.read_text())
+
+          valid = d.get('VALID_OFFERS') or []
+          rejected = d.get('REJECTED_OFFERS') or []
+          nonvalid = d.get('NON_VALIDATABLE_OFFERS') or []
+          validations = d.get('VALIDATION_RESULTS') or []
+
+          reject_reasons = Counter()
+          for o in rejected:
+              reject_reasons.update((o.get('derived') or {}).get('REJECTION_REASON_CODES') or [])
+          nonvalid_reasons = Counter()
+          source_nonvalid_reasons = Counter()
+          for o in nonvalid:
+              der = o.get('derived') or {}
+              nonvalid_reasons.update(der.get('NON_VALIDATABLE_REASON_CODES') or [])
+              source_nonvalid_reasons.update(der.get('SOURCE_NON_VALIDATABLE_REASONS') or [])
+
+          all_offers = valid + rejected + nonvalid
+          carrier_pairs = Counter()
+          operator_names = Counter()
+          operator_code_present = 0
+          total_segments = 0
+          taag_segments = []
+          for o in all_offers:
+              for direction_name in ('outbound','inbound'):
+                  direction = o.get(direction_name) or {}
+                  for s in direction.get('segments') or []:
+                      total_segments += 1
+                      mc = s.get('marketing_carrier')
+                      on = s.get('operating_carrier_name')
+                      oc = s.get('operating_carrier')
+                      carrier_pairs[(mc or 'UNKNOWN', on or 'UNKNOWN')] += 1
+                      operator_names[on or 'UNKNOWN'] += 1
+                      if oc:
+                          operator_code_present += 1
+                      hay = f"{mc or ''} {oc or ''} {on or ''}".upper()
+                      if mc == 'DT' or 'TAAG' in hay or 'ANGOLA AIRLINES' in hay:
+                          taag_segments.append({
+                              'offer_id': o.get('offer_id'),
+                              'marketing_carrier': mc,
+                              'operating_carrier': oc,
+                              'operating_carrier_name': on,
+                          })
+
+          valid_violations = []
+          for o in valid:
+              der = o.get('derived') or {}
+              problems = []
+              if der.get('HARD_FILTER_PASS') is not True: problems.append('HARD_FILTER_PASS_NOT_TRUE')
+              if der.get('ELIGIBILITY_STATE') != 'ELIGIBLE': problems.append('STATE_NOT_ELIGIBLE')
+              if der.get('TAAG_PRESENT'): problems.append('TAAG_PRESENT')
+              if der.get('AFRICA_CONNECTION_PRESENT'): problems.append('AFRICA_CONNECTION_PRESENT')
+              if der.get('SELF_TRANSFER_PRESENT'): problems.append('SELF_TRANSFER_PRESENT')
+              if der.get('AIRPORT_CHANGE_PRESENT'): problems.append('AIRPORT_CHANGE_PRESENT')
+              if der.get('LIS_ARRIVAL_DATE_VALID') is not True: problems.append('LIS_ARRIVAL_INVALID')
+              if der.get('RETURN_DATE_VALID') is not True: problems.append('RETURN_DATE_INVALID')
+              if (der.get('MAX_CONNECTIONS') or 0) > 1: problems.append('TOO_MANY_CONNECTIONS')
+              if (der.get('MAX_CONNECTION_MIN') or 0) > 300: problems.append('CONNECTION_TOO_LONG')
+              if (der.get('MAX_DIRECTION_DURATION_MIN') or 0) > 1080: problems.append('DIRECTION_TOO_LONG')
+              if der.get('OPERATING_CARRIER_CONFIRMED') is not True: problems.append('OPERATING_CARRIER_NOT_CONFIRMED')
+              if problems:
+                  valid_violations.append({'offer_id': o.get('offer_id'), 'problems': problems})
+
+          quality_counts = Counter((o.get('derived') or {}).get('QUALITY_CLASS') or 'UNKNOWN' for o in valid)
+          valid_prices = [o.get('price_brl') for o in valid if isinstance(o.get('price_brl'), (int,float))]
+
+          open_jaw_queries = []
+          provider_results = d.get('PROVIDER_RESULTS') or []
+          ignav = next((x for x in provider_results if x.get('provider') == 'IGNAV'), {})
+          for q in ignav.get('queries') or []:
+              qid = q.get('query_id') or ''
+              is_open_jaw = ('GRU-' in qid and qid.endswith('-VCP')) or ('VCP-' in qid and qid.endswith('-GRU'))
+              if is_open_jaw:
+                  open_jaw_queries.append({
+                      'query_id': qid,
+                      'status': q.get('status'),
+                      'raw_offers_count': q.get('raw_offers_count'),
+                  })
+
+          open_jaw_offers = []
+          for o in all_offers:
+              ob = o.get('outbound') or {}
+              ib = o.get('inbound') or {}
+              if ob.get('origin') in {'GRU','VCP'} and ib.get('destination') in {'GRU','VCP'} and ob.get('origin') != ib.get('destination'):
+                  open_jaw_offers.append({
+                      'offer_id': o.get('offer_id'),
+                      'origin': ob.get('origin'),
+                      'return_destination': ib.get('destination'),
+                      'price_brl': o.get('price_brl'),
+                      'eligibility_state': (o.get('derived') or {}).get('ELIGIBILITY_STATE'),
+                  })
+
+          validation_statuses = Counter()
+          validation_source_reasons = Counter()
+          booking_option_counts = []
+          for v in validations:
+              validation_statuses[v.get('status') or v.get('VALIDATION_STATUS') or 'UNKNOWN'] += 1
+              for r in v.get('reason_codes') or v.get('REASON_CODES') or []:
+                  validation_source_reasons[r] += 1
+              obs = v.get('booking_contract_observation') or {}
+              if 'BOOKING_OPTIONS_COUNT' in obs:
+                  booking_option_counts.append(obs.get('BOOKING_OPTIONS_COUNT'))
+
+          # Candidate outcomes are also materialized as NON_VALIDATABLE_OFFERS after failed booking refresh.
+          candidate_failures = []
+          for o in nonvalid:
+              if isinstance(o.get('price_brl'), (int,float)) and o.get('price_brl') < 4500:
+                  candidate_failures.append({
+                      'offer_id': o.get('offer_id'),
+                      'price_brl': o.get('price_brl'),
+                      'validation_status': o.get('validation_status'),
+                      'reasons': (o.get('derived') or {}).get('SOURCE_NON_VALIDATABLE_REASONS') or [],
+                      'booking_option_count': o.get('booking_option_count'),
+                  })
+
+          summary = {
+              'DATA_BRIDGE_VERSION': d.get('DATA_BRIDGE_VERSION'),
+              'PROTOCOL_VERSION': d.get('PROTOCOL_VERSION'),
+              'UI_VERSION': d.get('UI_VERSION'),
+              'LIVE_ENV_VERSION': d.get('LIVE_ENV_VERSION'),
+              'STATE': d.get('STATE'),
+              'APPROVED_CODE_SHA': d.get('APPROVED_CODE_SHA'),
+              'SEARCH_ID': (d.get('SEARCH_METADATA') or {}).get('SEARCH_ID') or d.get('LATEST_ATTEMPT'),
+              'SEARCH_STATUS': (d.get('SEARCH_METADATA') or {}).get('SEARCH_STATUS'),
+              'COUNTS': d.get('COUNTS'),
+              'QUERY_COVERAGE': {
+                  'expected': ignav.get('PROVIDER_QUERIES_EXPECTED'),
+                  'started': ignav.get('PROVIDER_QUERIES_STARTED'),
+                  'complete': ignav.get('PROVIDER_QUERIES_COMPLETE'),
+                  'failed': ignav.get('PROVIDER_QUERIES_FAILED'),
+                  'timed_out': ignav.get('PROVIDER_QUERIES_TIMED_OUT'),
+                  'grid_valid': ignav.get('QUERY_GRID_VALID'),
+              },
+              'OPEN_JAW': {
+                  'queries': open_jaw_queries,
+                  'all_queries_complete': bool(open_jaw_queries) and all(q['status']=='COMPLETE' for q in open_jaw_queries),
+                  'all_queries_returned_itineraries': bool(open_jaw_queries) and all((q['raw_offers_count'] or 0) > 0 for q in open_jaw_queries),
+                  'offers_observed_count': len(open_jaw_offers),
+                  'offers_sample': open_jaw_offers[:20],
+              },
+              'HARD_REJECT_REASON_COUNTS': dict(sorted(reject_reasons.items())),
+              'NON_VALIDATABLE_REASON_COUNTS': dict(sorted(nonvalid_reasons.items())),
+              'SOURCE_NON_VALIDATABLE_REASON_COUNTS': dict(sorted(source_nonvalid_reasons.items())),
+              'VALID_OFFER_INVARIANT_VIOLATIONS': valid_violations,
+              'VALID_QUALITY_COUNTS': dict(sorted(quality_counts.items())),
+              'LOWEST_ELIGIBLE_PRICE_BRL': min(valid_prices) if valid_prices else None,
+              'OPERATING_CARRIER_AUDIT': {
+                  'segments_observed': total_segments,
+                  'operating_code_present_count': operator_code_present,
+                  'operating_name_present_count': sum(v for k,v in operator_names.items() if k != 'UNKNOWN'),
+                  'operating_name_values': dict(sorted(operator_names.items())),
+                  'marketing_code_operating_name_pairs': [
+                      {'marketing_code': k[0], 'operating_name': k[1], 'count': v}
+                      for k,v in sorted(carrier_pairs.items())
+                  ],
+                  'taag_segments_detected': taag_segments,
+              },
+              'REVALIDATION': {
+                  'results_count': len(validations),
+                  'status_counts': dict(sorted(validation_statuses.items())),
+                  'reason_counts': dict(sorted(validation_source_reasons.items())),
+                  'booking_option_counts': booking_option_counts,
+                  'candidate_failures_below_4500': candidate_failures,
+              },
+              'ALERT_CANDIDATES_COUNT': len(d.get('ALERT_CANDIDATES') or []),
+          }
+
+          out = Path('flight-live/audit/latest-summary.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
+          print(json.dumps(summary, ensure_ascii=False, sort_keys=True))
+          PY
+
+      - name: Commit audit summary
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add flight-live/audit/latest-summary.json
+          if git diff --cached --quiet; then
+            echo "No audit summary changes."
+          else
+            git commit -m "Summarize Flight Data Bridge live audit"
+            git push origin HEAD:flight-live-data
+          fi
