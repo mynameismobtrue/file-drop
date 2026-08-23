@@ -1,9 +1,10 @@
 {
-  "data_bridge_version": "1.1.0",
+  "data_bridge_version": "1.1.1",
   "protocol_version": "LISBOA_V2.2",
   "ui_version": "1.0.0",
   "state": "PRE_PRODUCTION",
   "timezone": "America/Sao_Paulo",
+  "schedule_times_brt": ["06:00", "11:00", "16:00", "21:00"],
   "market": "BR",
   "locale": "pt-BR",
   "currency": "BRL",
