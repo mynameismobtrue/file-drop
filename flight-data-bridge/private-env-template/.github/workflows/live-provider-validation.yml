@@ -1,0 +1,181 @@
+name: Flight Data Bridge Live Provider Validation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: flight-data-bridge-live-validation
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      IGNAV_API_KEY: ${{ secrets.IGNAV_API_KEY }}
+      FLIGHT_BRIDGE_CODE_DIR: ${{ github.workspace }}/_code/flight-data-bridge
+    steps:
+      - name: Checkout private live repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enforce private repository
+        shell: bash
+        run: |
+          if [ "${{ github.event.repository.private }}" != "true" ]; then
+            echo "PRIVACY_GATE_FAILED"
+            exit 41
+          fi
+
+      - name: Read pinned code configuration
+        id: cfg
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          d=json.load(open('config/live-validation.json'))
+          sha=d['approved_code_sha']
+          if not sha or sha.startswith('__'):
+              raise SystemExit('CODE_SHA_MISMATCH: approved_code_sha not configured')
+          print('repo='+d['approved_code_repo'])
+          print('sha='+sha)
+          PY
+
+      - name: Require Ignav secret without printing it
+        shell: bash
+        run: |
+          if [ -z "${IGNAV_API_KEY:-}" ]; then
+            echo "AUTH_REQUIRED: IGNAV_API_KEY secret missing"
+            exit 44
+          fi
+
+      - name: Checkout approved public code SHA
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.cfg.outputs.repo }}
+          ref: ${{ steps.cfg.outputs.sha }}
+          path: _code
+          persist-credentials: false
+
+      - name: Verify exact code SHA
+        shell: bash
+        run: |
+          ACTUAL=$(git -C _code rev-parse HEAD)
+          if [ "$ACTUAL" != "${{ steps.cfg.outputs.sha }}" ]; then
+            echo "CODE_SHA_MISMATCH"
+            exit 45
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install approved bridge dependencies
+        run: pip install -r _code/flight-data-bridge/requirements.txt
+
+      - name: Compile approved bridge
+        run: python -m py_compile _code/flight-data-bridge/flight_bridge/*.py _code/flight-data-bridge/flight_bridge/providers/*.py
+
+      - name: Run complete approved regression suite
+        working-directory: _code/flight-data-bridge
+        env:
+          PYTHONPATH: .
+        run: pytest -q
+
+      - name: Validate protocol and live environment isolation
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          public=json.load(open('_code/flight-data-bridge/config/protocol_v2_2.json'))
+          private=json.load(open('config/live-validation.json'))
+          assert public['data_bridge_version']==private['data_bridge_version']
+          assert public['protocol_version']==private['protocol_version']=='LISBOA_V2.2'
+          assert public['ui_version']==private['ui_version']=='1.0.0'
+          assert private['live_env_version']=='1.0.0'
+          assert private['state']=='PRE_PRODUCTION'
+          assert private['paid_usage_authorized'] is False
+          assert private['alert_delivery_enabled'] is False
+          assert public['expected_queries_per_complete_provider']==12
+          assert public['alert_price_brl_strict_lt']==4500.0
+          PY
+
+      - name: Free-tier quota gate including one diagnostic health call
+        run: python scripts/private_runtime.py quota-check --include-health
+
+      - name: Build Ignav-only runtime config without changing protocol rules
+        run: python scripts/private_runtime.py runtime-config --output "$RUNNER_TEMP/live-runtime.json"
+
+      - name: One initial Ignav health check
+        run: python scripts/private_runtime.py health --output "$RUNNER_TEMP/ignav-health.json"
+
+      - name: Execute one manual 12-query live validation cycle
+        id: bridge
+        shell: bash
+        run: |
+          set +e
+          PYTHONPATH="$FLIGHT_BRIDGE_CODE_DIR" python -m flight_bridge.bridge \
+            --out-dir "$RUNNER_TEMP/flight-output" \
+            --config "$RUNNER_TEMP/live-runtime.json"
+          CODE=$?
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Sanitize and persist private audit trail
+        if: always() && steps.bridge.outcome == 'success'
+        run: |
+          python scripts/private_runtime.py persist \
+            --output-dir "$RUNNER_TEMP/flight-output" \
+            --health-file "$RUNNER_TEMP/ignav-health.json"
+
+      - name: Secret scan of all persisted live artifacts
+        if: always() && steps.bridge.outcome == 'success'
+        run: python scripts/private_runtime.py scan
+
+      - name: Validate 12-of-12 completeness and no alert delivery
+        if: always() && steps.bridge.outcome == 'success'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('live/last-attempt.json'))
+          m=d['SEARCH_METADATA']
+          assert m['SEARCH_STATUS'] in {'COMPLETE','COMPLETE_WITH_SOURCE_ERRORS'}, m['SEARCH_STATUS']
+          assert m['IS_COMPLETE'] is True
+          active=d['ACTIVE_DISCOVERY_PROVIDER']
+          assert active=='IGNAV', active
+          p=next(x for x in d['PROVIDER_RESULTS'] if x['provider']=='IGNAV')
+          assert p['PROVIDER_QUERIES_EXPECTED']==12
+          assert p['PROVIDER_QUERIES_STARTED']==12
+          assert p['PROVIDER_QUERIES_COMPLETE']==12
+          assert p['PROVIDER_QUERIES_FAILED']==0
+          assert p['PROVIDER_QUERIES_TIMED_OUT']==0
+          assert p['PROVIDER_SEARCH_STATUS']=='COMPLETE'
+          assert p['QUERY_GRID_VALID'] is True
+          assert d['STATE']=='PRE_PRODUCTION'
+          assert d['PROTOCOL_VERSION']=='LISBOA_V2.2'
+          PY
+
+      - name: Commit private validation artifacts even when cycle is non-conclusive
+        if: always() && steps.bridge.outcome == 'success'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add live history price-history audit
+          if git diff --cached --quiet; then
+            echo "No private audit changes."
+          else
+            git commit -m "Record Flight Data Bridge live validation"
+            git push
+          fi
+
+      - name: Propagate non-conclusive bridge result after audit persistence
+        if: steps.bridge.outputs.exit_code != '0'
+        run: |
+          echo "SEARCH_INCOMPLETE or provider failure; audit was retained."
+          exit 46
