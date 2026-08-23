@@ -1,4 +1,4 @@
-name: Flight Data Bridge
+name: Flight Data Bridge CI
 
 on:
   push:
@@ -10,28 +10,13 @@ on:
     paths:
       - "flight-data-bridge/**"
       - ".github/workflows/flight-data-bridge.yml"
-  schedule:
-    # 4 ciclos locais/dia em America/Sao_Paulo: 06:00, 11:00, 16:00 e 21:00.
-    # GitHub Actions cron usa UTC: 09:00, 14:00, 19:00 e 00:00.
-    - cron: "0 0,9,14,19 * * *"
   workflow_dispatch:
-    inputs:
-      persist_results:
-        description: "Persistir snapshot/history no repositório (exige privacy_ack=true)"
-        required: false
-        type: boolean
-        default: false
-      privacy_ack:
-        description: "Confirmo que o destino do snapshot pode receber dados pessoais da viagem"
-        required: false
-        type: boolean
-        default: false
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: flight-data-bridge-${{ github.ref }}
+  group: flight-data-bridge-ci-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -57,115 +42,20 @@ jobs:
           python - <<'PY'
           import json
           d=json.load(open('flight-data-bridge/config/protocol_v2_2.json'))
-          assert d['data_bridge_version']=='1.1.0'
+          assert d['data_bridge_version']=='1.1.1'
           assert d['protocol_version']=='LISBOA_V2.2'
+          assert d['ui_version']=='1.0.0'
           assert d['state']=='PRE_PRODUCTION'
           assert d['alert_price_brl_strict_lt']==4500.0
           assert d['expected_queries_per_complete_provider']==12
+          assert d['schedule_times_brt']==['06:00','11:00','16:00','21:00']
           PY
-
-  collect:
-    needs: test
-    if: >-
-      (github.event_name == 'workflow_dispatch' && vars.FLIGHT_BRIDGE_LIVE_ENABLED == 'true') ||
-      (github.event_name == 'schedule' &&
-       github.ref == 'refs/heads/main' &&
-       vars.FLIGHT_BRIDGE_LIVE_ENABLED == 'true' &&
-       vars.FLIGHT_BRIDGE_PRODUCTION_APPROVED == 'true' &&
-       vars.FLIGHT_BRIDGE_PRIVACY_ACK == 'true')
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    env:
-      SKYSCANNER_API_KEY: ${{ secrets.SKYSCANNER_API_KEY }}
-      IGNAV_API_KEY: ${{ secrets.IGNAV_API_KEY }}
-      DUFFEL_ACCESS_TOKEN: ${{ secrets.DUFFEL_ACCESS_TOKEN }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install dependencies
-        run: pip install -r flight-data-bridge/requirements.txt
-      - name: Collect, normalize, filter and revalidate
-        id: collect
-        shell: bash
+      - name: Enforce public repository privacy isolation
         run: |
-          set +e
-          PYTHONPATH=flight-data-bridge python -m flight_bridge.bridge --out-dir flight-data-bridge
-          CODE=$?
-          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
-          exit 0
-      - name: Validate latest attempt
-        shell: bash
-        run: |
-          test -s flight-data-bridge/status.json
           python - <<'PY'
-          import json
-          p='flight-data-bridge/status.json'
-          d=json.load(open(p))
-          raw=json.dumps(d)
-          forbidden=['SESSION_TOKEN','REFRESH_SESSION_TOKEN','SKYSCANNER_API_KEY','IGNAV_API_KEY','DUFFEL_ACCESS_TOKEN','ACCESS_TOKEN']
-          assert not any(x in raw for x in forbidden), 'secret/session token serialized'
-          m=d['SEARCH_METADATA']
-          if m['IS_COMPLETE']:
-              assert m['SEARCH_STATUS'] in {'COMPLETE','COMPLETE_WITH_SOURCE_ERRORS'}
-              assert d['ACTIVE_DISCOVERY_PROVIDER'] in {'SKYSCANNER','IGNAV'}
-              active=next(x for x in d['PROVIDER_RESULTS'] if x['provider']==d['ACTIVE_DISCOVERY_PROVIDER'])
-              assert active['PROVIDER_QUERIES_COMPLETE']==12
-              assert active['PROVIDER_SEARCH_STATUS']=='COMPLETE'
-              for o in d['ALERT_CANDIDATES']:
-                  der=o['derived']
-                  assert der['HARD_FILTER_PASS'] is True
-                  assert der['ELIGIBILITY_STATE']=='ELIGIBLE'
-                  assert der['ALERT_PRICE_PASS'] is True
-                  assert der['VERIFIED_ALERT_CANDIDATE'] is True
-                  assert o['validation_status'] in {'VALIDATED','PRICE_CHANGED'}
+          from pathlib import Path
+          text=Path('.github/workflows/flight-data-bridge.yml').read_text()
+          forbidden=['IGNAV_API_KEY','SKYSCANNER_API_KEY','DUFFEL_ACCESS_TOKEN','secrets.','schedule:','flight-data-bridge/snapshot.json','flight-data-bridge/history']
+          found=[x for x in forbidden if x in text]
+          assert not found, f'public workflow must be CI-only; found {found}'
           PY
-      - name: Validate complete snapshot schema
-        if: steps.collect.outputs.exit_code == '0'
-        run: |
-          test -s flight-data-bridge/snapshot.json
-          python - <<'PY'
-          import json,jsonschema
-          d=json.load(open('flight-data-bridge/snapshot.json'))
-          s=json.load(open('flight-data-bridge/schema/snapshot.schema.json'))
-          jsonschema.validate(d,s)
-          PY
-      - name: Decide persistence
-        id: persist
-        shell: bash
-        run: |
-          PERSIST=false
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            PERSIST=true
-          elif [ "${{ inputs.persist_results }}" = "true" ] && [ "${{ inputs.privacy_ack }}" = "true" ] && [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            PERSIST=true
-          fi
-          echo "persist=$PERSIST" >> "$GITHUB_OUTPUT"
-      - name: Persist audit trail without overwriting good snapshot on failure
-        if: steps.persist.outputs.persist == 'true'
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add flight-data-bridge/status.json flight-data-bridge/history
-          if [ "${{ steps.collect.outputs.exit_code }}" = "0" ]; then
-            git add flight-data-bridge/snapshot.json
-          fi
-          if git diff --cached --quiet; then
-            echo "No bridge data changes."
-          else
-            git commit -m "Update Flight Data Bridge audit data"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
-      - name: Enforce no silent persistence on manual dry run
-        if: github.event_name == 'workflow_dispatch' && steps.persist.outputs.persist != 'true'
-        run: echo "Manual live run completed as non-persistent dry run."
-      - name: Propagate collection failure after audit handling
-        if: steps.collect.outputs.exit_code != '0'
-        run: |
-          echo "Collection was non-conclusive; no complete snapshot was promoted."
-          exit 1
