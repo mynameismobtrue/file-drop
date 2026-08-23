@@ -196,11 +196,11 @@ def _summary(o):
         "origin": ((o.get("outbound") or {}).get("origin")),
         "quality_class": ((o.get("derived") or {}).get("QUALITY_CLASS")),
         "operating_carriers": sorted({
-            s.get("operating_carrier")
+            s.get("operating_carrier") or s.get("operating_carrier_name")
             for d in [o.get("outbound"), o.get("inbound")]
             if d
             for s in d.get("segments", [])
-            if s.get("operating_carrier")
+            if s.get("operating_carrier") or s.get("operating_carrier_name")
         }),
     }
 
