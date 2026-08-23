@@ -1,0 +1,255 @@
+{
+  "ALERT_CANDIDATES_COUNT": 0,
+  "APPROVED_CODE_SHA": "bf231c9dcc707cfe952822ac35c6f5aff5746eed",
+  "COUNTS": {
+    "ALERT_CANDIDATES_COUNT": 0,
+    "NON_VALIDATABLE_COUNT": 3,
+    "NORMALIZED_OFFERS_COUNT": 37,
+    "RAW_OFFERS_COUNT": 37,
+    "REJECTED_OFFERS_COUNT": 21,
+    "VALID_OFFERS_COUNT": 13
+  },
+  "DATA_BRIDGE_VERSION": "1.1.2",
+  "HARD_REJECT_REASON_COUNTS": {
+    "REJECT_CONNECTION_TOO_LONG": 5,
+    "REJECT_FORBIDDEN_CONNECTION": 8,
+    "REJECT_TOTAL_DURATION": 5,
+    "REJECT_WRONG_ARRIVAL_DATE": 13
+  },
+  "LIVE_ENV_VERSION": "1.0.0",
+  "LOWEST_ELIGIBLE_PRICE_BRL": 4674.0,
+  "NON_VALIDATABLE_REASON_COUNTS": {
+    "NON_VALIDATABLE_PRICE_UNCONFIRMED": 3
+  },
+  "OPEN_JAW": {
+    "all_queries_complete": true,
+    "all_queries_returned_itineraries": true,
+    "offers_observed_count": 12,
+    "offers_sample": [
+      {
+        "eligibility_state": "ELIGIBLE",
+        "offer_id": "f9ce90b4081840d82fa20b3343691bfb206bea19",
+        "origin": "GRU",
+        "price_brl": 6531.0,
+        "return_destination": "VCP"
+      },
+      {
+        "eligibility_state": "ELIGIBLE",
+        "offer_id": "33b1b8742e771e4a1763bdd8047d15bd5e2fe8ee",
+        "origin": "GRU",
+        "price_brl": 6531.0,
+        "return_destination": "VCP"
+      },
+      {
+        "eligibility_state": "ELIGIBLE",
+        "offer_id": "fc560a4a461aa20400f322d27d608edbc4562fb1",
+        "origin": "GRU",
+        "price_brl": 6531.0,
+        "return_destination": "VCP"
+      },
+      {
+        "eligibility_state": "ELIGIBLE",
+        "offer_id": "27f323e7d233caf1f6f4f075b975d331cd412189",
+        "origin": "VCP",
+        "price_brl": 6325.0,
+        "return_destination": "GRU"
+      },
+      {
+        "eligibility_state": "ELIGIBLE",
+        "offer_id": "d7f4c1c17f5519da336e1dec586dfc032b9d9675",
+        "origin": "VCP",
+        "price_brl": 6325.0,
+        "return_destination": "GRU"
+      },
+      {
+        "eligibility_state": "ELIGIBLE",
+        "offer_id": "678718b1a84566deec2a2d6833f7c140717c89a4",
+        "origin": "VCP",
+        "price_brl": 6325.0,
+        "return_destination": "GRU"
+      },
+      {
+        "eligibility_state": "HARD_REJECTED",
+        "offer_id": "aad1283f0863bbdccdd8dba335cccdf7ab7bd8fa",
+        "origin": "GRU",
+        "price_brl": 6531.0,
+        "return_destination": "VCP"
+      },
+      {
+        "eligibility_state": "HARD_REJECTED",
+        "offer_id": "974de4780683bb103c758f0df1af2b388d65cf3e",
+        "origin": "GRU",
+        "price_brl": 6531.0,
+        "return_destination": "VCP"
+      },
+      {
+        "eligibility_state": "HARD_REJECTED",
+        "offer_id": "e090e255871b7f2e6cdb59d7e91cee2a8e26c259",
+        "origin": "GRU",
+        "price_brl": 6531.0,
+        "return_destination": "VCP"
+      },
+      {
+        "eligibility_state": "HARD_REJECTED",
+        "offer_id": "efd3e5b841ee3078b5e056a911f3ff4eedb84f11",
+        "origin": "VCP",
+        "price_brl": 6325.0,
+        "return_destination": "GRU"
+      },
+      {
+        "eligibility_state": "HARD_REJECTED",
+        "offer_id": "ebff0720a8cd494e40f2380ccb8aa534e13d2680",
+        "origin": "VCP",
+        "price_brl": 6643.0,
+        "return_destination": "GRU"
+      },
+      {
+        "eligibility_state": "HARD_REJECTED",
+        "offer_id": "70902ba0736d1bbaf6a22033f9b76290fbd1d560",
+        "origin": "VCP",
+        "price_brl": 6325.0,
+        "return_destination": "GRU"
+      }
+    ],
+    "queries": [
+      {
+        "query_id": "GRU-2026-10-26-LIS-2026-11-03-VCP",
+        "raw_offers_count": 2,
+        "status": "COMPLETE"
+      },
+      {
+        "query_id": "GRU-2026-10-27-LIS-2026-11-03-VCP",
+        "raw_offers_count": 2,
+        "status": "COMPLETE"
+      },
+      {
+        "query_id": "GRU-2026-10-28-LIS-2026-11-03-VCP",
+        "raw_offers_count": 2,
+        "status": "COMPLETE"
+      },
+      {
+        "query_id": "VCP-2026-10-26-LIS-2026-11-03-GRU",
+        "raw_offers_count": 3,
+        "status": "COMPLETE"
+      },
+      {
+        "query_id": "VCP-2026-10-27-LIS-2026-11-03-GRU",
+        "raw_offers_count": 2,
+        "status": "COMPLETE"
+      },
+      {
+        "query_id": "VCP-2026-10-28-LIS-2026-11-03-GRU",
+        "raw_offers_count": 1,
+        "status": "COMPLETE"
+      }
+    ]
+  },
+  "OPERATING_CARRIER_AUDIT": {
+    "marketing_code_operating_name_pairs": [
+      {
+        "count": 22,
+        "marketing_code": "AD",
+        "operating_name": "Azul"
+      },
+      {
+        "count": 18,
+        "marketing_code": "AT",
+        "operating_name": "Royal Air Maroc"
+      },
+      {
+        "count": 2,
+        "marketing_code": "KL",
+        "operating_name": "KLM"
+      },
+      {
+        "count": 21,
+        "marketing_code": "LA",
+        "operating_name": "LATAM"
+      },
+      {
+        "count": 23,
+        "marketing_code": "TP",
+        "operating_name": "Tap Air Portugal"
+      },
+      {
+        "count": 6,
+        "marketing_code": "UX",
+        "operating_name": "Air Europa"
+      }
+    ],
+    "operating_code_present_count": 0,
+    "operating_name_present_count": 92,
+    "operating_name_values": {
+      "Air Europa": 6,
+      "Azul": 22,
+      "KLM": 2,
+      "LATAM": 21,
+      "Royal Air Maroc": 18,
+      "Tap Air Portugal": 23
+    },
+    "segments_observed": 92,
+    "taag_segments_detected": []
+  },
+  "PROTOCOL_VERSION": "LISBOA_V2.2",
+  "QUERY_COVERAGE": {
+    "complete": 12,
+    "expected": 12,
+    "failed": 0,
+    "grid_valid": true,
+    "started": 12,
+    "timed_out": 0
+  },
+  "REVALIDATION": {
+    "booking_option_counts": [
+      0,
+      0,
+      0
+    ],
+    "candidate_failures_below_4500": [
+      {
+        "booking_option_count": 0,
+        "offer_id": "4a61a6e7e88fb4be39eb70f0a7722ff8432df8b5",
+        "price_brl": 4447.0,
+        "reasons": [
+          "BOOKING_FULL_JOURNEY_UNAVAILABLE"
+        ],
+        "validation_status": "NON_VALIDATABLE"
+      },
+      {
+        "booking_option_count": 0,
+        "offer_id": "1fecd0b72ddc29199bb57fa7966182afb38bbac9",
+        "price_brl": 4447.0,
+        "reasons": [
+          "BOOKING_FULL_JOURNEY_UNAVAILABLE"
+        ],
+        "validation_status": "NON_VALIDATABLE"
+      },
+      {
+        "booking_option_count": 0,
+        "offer_id": "5a7d6f32dfc017e16a45a5f1218a4e0a0eb7d2c3",
+        "price_brl": 4447.0,
+        "reasons": [
+          "BOOKING_FULL_JOURNEY_UNAVAILABLE"
+        ],
+        "validation_status": "NON_VALIDATABLE"
+      }
+    ],
+    "reason_counts": {},
+    "results_count": 3,
+    "status_counts": {
+      "NON_VALIDATABLE": 3
+    }
+  },
+  "SEARCH_ID": "fd-20260823T034057Z-c05cbf3c",
+  "SEARCH_STATUS": "COMPLETE",
+  "SOURCE_NON_VALIDATABLE_REASON_COUNTS": {
+    "BOOKING_FULL_JOURNEY_UNAVAILABLE": 3
+  },
+  "STATE": "PRE_PRODUCTION",
+  "UI_VERSION": "1.0.0",
+  "VALID_OFFER_INVARIANT_VIOLATIONS": [],
+  "VALID_QUALITY_COUNTS": {
+    "A": 11,
+    "B": 2
+  }
+}
