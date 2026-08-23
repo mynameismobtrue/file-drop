@@ -1,6 +1,6 @@
 {
-  "execute": false,
-  "request_id": "INITIAL_DISABLED",
+  "execute": true,
+  "request_id": "LIVE-20260823-0022-BRT",
   "approved_code_sha": "c1007258ece8c55a2736b117eef75ade10ee8d03",
   "expected_queries": 12,
   "alert_delivery_enabled": false,
