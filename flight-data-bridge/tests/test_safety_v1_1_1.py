@@ -234,7 +234,7 @@ def test_public_workflow_is_ci_only_and_has_no_provider_secret_refs():
     assert "SKYSCANNER_API_KEY" not in text
 
 
-def test_protocol_version_is_frozen_while_bridge_is_1_1_2():
-    assert CFG["data_bridge_version"] == "1.1.2"
+def test_protocol_version_is_frozen_while_bridge_is_1_1_3():
+    assert CFG["data_bridge_version"] == "1.1.3"
     assert CFG["protocol_version"] == "LISBOA_V2.2"
     assert CFG["schedule_times_brt"] == ["06:00", "11:00", "16:00", "21:00"]
