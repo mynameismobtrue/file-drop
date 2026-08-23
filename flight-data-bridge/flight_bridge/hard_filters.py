@@ -122,7 +122,7 @@ def evaluate_offer(offer: Offer, cfg: dict, now: datetime | None = None) -> Offe
             for s in d.segments:
                 if not s.marketing_carrier:
                     unknown.append("MARKETING_CARRIER_UNKNOWN")
-                if not s.operating_carrier:
+                if not (s.operating_carrier or s.operating_carrier_name):
                     unknown.append("OPERATING_CARRIER_UNKNOWN")
                 if _forbidden_carrier(s.marketing_carrier, s.marketing_carrier_name, cfg):
                     hard.append("TAAG_MARKETING")
