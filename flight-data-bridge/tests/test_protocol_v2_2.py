@@ -144,7 +144,7 @@ def test_skyscanner_query_excludes_taag_and_open_jaw_single_search():
 class Fake(ProviderAdapter):
     def __init__(self,name,status="COMPLETE",configured=True,offers=None,role="PRIMARY_DISCOVERY"): self.name=name; self.role=role; self._status=status; self._configured=configured; self._offers=offers or []
     def configured(self): return self._configured
-    def search(self,job,search_id): return ProviderQueryResult(self.name,f"{job['origin']}-{job['outbound_date']}-{job['return_destination']}",self._status,NOW.isoformat(),NOW.isoformat(),list(self._offers),[] if self._status=="COMPLETE" else ["PROVIDER_TIMEOUT"],len(self._offers))
+    def search(self,job,search_id): return ProviderQueryResult(self.name,f"{job['origin']}-{job['outbound_date']}-LIS-{CFG['return_departure_date']}-{job['return_destination']}",self._status,NOW.isoformat(),NOW.isoformat(),list(self._offers),[] if self._status=="COMPLETE" else ["PROVIDER_TIMEOUT"],len(self._offers))
     def revalidate(self,offer,job): offer.validation_status="VALIDATED"; offer.last_validated_at=datetime.now(timezone.utc).isoformat(); return offer,{"revalidation_provider":self.name,"same_provider_revalidation":True,"independent_source_corroboration":False}
 
 def test_provider_cycle_complete_requires_12_of_12():
