@@ -3,12 +3,33 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "config" / "live-validation.json"
+
+USAGE_COUNTER_FIELDS = (
+    "REQUEST_ATTEMPTS",
+    "SUCCESSFUL_PROVIDER_REQUESTS",
+    "IGNAV_SEARCH_REQUEST_ATTEMPTS",
+    "IGNAV_SEARCH_REQUESTS",
+    "IGNAV_REVALIDATION_REQUEST_ATTEMPTS",
+    "IGNAV_REVALIDATION_REQUESTS",
+    "IGNAV_HEALTH_REQUEST_ATTEMPTS",
+    "IGNAV_HEALTH_REQUESTS",
+)
+
+_SECRET_KEY_RE = re.compile(
+    r'(?i)"(?:authorization|x[-_]?api[-_]?key|api[-_]?key|access[-_]?token|refresh[-_]?token|session[-_]?token|oauth[-_]?token|cookie)"\s*:'
+)
+_JWT_RE = re.compile(r"\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\b")
+_BEARER_RE = re.compile(r"(?i)\bBearer\s+[A-Za-z0-9._~+/=-]{12,}")
+_KNOWN_TOKEN_PREFIX_RE = re.compile(
+    r"\b(?:sk-[A-Za-z0-9_-]{16,}|gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|AIza[A-Za-z0-9_-]{20,})\b"
+)
 
 
 def load_private_config():
@@ -24,7 +45,17 @@ def code_root():
 def load_quota():
     path = ROOT / "live" / "quota.json"
     if not path.exists():
-        return {"IGNAV_SUCCESSFUL_REQUESTS_ESTIMATED": 0, "REQUEST_ATTEMPTS": 0}
+        return {
+            "IGNAV_SUCCESSFUL_REQUESTS_ESTIMATED": 0,
+            "REQUEST_ATTEMPTS": 0,
+            "SUCCESSFUL_PROVIDER_REQUESTS": 0,
+            "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+            "IGNAV_SEARCH_REQUESTS": 0,
+            "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 0,
+            "IGNAV_REVALIDATION_REQUESTS": 0,
+            "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+            "IGNAV_HEALTH_REQUESTS": 0,
+        }
     return json.loads(path.read_text())
 
 
@@ -33,6 +64,32 @@ def write_json(path: Path, doc):
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_text(json.dumps(doc, ensure_ascii=False, indent=2, sort_keys=True))
     tmp.replace(path)
+
+
+def accumulate_usage(previous: dict, *run_usage_docs: dict) -> dict[str, int]:
+    totals = {}
+    for field in USAGE_COUNTER_FIELDS:
+        if field == "SUCCESSFUL_PROVIDER_REQUESTS":
+            prior = int(previous.get(field, previous.get("IGNAV_SUCCESSFUL_REQUESTS_ESTIMATED", 0)) or 0)
+        else:
+            prior = int(previous.get(field, 0) or 0)
+        delta = sum(int((doc or {}).get(field, 0) or 0) for doc in run_usage_docs)
+        totals[field] = prior + delta
+    return totals
+
+
+def token_like_secret_reason(text: str, *, actual_secret: str | None = None) -> str | None:
+    if actual_secret and actual_secret in text:
+        return "ACTUAL_SECRET_VALUE"
+    if _SECRET_KEY_RE.search(text):
+        return "SECRET_FIELD_NAME"
+    if _JWT_RE.search(text):
+        return "JWT_PATTERN"
+    if _BEARER_RE.search(text):
+        return "BEARER_TOKEN_PATTERN"
+    if _KNOWN_TOKEN_PREFIX_RE.search(text):
+        return "KNOWN_TOKEN_PREFIX"
+    return None
 
 
 def cmd_quota(args):
@@ -113,12 +170,10 @@ def cmd_persist(args):
     health = json.loads(Path(args.health_file).read_text()) if Path(args.health_file).exists() else {"HEALTH": None, "USAGE": {}}
     bridge_usage = ((status.get("PROVIDER_USAGE") or {}).get("IGNAV") or {})
     health_usage = health.get("USAGE") or {}
-    successful_delta = int(bridge_usage.get("SUCCESSFUL_PROVIDER_REQUESTS") or 0) + int(health_usage.get("SUCCESSFUL_PROVIDER_REQUESTS") or 0)
-    attempts_delta = int(bridge_usage.get("REQUEST_ATTEMPTS") or 0) + int(health_usage.get("REQUEST_ATTEMPTS") or 0)
 
     previous_quota = load_quota()
-    successful_total = int(previous_quota.get("IGNAV_SUCCESSFUL_REQUESTS_ESTIMATED") or 0) + successful_delta
-    attempts_total = int(previous_quota.get("REQUEST_ATTEMPTS") or 0) + attempts_delta
+    usage_totals = accumulate_usage(previous_quota, bridge_usage, health_usage)
+    successful_total = usage_totals["SUCCESSFUL_PROVIDER_REQUESTS"]
     gate = quota_gate(
         successful_total,
         free_initial=private["ignav_free_requests_initial"],
@@ -128,11 +183,21 @@ def cmd_persist(args):
         revalidation_reserve=private["revalidation_request_reserve"],
         paid_usage_authorized=private["paid_usage_authorized"],
     )
+    run_usage = {
+        field: int(bridge_usage.get(field, 0) or 0) + int(health_usage.get(field, 0) or 0)
+        for field in USAGE_COUNTER_FIELDS
+    }
     quota = {
         **gate,
-        "REQUEST_ATTEMPTS": attempts_total,
-        "LAST_RUN_REQUEST_ATTEMPTS": attempts_delta,
-        "LAST_RUN_SUCCESSFUL_PROVIDER_REQUESTS": successful_delta,
+        **usage_totals,
+        "LAST_RUN_REQUEST_ATTEMPTS": run_usage["REQUEST_ATTEMPTS"],
+        "LAST_RUN_SUCCESSFUL_PROVIDER_REQUESTS": run_usage["SUCCESSFUL_PROVIDER_REQUESTS"],
+        "LAST_RUN_IGNAV_SEARCH_REQUEST_ATTEMPTS": run_usage["IGNAV_SEARCH_REQUEST_ATTEMPTS"],
+        "LAST_RUN_IGNAV_SEARCH_REQUESTS": run_usage["IGNAV_SEARCH_REQUESTS"],
+        "LAST_RUN_IGNAV_REVALIDATION_REQUEST_ATTEMPTS": run_usage["IGNAV_REVALIDATION_REQUEST_ATTEMPTS"],
+        "LAST_RUN_IGNAV_REVALIDATION_REQUESTS": run_usage["IGNAV_REVALIDATION_REQUESTS"],
+        "LAST_RUN_IGNAV_HEALTH_REQUEST_ATTEMPTS": run_usage["IGNAV_HEALTH_REQUEST_ATTEMPTS"],
+        "LAST_RUN_IGNAV_HEALTH_REQUESTS": run_usage["IGNAV_HEALTH_REQUESTS"],
         "UPDATED_AT": meta.get("SEARCH_COMPLETED_AT") or meta.get("SEARCH_STARTED_AT"),
     }
 
@@ -144,7 +209,6 @@ def cmd_persist(args):
     history_path = ROOT / "history" / started.strftime("%Y") / started.strftime("%m") / started.strftime("%d") / f"{search_id}.json"
     write_json(history_path, status)
 
-    snapshot_clean = None
     if meta.get("IS_COMPLETE") and (output / "snapshot.json").exists():
         snapshot_raw = json.loads((output / "snapshot.json").read_text())
         snapshot_clean = sanitize_document(add_live_metadata(snapshot_raw, private), actual_secret=secret)
@@ -195,17 +259,14 @@ def cmd_persist(args):
 def cmd_scan(args):
     secret = os.environ.get("IGNAV_API_KEY", "")
     roots = [ROOT / "live", ROOT / "history", ROOT / "price-history", ROOT / "audit"]
-    forbidden_literals = ["X-Api-Key", "Authorization", "access_token", "refresh_token", "session_token"]
     for base in roots:
         if not base.exists():
             continue
         for path in base.rglob("*.json"):
             text = path.read_text(errors="replace")
-            if secret and secret in text:
-                raise SystemExit(f"SECRET_SCAN_FAILED: secret value in {path}")
-            for literal in forbidden_literals:
-                if literal in text:
-                    raise SystemExit(f"SECRET_SCAN_FAILED: {literal} in {path}")
+            reason = token_like_secret_reason(text, actual_secret=secret)
+            if reason:
+                raise SystemExit(f"SECRET_SCAN_FAILED: {reason} in {path}")
     print("SECRET_SCAN_PASS")
 
 
