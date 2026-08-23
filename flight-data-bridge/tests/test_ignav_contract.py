@@ -7,7 +7,8 @@ CFG={"destination":"LIS","return_departure_date":"2026-11-03","max_connections_p
 "request_timeout_sec":1,"health_timeout_sec":1,"max_retries":2,"retry_backoff_base_sec":0,
 "origins":["GRU","VCP"],"outbound_departure_dates":["2026-10-26","2026-10-27","2026-10-28"],
 "allowed_lis_arrival_dates":["2026-10-27","2026-10-28"],"return_destinations":["GRU","VCP"],
-"max_total_duration_per_direction_min":1080,"max_connection_duration_min":300,"forbid_africa_connections":True,
+"max_total_duration_per_direction_min":1080,"max_connection_duration_min":300,"preferred_connection_duration_min":210,
+"quality_a_max_duration_min":720,"quality_b_max_duration_min":900,"forbid_africa_connections":True,
 "reject_airport_change":True,"reject_multiple_booking_required":True,"alert_price_brl_strict_lt":4500.0,
 "alert_validation_ttl_min":10,"forbidden_carriers":[{"iata":"DT","name_contains":"TAAG"},{"iata":None,"name_contains":"TAAG ANGOLA"}]}
 JOB={"origin":"GRU","outbound_date":"2026-10-27","return_destination":"VCP"}
@@ -62,11 +63,32 @@ def test_openapi_request_shape_open_jaw_and_dt_exclusion():
     assert q["legs"]==[{"origin":"GRU","destination":"LIS","departure_date":"2026-10-27","max_stops":1},{"origin":"LIS","destination":"VCP","departure_date":"2026-11-03","max_stops":1}]
     assert q["market"]=="BR" and q["allow_self_transfer"] is False and q["airlines_exclude"]==["DT"]
 
-def test_openapi_response_fixture_and_operating_missing():
+def test_openapi_response_fixture_operating_name_is_authoritative_for_ignav():
     r=adapter(Resp(data=search_response())).search(JOB,"s"); assert r.status=="COMPLETE" and len(r.offers)==1
     s=r.offers[0].outbound.segments[0]; assert s.marketing_carrier=="TP" and s.operating_carrier is None and s.operating_carrier_name=="TAP Air Portugal"
-    o=evaluate_offer(r.offers[0],CFG); assert o.derived["NON_VALIDATABLE"] and "NON_VALIDATABLE_OPERATING_CARRIER_UNKNOWN" in o.derived["NON_VALIDATABLE_REASON_CODES"]
+    o=evaluate_offer(r.offers[0],CFG)
+    assert o.derived["OPERATING_CARRIER_CONFIRMED"] is True
+    assert "NON_VALIDATABLE_OPERATING_CARRIER_UNKNOWN" not in o.derived["NON_VALIDATABLE_REASON_CODES"]
+    assert o.derived["HARD_FILTER_PASS"] is True
     assert o.itinerary_fingerprint is not None
+
+def test_ignav_operating_name_missing_and_code_absent_stays_nonvalidatable():
+    d=search_response()
+    for leg in d["itineraries"][0]["legs"]:
+        for s in leg["segments"]:
+            s["operating_carrier_name"]=None
+    r=adapter(Resp(data=d)).search(JOB,"s")
+    o=evaluate_offer(r.offers[0],CFG)
+    assert o.derived["NON_VALIDATABLE"] is True
+    assert "NON_VALIDATABLE_OPERATING_CARRIER_UNKNOWN" in o.derived["NON_VALIDATABLE_REASON_CODES"]
+
+def test_ignav_taag_operating_name_without_code_is_hard_rejected():
+    d=search_response()
+    d["itineraries"][0]["legs"][0]["segments"][0]["operating_carrier_name"]="TAAG Angola Airlines"
+    r=adapter(Resp(data=d)).search(JOB,"s")
+    o=evaluate_offer(r.offers[0],CFG)
+    assert "REJECT_TAAG_OPERATING" in o.derived["REJECTION_REASON_CODES"]
+    assert o.derived["HARD_REJECTED"] is True
 
 def test_unverified_operating_extension_not_promoted():
     d=search_response(); d["itineraries"][0]["legs"][0]["segments"][0]["operating_carrier_code"]="TP"
