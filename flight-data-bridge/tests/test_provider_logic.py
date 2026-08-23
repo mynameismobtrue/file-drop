@@ -24,6 +24,8 @@ def test_workflow_safety_contract():
     root=Path(__file__).parents[2]
     text=(root/'.github/workflows/flight-data-bridge.yml').read_text()
     assert 'cancel-in-progress: false' in text
-    assert 'FLIGHT_BRIDGE_PRODUCTION_APPROVED' in text
-    assert 'FLIGHT_BRIDGE_PRIVACY_ACK' in text
-    assert 'IGNAV_API_KEY' in text
+    assert 'schedule:' not in text
+    assert 'IGNAV_API_KEY' not in text
+    assert 'SKYSCANNER_API_KEY' not in text
+    assert 'DUFFEL_ACCESS_TOKEN' not in text
+    assert 'permissions:' in text and 'contents: read' in text
