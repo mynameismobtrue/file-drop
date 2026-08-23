@@ -1,0 +1,385 @@
+{
+  "ALERT_DELIVERY_ENABLED": false,
+  "APPROVED_CODE_SHA": "c1007258ece8c55a2736b117eef75ade10ee8d03",
+  "CONTRACT_AUDIT": {
+    "BOOKING_OPTIONS_COUNT": 0,
+    "BOOKING_OPTIONS_PRESENT": false,
+    "FIELDS": [
+      {
+        "FIELD": "ignav_id",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 37,
+        "REAL_PRESENT": true,
+        "SAMPLES": 37,
+        "TYPES": {
+          "string": 37
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "price.amount",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 37,
+        "REAL_PRESENT": true,
+        "SAMPLES": 37,
+        "TYPES": {
+          "number": 37
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "price.currency",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 37,
+        "REAL_PRESENT": true,
+        "SAMPLES": 37,
+        "TYPES": {
+          "string": 37
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "price.status",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 37,
+        "REAL_PRESENT": true,
+        "SAMPLES": 37,
+        "TYPES": {
+          "string": 37
+        },
+        "VALUES": [
+          "verified"
+        ]
+      },
+      {
+        "FIELD": "cabin_class",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 37,
+        "REAL_PRESENT": true,
+        "SAMPLES": 37,
+        "TYPES": {
+          "string": 37
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "requires_self_transfer",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 37,
+        "REAL_PRESENT": true,
+        "SAMPLES": 37,
+        "TYPES": {
+          "boolean": 37
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "legs",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 37,
+        "REAL_PRESENT": true,
+        "SAMPLES": 37,
+        "TYPES": {
+          "array": 37
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "segments",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 74,
+        "REAL_PRESENT": true,
+        "SAMPLES": 74,
+        "TYPES": {
+          "array": 74
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "marketing_carrier_code",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": [
+          "TP",
+          "LA",
+          "AT",
+          "KL",
+          "UX",
+          "AD"
+        ]
+      },
+      {
+        "FIELD": "marketing_carrier_name",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "UNDOCUMENTED",
+        "PRESENT_COUNT": 0,
+        "REAL_PRESENT": false,
+        "SAMPLES": 92,
+        "TYPES": {},
+        "VALUES": []
+      },
+      {
+        "FIELD": "operating_carrier_code",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "UNDOCUMENTED",
+        "PRESENT_COUNT": 0,
+        "REAL_PRESENT": false,
+        "SAMPLES": 92,
+        "TYPES": {},
+        "VALUES": []
+      },
+      {
+        "FIELD": "operating_carrier_name",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": [
+          "Tap Air Portugal",
+          "LATAM",
+          "Royal Air Maroc",
+          "KLM",
+          "Air Europa",
+          "Azul"
+        ]
+      },
+      {
+        "FIELD": "flight_number",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "departure_airport",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "arrival_airport",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "departure_time_local",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "arrival_time_local",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "departure_time_utc",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "arrival_time_utc",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "duration_minutes",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "integer": 92
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "aircraft",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 92,
+        "REAL_PRESENT": true,
+        "SAMPLES": 92,
+        "TYPES": {
+          "string": 92
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "bags",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+        "PRESENT_COUNT": 30,
+        "REAL_PRESENT": true,
+        "SAMPLES": 37,
+        "TYPES": {
+          "object": 30
+        },
+        "VALUES": []
+      }
+    ],
+    "FULL_JOURNEY_OPTIONS": 0
+  },
+  "COUNTS": {
+    "ALERT_CANDIDATES_COUNT": 0,
+    "NON_VALIDATABLE_COUNT": 16,
+    "NORMALIZED_OFFERS_COUNT": 37,
+    "RAW_OFFERS_COUNT": 37,
+    "REJECTED_OFFERS_COUNT": 21,
+    "VALID_OFFERS_COUNT": 0
+  },
+  "DATA_BRIDGE_VERSION": "1.1.1",
+  "HEALTH": {
+    "CHECKED_AT": "2026-08-23T03:23:18.149437+00:00",
+    "ERROR_CODE": null,
+    "ERROR_MAPPING_CONFIDENCE": "DOCUMENTED",
+    "HTTP_STATUS": 200,
+    "LATENCY_MS": 247.16,
+    "PROVIDER": "IGNAV",
+    "STATUS": "UP"
+  },
+  "LIVE_ENV_VERSION": "1.0.0",
+  "PRODUCTION_VALIDATED": false,
+  "PROTOCOL_VERSION": "LISBOA_V2.2",
+  "PROVIDER_USAGE": {
+    "IGNAV_HEALTH_REQUESTS": 0,
+    "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+    "IGNAV_REVALIDATION_REQUESTS": 0,
+    "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 0,
+    "IGNAV_SEARCH_REQUESTS": 12,
+    "IGNAV_SEARCH_REQUEST_ATTEMPTS": 12,
+    "REQUEST_ATTEMPTS": 12,
+    "SUCCESSFUL_PROVIDER_REQUESTS": 12
+  },
+  "QUERY_COVERAGE": {
+    "COMPLETE": 12,
+    "EXPECTED": 12,
+    "FAILED": 0,
+    "QUERY_GRID_VALID": true,
+    "STARTED": 12,
+    "TIMED_OUT": 0
+  },
+  "QUOTA": {
+    "EXTRA_REQUEST_RESERVE": 0,
+    "FREE_TIER_HARD_STOP_BUFFER": 50,
+    "FREE_TIER_WARNING": false,
+    "FREE_TIER_WARNING_THRESHOLD": 150,
+    "IGNAV_FREE_REQUESTS_ESTIMATED_REMAINING": 987,
+    "IGNAV_FREE_REQUESTS_INITIAL": 1000,
+    "IGNAV_HEALTH_REQUESTS": 1,
+    "IGNAV_HEALTH_REQUEST_ATTEMPTS": 1,
+    "IGNAV_PAID_USAGE_AUTHORIZED": false,
+    "IGNAV_REVALIDATION_REQUESTS": 0,
+    "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 0,
+    "IGNAV_SEARCH_REQUESTS": 12,
+    "IGNAV_SEARCH_REQUEST_ATTEMPTS": 12,
+    "IGNAV_SUCCESSFUL_REQUESTS_ESTIMATED": 13,
+    "LAST_RUN_IGNAV_HEALTH_REQUESTS": 1,
+    "LAST_RUN_IGNAV_HEALTH_REQUEST_ATTEMPTS": 1,
+    "LAST_RUN_IGNAV_REVALIDATION_REQUESTS": 0,
+    "LAST_RUN_IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 0,
+    "LAST_RUN_IGNAV_SEARCH_REQUESTS": 12,
+    "LAST_RUN_IGNAV_SEARCH_REQUEST_ATTEMPTS": 12,
+    "LAST_RUN_REQUEST_ATTEMPTS": 13,
+    "LAST_RUN_SUCCESSFUL_PROVIDER_REQUESTS": 13,
+    "MINIMUM_REMAINING_REQUIRED_BEFORE_START": 64,
+    "NEXT_CYCLE_BASE_REQUESTS": 12,
+    "QUOTA_GATE_ALLOWED": true,
+    "QUOTA_GATE_STATUS": "OK",
+    "REQUEST_ATTEMPTS": 13,
+    "REVALIDATION_REQUEST_RESERVE": 2,
+    "SUCCESSFUL_PROVIDER_REQUESTS": 13,
+    "UPDATED_AT": "2026-08-23T03:23:39.062898+00:00"
+  },
+  "SEARCH_ID": "fd-20260823T032318Z-29909412",
+  "SEARCH_STATUS": "COMPLETE",
+  "STATE": "PRE_PRODUCTION",
+  "UI_VERSION": "1.0.0",
+  "VALIDATION_RESULTS": []
+}
