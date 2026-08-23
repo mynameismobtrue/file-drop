@@ -24,7 +24,9 @@ _QUALITY_RANK = {"C": 1, "B": 2, "A": 3}
 
 
 def _decimal(value):
-    if value is None or isinstance(value, bool):
+    if value is None or isinstance(value, (bool, str)):
+        return None
+    if not isinstance(value, (int, float, Decimal)):
         return None
     try:
         return Decimal(str(value))
@@ -157,9 +159,7 @@ def alert_dedupe_decision(previous: dict | None, current: dict) -> dict:
     if bag_rank(current.get("checked_bag")) > bag_rank(previous.get("checked_bag")):
         return {"SHOULD_ALERT": True, "REASON": "BAGGAGE_IMPROVED"}
 
-    prev_condition = (previous.get("derived") or {}).get("CONDITION_SIGNATURE")
-    cur_condition = (current.get("derived") or {}).get("CONDITION_SIGNATURE")
-    if prev_condition and cur_condition and prev_condition != cur_condition:
+    if (current.get("derived") or {}).get("CONDITION_IMPROVED") is True:
         return {"SHOULD_ALERT": True, "REASON": "CONDITION_IMPROVED"}
 
     return {"SHOULD_ALERT": False, "REASON": "DUPLICATE_NO_MATERIAL_IMPROVEMENT"}
