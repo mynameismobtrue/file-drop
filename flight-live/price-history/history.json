@@ -1,7 +1,7 @@
 {
   "observations": [
     {
-      "COMPLETED_AT": "2026-08-23T04:24:14.683520+00:00",
+      "COMPLETED_AT": "2026-08-23T04:29:50.319926+00:00",
       "PRICE_HISTORY": {
         "AVERAGE": 5750.083333333333,
         "CHEAPEST_OPERATING_CARRIER": [
@@ -12,9 +12,9 @@
         "DELTA_PREVIOUS": null,
         "MEDIAN": 6325.0,
         "MIN_24H": {
-          "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
-          "observed_at": "2026-08-23T04:24:14.683520+00:00",
-          "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
+          "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
+          "observed_at": "2026-08-23T04:29:50.319926+00:00",
+          "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
           "operating_carriers": [
             "LATAM"
           ],
@@ -23,9 +23,9 @@
           "quality_class": "B"
         },
         "MIN_7D": {
-          "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
-          "observed_at": "2026-08-23T04:24:14.683520+00:00",
-          "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
+          "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
+          "observed_at": "2026-08-23T04:29:50.319926+00:00",
+          "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
           "operating_carriers": [
             "LATAM"
           ],
@@ -34,9 +34,9 @@
           "quality_class": "B"
         },
         "MIN_CONNECTION": {
-          "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
-          "observed_at": "2026-08-23T04:24:14.683520+00:00",
-          "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
+          "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
+          "observed_at": "2026-08-23T04:29:50.319926+00:00",
+          "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
           "operating_carriers": [
             "LATAM"
           ],
@@ -45,9 +45,9 @@
           "quality_class": "B"
         },
         "MIN_CYCLE": {
-          "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
-          "observed_at": "2026-08-23T04:24:14.683520+00:00",
-          "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
+          "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
+          "observed_at": "2026-08-23T04:29:50.319926+00:00",
+          "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
           "operating_carriers": [
             "LATAM"
           ],
@@ -56,9 +56,9 @@
           "quality_class": "B"
         },
         "MIN_DAY": {
-          "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
-          "observed_at": "2026-08-23T04:24:14.683520+00:00",
-          "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
+          "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
+          "observed_at": "2026-08-23T04:29:50.319926+00:00",
+          "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
           "operating_carriers": [
             "LATAM"
           ],
@@ -68,7 +68,7 @@
         },
         "MIN_DIRECT": {
           "commercial_offer_id": "ed4243055ca0b4b34e1a9f35b216caa24480b215",
-          "observed_at": "2026-08-23T04:24:14.683520+00:00",
+          "observed_at": "2026-08-23T04:29:50.319926+00:00",
           "offer_id": "0c394e77bdb4fa8a1e0ce54918a5f8b242cdc0ba",
           "operating_carriers": [
             "Azul"
@@ -78,9 +78,9 @@
           "quality_class": "A"
         },
         "MIN_SINCE_START": {
-          "commercial_offer_id": "7515a4c5ea3234a6bd47038ffef0d50c9f1adab4",
-          "observed_at": "2026-08-23T04:24:14.683520+00:00",
-          "offer_id": "7fa301df7cb53a19d4a4118d6acc3a04ec81bede",
+          "commercial_offer_id": "eba8d419c69b574474be1ef4d2af1996c9811085",
+          "observed_at": "2026-08-23T04:29:50.319926+00:00",
+          "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
           "operating_carriers": [
             "LATAM"
           ],
@@ -92,7 +92,7 @@
         "informational_only": true,
         "observation_count": 12
       },
-      "SEARCH_ID": "fd-20260823T042133Z-3be8ee8c"
+      "SEARCH_ID": "fd-20260823T042733Z-d8dec693"
     }
   ]
 }
