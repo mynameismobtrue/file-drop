@@ -1,0 +1,228 @@
+name: Flight Data Bridge Live Validation
+
+on:
+  push:
+    branches: ["flight-live-data"]
+    paths:
+      - "flight-live/request/live-validation.json"
+      - "flight-live/config/live-validation.json"
+      - ".github/workflows/flight-live-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: flight-data-bridge-live-validation
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      IGNAV_API_KEY: ${{ secrets.IGNAV_API_KEY }}
+      FLIGHT_BRIDGE_CODE_DIR: ${{ github.workspace }}/_code/flight-data-bridge
+    steps:
+      - name: Checkout public live-data branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read explicit validation request
+        id: req
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          req=json.load(open('flight-live/request/live-validation.json'))
+          cfg=json.load(open('flight-live/config/live-validation.json'))
+          assert cfg['state']=='PRE_PRODUCTION'
+          assert cfg['protocol_version']=='LISBOA_V2.2'
+          assert cfg['alert_delivery_enabled'] is False
+          assert cfg['paid_usage_authorized'] is False
+          assert cfg['schedule_enabled'] is False
+          assert cfg['public_live_data_authorized'] is True
+          assert req['alert_delivery_enabled'] is False
+          assert req['schedule_enabled'] is False
+          assert req['paid_usage_authorized'] is False
+          assert int(req['expected_queries'])==12
+          assert req['approved_code_sha']==cfg['approved_code_sha']
+          print('execute=' + ('true' if req.get('execute') is True else 'false'))
+          print('sha=' + cfg['approved_code_sha'])
+          print('request_id=' + str(req.get('request_id') or 'UNKNOWN'))
+          PY
+
+      - name: Validation request disabled
+        if: steps.req.outputs.execute != 'true'
+        run: echo "LIVE_VALIDATION_NOT_REQUESTED"
+
+      - name: Require Ignav secret without printing it
+        if: steps.req.outputs.execute == 'true'
+        shell: bash
+        run: |
+          if [ -z "${IGNAV_API_KEY:-}" ]; then
+            echo "AUTH_REQUIRED: IGNAV_API_KEY Actions secret missing"
+            exit 44
+          fi
+
+      - name: Checkout approved code SHA
+        if: steps.req.outputs.execute == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: mynameismobtrue/file-drop
+          ref: ${{ steps.req.outputs.sha }}
+          path: _code
+          persist-credentials: false
+
+      - name: Verify exact approved code SHA
+        if: steps.req.outputs.execute == 'true'
+        shell: bash
+        run: |
+          ACTUAL=$(git -C _code rev-parse HEAD)
+          if [ "$ACTUAL" != "${{ steps.req.outputs.sha }}" ]; then
+            echo "CODE_SHA_MISMATCH"
+            exit 45
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.req.outputs.execute == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Install approved bridge dependencies
+        if: steps.req.outputs.execute == 'true'
+        run: pip install -r _code/flight-data-bridge/requirements.txt
+
+      - name: Compile approved bridge
+        if: steps.req.outputs.execute == 'true'
+        run: python -m py_compile _code/flight-data-bridge/flight_bridge/*.py _code/flight-data-bridge/flight_bridge/providers/*.py
+
+      - name: Run complete approved regression suite
+        if: steps.req.outputs.execute == 'true'
+        working-directory: _code/flight-data-bridge
+        env:
+          PYTHONPATH: .
+        run: pytest -q
+
+      - name: Stage sanitized public live runtime
+        if: steps.req.outputs.execute == 'true'
+        shell: bash
+        run: |
+          cp flight-live/config/live-validation.json flight-data-bridge/private-env-template/config/live-validation.json
+          mkdir -p flight-data-bridge/private-env-template/live
+          if [ -f flight-live/live/quota.json ]; then
+            cp flight-live/live/quota.json flight-data-bridge/private-env-template/live/quota.json
+          fi
+
+      - name: Validate protocol and live environment isolation
+        if: steps.req.outputs.execute == 'true'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          public=json.load(open('_code/flight-data-bridge/config/protocol_v2_2.json'))
+          live=json.load(open('flight-live/config/live-validation.json'))
+          assert public['data_bridge_version']==live['data_bridge_version']=='1.1.1'
+          assert public['protocol_version']==live['protocol_version']=='LISBOA_V2.2'
+          assert public['ui_version']==live['ui_version']=='1.0.0'
+          assert live['live_env_version']=='1.0.0'
+          assert live['state']=='PRE_PRODUCTION'
+          assert live['paid_usage_authorized'] is False
+          assert live['alert_delivery_enabled'] is False
+          assert live['schedule_enabled'] is False
+          assert live['public_live_data_authorized'] is True
+          assert public['expected_queries_per_complete_provider']==12
+          assert public['alert_price_brl_strict_lt']==4500.0
+          PY
+
+      - name: Free-tier quota gate including one diagnostic health call
+        if: steps.req.outputs.execute == 'true'
+        run: python flight-data-bridge/private-env-template/scripts/private_runtime.py quota-check --include-health
+
+      - name: Build Ignav-only runtime config
+        if: steps.req.outputs.execute == 'true'
+        run: python flight-data-bridge/private-env-template/scripts/private_runtime.py runtime-config --output "$RUNNER_TEMP/live-runtime.json"
+
+      - name: One initial Ignav health check
+        if: steps.req.outputs.execute == 'true'
+        run: python flight-data-bridge/private-env-template/scripts/private_runtime.py health --output "$RUNNER_TEMP/ignav-health.json"
+
+      - name: Execute one manual 12-query live validation cycle
+        if: steps.req.outputs.execute == 'true'
+        id: bridge
+        shell: bash
+        run: |
+          set +e
+          PYTHONPATH="$FLIGHT_BRIDGE_CODE_DIR" python -m flight_bridge.bridge \
+            --out-dir "$RUNNER_TEMP/flight-output" \
+            --config "$RUNNER_TEMP/live-runtime.json"
+          CODE=$?
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Sanitize validation artifacts
+        if: steps.req.outputs.execute == 'true' && always() && steps.bridge.outcome == 'success'
+        run: |
+          python flight-data-bridge/private-env-template/scripts/private_runtime.py persist \
+            --output-dir "$RUNNER_TEMP/flight-output" \
+            --health-file "$RUNNER_TEMP/ignav-health.json"
+
+      - name: Secret scan before public persistence
+        if: steps.req.outputs.execute == 'true' && always() && steps.bridge.outcome == 'success'
+        run: python flight-data-bridge/private-env-template/scripts/private_runtime.py scan
+
+      - name: Validate 12-of-12 completeness and no alert delivery
+        if: steps.req.outputs.execute == 'true' && always() && steps.bridge.outcome == 'success'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('flight-data-bridge/private-env-template/live/last-attempt.json'))
+          m=d['SEARCH_METADATA']
+          assert m['SEARCH_STATUS'] in {'COMPLETE','COMPLETE_WITH_SOURCE_ERRORS'}, m['SEARCH_STATUS']
+          assert m['IS_COMPLETE'] is True
+          active=d['ACTIVE_DISCOVERY_PROVIDER']
+          assert active=='IGNAV', active
+          p=next(x for x in d['PROVIDER_RESULTS'] if x['provider']=='IGNAV')
+          assert p['PROVIDER_QUERIES_EXPECTED']==12
+          assert p['PROVIDER_QUERIES_STARTED']==12
+          assert p['PROVIDER_QUERIES_COMPLETE']==12
+          assert p['PROVIDER_QUERIES_FAILED']==0
+          assert p['PROVIDER_QUERIES_TIMED_OUT']==0
+          assert p['PROVIDER_SEARCH_STATUS']=='COMPLETE'
+          assert p['QUERY_GRID_VALID'] is True
+          assert d['STATE']=='PRE_PRODUCTION'
+          assert d['PROTOCOL_VERSION']=='LISBOA_V2.2'
+          PY
+
+      - name: Copy only sanitized artifacts to public live-data paths
+        if: steps.req.outputs.execute == 'true' && always() && steps.bridge.outcome == 'success'
+        shell: bash
+        run: |
+          mkdir -p flight-live/live flight-live/history flight-live/price-history flight-live/audit
+          for d in live history price-history audit; do
+            SRC="flight-data-bridge/private-env-template/$d"
+            DST="flight-live/$d"
+            if [ -d "$SRC" ]; then cp -a "$SRC/." "$DST/"; fi
+          done
+
+      - name: Commit sanitized public validation artifacts
+        if: steps.req.outputs.execute == 'true' && always() && steps.bridge.outcome == 'success'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add flight-live/live flight-live/history flight-live/price-history flight-live/audit
+          if git diff --cached --quiet; then
+            echo "No sanitized audit changes."
+          else
+            git commit -m "Record Flight Data Bridge live validation ${{ steps.req.outputs.request_id }}"
+            git push origin HEAD:flight-live-data
+          fi
+
+      - name: Propagate non-conclusive bridge result after audit persistence
+        if: steps.req.outputs.execute == 'true' && steps.bridge.outputs.exit_code != '0'
+        run: |
+          echo "SEARCH_INCOMPLETE or provider failure; sanitized audit was retained."
+          exit 46
