@@ -1,6 +1,6 @@
-# Flight Data Bridge V1.0
+# Flight Data Bridge V1.1
 
-**DATA_BRIDGE_VERSION:** `1.0.0`  
+**DATA_BRIDGE_VERSION:** `1.1.0`  
 **PROTOCOL_VERSION:** `LISBOA_V2.2`  
 **UI_VERSION:** `1.0.0`  
 **STATE:** `PRE_PRODUCTION`
@@ -45,7 +45,13 @@ Fluxo: `create -> poll -> RESULT_STATUS_COMPLETE`. O retorno de `create` nunca �
 
 Usa `POST /api/fares/search` com dois legs em uma única busca comercial, inclusive open-jaw. `max_stops=1` fica dentro de cada leg. Top-level: `market=BR`, `cabin_class=economy`, `allow_self_transfer=false`, `airlines_exclude=["DT"]`.
 
-Candidato de alerta é revalidado com `booking-links(ignav_id)`. O `itinerary` retornado pela revalidação é a versão corrente. Se não existir opção única cobrindo ambos os legs, não há alerta.
+A integração 1.1.0 foi auditada contra o OpenAPI público Ignav 1.0.0, pinado pelo blob SHA `7f57f5dbfb8e2d8ebbc9956a4c2860e8c887be50`. O runtime continua usando `requests` direto; o SDK gerado não controla a lógica do protocolo. Ver `IGNAV_CONTRACT_AUDIT.md`.
+
+O contrato público documenta `operating_carrier_name`, mas não documenta `operating_carrier_code`. O bridge não converte marketing carrier em operating carrier e não promove extensões não documentadas. Portanto, enquanto o operating carrier code não estiver comprovado, a oferta Ignav permanece `NON_VALIDATABLE` para alerta.
+
+A revalidação Ignav executa uma segunda `/api/fares/search`, faz `exact_itinerary_match`, usa o `ignav_id` fresco em `/api/fares/booking-links`, confere novamente o itinerário, exige uma opção de compra cobrindo a jornada inteira e só então atualiza preço/link. Nunca escolhe alternativa por `min(price)`.
+
+`health_check()` é diagnóstico explícito e não adiciona uma chamada automática a cada ciclo. Ele registra status, latência, timestamp, HTTP status e error code.
 
 ### Duffel
 
@@ -69,7 +75,7 @@ Freshness: `LIVE | STALE | UNAVAILABLE`
 
 Eligibility: `ELIGIBLE | HARD_REJECTED | NON_VALIDATABLE`
 
-Validation: `NOT_REQUIRED | VALIDATED | PRICE_CHANGED | DISAPPEARED | NON_VALIDATABLE | ERROR`
+Validation: `NOT_REQUIRED | VALIDATED | PRICE_CHANGED | DISAPPEARED | CHANGED | NON_VALIDATABLE | ERROR`
 
 `SOURCE_HEALTH` mede capacidade técnica do provider. `TTL_STATUS` mede idade temporal da evidência. Um não substitui o outro.
 
@@ -115,4 +121,4 @@ Variáveis previstas:
 
 ## Produção
 
-A suíte unitária não basta. O estado permanece `PRE_PRODUCTION` até cumprir `PRODUCTION_GATE.md`, testar provider live, revisar 12/12, validar snapshot real, revisar rejeitados/não-validáveis e aprovar explicitamente o schedule.
+A suíte unitária não basta. O estado permanece `PRE_PRODUCTION` até cumprir `PRODUCTION_GATE.md`, testar provider live com API key real, revisar 12/12, validar snapshot real, revisar rejeitados/não-validáveis e aprovar explicitamente o schedule.

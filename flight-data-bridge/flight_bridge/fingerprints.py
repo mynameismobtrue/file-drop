@@ -9,7 +9,7 @@ def _seg_token(seg):
         seg.departure_utc or seg.departure_local,
         seg.arrival_utc or seg.arrival_local,
         seg.marketing_carrier,
-        seg.operating_carrier,
+        seg.operating_carrier or "__OPERATING_UNKNOWN__",
         seg.flight_number,
     ]
 
@@ -19,7 +19,11 @@ def normalized_itinerary_components(offer: Offer):
         if direction is None:
             return None
         rows.append([_seg_token(s) for s in direction.segments])
-    if not all(rows) or not all(all(v not in (None, "") for v in s) for direction in rows for s in direction):
+    if not all(rows):
+        return None
+    # Operating carrier may be unknown and is separately enforced by hard filters.
+    required_indexes=(0,1,2,3,4,6)
+    if not all(all(s[i] not in (None, "") for i in required_indexes) for direction in rows for s in direction):
         return None
     return rows
 
