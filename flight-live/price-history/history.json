@@ -1,106 +1,105 @@
 {
   "observations": [
     {
-      "COMPLETED_AT": "2026-08-24T00:41:11.022157+00:00",
+      "COMPLETED_AT": "2026-08-24T09:38:28.570147+00:00",
       "PRICE_HISTORY": {
-        "AVERAGE": 6262.7037037037035,
+        "AVERAGE": 5639.642857142857,
         "CHEAPEST_OPERATING_CARRIER": [
-          "Azul Brazilian Airlines",
-          "TAM Airlines"
+          "LATAM",
+          "Tap Air Portugal"
         ],
-        "CHEAPEST_ORIGIN": "VCP",
+        "CHEAPEST_ORIGIN": "GRU",
         "DELTA_HISTORICAL_MIN": 0.0,
         "DELTA_PREVIOUS": null,
-        "MEDIAN": 5867.0,
+        "MEDIAN": 5670.5,
         "MIN_24H": {
-          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
-          "observed_at": "2026-08-24T00:41:11.022157+00:00",
-          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "commercial_offer_id": "9fa922355ff20d0a7be311d8f65fb2d5dd564e03",
+          "observed_at": "2026-08-24T09:38:28.570147+00:00",
+          "offer_id": "1caa24fbcc4cfe8624dd771b02835b5ee5b6c11b",
           "operating_carriers": [
-            "Azul Brazilian Airlines",
-            "TAM Airlines"
+            "LATAM",
+            "Tap Air Portugal"
           ],
-          "origin": "VCP",
-          "price_brl": 4649.0,
+          "origin": "GRU",
+          "price_brl": 4674.0,
           "quality_class": "A"
         },
         "MIN_7D": {
-          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
-          "observed_at": "2026-08-24T00:41:11.022157+00:00",
-          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "commercial_offer_id": "9fa922355ff20d0a7be311d8f65fb2d5dd564e03",
+          "observed_at": "2026-08-24T09:38:28.570147+00:00",
+          "offer_id": "1caa24fbcc4cfe8624dd771b02835b5ee5b6c11b",
           "operating_carriers": [
-            "Azul Brazilian Airlines",
-            "TAM Airlines"
+            "LATAM",
+            "Tap Air Portugal"
           ],
-          "origin": "VCP",
-          "price_brl": 4649.0,
+          "origin": "GRU",
+          "price_brl": 4674.0,
           "quality_class": "A"
         },
         "MIN_CONNECTION": {
-          "commercial_offer_id": "910991d1b903bfa63daee67e8c0dac2a93a695ab",
-          "observed_at": "2026-08-24T00:41:11.022157+00:00",
-          "offer_id": "55c4a882934a0ea736ac0cfa9ae9d66f887870ef",
+          "commercial_offer_id": "8d25647ff8550803c8cd866a29ee2611f6b18ba8",
+          "observed_at": "2026-08-24T09:38:28.570147+00:00",
+          "offer_id": "b9b3cacf6d7eddf627bc9c5949aa272449378601",
           "operating_carriers": [
-            "Azul Brazilian Airlines",
-            "Portugália Airlines"
+            "LATAM"
           ],
-          "origin": "VCP",
-          "price_brl": 4685.0,
+          "origin": "GRU",
+          "price_brl": 4674.0,
           "quality_class": "B"
         },
         "MIN_CYCLE": {
-          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
-          "observed_at": "2026-08-24T00:41:11.022157+00:00",
-          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "commercial_offer_id": "9fa922355ff20d0a7be311d8f65fb2d5dd564e03",
+          "observed_at": "2026-08-24T09:38:28.570147+00:00",
+          "offer_id": "1caa24fbcc4cfe8624dd771b02835b5ee5b6c11b",
           "operating_carriers": [
-            "Azul Brazilian Airlines",
-            "TAM Airlines"
+            "LATAM",
+            "Tap Air Portugal"
           ],
-          "origin": "VCP",
-          "price_brl": 4649.0,
+          "origin": "GRU",
+          "price_brl": 4674.0,
           "quality_class": "A"
         },
         "MIN_DAY": {
-          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
-          "observed_at": "2026-08-24T00:41:11.022157+00:00",
-          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "commercial_offer_id": "9fa922355ff20d0a7be311d8f65fb2d5dd564e03",
+          "observed_at": "2026-08-24T09:38:28.570147+00:00",
+          "offer_id": "1caa24fbcc4cfe8624dd771b02835b5ee5b6c11b",
           "operating_carriers": [
-            "Azul Brazilian Airlines",
-            "TAM Airlines"
+            "LATAM",
+            "Tap Air Portugal"
           ],
-          "origin": "VCP",
-          "price_brl": 4649.0,
+          "origin": "GRU",
+          "price_brl": 4674.0,
           "quality_class": "A"
         },
         "MIN_DIRECT": {
-          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
-          "observed_at": "2026-08-24T00:41:11.022157+00:00",
-          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "commercial_offer_id": "9fa922355ff20d0a7be311d8f65fb2d5dd564e03",
+          "observed_at": "2026-08-24T09:38:28.570147+00:00",
+          "offer_id": "1caa24fbcc4cfe8624dd771b02835b5ee5b6c11b",
           "operating_carriers": [
-            "Azul Brazilian Airlines",
-            "TAM Airlines"
+            "LATAM",
+            "Tap Air Portugal"
           ],
-          "origin": "VCP",
-          "price_brl": 4649.0,
+          "origin": "GRU",
+          "price_brl": 4674.0,
           "quality_class": "A"
         },
         "MIN_SINCE_START": {
-          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
-          "observed_at": "2026-08-24T00:41:11.022157+00:00",
-          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "commercial_offer_id": "9fa922355ff20d0a7be311d8f65fb2d5dd564e03",
+          "observed_at": "2026-08-24T09:38:28.570147+00:00",
+          "offer_id": "1caa24fbcc4cfe8624dd771b02835b5ee5b6c11b",
           "operating_carriers": [
-            "Azul Brazilian Airlines",
-            "TAM Airlines"
+            "LATAM",
+            "Tap Air Portugal"
           ],
-          "origin": "VCP",
-          "price_brl": 4649.0,
+          "origin": "GRU",
+          "price_brl": 4674.0,
           "quality_class": "A"
         },
         "PREVIOUS_SEARCH_MIN": null,
         "informational_only": true,
-        "observation_count": 135
+        "observation_count": 14
       },
-      "SEARCH_ID": "fd-20260824T004025Z-2d484970"
+      "SEARCH_ID": "fd-20260824T093629Z-95d9a75d"
     }
   ]
 }
