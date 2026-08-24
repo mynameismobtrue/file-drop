@@ -1,99 +1,106 @@
 {
   "observations": [
     {
-      "COMPLETED_AT": "2026-08-23T19:16:20.513989+00:00",
+      "COMPLETED_AT": "2026-08-24T00:41:11.022157+00:00",
       "PRICE_HISTORY": {
-        "AVERAGE": 5859.482758620689,
+        "AVERAGE": 6262.7037037037035,
         "CHEAPEST_OPERATING_CARRIER": [
-          "Tap Air Portugal"
+          "Azul Brazilian Airlines",
+          "TAM Airlines"
         ],
-        "CHEAPEST_ORIGIN": "GRU",
+        "CHEAPEST_ORIGIN": "VCP",
         "DELTA_HISTORICAL_MIN": 0.0,
         "DELTA_PREVIOUS": null,
         "MEDIAN": 5867.0,
         "MIN_24H": {
-          "commercial_offer_id": "3fdea7ff0c3ae20111e469ff08282f61816bb792",
-          "observed_at": "2026-08-23T19:16:20.513989+00:00",
-          "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
-          "operating_carriers": [
-            "Tap Air Portugal"
-          ],
-          "origin": "GRU",
-          "price_brl": 4447.0,
-          "quality_class": "B"
-        },
-        "MIN_7D": {
-          "commercial_offer_id": "3fdea7ff0c3ae20111e469ff08282f61816bb792",
-          "observed_at": "2026-08-23T19:16:20.513989+00:00",
-          "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
-          "operating_carriers": [
-            "Tap Air Portugal"
-          ],
-          "origin": "GRU",
-          "price_brl": 4447.0,
-          "quality_class": "B"
-        },
-        "MIN_CONNECTION": {
-          "commercial_offer_id": "3fdea7ff0c3ae20111e469ff08282f61816bb792",
-          "observed_at": "2026-08-23T19:16:20.513989+00:00",
-          "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
-          "operating_carriers": [
-            "Tap Air Portugal"
-          ],
-          "origin": "GRU",
-          "price_brl": 4447.0,
-          "quality_class": "B"
-        },
-        "MIN_CYCLE": {
-          "commercial_offer_id": "3fdea7ff0c3ae20111e469ff08282f61816bb792",
-          "observed_at": "2026-08-23T19:16:20.513989+00:00",
-          "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
-          "operating_carriers": [
-            "Tap Air Portugal"
-          ],
-          "origin": "GRU",
-          "price_brl": 4447.0,
-          "quality_class": "B"
-        },
-        "MIN_DAY": {
-          "commercial_offer_id": "3fdea7ff0c3ae20111e469ff08282f61816bb792",
-          "observed_at": "2026-08-23T19:16:20.513989+00:00",
-          "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
-          "operating_carriers": [
-            "Tap Air Portugal"
-          ],
-          "origin": "GRU",
-          "price_brl": 4447.0,
-          "quality_class": "B"
-        },
-        "MIN_DIRECT": {
-          "commercial_offer_id": "b7300f18cff96910f8c4528af9f7682fe7061c0a",
-          "observed_at": "2026-08-23T19:16:20.513989+00:00",
-          "offer_id": "4e7577eabd21018740536655f5c0db5b03a6015e",
+          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
+          "observed_at": "2026-08-24T00:41:11.022157+00:00",
+          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
           "operating_carriers": [
             "Azul Brazilian Airlines",
             "TAM Airlines"
           ],
-          "origin": "GRU",
-          "price_brl": 4511.0,
+          "origin": "VCP",
+          "price_brl": 4649.0,
+          "quality_class": "A"
+        },
+        "MIN_7D": {
+          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
+          "observed_at": "2026-08-24T00:41:11.022157+00:00",
+          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "operating_carriers": [
+            "Azul Brazilian Airlines",
+            "TAM Airlines"
+          ],
+          "origin": "VCP",
+          "price_brl": 4649.0,
+          "quality_class": "A"
+        },
+        "MIN_CONNECTION": {
+          "commercial_offer_id": "910991d1b903bfa63daee67e8c0dac2a93a695ab",
+          "observed_at": "2026-08-24T00:41:11.022157+00:00",
+          "offer_id": "55c4a882934a0ea736ac0cfa9ae9d66f887870ef",
+          "operating_carriers": [
+            "Azul Brazilian Airlines",
+            "Portugália Airlines"
+          ],
+          "origin": "VCP",
+          "price_brl": 4685.0,
+          "quality_class": "B"
+        },
+        "MIN_CYCLE": {
+          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
+          "observed_at": "2026-08-24T00:41:11.022157+00:00",
+          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "operating_carriers": [
+            "Azul Brazilian Airlines",
+            "TAM Airlines"
+          ],
+          "origin": "VCP",
+          "price_brl": 4649.0,
+          "quality_class": "A"
+        },
+        "MIN_DAY": {
+          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
+          "observed_at": "2026-08-24T00:41:11.022157+00:00",
+          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "operating_carriers": [
+            "Azul Brazilian Airlines",
+            "TAM Airlines"
+          ],
+          "origin": "VCP",
+          "price_brl": 4649.0,
+          "quality_class": "A"
+        },
+        "MIN_DIRECT": {
+          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
+          "observed_at": "2026-08-24T00:41:11.022157+00:00",
+          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
+          "operating_carriers": [
+            "Azul Brazilian Airlines",
+            "TAM Airlines"
+          ],
+          "origin": "VCP",
+          "price_brl": 4649.0,
           "quality_class": "A"
         },
         "MIN_SINCE_START": {
-          "commercial_offer_id": "3fdea7ff0c3ae20111e469ff08282f61816bb792",
-          "observed_at": "2026-08-23T19:16:20.513989+00:00",
-          "offer_id": "4526d58848352c70585bd8c6856584f32308caf7",
+          "commercial_offer_id": "aa8485ab90b77f8df5468ddb9c494e5bc46f4c36",
+          "observed_at": "2026-08-24T00:41:11.022157+00:00",
+          "offer_id": "eea04fa1da7f3803dae81bbff8468aa6fd41798c",
           "operating_carriers": [
-            "Tap Air Portugal"
+            "Azul Brazilian Airlines",
+            "TAM Airlines"
           ],
-          "origin": "GRU",
-          "price_brl": 4447.0,
-          "quality_class": "B"
+          "origin": "VCP",
+          "price_brl": 4649.0,
+          "quality_class": "A"
         },
         "PREVIOUS_SEARCH_MIN": null,
         "informational_only": true,
-        "observation_count": 29
+        "observation_count": 135
       },
-      "SEARCH_ID": "fd-20260823T191533Z-baaa66de"
+      "SEARCH_ID": "fd-20260824T004025Z-2d484970"
     }
   ]
 }
