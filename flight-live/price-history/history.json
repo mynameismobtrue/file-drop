@@ -1,20 +1,20 @@
 {
   "observations": [
     {
-      "COMPLETED_AT": "2026-08-25T09:27:25.656083+00:00",
+      "COMPLETED_AT": "2026-08-25T14:35:47.745942+00:00",
       "PRICE_HISTORY": {
-        "AVERAGE": 5513.6875,
+        "AVERAGE": 5426.705882352941,
         "CHEAPEST_OPERATING_CARRIER": [
           "LATAM"
         ],
         "CHEAPEST_ORIGIN": "GRU",
         "DELTA_HISTORICAL_MIN": 0.0,
         "DELTA_PREVIOUS": null,
-        "MEDIAN": 5335.0,
+        "MEDIAN": 4986.0,
         "MIN_24H": {
-          "commercial_offer_id": "a937f377a95a9cbfbd697cab83da4db3722405fd",
-          "observed_at": "2026-08-25T09:27:25.656083+00:00",
-          "offer_id": "f224460674988667154623c9a2e41164bb373b8a",
+          "commercial_offer_id": "d9273d1c2b0fc9015ef828572a25e0f52db523ed",
+          "observed_at": "2026-08-25T14:35:47.745942+00:00",
+          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
           "operating_carriers": [
             "LATAM"
           ],
@@ -23,9 +23,9 @@
           "quality_class": "A"
         },
         "MIN_7D": {
-          "commercial_offer_id": "a937f377a95a9cbfbd697cab83da4db3722405fd",
-          "observed_at": "2026-08-25T09:27:25.656083+00:00",
-          "offer_id": "f224460674988667154623c9a2e41164bb373b8a",
+          "commercial_offer_id": "d9273d1c2b0fc9015ef828572a25e0f52db523ed",
+          "observed_at": "2026-08-25T14:35:47.745942+00:00",
+          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
           "operating_carriers": [
             "LATAM"
           ],
@@ -34,8 +34,8 @@
           "quality_class": "A"
         },
         "MIN_CONNECTION": {
-          "commercial_offer_id": "af695bd8e996d693210771130af83ce98ff7c5d4",
-          "observed_at": "2026-08-25T09:27:25.656083+00:00",
+          "commercial_offer_id": "fcc504f2649ca830568f7ca281d728f3f933cbdc",
+          "observed_at": "2026-08-25T14:35:47.745942+00:00",
           "offer_id": "ac9aa99e0108b4e7739234728a0252883dd391f7",
           "operating_carriers": [
             "Air Europa",
@@ -46,9 +46,9 @@
           "quality_class": "B"
         },
         "MIN_CYCLE": {
-          "commercial_offer_id": "a937f377a95a9cbfbd697cab83da4db3722405fd",
-          "observed_at": "2026-08-25T09:27:25.656083+00:00",
-          "offer_id": "f224460674988667154623c9a2e41164bb373b8a",
+          "commercial_offer_id": "d9273d1c2b0fc9015ef828572a25e0f52db523ed",
+          "observed_at": "2026-08-25T14:35:47.745942+00:00",
+          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
           "operating_carriers": [
             "LATAM"
           ],
@@ -57,9 +57,9 @@
           "quality_class": "A"
         },
         "MIN_DAY": {
-          "commercial_offer_id": "a937f377a95a9cbfbd697cab83da4db3722405fd",
-          "observed_at": "2026-08-25T09:27:25.656083+00:00",
-          "offer_id": "f224460674988667154623c9a2e41164bb373b8a",
+          "commercial_offer_id": "d9273d1c2b0fc9015ef828572a25e0f52db523ed",
+          "observed_at": "2026-08-25T14:35:47.745942+00:00",
+          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
           "operating_carriers": [
             "LATAM"
           ],
@@ -68,9 +68,9 @@
           "quality_class": "A"
         },
         "MIN_DIRECT": {
-          "commercial_offer_id": "a937f377a95a9cbfbd697cab83da4db3722405fd",
-          "observed_at": "2026-08-25T09:27:25.656083+00:00",
-          "offer_id": "f224460674988667154623c9a2e41164bb373b8a",
+          "commercial_offer_id": "d9273d1c2b0fc9015ef828572a25e0f52db523ed",
+          "observed_at": "2026-08-25T14:35:47.745942+00:00",
+          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
           "operating_carriers": [
             "LATAM"
           ],
@@ -79,9 +79,9 @@
           "quality_class": "A"
         },
         "MIN_SINCE_START": {
-          "commercial_offer_id": "a937f377a95a9cbfbd697cab83da4db3722405fd",
-          "observed_at": "2026-08-25T09:27:25.656083+00:00",
-          "offer_id": "f224460674988667154623c9a2e41164bb373b8a",
+          "commercial_offer_id": "d9273d1c2b0fc9015ef828572a25e0f52db523ed",
+          "observed_at": "2026-08-25T14:35:47.745942+00:00",
+          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
           "operating_carriers": [
             "LATAM"
           ],
@@ -91,9 +91,9 @@
         },
         "PREVIOUS_SEARCH_MIN": null,
         "informational_only": true,
-        "observation_count": 16
+        "observation_count": 17
       },
-      "SEARCH_ID": "fd-20260825T092439Z-c9830fa7"
+      "SEARCH_ID": "fd-20260825T143435Z-710f057a"
     }
   ]
 }
