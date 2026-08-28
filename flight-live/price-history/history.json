@@ -1,98 +1,98 @@
 {
   "observations": [
     {
-      "COMPLETED_AT": "2026-08-28T07:54:19.063283+00:00",
+      "COMPLETED_AT": "2026-08-28T20:33:27.456439+00:00",
       "PRICE_HISTORY": {
-        "AVERAGE": 5807.5,
+        "AVERAGE": 5595.666666666667,
         "CHEAPEST_OPERATING_CARRIER": [
-          "LATAM"
+          "Air Europa"
         ],
         "CHEAPEST_ORIGIN": "GRU",
         "DELTA_HISTORICAL_MIN": 0.0,
         "DELTA_PREVIOUS": null,
-        "MEDIAN": 5774.0,
+        "MEDIAN": 5656.5,
         "MIN_24H": {
-          "commercial_offer_id": "bb10cfa2c2b5729f1b4ac504c9e0792a312e479a",
-          "observed_at": "2026-08-28T07:54:19.063283+00:00",
-          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
+          "commercial_offer_id": "cb97f447ea09ef586f4099c3d759253747d2d7a1",
+          "observed_at": "2026-08-28T20:33:27.456439+00:00",
+          "offer_id": "d27fff7c88264c62a2a13cd4a241934f28dc73d6",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa"
           ],
           "origin": "GRU",
-          "price_brl": 4416.0,
-          "quality_class": "A"
+          "price_brl": 4532.0,
+          "quality_class": "B"
         },
         "MIN_7D": {
-          "commercial_offer_id": "bb10cfa2c2b5729f1b4ac504c9e0792a312e479a",
-          "observed_at": "2026-08-28T07:54:19.063283+00:00",
-          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
+          "commercial_offer_id": "cb97f447ea09ef586f4099c3d759253747d2d7a1",
+          "observed_at": "2026-08-28T20:33:27.456439+00:00",
+          "offer_id": "d27fff7c88264c62a2a13cd4a241934f28dc73d6",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa"
           ],
           "origin": "GRU",
-          "price_brl": 4416.0,
-          "quality_class": "A"
+          "price_brl": 4532.0,
+          "quality_class": "B"
         },
         "MIN_CONNECTION": {
-          "commercial_offer_id": "ff34e0c1c1afe64e035ad82bbb95af2b1245cdd6",
-          "observed_at": "2026-08-28T07:54:19.063283+00:00",
-          "offer_id": "ac462425c546648a3e23a8ed673732dda9909cbb",
+          "commercial_offer_id": "cb97f447ea09ef586f4099c3d759253747d2d7a1",
+          "observed_at": "2026-08-28T20:33:27.456439+00:00",
+          "offer_id": "d27fff7c88264c62a2a13cd4a241934f28dc73d6",
           "operating_carriers": [
-            "Tap Air Portugal"
+            "Air Europa"
           ],
           "origin": "GRU",
-          "price_brl": 4447.0,
+          "price_brl": 4532.0,
           "quality_class": "B"
         },
         "MIN_CYCLE": {
-          "commercial_offer_id": "bb10cfa2c2b5729f1b4ac504c9e0792a312e479a",
-          "observed_at": "2026-08-28T07:54:19.063283+00:00",
-          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
+          "commercial_offer_id": "cb97f447ea09ef586f4099c3d759253747d2d7a1",
+          "observed_at": "2026-08-28T20:33:27.456439+00:00",
+          "offer_id": "d27fff7c88264c62a2a13cd4a241934f28dc73d6",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa"
           ],
           "origin": "GRU",
-          "price_brl": 4416.0,
-          "quality_class": "A"
+          "price_brl": 4532.0,
+          "quality_class": "B"
         },
         "MIN_DAY": {
-          "commercial_offer_id": "bb10cfa2c2b5729f1b4ac504c9e0792a312e479a",
-          "observed_at": "2026-08-28T07:54:19.063283+00:00",
-          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
+          "commercial_offer_id": "cb97f447ea09ef586f4099c3d759253747d2d7a1",
+          "observed_at": "2026-08-28T20:33:27.456439+00:00",
+          "offer_id": "d27fff7c88264c62a2a13cd4a241934f28dc73d6",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa"
           ],
           "origin": "GRU",
-          "price_brl": 4416.0,
-          "quality_class": "A"
+          "price_brl": 4532.0,
+          "quality_class": "B"
         },
         "MIN_DIRECT": {
-          "commercial_offer_id": "bb10cfa2c2b5729f1b4ac504c9e0792a312e479a",
-          "observed_at": "2026-08-28T07:54:19.063283+00:00",
-          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
+          "commercial_offer_id": "8e9b80ee0576b1045f3958e7790906732be4ed19",
+          "observed_at": "2026-08-28T20:33:27.456439+00:00",
+          "offer_id": "0c394e77bdb4fa8a1e0ce54918a5f8b242cdc0ba",
           "operating_carriers": [
-            "LATAM"
+            "Azul"
           ],
-          "origin": "GRU",
-          "price_brl": 4416.0,
+          "origin": "VCP",
+          "price_brl": 4823.0,
           "quality_class": "A"
         },
         "MIN_SINCE_START": {
-          "commercial_offer_id": "bb10cfa2c2b5729f1b4ac504c9e0792a312e479a",
-          "observed_at": "2026-08-28T07:54:19.063283+00:00",
-          "offer_id": "5d42b9f90f8a3d85e28154125511d36f5a92f125",
+          "commercial_offer_id": "cb97f447ea09ef586f4099c3d759253747d2d7a1",
+          "observed_at": "2026-08-28T20:33:27.456439+00:00",
+          "offer_id": "d27fff7c88264c62a2a13cd4a241934f28dc73d6",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa"
           ],
           "origin": "GRU",
-          "price_brl": 4416.0,
-          "quality_class": "A"
+          "price_brl": 4532.0,
+          "quality_class": "B"
         },
         "PREVIOUS_SEARCH_MIN": null,
         "informational_only": true,
-        "observation_count": 32
+        "observation_count": 12
       },
-      "SEARCH_ID": "fd-20260828T075322Z-4c255960"
+      "SEARCH_ID": "fd-20260828T202904Z-620a0be8"
     }
   ]
 }
