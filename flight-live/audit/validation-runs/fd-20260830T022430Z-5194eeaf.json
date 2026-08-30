@@ -1,0 +1,5322 @@
+{
+  "ALERT_DELIVERY_ENABLED": false,
+  "APPROVED_CODE_SHA": "c90d3fd396192d52e8181c4a3e030635858f034b",
+  "CONTRACT_AUDIT": {
+    "BOOKING_OPTIONS_COUNT": 0,
+    "BOOKING_OPTIONS_PRESENT": true,
+    "FIELDS": [
+      {
+        "FIELD": "ignav_id",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 99,
+        "REAL_PRESENT": true,
+        "SAMPLES": 107,
+        "TYPES": {
+          "string": 99
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "price.amount",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 107,
+        "REAL_PRESENT": true,
+        "SAMPLES": 107,
+        "TYPES": {
+          "number": 107
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "price.currency",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 107,
+        "REAL_PRESENT": true,
+        "SAMPLES": 107,
+        "TYPES": {
+          "string": 107
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "price.status",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 107,
+        "REAL_PRESENT": true,
+        "SAMPLES": 107,
+        "TYPES": {
+          "string": 107
+        },
+        "VALUES": [
+          "verified"
+        ]
+      },
+      {
+        "FIELD": "cabin_class",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 107,
+        "REAL_PRESENT": true,
+        "SAMPLES": 107,
+        "TYPES": {
+          "string": 107
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "requires_self_transfer",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 107,
+        "REAL_PRESENT": true,
+        "SAMPLES": 107,
+        "TYPES": {
+          "boolean": 107
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "legs",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 107,
+        "REAL_PRESENT": true,
+        "SAMPLES": 107,
+        "TYPES": {
+          "array": 107
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "segments",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 214,
+        "REAL_PRESENT": true,
+        "SAMPLES": 214,
+        "TYPES": {
+          "array": 214
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "marketing_carrier_code",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": [
+          "AT",
+          "LA",
+          "TP",
+          "UX",
+          "AD"
+        ]
+      },
+      {
+        "FIELD": "marketing_carrier_name",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "UNDOCUMENTED",
+        "PRESENT_COUNT": 0,
+        "REAL_PRESENT": false,
+        "SAMPLES": 298,
+        "TYPES": {},
+        "VALUES": []
+      },
+      {
+        "FIELD": "operating_carrier_code",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "UNDOCUMENTED",
+        "PRESENT_COUNT": 0,
+        "REAL_PRESENT": false,
+        "SAMPLES": 298,
+        "TYPES": {},
+        "VALUES": []
+      },
+      {
+        "FIELD": "operating_carrier_name",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": [
+          "Royal Air Maroc",
+          "LATAM",
+          "Tap Air Portugal",
+          "Air Europa",
+          "Azul"
+        ]
+      },
+      {
+        "FIELD": "flight_number",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "departure_airport",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "arrival_airport",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "departure_time_local",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "arrival_time_local",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "departure_time_utc",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "arrival_time_utc",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "duration_minutes",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "integer": 298
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "aircraft",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED",
+        "PRESENT_COUNT": 298,
+        "REAL_PRESENT": true,
+        "SAMPLES": 298,
+        "TYPES": {
+          "string": 298
+        },
+        "VALUES": []
+      },
+      {
+        "FIELD": "bags",
+        "NULL_COUNT": 0,
+        "NULL_RATE": 0.0,
+        "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+        "PRESENT_COUNT": 100,
+        "REAL_PRESENT": true,
+        "SAMPLES": 107,
+        "TYPES": {
+          "object": 100
+        },
+        "VALUES": []
+      }
+    ],
+    "FULL_JOURNEY_OPTIONS": 0
+  },
+  "COUNTS": {
+    "ALERT_CANDIDATES_COUNT": 0,
+    "NON_VALIDATABLE_COUNT": 8,
+    "NORMALIZED_OFFERS_COUNT": 38,
+    "RAW_OFFERS_COUNT": 38,
+    "REJECTED_OFFERS_COUNT": 19,
+    "VALID_OFFERS_COUNT": 11
+  },
+  "DATA_BRIDGE_VERSION": "1.1.3",
+  "HEALTH": null,
+  "LIVE_ENV_VERSION": "1.0.0",
+  "PRODUCTION_VALIDATED": false,
+  "PROTOCOL_VERSION": "LISBOA_V2.2",
+  "PROVIDER_USAGE": {
+    "IGNAV_HEALTH_REQUESTS": 0,
+    "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+    "IGNAV_REVALIDATION_REQUESTS": 16,
+    "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 19,
+    "IGNAV_SEARCH_REQUESTS": 12,
+    "IGNAV_SEARCH_REQUEST_ATTEMPTS": 12,
+    "REQUEST_ATTEMPTS": 31,
+    "SUCCESSFUL_PROVIDER_REQUESTS": 28
+  },
+  "QUERY_COVERAGE": {
+    "COMPLETE": 12,
+    "EXPECTED": 12,
+    "FAILED": 0,
+    "QUERY_GRID_VALID": true,
+    "STARTED": 12,
+    "TIMED_OUT": 0
+  },
+  "QUOTA": {
+    "EXTRA_REQUEST_RESERVE": 0,
+    "FREE_TIER_HARD_STOP_BUFFER": 50,
+    "FREE_TIER_WARNING": false,
+    "FREE_TIER_WARNING_THRESHOLD": 150,
+    "IGNAV_FREE_REQUESTS_ESTIMATED_REMAINING": 353,
+    "IGNAV_FREE_REQUESTS_INITIAL": 1000,
+    "IGNAV_HEALTH_REQUESTS": 5,
+    "IGNAV_HEALTH_REQUEST_ATTEMPTS": 5,
+    "IGNAV_PAID_USAGE_AUTHORIZED": false,
+    "IGNAV_REVALIDATION_REQUESTS": 290,
+    "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 316,
+    "IGNAV_SEARCH_REQUESTS": 336,
+    "IGNAV_SEARCH_REQUEST_ATTEMPTS": 349,
+    "IGNAV_SUCCESSFUL_REQUESTS_ESTIMATED": 647,
+    "LAST_RUN_IGNAV_HEALTH_REQUESTS": 0,
+    "LAST_RUN_IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+    "LAST_RUN_IGNAV_REVALIDATION_REQUESTS": 16,
+    "LAST_RUN_IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 19,
+    "LAST_RUN_IGNAV_SEARCH_REQUESTS": 12,
+    "LAST_RUN_IGNAV_SEARCH_REQUEST_ATTEMPTS": 12,
+    "LAST_RUN_REQUEST_ATTEMPTS": 31,
+    "LAST_RUN_SUCCESSFUL_PROVIDER_REQUESTS": 28,
+    "MINIMUM_REMAINING_REQUIRED_BEFORE_START": 64,
+    "NEXT_CYCLE_BASE_REQUESTS": 12,
+    "QUOTA_GATE_ALLOWED": true,
+    "QUOTA_GATE_STATUS": "OK",
+    "REQUEST_ATTEMPTS": 684,
+    "REVALIDATION_REQUEST_RESERVE": 2,
+    "SUCCESSFUL_PROVIDER_REQUESTS": 647,
+    "UPDATED_AT": "2026-08-30T02:29:42.201588+00:00"
+  },
+  "SEARCH_ID": "fd-20260830T022430Z-5194eeaf",
+  "SEARCH_STATUS": "COMPLETE",
+  "STATE": "PRODUCTION_VALIDATED",
+  "UI_VERSION": "1.0.0",
+  "VALIDATION_RESULTS": [
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "LA"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "LATAM"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "integer": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "a559694badd1568878a5ac34e660c3a4ebf35545",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "03cd47ec834176b16833001d4bc761f990ef4b19",
+      "offer_id": "03cd47ec834176b16833001d4bc761f990ef4b19",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "number": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "boolean": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "array": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 16,
+            "REAL_PRESENT": true,
+            "SAMPLES": 16,
+            "TYPES": {
+              "array": 16
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "AT",
+              "LA",
+              "TP",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "Royal Air Maroc",
+              "LATAM",
+              "Tap Air Portugal",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "integer": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "object": 8
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 2,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 2,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-30T02:25:16.914642+00:00"
+    },
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": [
+              "LA"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 3,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 3,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": [
+              "LATAM"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "integer": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "2c35180f293c3918341668354c1e1ac94d0797d4",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "5ed84bb42db70703d7a2f453f63d6e726bbe1a92",
+      "offer_id": "5ed84bb42db70703d7a2f453f63d6e726bbe1a92",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "number": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "boolean": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "array": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 16,
+            "REAL_PRESENT": true,
+            "SAMPLES": 16,
+            "TYPES": {
+              "array": 16
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "AT",
+              "LA",
+              "TP",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "Royal Air Maroc",
+              "LATAM",
+              "Tap Air Portugal",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "integer": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "object": 8
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 3,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 3,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-30T02:26:10.384687+00:00"
+    },
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "TP"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "Tap Air Portugal"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "integer": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "2a5708722d5d81962b13cbcbcd7b36b9c36e4cc5",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "81f5fef31e0e7df854d5a1037a5646a72a424659",
+      "offer_id": "81f5fef31e0e7df854d5a1037a5646a72a424659",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "number": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "boolean": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "array": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 16,
+            "REAL_PRESENT": true,
+            "SAMPLES": 16,
+            "TYPES": {
+              "array": 16
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "AT",
+              "LA",
+              "TP",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "Royal Air Maroc",
+              "LATAM",
+              "Tap Air Portugal",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "integer": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "object": 8
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 2,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 2,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-30T02:26:35.900683+00:00"
+    },
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": [
+              "TP",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 3,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 3,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": [
+              "Tap Air Portugal",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "integer": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "3ff23cb3355524b821bac33f61346d8c9b6b8703",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "2ab94121987360526f4b83005c3a9679c7836498",
+      "offer_id": "2ab94121987360526f4b83005c3a9679c7836498",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "number": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "boolean": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "array": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 16,
+            "REAL_PRESENT": true,
+            "SAMPLES": 16,
+            "TYPES": {
+              "array": 16
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "AT",
+              "LA",
+              "TP",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "Royal Air Maroc",
+              "LATAM",
+              "Tap Air Portugal",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "integer": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "object": 8
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 3,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 3,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-30T02:27:23.602438+00:00"
+    },
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": [
+              "TP"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 3,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 3,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": [
+              "Tap Air Portugal"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "integer": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "9f49bcae608d53a975d0fc6faef24e01e9f3dd30",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "479042c20dc33a3f92e2609d013191892ba69d5b",
+      "offer_id": "479042c20dc33a3f92e2609d013191892ba69d5b",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "number": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "string": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "boolean": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "array": 8
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 16,
+            "REAL_PRESENT": true,
+            "SAMPLES": 16,
+            "TYPES": {
+              "array": 16
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "AT",
+              "LA",
+              "TP",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 24,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": [
+              "Royal Air Maroc",
+              "LATAM",
+              "Tap Air Portugal",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "integer": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 24,
+            "REAL_PRESENT": true,
+            "SAMPLES": 24,
+            "TYPES": {
+              "string": 24
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 8,
+            "REAL_PRESENT": true,
+            "SAMPLES": 8,
+            "TYPES": {
+              "object": 8
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 2,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 2,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-30T02:27:52.621498+00:00"
+    },
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "LA"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "LATAM"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "integer": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "25cf28d15feb5ade1b3e373dd1b88f10a1a975d9",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "d3268007f4fec9980206e48803bfb5f1302eeddc",
+      "offer_id": "d3268007f4fec9980206e48803bfb5f1302eeddc",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "number": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "boolean": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "array": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 14,
+            "REAL_PRESENT": true,
+            "SAMPLES": 14,
+            "TYPES": {
+              "array": 14
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": [
+              "LA",
+              "AT",
+              "TP",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 20,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 20,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": [
+              "LATAM",
+              "Royal Air Maroc",
+              "Tap Air Portugal",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "integer": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "object": 7
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 2,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 2,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-30T02:28:15.303512+00:00"
+    },
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "TP"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 2,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": [
+              "Tap Air Portugal"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "integer": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "string": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "340251bdd53abac34cceb9e89ffc846fa5796bf8",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "c600f129391289d96ba9676f259fcbdc90124b17",
+      "offer_id": "c600f129391289d96ba9676f259fcbdc90124b17",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "number": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "boolean": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "array": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 14,
+            "REAL_PRESENT": true,
+            "SAMPLES": 14,
+            "TYPES": {
+              "array": 14
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": [
+              "LA",
+              "AT",
+              "TP",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 20,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 20,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": [
+              "LATAM",
+              "Royal Air Maroc",
+              "Tap Air Portugal",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "integer": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "object": 7
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 3,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 3,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-30T02:29:13.740181+00:00"
+    },
+    {
+      "booking_contract_observation": {
+        "BOOKING_OPTIONS_COUNT": 0,
+        "BOOKING_OPTIONS_PRESENT": true,
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 1,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "number": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "string": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "boolean": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "array": 1
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 2,
+            "REAL_PRESENT": true,
+            "SAMPLES": 2,
+            "TYPES": {
+              "array": 2
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": [
+              "TP"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 3,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 3,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": [
+              "Tap Air Portugal"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "integer": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 3,
+            "REAL_PRESENT": true,
+            "SAMPLES": 3,
+            "TYPES": {
+              "string": 3
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 1,
+            "REAL_PRESENT": true,
+            "SAMPLES": 1,
+            "TYPES": {
+              "object": 1
+            },
+            "VALUES": []
+          }
+        ],
+        "FULL_JOURNEY_OPTIONS": 0
+      },
+      "booking_links_refresh": true,
+      "booking_option_count": 0,
+      "commercial_offer_id": "f1eb1668796a4eda55c01fb9a1db632b65f77ebe",
+      "full_journey_option_count": 0,
+      "independent_source_corroboration": false,
+      "itinerary_fingerprint": "ac462425c546648a3e23a8ed673732dda9909cbb",
+      "offer_id": "ac462425c546648a3e23a8ed673732dda9909cbb",
+      "price_based_selection": false,
+      "revalidation_provider": "IGNAV",
+      "same_provider_revalidation": true,
+      "second_full_search": true,
+      "second_search_contract_observation": {
+        "FIELDS": [
+          {
+            "FIELD": "ignav_id",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.amount",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "number": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.currency",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "price.status",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": [
+              "verified"
+            ]
+          },
+          {
+            "FIELD": "cabin_class",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "string": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "requires_self_transfer",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "boolean": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "legs",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "array": 7
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "segments",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 14,
+            "REAL_PRESENT": true,
+            "SAMPLES": 14,
+            "TYPES": {
+              "array": 14
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "marketing_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": [
+              "LA",
+              "AT",
+              "TP",
+              "UX"
+            ]
+          },
+          {
+            "FIELD": "marketing_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 20,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_code",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "UNDOCUMENTED",
+            "PRESENT_COUNT": 0,
+            "REAL_PRESENT": false,
+            "SAMPLES": 20,
+            "TYPES": {},
+            "VALUES": []
+          },
+          {
+            "FIELD": "operating_carrier_name",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": [
+              "LATAM",
+              "Royal Air Maroc",
+              "Tap Air Portugal",
+              "Air Europa"
+            ]
+          },
+          {
+            "FIELD": "flight_number",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_airport",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_local",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "departure_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "arrival_time_utc",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "duration_minutes",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "integer": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "aircraft",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED",
+            "PRESENT_COUNT": 20,
+            "REAL_PRESENT": true,
+            "SAMPLES": 20,
+            "TYPES": {
+              "string": 20
+            },
+            "VALUES": []
+          },
+          {
+            "FIELD": "bags",
+            "NULL_COUNT": 0,
+            "NULL_RATE": 0.0,
+            "OPENAPI_EXPECTED": "DOCUMENTED_OPTIONAL",
+            "PRESENT_COUNT": 7,
+            "REAL_PRESENT": true,
+            "SAMPLES": 7,
+            "TYPES": {
+              "object": 7
+            },
+            "VALUES": []
+          }
+        ]
+      },
+      "second_search_exact_matches": 1,
+      "source_offer_id_changed": false,
+      "status": "NON_VALIDATABLE",
+      "usage_delta": {
+        "IGNAV_HEALTH_REQUESTS": 0,
+        "IGNAV_HEALTH_REQUEST_ATTEMPTS": 0,
+        "IGNAV_REVALIDATION_REQUESTS": 2,
+        "IGNAV_REVALIDATION_REQUEST_ATTEMPTS": 2,
+        "IGNAV_SEARCH_REQUESTS": 0,
+        "IGNAV_SEARCH_REQUEST_ATTEMPTS": 0,
+        "REQUEST_ATTEMPTS": 2,
+        "SUCCESSFUL_PROVIDER_REQUESTS": 2
+      },
+      "validated_at": "2026-08-30T02:29:42.198988+00:00"
+    }
+  ]
+}
