@@ -1,3 +1,99 @@
 {
-  "observations": []
+  "observations": [
+    {
+      "COMPLETED_AT": "2026-08-31T23:05:28.262938+00:00",
+      "PRICE_HISTORY": {
+        "AVERAGE": 5479.9375,
+        "CHEAPEST_OPERATING_CARRIER": [
+          "LATAM"
+        ],
+        "CHEAPEST_ORIGIN": "GRU",
+        "DELTA_HISTORICAL_MIN": 0.0,
+        "DELTA_PREVIOUS": null,
+        "MEDIAN": 5361.0,
+        "MIN_24H": {
+          "commercial_offer_id": "625e9885f75a58c98a30c7337fbe5f5d9b9fccc5",
+          "observed_at": "2026-08-31T23:05:28.262938+00:00",
+          "offer_id": "70a57fc4d8a89ab725e647c481379925980df50f",
+          "operating_carriers": [
+            "LATAM"
+          ],
+          "origin": "GRU",
+          "price_brl": 4346.0,
+          "quality_class": "A"
+        },
+        "MIN_7D": {
+          "commercial_offer_id": "625e9885f75a58c98a30c7337fbe5f5d9b9fccc5",
+          "observed_at": "2026-08-31T23:05:28.262938+00:00",
+          "offer_id": "70a57fc4d8a89ab725e647c481379925980df50f",
+          "operating_carriers": [
+            "LATAM"
+          ],
+          "origin": "GRU",
+          "price_brl": 4346.0,
+          "quality_class": "A"
+        },
+        "MIN_CONNECTION": {
+          "commercial_offer_id": "18cc4dce0b5137e923e5d68f70b23232ee761028",
+          "observed_at": "2026-08-31T23:05:28.262938+00:00",
+          "offer_id": "d9cc12d17a9a645c9a2d58ac70fcd509513ef4f6",
+          "operating_carriers": [
+            "Azul",
+            "Gol"
+          ],
+          "origin": "VCP",
+          "price_brl": 5019.0,
+          "quality_class": "B"
+        },
+        "MIN_CYCLE": {
+          "commercial_offer_id": "625e9885f75a58c98a30c7337fbe5f5d9b9fccc5",
+          "observed_at": "2026-08-31T23:05:28.262938+00:00",
+          "offer_id": "70a57fc4d8a89ab725e647c481379925980df50f",
+          "operating_carriers": [
+            "LATAM"
+          ],
+          "origin": "GRU",
+          "price_brl": 4346.0,
+          "quality_class": "A"
+        },
+        "MIN_DAY": {
+          "commercial_offer_id": "625e9885f75a58c98a30c7337fbe5f5d9b9fccc5",
+          "observed_at": "2026-08-31T23:05:28.262938+00:00",
+          "offer_id": "70a57fc4d8a89ab725e647c481379925980df50f",
+          "operating_carriers": [
+            "LATAM"
+          ],
+          "origin": "GRU",
+          "price_brl": 4346.0,
+          "quality_class": "A"
+        },
+        "MIN_DIRECT": {
+          "commercial_offer_id": "625e9885f75a58c98a30c7337fbe5f5d9b9fccc5",
+          "observed_at": "2026-08-31T23:05:28.262938+00:00",
+          "offer_id": "70a57fc4d8a89ab725e647c481379925980df50f",
+          "operating_carriers": [
+            "LATAM"
+          ],
+          "origin": "GRU",
+          "price_brl": 4346.0,
+          "quality_class": "A"
+        },
+        "MIN_SINCE_START": {
+          "commercial_offer_id": "625e9885f75a58c98a30c7337fbe5f5d9b9fccc5",
+          "observed_at": "2026-08-31T23:05:28.262938+00:00",
+          "offer_id": "70a57fc4d8a89ab725e647c481379925980df50f",
+          "operating_carriers": [
+            "LATAM"
+          ],
+          "origin": "GRU",
+          "price_brl": 4346.0,
+          "quality_class": "A"
+        },
+        "PREVIOUS_SEARCH_MIN": null,
+        "informational_only": true,
+        "observation_count": 16
+      },
+      "SEARCH_ID": "fd-20260831T230416Z-284a1b39"
+    }
+  ]
 }
