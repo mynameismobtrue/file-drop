@@ -1,99 +1,105 @@
 {
   "observations": [
     {
-      "COMPLETED_AT": "2026-09-01T02:38:32.891779+00:00",
+      "COMPLETED_AT": "2026-09-01T13:52:24.488098+00:00",
       "PRICE_HISTORY": {
-        "AVERAGE": 5554.6,
+        "AVERAGE": 5758.5,
         "CHEAPEST_OPERATING_CARRIER": [
-          "LATAM"
+          "Air Europa",
+          "Tap Air Portugal"
         ],
         "CHEAPEST_ORIGIN": "GRU",
         "DELTA_HISTORICAL_MIN": 0.0,
         "DELTA_PREVIOUS": null,
-        "MEDIAN": 5703.0,
+        "MEDIAN": 6314.0,
         "MIN_24H": {
-          "commercial_offer_id": "b386a6bc6d70cc8eff2b74cc9c934718f59740f3",
-          "observed_at": "2026-09-01T02:38:32.891779+00:00",
-          "offer_id": "21ead533b0f35cb732669a7b78d4802636002a8f",
+          "commercial_offer_id": "8d768647547f477dcef431b806c83ab5d18870f6",
+          "observed_at": "2026-09-01T13:52:24.488098+00:00",
+          "offer_id": "9818459fbc9c72847dd2a9e59e89c3cb506f7122",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa",
+            "Tap Air Portugal"
           ],
           "origin": "GRU",
-          "price_brl": 4341.0,
-          "quality_class": "A"
+          "price_brl": 4754.0,
+          "quality_class": "B"
         },
         "MIN_7D": {
-          "commercial_offer_id": "b386a6bc6d70cc8eff2b74cc9c934718f59740f3",
-          "observed_at": "2026-09-01T02:38:32.891779+00:00",
-          "offer_id": "21ead533b0f35cb732669a7b78d4802636002a8f",
+          "commercial_offer_id": "8d768647547f477dcef431b806c83ab5d18870f6",
+          "observed_at": "2026-09-01T13:52:24.488098+00:00",
+          "offer_id": "9818459fbc9c72847dd2a9e59e89c3cb506f7122",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa",
+            "Tap Air Portugal"
           ],
           "origin": "GRU",
-          "price_brl": 4341.0,
-          "quality_class": "A"
+          "price_brl": 4754.0,
+          "quality_class": "B"
         },
         "MIN_CONNECTION": {
-          "commercial_offer_id": "129e07e89bfe4fd27bd2377785eb0d08e6435007",
-          "observed_at": "2026-09-01T02:38:32.891779+00:00",
-          "offer_id": "d9cc12d17a9a645c9a2d58ac70fcd509513ef4f6",
+          "commercial_offer_id": "8d768647547f477dcef431b806c83ab5d18870f6",
+          "observed_at": "2026-09-01T13:52:24.488098+00:00",
+          "offer_id": "9818459fbc9c72847dd2a9e59e89c3cb506f7122",
           "operating_carriers": [
-            "Azul",
-            "Gol"
+            "Air Europa",
+            "Tap Air Portugal"
           ],
-          "origin": "VCP",
-          "price_brl": 5016.0,
+          "origin": "GRU",
+          "price_brl": 4754.0,
           "quality_class": "B"
         },
         "MIN_CYCLE": {
-          "commercial_offer_id": "b386a6bc6d70cc8eff2b74cc9c934718f59740f3",
-          "observed_at": "2026-09-01T02:38:32.891779+00:00",
-          "offer_id": "21ead533b0f35cb732669a7b78d4802636002a8f",
+          "commercial_offer_id": "8d768647547f477dcef431b806c83ab5d18870f6",
+          "observed_at": "2026-09-01T13:52:24.488098+00:00",
+          "offer_id": "9818459fbc9c72847dd2a9e59e89c3cb506f7122",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa",
+            "Tap Air Portugal"
           ],
           "origin": "GRU",
-          "price_brl": 4341.0,
-          "quality_class": "A"
+          "price_brl": 4754.0,
+          "quality_class": "B"
         },
         "MIN_DAY": {
-          "commercial_offer_id": "b386a6bc6d70cc8eff2b74cc9c934718f59740f3",
-          "observed_at": "2026-09-01T02:38:32.891779+00:00",
-          "offer_id": "21ead533b0f35cb732669a7b78d4802636002a8f",
+          "commercial_offer_id": "8d768647547f477dcef431b806c83ab5d18870f6",
+          "observed_at": "2026-09-01T13:52:24.488098+00:00",
+          "offer_id": "9818459fbc9c72847dd2a9e59e89c3cb506f7122",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa",
+            "Tap Air Portugal"
           ],
           "origin": "GRU",
-          "price_brl": 4341.0,
-          "quality_class": "A"
+          "price_brl": 4754.0,
+          "quality_class": "B"
         },
         "MIN_DIRECT": {
-          "commercial_offer_id": "b386a6bc6d70cc8eff2b74cc9c934718f59740f3",
-          "observed_at": "2026-09-01T02:38:32.891779+00:00",
-          "offer_id": "21ead533b0f35cb732669a7b78d4802636002a8f",
+          "commercial_offer_id": "d4e23ea4b3946c5fe414fab7ee916e8f2b9a43e8",
+          "observed_at": "2026-09-01T13:52:24.488098+00:00",
+          "offer_id": "0c394e77bdb4fa8a1e0ce54918a5f8b242cdc0ba",
           "operating_carriers": [
-            "LATAM"
+            "Azul"
           ],
-          "origin": "GRU",
-          "price_brl": 4341.0,
+          "origin": "VCP",
+          "price_brl": 4820.0,
           "quality_class": "A"
         },
         "MIN_SINCE_START": {
-          "commercial_offer_id": "b386a6bc6d70cc8eff2b74cc9c934718f59740f3",
-          "observed_at": "2026-09-01T02:38:32.891779+00:00",
-          "offer_id": "21ead533b0f35cb732669a7b78d4802636002a8f",
+          "commercial_offer_id": "8d768647547f477dcef431b806c83ab5d18870f6",
+          "observed_at": "2026-09-01T13:52:24.488098+00:00",
+          "offer_id": "9818459fbc9c72847dd2a9e59e89c3cb506f7122",
           "operating_carriers": [
-            "LATAM"
+            "Air Europa",
+            "Tap Air Portugal"
           ],
           "origin": "GRU",
-          "price_brl": 4341.0,
-          "quality_class": "A"
+          "price_brl": 4754.0,
+          "quality_class": "B"
         },
         "PREVIOUS_SEARCH_MIN": null,
         "informational_only": true,
-        "observation_count": 15
+        "observation_count": 12
       },
-      "SEARCH_ID": "fd-20260901T023702Z-3a4f6c93"
+      "SEARCH_ID": "fd-20260901T134747Z-87db37d3"
     }
   ]
 }
