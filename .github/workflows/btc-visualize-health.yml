@@ -35,7 +35,7 @@ jobs:
       - name: Verify immutable public shell and live report contract
         shell: bash
         run: |
-          set -euxo pipefail
+          set -euo pipefail
           CACHE_BUSTER="$(date +%s)"
 
           curl --fail --silent --show-error --location --dump-header /tmp/index.headers \
@@ -74,3 +74,33 @@ jobs:
             *) echo "Portable URL did not use immutable shell" >&2; exit 1 ;;
           esac
           echo "PORTABLE_VISUAL_URL=PASS"
+
+      - name: Render portable visual in a real mobile browser
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORTABLE_URL="$(python3 btc-committee/make_visual_url.py /tmp/latest.json)"
+          BROWSER="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium || true)"
+          test -n "$BROWSER"
+
+          if ! timeout 30s "$BROWSER" \
+            --headless=new \
+            --no-sandbox \
+            --disable-gpu \
+            --disable-dev-shm-usage \
+            --hide-scrollbars \
+            --window-size=393,852 \
+            --virtual-time-budget=6000 \
+            --dump-dom "$PORTABLE_URL" \
+            > /tmp/rendered-mobile.html 2> /tmp/browser.log; then
+              cat /tmp/browser.log >&2
+              exit 1
+          fi
+
+          grep -q 'RELATÓRIO ARQUIVADO' /tmp/rendered-mobile.html
+          grep -q 'SCORE_SEM_OPORTUNIDADE' /tmp/rendered-mobile.html
+          grep -q '0,00015382' /tmp/rendered-mobile.html
+          grep -q '25/25 PASS' /tmp/rendered-mobile.html
+          grep -q 'Por quê?' /tmp/rendered-mobile.html
+          grep -q 'Minha carteira' /tmp/rendered-mobile.html
+          echo 'MOBILE_BROWSER_RENDER=PASS'
