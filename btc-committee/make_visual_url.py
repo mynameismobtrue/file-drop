@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Create a portable GitHub Pages URL carrying a validated report in the URL fragment."""
+"""Create a portable, validated BTC Committee visual URL.
+
+The visual shell is pinned to an immutable Git commit on jsDelivr. The report
+travels in the URL fragment, so it is never sent to or cached by the CDN.
+"""
 from __future__ import annotations
 
 import argparse
@@ -11,7 +15,11 @@ import sys
 
 from validate_report import validate
 
-BASE_URL = "https://mynameismobtrue.github.io/file-drop/btc-committee/"
+VISUAL_SHELL_COMMIT = "fbb7f7c6c7c4ee3249353ddd8af52b92977def58"
+BASE_URL = (
+    "https://cdn.jsdelivr.net/gh/mynameismobtrue/file-drop@"
+    f"{VISUAL_SHELL_COMMIT}/btc-committee/index.html"
+)
 
 
 def encode_base64url(data: bytes) -> str:
