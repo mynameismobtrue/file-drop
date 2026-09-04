@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Create a portable, validated BTC Committee visual URL.
 
-The visual shell is pinned to an immutable Git commit on jsDelivr. The report
-travels in the URL fragment, so it is never sent to or cached by the CDN.
+The visual shell is pinned to an immutable Git commit on raw.githack CDN. The
+report travels in the URL fragment, so it is never sent to or cached by the CDN.
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from validate_report import validate
 
 VISUAL_SHELL_COMMIT = "fbb7f7c6c7c4ee3249353ddd8af52b92977def58"
 BASE_URL = (
-    "https://cdn.jsdelivr.net/gh/mynameismobtrue/file-drop@"
+    "https://rawcdn.githack.com/mynameismobtrue/file-drop/"
     f"{VISUAL_SHELL_COMMIT}/btc-committee/index.html"
 )
 
