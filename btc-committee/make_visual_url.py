@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Create a portable, validated BTC Committee visual URL.
 
-The visual shell is pinned to an immutable Git commit on raw.githack CDN. The
-report travels in the URL fragment, so it is never sent to or cached by the CDN.
+The HTML shell is served by a stable Vercel production alias. Immutable CSS and
+JavaScript are pinned by commit inside that shell. The report travels only in
+the URL fragment, so it is not sent to the host.
 """
 from __future__ import annotations
 
@@ -15,11 +16,7 @@ import sys
 
 from validate_report import validate
 
-VISUAL_SHELL_COMMIT = "fbb7f7c6c7c4ee3249353ddd8af52b92977def58"
-BASE_URL = (
-    "https://rawcdn.githack.com/mynameismobtrue/file-drop/"
-    f"{VISUAL_SHELL_COMMIT}/btc-committee/index.html"
-)
+BASE_URL = "https://btc-committee-visual-marceloapplemob-7630s-projects.vercel.app/"
 
 
 def encode_base64url(data: bytes) -> str:
