@@ -97,10 +97,34 @@ jobs:
               exit 1
           fi
 
-          grep -q 'RELATÓRIO ARQUIVADO' /tmp/rendered-mobile.html
-          grep -q 'SCORE_SEM_OPORTUNIDADE' /tmp/rendered-mobile.html
-          grep -q '0,00015382' /tmp/rendered-mobile.html
-          grep -q '25/25 PASS' /tmp/rendered-mobile.html
-          grep -q 'Por quê?' /tmp/rendered-mobile.html
-          grep -q 'Minha carteira' /tmp/rendered-mobile.html
-          echo 'MOBILE_BROWSER_RENDER=PASS'
+          python3 - <<'PY'
+          from html import unescape
+          from pathlib import Path
+          import re
+
+          rendered = Path('/tmp/rendered-mobile.html').read_text(encoding='utf-8', errors='replace')
+          text = unescape(re.sub(r'<[^>]+>', ' ', rendered))
+          text = re.sub(r'\s+', ' ', text).strip()
+
+          required = (
+              'RELATÓRIO ARQUIVADO',
+              'SCORE_SEM_OPORTUNIDADE',
+              '0,00015382',
+              '25/25',
+              'PASS',
+              'Por quê?',
+              'Minha carteira',
+          )
+          missing = [marker for marker in required if marker not in text]
+          if missing:
+              print('MOBILE_BROWSER_RENDER=FAIL')
+              print('Missing runtime markers: ' + ', '.join(missing))
+              raise SystemExit(1)
+
+          if 'Visual bloqueado por integridade' in text:
+              print('MOBILE_BROWSER_RENDER=FAIL')
+              print('Integrity error card was rendered')
+              raise SystemExit(1)
+
+          print('MOBILE_BROWSER_RENDER=PASS')
+          PY
