@@ -9,7 +9,7 @@ O relatório dependia do recurso nativo `@Visualize` do runtime do ChatGPT. Essa
 A arquitetura agora remove esse ponto único de falha:
 
 1. `@Visualize` nativo é um renderizador opcional.
-2. O visual operacional usa um shell estático imutável, fixado por commit e servido por jsDelivr, sem configuração de GitHub Pages ou Vercel.
+2. O visual operacional usa um shell estático imutável, fixado por commit e servido com MIME correto por raw.githack CDN, sem configuração de GitHub Pages ou Vercel.
 3. Cada relatório viaja no fragmento portátil `#gz=` ou `#report=`; o fragmento não é enviado ao CDN.
 4. A página valida Score, HALF-UP, tiers, Final, exatamente 3 drivers, ledger DQ, posição BTC e Validator antes de renderizar.
 5. Envelope inconsistente é bloqueado; a UI nunca tenta corrigir, completar ou reinterpretar a V3.25.
@@ -24,9 +24,17 @@ O gerador utiliza um shell imutável no commit:
 
 Base técnica:
 
-`https://cdn.jsdelivr.net/gh/mynameismobtrue/file-drop@fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee/index.html`
+`https://rawcdn.githack.com/mynameismobtrue/file-drop/fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee/index.html`
 
 O shell contém apenas apresentação e validação. O resultado diário é carregado pelo fragmento da URL, de modo que o CDN não recebe nem armazena o envelope do relatório.
+
+O monitor de saúde exige publicamente:
+
+- `text/html` para o shell;
+- JavaScript executável com MIME apropriado;
+- `text/css` para estilos;
+- contrato do relatório válido;
+- geração correta do link portátil.
 
 ## Publicação de um novo relatório
 
@@ -68,5 +76,5 @@ A falha de uma camada não altera Score, Risk, DQ, Execution, Reference, Primary
 ## Monitoramento
 
 - `btc-visualize-ci.yml` valida contrato, assets e smoke test local.
-- `btc-visualize-health.yml` testa periodicamente o shell público imutável, MIME HTML, JavaScript, CSS, health contract, envelope atual e geração do link portátil.
+- `btc-visualize-health.yml` testa periodicamente o shell público imutável, MIME HTML/JS/CSS, health contract, envelope atual e geração do link portátil.
 - `pages.yml` é manual-only para não gerar falhas recorrentes enquanto GitHub Pages não estiver habilitado.
