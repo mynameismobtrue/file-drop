@@ -89,14 +89,17 @@ jobs:
             --disable-gpu \
             --disable-dev-shm-usage \
             --hide-scrollbars \
+            --enable-logging=stderr \
+            --log-level=0 \
             --window-size=393,852 \
             --virtual-time-budget=6000 \
             --dump-dom "$PORTABLE_URL" \
             > /tmp/rendered-mobile.html 2> /tmp/browser.log; then
-              cat /tmp/browser.log >&2
+              tail -n 120 /tmp/browser.log >&2
               exit 1
           fi
 
+          set +e
           python3 - <<'PY'
           from html import unescape
           from pathlib import Path
@@ -105,6 +108,12 @@ jobs:
           rendered = Path('/tmp/rendered-mobile.html').read_text(encoding='utf-8', errors='replace')
           text = unescape(re.sub(r'<[^>]+>', ' ', rendered))
           text = re.sub(r'\s+', ' ', text).strip()
+
+          if 'Visual bloqueado por integridade' in text:
+              error = re.search(r'Visual bloqueado por integridade(.{0,600})', text)
+              print('MOBILE_BROWSER_RENDER=FAIL')
+              print('Runtime integrity error: ' + (error.group(0) if error else 'details unavailable'))
+              raise SystemExit(1)
 
           required = (
               'RELATÓRIO ARQUIVADO',
@@ -119,12 +128,16 @@ jobs:
           if missing:
               print('MOBILE_BROWSER_RENDER=FAIL')
               print('Missing runtime markers: ' + ', '.join(missing))
-              raise SystemExit(1)
-
-          if 'Visual bloqueado por integridade' in text:
-              print('MOBILE_BROWSER_RENDER=FAIL')
-              print('Integrity error card was rendered')
+              print('Safe DOM state: skeleton=' + str('aria-busy="true"' in rendered) + ', app_script=' + str('app.js' in rendered) + ', text_length=' + str(len(text)))
+              print('Visible text prefix: ' + text[:700])
               raise SystemExit(1)
 
           print('MOBILE_BROWSER_RENDER=PASS')
           PY
+          STATUS=$?
+          set -e
+          if [ "$STATUS" -ne 0 ]; then
+            echo '--- BROWSER DIAGNOSTICS ---' >&2
+            grep -E 'ERROR|Error|error|CONSOLE|Console|Refused|blocked|Failed|failed' /tmp/browser.log | tail -n 120 >&2 || true
+            exit "$STATUS"
+          fi
