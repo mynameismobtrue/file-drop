@@ -23,12 +23,44 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Validate BTC visual contract
+        shell: bash
+        run: |
+          python3 btc-committee/validate_report.py btc-committee/latest.json
+          grep -q 'data-btc-visualize="v1"' btc-committee/index.html
+          grep -q 'native_visualize_required' btc-committee/health.json
+          test -s btc-committee/style.css
+          test -s btc-committee/app.js
+          grep -q 'href="style.css"' btc-committee/index.html
+          grep -q 'src="app.js"' btc-committee/index.html
+          node --check btc-committee/app.js
+
+      - name: Local static smoke test
+        shell: bash
+        run: |
+          python3 -m http.server 8080 --directory . >/tmp/pages-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+          for attempt in {1..10}; do
+            if curl --fail --silent --show-error http://127.0.0.1:8080/btc-committee/ | grep -q 'data-btc-visualize="v1"'; then
+              break
+            fi
+            sleep 1
+          done
+          curl --fail --silent --show-error http://127.0.0.1:8080/btc-committee/latest.json | \
+            python3 btc-committee/validate_report.py -
+          curl --fail --silent --show-error http://127.0.0.1:8080/btc-committee/health.json | \
+            python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["status"]=="OK" and d["native_visualize_required"] is False'
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
