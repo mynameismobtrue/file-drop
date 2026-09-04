@@ -1,58 +1,72 @@
-# Comitê BTC Diário — Visual Permanente V1
+# Comitê BTC Diário — Visual Resiliente V1
 
 Camada visual resiliente para o protocolo **Comitê BTC Diário V3.25 Congelada**.
 
-## Problema corrigido
+## Causa raiz corrigida
 
-O relatório dependia do recurso nativo `@Visualize` do runtime do ChatGPT. Esse recurso não está presente em todos os runtimes, especialmente em algumas execuções agendadas. Quando a capacidade nativa não era carregada, a análise podia estar correta, mas a apresentação visual desaparecia.
+O relatório dependia do recurso nativo `@Visualize` do runtime do ChatGPT. Essa capacidade não é carregada em todos os runtimes, especialmente em algumas execuções agendadas. Assim, a análise podia estar íntegra enquanto a apresentação visual desaparecia.
 
-A correção remove esse acoplamento:
+A arquitetura agora remove esse ponto único de falha:
 
-1. `@Visualize` passa a ser apenas um renderizador opcional.
-2. O visual permanente é servido pelo GitHub Pages em `/btc-committee/`.
-3. A página aceita um envelope publicado em `latest.json` ou um envelope portátil no fragmento `#report=`/`#gz=`.
-4. O navegador valida Score, HALF-UP, tiers, Final, DQ ledger, posição BTC e Validator antes de renderizar.
-5. Envelope inconsistente é bloqueado; a UI nunca tenta “consertar” ou reinterpretar a V3.25.
-6. Falha de rede pode exibir somente o último envelope íntegro salvo localmente, rotulado como **ARQUIVADO / NÃO EXECUTAR**.
+1. `@Visualize` nativo é um renderizador opcional.
+2. O visual operacional usa um shell estático imutável, fixado por commit e servido por jsDelivr, sem configuração de GitHub Pages ou Vercel.
+3. Cada relatório viaja no fragmento portátil `#gz=` ou `#report=`; o fragmento não é enviado ao CDN.
+4. A página valida Score, HALF-UP, tiers, Final, exatamente 3 drivers, ledger DQ, posição BTC e Validator antes de renderizar.
+5. Envelope inconsistente é bloqueado; a UI nunca tenta corrigir, completar ou reinterpretar a V3.25.
+6. Relatório expirado ou cache local é rotulado **ARQUIVADO — NÃO EXECUTAR**.
+7. GitHub Pages permanece apenas como espelho opcional e manual, depois de habilitado nas configurações do repositório.
 
-## Rotas
+## Shell operacional
 
-- Painel estável: `https://mynameismobtrue.github.io/file-drop/btc-committee/`
-- Saúde estática: `https://mynameismobtrue.github.io/file-drop/btc-committee/health.json`
-- Última publicação: `https://mynameismobtrue.github.io/file-drop/btc-committee/latest.json`
+O gerador utiliza um shell imutável no commit:
+
+`fbb7f7c6c7c4ee3249353ddd8af52b92977def58`
+
+Base técnica:
+
+`https://cdn.jsdelivr.net/gh/mynameismobtrue/file-drop@fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee/index.html`
+
+O shell contém apenas apresentação e validação. O resultado diário é carregado pelo fragmento da URL, de modo que o CDN não recebe nem armazena o envelope do relatório.
 
 ## Publicação de um novo relatório
 
-1. Substituir `latest.json` por um envelope `btc-committee-visual/1.0`.
-2. Executar:
+1. Gerar o envelope `btc-committee-visual/1.0` depois de fechar integralmente a V3.25.
+2. Validar:
 
 ```bash
 python3 btc-committee/validate_report.py btc-committee/latest.json
 ```
 
-3. Para gerar um link que não depende de gravação no GitHub:
+3. Gerar o link visual portátil:
 
 ```bash
 python3 btc-committee/make_visual_url.py btc-committee/latest.json
 ```
 
-O link portátil usa `#gz=` com GZIP + Base64URL e carrega o envelope no fragmento da URL. O fragmento não é enviado ao servidor. Use `--plain` apenas para navegadores sem `DecompressionStream`.
+O padrão é GZIP + Base64URL em `#gz=`. Use `--plain` apenas para navegadores sem `DecompressionStream`.
+
+4. Quando houver escrita GitHub, também atualizar `btc-committee/latest.json` para auditoria e histórico de publicação. Isso não é requisito para o link portátil funcionar.
 
 ## Contrato obrigatório para a tarefa das 16:30
 
-A tarefa deve encerrar a análise econômica antes de renderizar. Depois disso:
+A tarefa deve concluir o motor econômico antes de renderizar. Depois disso:
 
-1. Gerar o envelope visual conforme `latest.json`.
+1. Gerar um único `VISUAL_ENVELOPE`.
 2. Validar o envelope.
-3. Tentar o `@Visualize` nativo, quando disponível.
-4. **Sempre** fornecer também o visual permanente:
-   - preferencialmente, publicar o envelope em `btc-committee/latest.json`;
-   - se a escrita no GitHub não estiver disponível, gerar o link portátil `#gz=`.
-5. Se o recurso nativo falhar, não declarar que “a visualização ficou indisponível”. Declarar apenas `NATIVE_VISUALIZE=UNAVAILABLE` e usar o painel permanente como apresentação principal.
-6. O fallback textual mobile continua obrigatório como terceira camada, nunca como única camada visual.
+3. Tentar o `@Visualize` nativo quando disponível.
+4. Sempre gerar `PORTABLE_VISUAL_URL` com `make_visual_url.py` ou algoritmo equivalente.
+5. Entregar o link portátil como camada visual garantida, mesmo quando o nativo funcionar.
+6. Se o nativo falhar, registrar apenas `NATIVE_VISUALIZE=UNAVAILABLE`; o link portátil passa a ser a apresentação principal.
+7. Manter o fallback textual mobile como terceira camada.
 
 ## Hierarquia de entrega
 
-`NATIVE_VISUALIZE` → `HOSTED_VISUAL` → `TEXTUAL_MOBILE`
+`NATIVE_VISUALIZE` → `PORTABLE_HOSTED_VISUAL` → `TEXTUAL_MOBILE`
 
-A falha de uma camada não invalida as demais nem altera Score, Risk, DQ, Execution, Primary Block ou Final.
+A falha de uma camada não altera Score, Risk, DQ, Execution, Reference, Primary Block, Portfolio Tracker, aporte ou Final.
+
+## Monitoramento
+
+- `btc-visualize-ci.yml` valida contrato, assets e smoke test local.
+- `btc-visualize-health.yml` testa periodicamente o shell público imutável, MIME HTML, JavaScript, CSS, health contract, envelope atual e geração do link portátil.
+- `pages.yml` é manual-only para não gerar falhas recorrentes enquanto GitHub Pages não estiver habilitado.
