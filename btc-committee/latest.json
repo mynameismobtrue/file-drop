@@ -1,0 +1,157 @@
+{
+  "schema_version": "btc-committee-visual/1.0",
+  "published_at": "2026-09-03T19:34:36Z",
+  "publication_status": "LAST_PUBLISHED_REPORT",
+  "report": {
+    "cycle": {
+      "id": "20260903-1631-BRT",
+      "started_at": "2026-09-03T19:31:33Z",
+      "completed_at": "2026-09-03T19:34:36Z",
+      "cutoff_at": "2026-09-03T19:30:00Z",
+      "execution_expires_at": "2026-09-03T19:36:06Z",
+      "regime": "EXECUÇÃO EXTRAORDINÁRIA / TESTE MANUAL"
+    },
+    "decision": {
+      "executable_now_brl": 0,
+      "signal_theoretical_brl": 0,
+      "action": "NÃO COMPRAR",
+      "score_final": 52,
+      "score_class": "SEM OPORTUNIDADE",
+      "distance_to_next_threshold_points": 3,
+      "next_threshold_label": "55 → R$50",
+      "primary_block": "SCORE_SEM_OPORTUNIDADE",
+      "final": "BLOQUEADA",
+      "summary": "O score permaneceu abaixo do primeiro threshold. ETFs e parte do macro melhoraram, mas não houve autorização econômica; a baixa qualidade dos dados e a ausência de Reference MB atual foram gates adicionais."
+    },
+    "drivers": [
+      {
+        "title": "ETF voltou a ajudar, sem força máxima",
+        "detail": "A última sessão final elegível usada no ciclo foi +US$101,1 milhões contra −US$236,5 milhões. Pela regra L>0 e P<0, FL1 ficou FAV, não FORTE_FAV."
+      },
+      {
+        "title": "Macro melhorou, mas permaneceu misto",
+        "detail": "Yields e dólar recuaram no ciclo, enquanto petróleo e geopolítica continuaram adversos. Falas de autoridade monetária não foram tratadas como medida implementada."
+      },
+      {
+        "title": "Reference MB não atingiu a janela",
+        "detail": "Os snapshots disponíveis estavam fora da freshness exigida. A ausência reduziu confiança e validabilidade, mas não foi transformada em voto bearish ou Risk veto."
+      }
+    ],
+    "score": {
+      "total_raw": 52.0,
+      "breakdown": {
+        "valuation": {"weight": 25, "value": 12.5},
+        "trend": {"weight": 20, "value": 10.0},
+        "flows": {"weight": 15, "value": 9.25},
+        "onchain": {"weight": 15, "value": 7.5},
+        "macro": {"weight": 15, "value": 7.75},
+        "micro": {"weight": 10, "value": 5.0}
+      },
+      "anti_double_counting": "ETF foi contado uma vez em FL1; narrativa institucional não adicionou votos. Ausência técnica afetou DQ, não Trend. Falta de book fresco não virou microestrutura ruim."
+    },
+    "gates": {
+      "risk": {"status": "APROVADO COM RESSALVAS", "note": "Sem hard veto confirmado; geopolítica e energia permaneceram warnings."},
+      "dq": {"score": 40, "class": "INSUFICIENTE"},
+      "execution": {"status": "NÃO APLICÁVEL", "note": "Sinal teórico R$0; Final Refresh e comparação de modalidades não se aplicam."},
+      "materiality": "CLEAR"
+    },
+    "market_mb": {
+      "reference": {"type": "NONE", "value_label": "NONE", "timestamp": null},
+      "bridge": {"live": "DESATUALIZADO", "main": "DESATUALIZADO", "direct_api": "NÃO VALIDÁVEL"},
+      "book_note": "Nenhum book ou ticker MB dentro de 120 segundos foi usado. Snapshots stale não foram promovidos a Reference, carteira atual ou Execution."
+    },
+    "portfolio": {
+      "position_btc": "0.00015382",
+      "display_baseline_brl": 47.52,
+      "baseline_note": "Derivada do app MB por arredondamento; não é extrato oficial.",
+      "current": {
+        "available": false,
+        "value_brl": null,
+        "gain_origin_brl": null,
+        "gain_origin_pct": null,
+        "direction_since_origin": "INDISPONÍVEL",
+        "mark_type": "NONE",
+        "mark_timestamp": null
+      },
+      "last_verified": {
+        "available": true,
+        "value_brl": 60.79,
+        "gain_origin_brl": 13.27,
+        "gain_origin_pct": 27.93,
+        "direction_since_origin": "AUMENTOU",
+        "mark_type": "MB_HISTORICAL_LAST_TRADE",
+        "mark_price_brl": 395221,
+        "mark_timestamp": "2026-09-02T19:30:00Z"
+      },
+      "comparison": {"available": true, "label": "01/09/2026", "delta_brl": -0.68, "delta_pct": -1.11},
+      "integrity_note": "Portfolio Tracker permanece totalmente separado do Score, Risk, DQ, Execution, Reference e Final. O visual não calcula nem usa patrimônio para alterar a decisão."
+    },
+    "dq_ledger": {
+      "items": [
+        {"id":"A1","block":"A","qualified":0,"reason_codes":["STALE"]},
+        {"id":"A2","block":"A","qualified":0,"reason_codes":["MISSING"]},
+        {"id":"A3","block":"A","qualified":0,"reason_codes":["STALE"]},
+        {"id":"A4","block":"A","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"B1","block":"B","qualified":0,"reason_codes":["MISSING"]},
+        {"id":"B2","block":"B","qualified":0,"reason_codes":["MISSING"]},
+        {"id":"B3","block":"B","qualified":0,"reason_codes":["COMPONENT_MISSING"]},
+        {"id":"B4","block":"B","qualified":0,"reason_codes":["MISSING"]},
+        {"id":"C1","block":"C","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"C2","block":"C","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"C3","block":"C","qualified":0,"reason_codes":["COMPONENT_MISSING"]},
+        {"id":"C4","block":"C","qualified":0,"reason_codes":["COMPONENT_MISSING"]},
+        {"id":"D1","block":"D","qualified":0,"reason_codes":["MISSING"]},
+        {"id":"D2","block":"D","qualified":0,"reason_codes":["MISSING"]},
+        {"id":"D3","block":"D","qualified":0,"reason_codes":["MISSING"]},
+        {"id":"D4","block":"D","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"E1","block":"E","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"E2","block":"E","qualified":0,"reason_codes":["COMPONENT_MISSING"]},
+        {"id":"E3","block":"E","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"E4","block":"E","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"F1","block":"F","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"F2","block":"F","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"F3","block":"F","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]},
+        {"id":"F4","block":"F","qualified":1,"reason_codes":["PASS_ALL_REQUIREMENTS"]}
+      ]
+    },
+    "validator": {
+      "evaluated_count": 25,
+      "result": "PASS",
+      "asserts": [
+        {"id":"ASSERT1","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT2","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT3","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT4","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT5","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT6","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT7","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT8","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT9","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT10","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT11","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT12","status":"PASS-NOT_TRIGGERED"},
+        {"id":"ASSERT13","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT14","status":"PASS-NOT_TRIGGERED"},
+        {"id":"ASSERT15","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT16","status":"PASS-NOT_TRIGGERED"},
+        {"id":"ASSERT17","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT18","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT19","status":"PASS-NOT_TRIGGERED"},
+        {"id":"ASSERT20","status":"PASS-NOT_TRIGGERED"},
+        {"id":"ASSERT21","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT22","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT23","status":"PASS-TRIGGERED"},
+        {"id":"ASSERT24","status":"PASS-NOT_TRIGGERED"},
+        {"id":"ASSERT25","status":"PASS-TRIGGERED"}
+      ]
+    },
+    "adversarial_analysis": "O melhor argumento pró-compra foi a melhora simultânea de ETF, yield e dólar. O argumento contrário permaneceu superior no motor fechado: Score 52, DQ 40, ausência de Reference MB elegível e risco energético/geopolítico ainda ativo. Reordenação narrativa não altera o resultado.",
+    "sources": [
+      {"label":"MB Data Bridge live","role":"mercado local e execution","tier":"SRC1","url":"https://raw.githubusercontent.com/mynameismobtrue/file-drop/mb-live/mb-data-bridge/snapshot.txt"},
+      {"label":"MB Data Bridge main","role":"fallback auditável","tier":"SRC1","url":"https://raw.githubusercontent.com/mynameismobtrue/file-drop/main/mb-data-bridge/snapshot.txt"},
+      {"label":"Portfolio History","role":"tracker patrimonial oficial MB","tier":"SRC1","url":"https://raw.githubusercontent.com/mynameismobtrue/file-drop/main/portfolio-history/latest.json"},
+      {"label":"Farside Investors","role":"ETF spot EUA","tier":"DIRECT_DATA_PROVIDER","url":"https://farside.co.uk/btc/"},
+      {"label":"Alternative.me","role":"sentimento timestamped","tier":"DIRECT_DATA_PROVIDER","url":"https://alternative.me/crypto/fear-and-greed-index/"}
+    ]
+  }
+}
