@@ -35,7 +35,7 @@ jobs:
       - name: Verify immutable public shell and live report contract
         shell: bash
         run: |
-          set -euo pipefail
+          set -euxo pipefail
           CACHE_BUSTER="$(date +%s)"
 
           curl --fail --silent --show-error --location --dump-header /tmp/index.headers \
@@ -44,6 +44,11 @@ jobs:
           curl --fail --silent --show-error --location "${SHELL_BASE}/style.css" -o /tmp/style.css
           curl --fail --silent --show-error --location "${SHELL_BASE}/health.json" -o /tmp/health.json
           curl --fail --silent --show-error --location "${LATEST_URL}?health=${CACHE_BUSTER}" -o /tmp/latest.json
+
+          echo '--- INDEX HEADERS ---'
+          cat /tmp/index.headers
+          echo '--- FILE SIZES ---'
+          wc -c /tmp/index.html /tmp/app.js /tmp/style.css /tmp/health.json /tmp/latest.json
 
           grep -qi '^content-type: *text/html' /tmp/index.headers
           grep -q 'data-btc-visualize="v1"' /tmp/index.html
