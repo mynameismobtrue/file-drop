@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
-      SHELL_BASE: https://cdn.jsdelivr.net/gh/mynameismobtrue/file-drop@fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee
+      SHELL_BASE: https://rawcdn.githack.com/mynameismobtrue/file-drop/fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee
       LATEST_URL: https://raw.githubusercontent.com/mynameismobtrue/file-drop/main/btc-committee/latest.json
     steps:
       - name: Checkout validation tools
@@ -40,17 +40,19 @@ jobs:
 
           curl --fail --silent --show-error --location --dump-header /tmp/index.headers \
             "${SHELL_BASE}/index.html?health=${CACHE_BUSTER}" -o /tmp/index.html
-          curl --fail --silent --show-error --location "${SHELL_BASE}/app.js" -o /tmp/app.js
-          curl --fail --silent --show-error --location "${SHELL_BASE}/style.css" -o /tmp/style.css
+          curl --fail --silent --show-error --location --dump-header /tmp/app.headers \
+            "${SHELL_BASE}/app.js" -o /tmp/app.js
+          curl --fail --silent --show-error --location --dump-header /tmp/style.headers \
+            "${SHELL_BASE}/style.css" -o /tmp/style.css
           curl --fail --silent --show-error --location "${SHELL_BASE}/health.json" -o /tmp/health.json
           curl --fail --silent --show-error --location "${LATEST_URL}?health=${CACHE_BUSTER}" -o /tmp/latest.json
 
-          echo '--- INDEX HEADERS ---'
-          cat /tmp/index.headers
-          echo '--- FILE SIZES ---'
-          wc -c /tmp/index.html /tmp/app.js /tmp/style.css /tmp/health.json /tmp/latest.json
+          echo '--- PUBLIC MIME HEADERS ---'
+          grep -i '^content-type:' /tmp/index.headers /tmp/app.headers /tmp/style.headers
 
           grep -qi '^content-type: *text/html' /tmp/index.headers
+          grep -qi '^content-type: *\(application\|text\)/javascript' /tmp/app.headers
+          grep -qi '^content-type: *text/css' /tmp/style.headers
           grep -q 'data-btc-visualize="v1"' /tmp/index.html
           grep -q '__BTC_VISUALIZE_READY__' /tmp/app.js
           grep -q '^:root' /tmp/style.css
