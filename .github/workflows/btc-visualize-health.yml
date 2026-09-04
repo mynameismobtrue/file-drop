@@ -26,25 +26,26 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
-      SHELL_BASE: https://cdn.statically.io/gh/mynameismobtrue/file-drop@fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee
+      PREVIEW_BASE: https://htmlpreview.github.io/?https://github.com/mynameismobtrue/file-drop/blob/fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee/index.html
+      ASSET_BASE: https://rawcdn.githack.com/mynameismobtrue/file-drop/fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee
       LATEST_URL: https://raw.githubusercontent.com/mynameismobtrue/file-drop/main/btc-committee/latest.json
     steps:
       - name: Checkout validation tools
         uses: actions/checkout@v4
 
-      - name: Verify immutable public shell and live report contract
+      - name: Verify preview host, immutable assets and live report contract
         shell: bash
         run: |
           set -euo pipefail
           CACHE_BUSTER="$(date +%s)"
 
           curl --fail --silent --show-error --location --dump-header /tmp/index.headers \
-            "${SHELL_BASE}/index.html?health=${CACHE_BUSTER}" -o /tmp/index.html
+            "${PREVIEW_BASE}&health=${CACHE_BUSTER}" -o /tmp/preview.html
           curl --fail --silent --show-error --location --dump-header /tmp/app.headers \
-            "${SHELL_BASE}/app.js" -o /tmp/app.js
+            "${ASSET_BASE}/app.js" -o /tmp/app.js
           curl --fail --silent --show-error --location --dump-header /tmp/style.headers \
-            "${SHELL_BASE}/style.css" -o /tmp/style.css
-          curl --fail --silent --show-error --location "${SHELL_BASE}/health.json" -o /tmp/health.json
+            "${ASSET_BASE}/style.css" -o /tmp/style.css
+          curl --fail --silent --show-error --location "${ASSET_BASE}/health.json" -o /tmp/health.json
           curl --fail --silent --show-error --location "${LATEST_URL}?health=${CACHE_BUSTER}" -o /tmp/latest.json
 
           echo '--- PUBLIC MIME HEADERS ---'
@@ -53,7 +54,7 @@ jobs:
           grep -qi '^content-type: *text/html' /tmp/index.headers
           grep -qi '^content-type: *\(application\|text\)/javascript' /tmp/app.headers
           grep -qi '^content-type: *text/css' /tmp/style.headers
-          grep -q 'data-btc-visualize="v1"' /tmp/index.html
+          grep -qi 'HTML Preview' /tmp/preview.html
           grep -q '__BTC_VISUALIZE_READY__' /tmp/app.js
           grep -q '^:root' /tmp/style.css
           node --check /tmp/app.js
@@ -65,13 +66,13 @@ jobs:
           assert health['status'] == 'OK'
           assert health['service'] == 'btc-committee-visual'
           assert health['native_visualize_required'] is False
-          print('IMMUTABLE_VISUAL_SHELL=PASS')
+          print('IMMUTABLE_VISUAL_ASSETS=PASS')
           PY
 
           PORTABLE_URL="$(python3 btc-committee/make_visual_url.py /tmp/latest.json)"
           case "$PORTABLE_URL" in
-            "${SHELL_BASE}/index.html#gz="*) ;;
-            *) echo "Portable URL did not use the immutable Statically shell" >&2; exit 1 ;;
+            "${PREVIEW_BASE}#gz="*) ;;
+            *) echo "Portable URL did not use GitHub HTML Preview" >&2; exit 1 ;;
           esac
           echo "PORTABLE_VISUAL_URL=PASS"
 
@@ -83,7 +84,7 @@ jobs:
           BROWSER="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium || true)"
           test -n "$BROWSER"
 
-          if ! timeout 30s "$BROWSER" \
+          if ! timeout 35s "$BROWSER" \
             --headless=new \
             --no-sandbox \
             --disable-gpu \
@@ -92,7 +93,7 @@ jobs:
             --enable-logging=stderr \
             --log-level=0 \
             --window-size=393,852 \
-            --virtual-time-budget=8000 \
+            --virtual-time-budget=10000 \
             --dump-dom "$PORTABLE_URL" \
             > /tmp/rendered-mobile.html 2> /tmp/browser.log; then
               tail -n 120 /tmp/browser.log >&2
@@ -132,9 +133,9 @@ jobs:
               print('Visible text prefix: ' + text[:700])
               raise SystemExit(1)
 
-          if 'External Content Notice' in text:
+          if 'Enter URL of HTML file to preview' in text:
               print('MOBILE_BROWSER_RENDER=FAIL')
-              print('Unexpected interstitial detected')
+              print('Preview host did not load the requested source')
               raise SystemExit(1)
 
           print('MOBILE_BROWSER_RENDER=PASS')
