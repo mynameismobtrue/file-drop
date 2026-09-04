@@ -1,0 +1,8 @@
+{
+  "status": "OK",
+  "service": "btc-committee-visual",
+  "schema_version": "btc-committee-visual/1.0",
+  "native_visualize_required": false,
+  "host": "github-pages",
+  "route": "/file-drop/btc-committee/"
+}
