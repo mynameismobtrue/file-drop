@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Create a portable, validated BTC Committee visual URL.
 
-The HTML shell is served by a stable Vercel production alias. Immutable CSS and
-JavaScript are pinned by commit inside that shell. The report travels only in
-the URL fragment, so it is not sent to the host.
+The visual shell and assets are pinned to an immutable Git commit through the
+Statically GitHub CDN. The report travels only in the URL fragment, so it is
+not sent to or cached by the host.
 """
 from __future__ import annotations
 
@@ -16,7 +16,11 @@ import sys
 
 from validate_report import validate
 
-BASE_URL = "https://btc-committee-visual-marceloapplemob-7630s-projects.vercel.app/"
+VISUAL_SHELL_COMMIT = "fbb7f7c6c7c4ee3249353ddd8af52b92977def58"
+BASE_URL = (
+    "https://cdn.statically.io/gh/mynameismobtrue/file-drop@"
+    f"{VISUAL_SHELL_COMMIT}/btc-committee/index.html"
+)
 
 
 def encode_base64url(data: bytes) -> str:
