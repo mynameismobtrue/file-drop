@@ -1,8 +1,9 @@
-name: Deploy static site to GitHub Pages
+name: Deploy static site to GitHub Pages (optional)
 
+# GitHub Pages is an optional branded mirror. It is manual-only until the
+# repository owner enables Settings > Pages > Source: GitHub Actions.
+# The operational BTC visual does not depend on this workflow.
 on:
-  push:
-    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -27,6 +28,7 @@ jobs:
       - name: Validate BTC visual contract
         shell: bash
         run: |
+          set -euo pipefail
           python3 btc-committee/validate_report.py btc-committee/latest.json
           grep -q 'data-btc-visualize="v1"' btc-committee/index.html
           grep -q 'native_visualize_required' btc-committee/health.json
@@ -39,6 +41,7 @@ jobs:
       - name: Local static smoke test
         shell: bash
         run: |
+          set -euo pipefail
           python3 -m http.server 8080 --directory . >/tmp/pages-http.log 2>&1 &
           SERVER_PID=$!
           trap 'kill "$SERVER_PID"' EXIT
