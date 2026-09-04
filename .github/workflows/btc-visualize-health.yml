@@ -26,26 +26,25 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
-      SHELL_URL: https://btc-committee-visual-marceloapplemob-7630s-projects.vercel.app/
-      ASSET_BASE: https://rawcdn.githack.com/mynameismobtrue/file-drop/fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee
+      SHELL_BASE: https://cdn.statically.io/gh/mynameismobtrue/file-drop@fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee
       LATEST_URL: https://raw.githubusercontent.com/mynameismobtrue/file-drop/main/btc-committee/latest.json
     steps:
       - name: Checkout validation tools
         uses: actions/checkout@v4
 
-      - name: Verify public shell, immutable assets and live report contract
+      - name: Verify immutable public shell and live report contract
         shell: bash
         run: |
           set -euo pipefail
           CACHE_BUSTER="$(date +%s)"
 
           curl --fail --silent --show-error --location --dump-header /tmp/index.headers \
-            "${SHELL_URL}?health=${CACHE_BUSTER}" -o /tmp/index.html
+            "${SHELL_BASE}/index.html?health=${CACHE_BUSTER}" -o /tmp/index.html
           curl --fail --silent --show-error --location --dump-header /tmp/app.headers \
-            "${ASSET_BASE}/app.js" -o /tmp/app.js
+            "${SHELL_BASE}/app.js" -o /tmp/app.js
           curl --fail --silent --show-error --location --dump-header /tmp/style.headers \
-            "${ASSET_BASE}/style.css" -o /tmp/style.css
-          curl --fail --silent --show-error --location "${ASSET_BASE}/health.json" -o /tmp/health.json
+            "${SHELL_BASE}/style.css" -o /tmp/style.css
+          curl --fail --silent --show-error --location "${SHELL_BASE}/health.json" -o /tmp/health.json
           curl --fail --silent --show-error --location "${LATEST_URL}?health=${CACHE_BUSTER}" -o /tmp/latest.json
 
           echo '--- PUBLIC MIME HEADERS ---'
@@ -57,8 +56,6 @@ jobs:
           grep -q 'data-btc-visualize="v1"' /tmp/index.html
           grep -q '__BTC_VISUALIZE_READY__' /tmp/app.js
           grep -q '^:root' /tmp/style.css
-          grep -q "${ASSET_BASE}/app.js" /tmp/index.html
-          grep -q "${ASSET_BASE}/style.css" /tmp/index.html
           node --check /tmp/app.js
           python3 btc-committee/validate_report.py /tmp/latest.json
 
@@ -68,13 +65,13 @@ jobs:
           assert health['status'] == 'OK'
           assert health['service'] == 'btc-committee-visual'
           assert health['native_visualize_required'] is False
-          print('IMMUTABLE_VISUAL_ASSETS=PASS')
+          print('IMMUTABLE_VISUAL_SHELL=PASS')
           PY
 
           PORTABLE_URL="$(python3 btc-committee/make_visual_url.py /tmp/latest.json)"
           case "$PORTABLE_URL" in
-            "${SHELL_URL}#gz="*) ;;
-            *) echo "Portable URL did not use the stable Vercel shell" >&2; exit 1 ;;
+            "${SHELL_BASE}/index.html#gz="*) ;;
+            *) echo "Portable URL did not use the immutable Statically shell" >&2; exit 1 ;;
           esac
           echo "PORTABLE_VISUAL_URL=PASS"
 
