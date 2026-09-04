@@ -1,9 +1,15 @@
 name: BTC Visualize public health
 
 on:
-  workflow_run:
-    workflows: ["Deploy static site to GitHub Pages"]
-    types: [completed]
+  pull_request:
+    paths:
+      - "btc-committee/**"
+      - ".github/workflows/btc-visualize-health.yml"
+  push:
+    branches: ["main"]
+    paths:
+      - "btc-committee/**"
+      - ".github/workflows/btc-visualize-health.yml"
   schedule:
     - cron: "17,47 * * * *"
   workflow_dispatch:
@@ -12,43 +18,52 @@ permissions:
   contents: read
 
 concurrency:
-  group: btc-visualize-public-health
+  group: btc-visualize-public-health-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   public-smoke:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    env:
+      SHELL_BASE: https://cdn.jsdelivr.net/gh/mynameismobtrue/file-drop@fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee
+      LATEST_URL: https://raw.githubusercontent.com/mynameismobtrue/file-drop/main/btc-committee/latest.json
     steps:
-      - name: Checkout validation script
+      - name: Checkout validation tools
         uses: actions/checkout@v4
 
-      - name: Verify permanent visual and report contract
+      - name: Verify immutable public shell and live report contract
         shell: bash
-        env:
-          BASE_URL: https://mynameismobtrue.github.io/file-drop/btc-committee
         run: |
           set -euo pipefail
           CACHE_BUSTER="$(date +%s)"
-          SUCCESS=0
-          for attempt in {1..18}; do
-            if curl --fail --silent --show-error "${BASE_URL}/?health=${CACHE_BUSTER}" -o /tmp/btc-visual.html && \
-               grep -q 'data-btc-visualize="v1"' /tmp/btc-visual.html && \
-               curl --fail --silent --show-error "${BASE_URL}/latest.json?health=${CACHE_BUSTER}" -o /tmp/latest.json && \
-               curl --fail --silent --show-error "${BASE_URL}/health.json?health=${CACHE_BUSTER}" -o /tmp/health.json; then
-              SUCCESS=1
-              break
-            fi
-            sleep 5
-          done
-          test "$SUCCESS" -eq 1
+
+          curl --fail --silent --show-error --location --dump-header /tmp/index.headers \
+            "${SHELL_BASE}/index.html?health=${CACHE_BUSTER}" -o /tmp/index.html
+          curl --fail --silent --show-error --location "${SHELL_BASE}/app.js" -o /tmp/app.js
+          curl --fail --silent --show-error --location "${SHELL_BASE}/style.css" -o /tmp/style.css
+          curl --fail --silent --show-error --location "${SHELL_BASE}/health.json" -o /tmp/health.json
+          curl --fail --silent --show-error --location "${LATEST_URL}?health=${CACHE_BUSTER}" -o /tmp/latest.json
+
+          grep -qi '^content-type: *text/html' /tmp/index.headers
+          grep -q 'data-btc-visualize="v1"' /tmp/index.html
+          grep -q '__BTC_VISUALIZE_READY__' /tmp/app.js
+          grep -q '^:root' /tmp/style.css
+          node --check /tmp/app.js
           python3 btc-committee/validate_report.py /tmp/latest.json
+
           python3 - <<'PY'
           import json
           health = json.load(open('/tmp/health.json', encoding='utf-8'))
           assert health['status'] == 'OK'
           assert health['service'] == 'btc-committee-visual'
           assert health['native_visualize_required'] is False
-          print('PUBLIC_VISUAL_HEALTH=PASS')
+          print('IMMUTABLE_VISUAL_SHELL=PASS')
           PY
+
+          PORTABLE_URL="$(python3 btc-committee/make_visual_url.py /tmp/latest.json)"
+          case "$PORTABLE_URL" in
+            "${SHELL_BASE}/index.html#gz="*) ;;
+            *) echo "Portable URL did not use immutable shell" >&2; exit 1 ;;
+          esac
+          echo "PORTABLE_VISUAL_URL=PASS"
