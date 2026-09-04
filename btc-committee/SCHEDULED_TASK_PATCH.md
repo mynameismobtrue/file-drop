@@ -10,8 +10,8 @@ Após fechar integralmente a V3.25 e executar o Validator 25/25:
 - Gerar um único `VISUAL_ENVELOPE` no schema `btc-committee-visual/1.0`. A UI não recalcula nem reinterpreta o motor.
 - Validar antes de exibir: HALF-UP, Score/sinal, Final/executável, exatamente 3 drivers, pesos 25/20/15/15/15/10, ledger A1-F4 completo, posição `0.00015382 BTC` e Validator 25/25.
 - Tentar `@Visualize` nativo quando essa capacidade existir no runtime.
-- Independentemente do resultado nativo, sempre produzir `PORTABLE_VISUAL_URL` usando o shell imutável:
-  - `https://cdn.jsdelivr.net/gh/mynameismobtrue/file-drop@fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee/index.html`
+- Independentemente do resultado nativo, sempre produzir `PORTABLE_VISUAL_URL` usando o shell imutável com MIME HTML/JS/CSS validado:
+  - `https://rawcdn.githack.com/mynameismobtrue/file-drop/fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee/index.html`
   - anexar `#gz=<GZIP_BASE64URL_DO_VISUAL_ENVELOPE>`;
   - usar `#report=<BASE64URL_DO_VISUAL_ENVELOPE>` apenas quando o navegador não suportar `DecompressionStream`.
 - O fragmento contém o relatório e não é enviado ao CDN.
