@@ -1,97 +1,97 @@
 {
   "service": "mb-data-bridge-github",
   "version": "1.2.0",
-  "status": "DEGRADED",
+  "status": "OK",
   "source": "MERCADO_BITCOIN",
   "pair": "BTC-BRL",
-  "fetched_at": "2026-09-18T17:03:22.669328Z",
-  "source_timestamp": "2026-09-18T17:03:18Z",
+  "fetched_at": "2026-09-18T19:32:10.719270Z",
+  "source_timestamp": "2026-09-18T19:32:10.719270Z",
   "ticker": {
     "valid": true,
     "attempts": 1,
     "http_status": 200,
-    "last_brl": 416592.0,
+    "last_brl": 418488.0,
     "high_brl": 419443.0,
     "low_brl": 392510.0,
-    "open_brl": 396614.0,
-    "volume_btc": 30.03975788,
-    "timestamp": "2026-09-18T17:03:18Z",
+    "open_brl": 394293.0,
+    "volume_btc": 28.99054272,
+    "timestamp": "2026-09-18T19:32:10Z",
     "error": null
   },
   "orderbook": {
-    "valid": false,
-    "attempts": 3,
-    "http_status": null,
-    "validation_error": "BOOK_NOT_FOUND",
+    "valid": true,
+    "attempts": 1,
+    "http_status": 200,
+    "validation_error": null,
     "timestamp": null,
-    "freshness_timestamp": null,
-    "time_basis": null,
+    "freshness_timestamp": "2026-09-18T19:32:10.719270Z",
+    "time_basis": "FETCHED_AT",
     "limit_requested": 1000,
-    "bid_levels": 0,
-    "ask_levels": 0,
+    "bid_levels": 718,
+    "ask_levels": 1000,
     "bid_limit_reached": false,
-    "ask_limit_reached": false,
-    "best_bid_brl": null,
-    "best_ask_brl": null,
-    "spread_brl": null,
-    "spread_pct": null,
-    "error": "HTTPError:HTTP Error 500: Internal Server Error"
+    "ask_limit_reached": true,
+    "best_bid_brl": 418457.0,
+    "best_ask_brl": 418458.0,
+    "spread_brl": 1.0,
+    "spread_pct": 0.0002389728944994414,
+    "error": null
   },
   "execution": {
     "vwap_buy": {
       "50": {
         "amount_brl": 50,
-        "sufficient_depth": false,
-        "vwap_brl": null,
-        "slippage_pct_vs_best_ask": null,
-        "btc_acquired": null
+        "sufficient_depth": true,
+        "vwap_brl": 418458.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000119486304
       },
       "100": {
         "amount_brl": 100,
-        "sufficient_depth": false,
-        "vwap_brl": null,
-        "slippage_pct_vs_best_ask": null,
-        "btc_acquired": null
+        "sufficient_depth": true,
+        "vwap_brl": 418458.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000238972609
       },
       "150": {
         "amount_brl": 150,
-        "sufficient_depth": false,
-        "vwap_brl": null,
-        "slippage_pct_vs_best_ask": null,
-        "btc_acquired": null
+        "sufficient_depth": true,
+        "vwap_brl": 418458.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000358458913
       },
       "200": {
         "amount_brl": 200,
-        "sufficient_depth": false,
-        "vwap_brl": null,
-        "slippage_pct_vs_best_ask": null,
-        "btc_acquired": null
+        "sufficient_depth": true,
+        "vwap_brl": 418458.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000477945218
       },
       "300": {
         "amount_brl": 300,
-        "sufficient_depth": false,
-        "vwap_brl": null,
-        "slippage_pct_vs_best_ask": null,
-        "btc_acquired": null
+        "sufficient_depth": true,
+        "vwap_brl": 418458.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000716917827
       },
       "400": {
         "amount_brl": 400,
-        "sufficient_depth": false,
-        "vwap_brl": null,
-        "slippage_pct_vs_best_ask": null,
-        "btc_acquired": null
+        "sufficient_depth": true,
+        "vwap_brl": 418458.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000955890436
       },
       "500": {
         "amount_brl": 500,
-        "sufficient_depth": false,
-        "vwap_brl": null,
-        "slippage_pct_vs_best_ask": null,
-        "btc_acquired": null
+        "sufficient_depth": true,
+        "vwap_brl": 418458.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.001194863045
       }
     }
   },
   "integrity": {
-    "execution_book_ready": false,
+    "execution_book_ready": true,
     "read_only": true,
     "no_trading_credentials": true
   }
