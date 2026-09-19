@@ -14,7 +14,7 @@
   "COVERAGE_EQUIVALENCE_NOT_ASSERTED": false,
   "DATA_BRIDGE_VERSION": "1.1.3",
   "LAST_COMPLETE_SNAPSHOT": null,
-  "LATEST_ATTEMPT": "fd-20260919T124604Z-7a18ce36",
+  "LATEST_ATTEMPT": "fd-20260919T165350Z-718a840b",
   "LIVE_ENV_VERSION": "1.0.0",
   "NON_VALIDATABLE_OFFERS": [],
   "PRICE_HISTORY": {},
@@ -41,7 +41,7 @@
       "provider": "IGNAV",
       "queries": [
         {
-          "completed_at": "2026-09-19T12:46:05.243303+00:00",
+          "completed_at": "2026-09-19T16:53:51.301255+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -54,11 +54,11 @@
           "query_id": "GRU-2026-10-26-LIS-2026-11-03-GRU",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.024863+00:00",
+          "started_at": "2026-09-19T16:53:50.986843+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.242146+00:00",
+          "completed_at": "2026-09-19T16:53:51.301962+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -71,11 +71,11 @@
           "query_id": "GRU-2026-10-26-LIS-2026-11-03-VCP",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.025344+00:00",
+          "started_at": "2026-09-19T16:53:50.987166+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.240837+00:00",
+          "completed_at": "2026-09-19T16:53:51.298625+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -88,11 +88,11 @@
           "query_id": "GRU-2026-10-27-LIS-2026-11-03-GRU",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.025601+00:00",
+          "started_at": "2026-09-19T16:53:50.987628+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.244828+00:00",
+          "completed_at": "2026-09-19T16:53:51.299953+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -105,11 +105,11 @@
           "query_id": "GRU-2026-10-27-LIS-2026-11-03-VCP",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.025854+00:00",
+          "started_at": "2026-09-19T16:53:50.987893+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.253945+00:00",
+          "completed_at": "2026-09-19T16:53:51.315697+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -122,11 +122,11 @@
           "query_id": "GRU-2026-10-28-LIS-2026-11-03-GRU",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.240896+00:00",
+          "started_at": "2026-09-19T16:53:51.298690+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.260621+00:00",
+          "completed_at": "2026-09-19T16:53:51.318822+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -139,11 +139,11 @@
           "query_id": "GRU-2026-10-28-LIS-2026-11-03-VCP",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.242177+00:00",
+          "started_at": "2026-09-19T16:53:51.299982+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.264432+00:00",
+          "completed_at": "2026-09-19T16:53:51.347524+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -156,11 +156,11 @@
           "query_id": "VCP-2026-10-26-LIS-2026-11-03-GRU",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.243324+00:00",
+          "started_at": "2026-09-19T16:53:51.301290+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.288218+00:00",
+          "completed_at": "2026-09-19T16:53:51.320362+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -173,11 +173,11 @@
           "query_id": "VCP-2026-10-26-LIS-2026-11-03-VCP",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.244869+00:00",
+          "started_at": "2026-09-19T16:53:51.301993+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.266836+00:00",
+          "completed_at": "2026-09-19T16:53:51.330173+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -190,11 +190,11 @@
           "query_id": "VCP-2026-10-27-LIS-2026-11-03-GRU",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.253974+00:00",
+          "started_at": "2026-09-19T16:53:51.315724+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.277848+00:00",
+          "completed_at": "2026-09-19T16:53:51.339416+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -207,11 +207,11 @@
           "query_id": "VCP-2026-10-27-LIS-2026-11-03-VCP",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.260682+00:00",
+          "started_at": "2026-09-19T16:53:51.318848+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.279202+00:00",
+          "completed_at": "2026-09-19T16:53:51.336557+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -224,11 +224,11 @@
           "query_id": "VCP-2026-10-28-LIS-2026-11-03-GRU",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.264460+00:00",
+          "started_at": "2026-09-19T16:53:51.320395+00:00",
           "status": "FAILED"
         },
         {
-          "completed_at": "2026-09-19T12:46:05.282298+00:00",
+          "completed_at": "2026-09-19T16:53:51.343583+00:00",
           "error_codes": [
             "BILLING_REQUIRED"
           ],
@@ -241,7 +241,7 @@
           "query_id": "VCP-2026-10-28-LIS-2026-11-03-VCP",
           "raw_offers_count": 0,
           "response_sha256": null,
-          "started_at": "2026-09-19T12:46:05.266862+00:00",
+          "started_at": "2026-09-19T16:53:51.330199+00:00",
           "status": "FAILED"
         }
       ],
@@ -262,12 +262,12 @@
   },
   "REJECTED_OFFERS": [],
   "SEARCH_METADATA": {
-    "ACTUAL_DELAY_SECONDS": 13564,
+    "ACTUAL_DELAY_SECONDS": 10430,
     "ERROR_CODES": [
       "BILLING_REQUIRED",
       "SEARCH_MISSING_QUERY"
     ],
-    "FETCHED_AT": "2026-09-19T12:46:05.288687+00:00",
+    "FETCHED_AT": "2026-09-19T16:53:51.347999+00:00",
     "FLIGHT_SEARCH_TTL_MIN": 90,
     "IS_COMPLETE": false,
     "QUERY_PARAMETERS": {
@@ -346,10 +346,10 @@
         }
       ]
     },
-    "SCHEDULED_FOR": "2026-09-19T09:00:00+00:00",
-    "SEARCH_COMPLETED_AT": "2026-09-19T12:46:05.288687+00:00",
-    "SEARCH_ID": "fd-20260919T124604Z-7a18ce36",
-    "SEARCH_STARTED_AT": "2026-09-19T12:46:04.823831+00:00",
+    "SCHEDULED_FOR": "2026-09-19T14:00:00+00:00",
+    "SEARCH_COMPLETED_AT": "2026-09-19T16:53:51.347999+00:00",
+    "SEARCH_ID": "fd-20260919T165350Z-718a840b",
+    "SEARCH_STARTED_AT": "2026-09-19T16:53:50.793578+00:00",
     "SEARCH_STATUS": "FAILED",
     "SOURCE_TIMESTAMP": null,
     "TTL_STATUS": "UNAVAILABLE"
