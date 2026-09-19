@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Create a portable, validated BTC Committee visual URL.
 
-The visual shell is pinned to an immutable Git commit on raw.githack CDN. The
-report travels in the URL fragment, so it is never sent to or cached by the CDN.
+The immutable visual source remains pinned to a Git commit. GitHub HTML Preview
+renders that source in the browser, while the report travels only in the URL
+fragment and is not sent to the preview host.
 """
 from __future__ import annotations
 
@@ -16,10 +17,11 @@ import sys
 from validate_report import validate
 
 VISUAL_SHELL_COMMIT = "fbb7f7c6c7c4ee3249353ddd8af52b92977def58"
-BASE_URL = (
-    "https://rawcdn.githack.com/mynameismobtrue/file-drop/"
+SOURCE_URL = (
+    "https://github.com/mynameismobtrue/file-drop/blob/"
     f"{VISUAL_SHELL_COMMIT}/btc-committee/index.html"
 )
+BASE_URL = f"https://htmlpreview.github.io/?{SOURCE_URL}"
 
 
 def encode_base64url(data: bytes) -> str:
