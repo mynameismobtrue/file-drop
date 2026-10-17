@@ -4,36 +4,36 @@
   "not_for_research_reference": true,
   "source": "MERCADO_BITCOIN",
   "pair": "BTC-BRL",
-  "target_date": "2026-10-16",
-  "cutoff_local": "2026-10-16T16:30:00-03:00",
-  "cutoff_utc": "2026-10-16T19:30:00Z",
-  "generated_at": "2026-10-16T22:09:59.391931Z",
+  "target_date": "2026-10-17",
+  "cutoff_local": "2026-10-17T16:30:00-03:00",
+  "cutoff_utc": "2026-10-17T19:30:00Z",
+  "generated_at": "2026-10-17T21:37:01.231582Z",
   "position_btc_confirmed": 0.00015382,
   "display_baseline_brl": 47.52,
   "mark_status": "AVAILABLE",
   "mark": {
     "status": "AVAILABLE",
-    "method": "MB_HISTORICAL_LAST_TRADE",
-    "price_brl": 414532.0,
-    "source_timestamp": "2026-10-16T19:29:51Z",
-    "age_seconds_at_cutoff": 9,
-    "trade_id": 22691941,
-    "raw_url": "https://api.mercadobitcoin.net/api/v4/BTC-BRL/trades?from=1792178880&to=1792179000&limit=1000"
+    "method": "MB_HISTORICAL_CANDLE_1M_CLOSE",
+    "price_brl": 414024.0,
+    "source_timestamp": "2026-10-17T19:28:00Z",
+    "candle_start_timestamp": "2026-10-17T19:27:00Z",
+    "age_seconds_at_cutoff": 120,
+    "raw_url": "https://api.mercadobitcoin.net/api/v4/candles?symbol=BTC-BRL&resolution=1m&to=1792265399&countback=5"
   },
   "portfolio": {
-    "value_brl": 63.76,
-    "value_brl_raw": 63.76331224,
-    "gain_since_2026_06_11_brl": 16.24,
-    "gain_since_2026_06_11_pct": 34.182054,
+    "value_brl": 63.69,
+    "value_brl_raw": 63.68517168,
+    "gain_since_2026_06_11_brl": 16.17,
+    "gain_since_2026_06_11_pct": 34.017617,
     "direction_since_2026_06_11": "AUMENTOU",
     "baseline_is_display_estimate": true
   },
   "previous_archive": {
-    "target_date": "2026-10-15",
-    "value_brl": 64.68,
-    "value_brl_raw": 64.68454022,
-    "delta_brl": -0.92,
-    "delta_pct": -1.424186,
+    "target_date": "2026-10-16",
+    "value_brl": 63.76,
+    "value_brl_raw": 63.76331224,
+    "delta_brl": -0.08,
+    "delta_pct": -0.122548,
     "direction": "CAIU"
   },
   "retrieval": {
@@ -42,6 +42,10 @@
       "attempts": 1,
       "error": null
     },
-    "candles": null
+    "candles": {
+      "ok": true,
+      "attempts": 1,
+      "error": null
+    }
   }
 }
