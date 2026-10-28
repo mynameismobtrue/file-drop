@@ -4,18 +4,18 @@
   "status": "OK",
   "source": "MERCADO_BITCOIN",
   "pair": "BTC-BRL",
-  "fetched_at": "2026-10-28T05:08:33.753169Z",
-  "source_timestamp": "2026-10-28T05:08:33.753169Z",
+  "fetched_at": "2026-10-28T11:17:51.589616Z",
+  "source_timestamp": "2026-10-28T11:17:51.589616Z",
   "ticker": {
     "valid": true,
     "attempts": 1,
     "http_status": 200,
-    "last_brl": 433409.0,
-    "high_brl": 435000.0,
+    "last_brl": 435325.0,
+    "high_brl": 437148.0,
     "low_brl": 424649.0,
-    "open_brl": 429141.0,
-    "volume_btc": 16.33068635,
-    "timestamp": "2026-10-28T05:08:16Z",
+    "open_brl": 430197.0,
+    "volume_btc": 16.85812894,
+    "timestamp": "2026-10-28T11:17:48Z",
     "error": null
   },
   "orderbook": {
@@ -24,17 +24,17 @@
     "http_status": 200,
     "validation_error": null,
     "timestamp": null,
-    "freshness_timestamp": "2026-10-28T05:08:33.753169Z",
+    "freshness_timestamp": "2026-10-28T11:17:51.589616Z",
     "time_basis": "FETCHED_AT",
     "limit_requested": 1000,
     "bid_levels": 624,
     "ask_levels": 1000,
     "bid_limit_reached": false,
     "ask_limit_reached": true,
-    "best_bid_brl": 433557.0,
-    "best_ask_brl": 433558.0,
+    "best_bid_brl": 435324.0,
+    "best_ask_brl": 435325.0,
     "spread_brl": 1.0,
-    "spread_pct": 0.00023064991379459474,
+    "spread_pct": 0.00022971369633457343,
     "error": null
   },
   "execution": {
@@ -42,51 +42,51 @@
       "50": {
         "amount_brl": 50,
         "sufficient_depth": true,
-        "vwap_brl": 433558.0,
+        "vwap_brl": 435325.0,
         "slippage_pct_vs_best_ask": 0.0,
-        "btc_acquired": 0.000115324824
+        "btc_acquired": 0.000114856716
       },
       "100": {
         "amount_brl": 100,
         "sufficient_depth": true,
-        "vwap_brl": 433558.0,
+        "vwap_brl": 435325.0,
         "slippage_pct_vs_best_ask": 0.0,
-        "btc_acquired": 0.000230649648
+        "btc_acquired": 0.000229713432
       },
       "150": {
         "amount_brl": 150,
         "sufficient_depth": true,
-        "vwap_brl": 433558.0,
-        "slippage_pct_vs_best_ask": -0.0,
-        "btc_acquired": 0.000345974472
+        "vwap_brl": 435325.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000344570149
       },
       "200": {
         "amount_brl": 200,
         "sufficient_depth": true,
-        "vwap_brl": 433558.0,
+        "vwap_brl": 435325.0,
         "slippage_pct_vs_best_ask": 0.0,
-        "btc_acquired": 0.000461299296
+        "btc_acquired": 0.000459426865
       },
       "300": {
         "amount_brl": 300,
         "sufficient_depth": true,
-        "vwap_brl": 433558.0,
-        "slippage_pct_vs_best_ask": -0.0,
-        "btc_acquired": 0.000691948943
+        "vwap_brl": 435325.0,
+        "slippage_pct_vs_best_ask": 0.0,
+        "btc_acquired": 0.000689140297
       },
       "400": {
         "amount_brl": 400,
         "sufficient_depth": true,
-        "vwap_brl": 433558.0,
+        "vwap_brl": 435325.0,
         "slippage_pct_vs_best_ask": 0.0,
-        "btc_acquired": 0.000922598591
+        "btc_acquired": 0.00091885373
       },
       "500": {
         "amount_brl": 500,
         "sufficient_depth": true,
-        "vwap_brl": 433558.0,
+        "vwap_brl": 435325.0,
         "slippage_pct_vs_best_ask": 0.0,
-        "btc_acquired": 0.001153248239
+        "btc_acquired": 0.001148567162
       }
     }
   },
