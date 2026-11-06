@@ -4,10 +4,10 @@
   "not_for_research_reference": true,
   "source": "MERCADO_BITCOIN",
   "pair": "BTC-BRL",
-  "target_date": "2026-11-05",
-  "cutoff_local": "2026-11-05T16:30:00-03:00",
-  "cutoff_utc": "2026-11-05T19:30:00Z",
-  "generated_at": "2026-11-06T00:29:00.848662Z",
+  "target_date": "2026-11-06",
+  "cutoff_local": "2026-11-06T16:30:00-03:00",
+  "cutoff_utc": "2026-11-06T19:30:00Z",
+  "generated_at": "2026-11-06T23:46:00.310284Z",
   "position_btc_confirmed": 0.00015382,
   "display_baseline_brl": 47.52,
   "mark_status": "UNAVAILABLE",
@@ -22,12 +22,12 @@
     "trades": {
       "ok": false,
       "attempts": 3,
-      "error": "HTTPError:HTTP Error 302: Found"
+      "error": "HTTPError:HTTP Error 403: Forbidden"
     },
     "candles": {
       "ok": false,
       "attempts": 3,
-      "error": "HTTPError:HTTP Error 302: Found"
+      "error": "HTTPError:HTTP Error 403: Forbidden"
     }
   }
 }
