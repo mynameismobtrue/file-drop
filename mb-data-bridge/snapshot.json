@@ -4,8 +4,8 @@
   "status": "ERROR",
   "source": "MERCADO_BITCOIN",
   "pair": "BTC-BRL",
-  "fetched_at": "2026-11-06T09:52:46.026224Z",
-  "source_timestamp": "2026-11-06T09:52:46.026224Z",
+  "fetched_at": "2026-11-06T16:59:01.624013Z",
+  "source_timestamp": "2026-11-06T16:59:01.624013Z",
   "ticker": {
     "valid": false,
     "attempts": 2,
@@ -16,7 +16,7 @@
     "open_brl": null,
     "volume_btc": null,
     "timestamp": null,
-    "error": "HTTPError:HTTP Error 302: Found"
+    "error": "HTTPError:HTTP Error 403: Forbidden"
   },
   "orderbook": {
     "valid": false,
@@ -35,7 +35,7 @@
     "best_ask_brl": null,
     "spread_brl": null,
     "spread_pct": null,
-    "error": "HTTPError:HTTP Error 302: Found"
+    "error": "HTTPError:HTTP Error 403: Forbidden"
   },
   "execution": {
     "vwap_buy": {
