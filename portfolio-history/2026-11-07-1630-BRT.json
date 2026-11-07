@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "PORTFOLIO_TRACKER_ONLY",
+  "not_for_research_reference": true,
+  "source": "MERCADO_BITCOIN",
+  "pair": "BTC-BRL",
+  "target_date": "2026-11-07",
+  "cutoff_local": "2026-11-07T16:30:00-03:00",
+  "cutoff_utc": "2026-11-07T19:30:00Z",
+  "generated_at": "2026-11-07T22:53:45.228604Z",
+  "position_btc_confirmed": 0.00015382,
+  "display_baseline_brl": 47.52,
+  "mark_status": "UNAVAILABLE",
+  "mark": null,
+  "portfolio": null,
+  "previous_archive": null,
+  "reason_codes": [
+    "NO_ELIGIBLE_MB_TRADE_WITHIN_120S",
+    "NO_ELIGIBLE_CLOSED_MB_1M_CANDLE"
+  ],
+  "retrieval": {
+    "trades": {
+      "ok": false,
+      "attempts": 3,
+      "error": "HTTPError:HTTP Error 403: Forbidden"
+    },
+    "candles": {
+      "ok": false,
+      "attempts": 3,
+      "error": "HTTPError:HTTP Error 403: Forbidden"
+    }
+  }
+}
