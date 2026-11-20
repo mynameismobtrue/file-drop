@@ -26,25 +26,26 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
-      SHELL_BASE: https://rawcdn.githack.com/mynameismobtrue/file-drop/fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee
+      PREVIEW_BASE: https://htmlpreview.github.io/?https://github.com/mynameismobtrue/file-drop/blob/fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee/index.html
+      ASSET_BASE: https://rawcdn.githack.com/mynameismobtrue/file-drop/fbb7f7c6c7c4ee3249353ddd8af52b92977def58/btc-committee
       LATEST_URL: https://raw.githubusercontent.com/mynameismobtrue/file-drop/main/btc-committee/latest.json
     steps:
       - name: Checkout validation tools
         uses: actions/checkout@v4
 
-      - name: Verify immutable public shell and live report contract
+      - name: Verify preview host, immutable assets and live report contract
         shell: bash
         run: |
-          set -euxo pipefail
+          set -euo pipefail
           CACHE_BUSTER="$(date +%s)"
 
           curl --fail --silent --show-error --location --dump-header /tmp/index.headers \
-            "${SHELL_BASE}/index.html?health=${CACHE_BUSTER}" -o /tmp/index.html
+            "${PREVIEW_BASE}&health=${CACHE_BUSTER}" -o /tmp/preview.html
           curl --fail --silent --show-error --location --dump-header /tmp/app.headers \
-            "${SHELL_BASE}/app.js" -o /tmp/app.js
+            "${ASSET_BASE}/app.js" -o /tmp/app.js
           curl --fail --silent --show-error --location --dump-header /tmp/style.headers \
-            "${SHELL_BASE}/style.css" -o /tmp/style.css
-          curl --fail --silent --show-error --location "${SHELL_BASE}/health.json" -o /tmp/health.json
+            "${ASSET_BASE}/style.css" -o /tmp/style.css
+          curl --fail --silent --show-error --location "${ASSET_BASE}/health.json" -o /tmp/health.json
           curl --fail --silent --show-error --location "${LATEST_URL}?health=${CACHE_BUSTER}" -o /tmp/latest.json
 
           echo '--- PUBLIC MIME HEADERS ---'
@@ -53,7 +54,7 @@ jobs:
           grep -qi '^content-type: *text/html' /tmp/index.headers
           grep -qi '^content-type: *\(application\|text\)/javascript' /tmp/app.headers
           grep -qi '^content-type: *text/css' /tmp/style.headers
-          grep -q 'data-btc-visualize="v1"' /tmp/index.html
+          grep -qi 'HTML Preview' /tmp/preview.html
           grep -q '__BTC_VISUALIZE_READY__' /tmp/app.js
           grep -q '^:root' /tmp/style.css
           node --check /tmp/app.js
@@ -65,12 +66,84 @@ jobs:
           assert health['status'] == 'OK'
           assert health['service'] == 'btc-committee-visual'
           assert health['native_visualize_required'] is False
-          print('IMMUTABLE_VISUAL_SHELL=PASS')
+          print('IMMUTABLE_VISUAL_ASSETS=PASS')
           PY
 
           PORTABLE_URL="$(python3 btc-committee/make_visual_url.py /tmp/latest.json)"
           case "$PORTABLE_URL" in
-            "${SHELL_BASE}/index.html#gz="*) ;;
-            *) echo "Portable URL did not use immutable shell" >&2; exit 1 ;;
+            "${PREVIEW_BASE}#gz="*) ;;
+            *) echo "Portable URL did not use GitHub HTML Preview" >&2; exit 1 ;;
           esac
           echo "PORTABLE_VISUAL_URL=PASS"
+
+      - name: Render portable visual in a real mobile browser
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORTABLE_URL="$(python3 btc-committee/make_visual_url.py /tmp/latest.json)"
+          BROWSER="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium || true)"
+          test -n "$BROWSER"
+
+          if ! timeout 35s "$BROWSER" \
+            --headless=new \
+            --no-sandbox \
+            --disable-gpu \
+            --disable-dev-shm-usage \
+            --hide-scrollbars \
+            --enable-logging=stderr \
+            --log-level=0 \
+            --window-size=393,852 \
+            --virtual-time-budget=10000 \
+            --dump-dom "$PORTABLE_URL" \
+            > /tmp/rendered-mobile.html 2> /tmp/browser.log; then
+              tail -n 120 /tmp/browser.log >&2
+              exit 1
+          fi
+
+          set +e
+          python3 - <<'PY'
+          from html import unescape
+          from pathlib import Path
+          import re
+
+          rendered = Path('/tmp/rendered-mobile.html').read_text(encoding='utf-8', errors='replace')
+          text = unescape(re.sub(r'<[^>]+>', ' ', rendered))
+          text = re.sub(r'\s+', ' ', text).strip()
+
+          if 'Visual bloqueado por integridade' in text:
+              error = re.search(r'Visual bloqueado por integridade(.{0,600})', text)
+              print('MOBILE_BROWSER_RENDER=FAIL')
+              print('Runtime integrity error: ' + (error.group(0) if error else 'details unavailable'))
+              raise SystemExit(1)
+
+          required = (
+              'RELATÓRIO ARQUIVADO',
+              'SCORE_SEM_OPORTUNIDADE',
+              '0,00015382',
+              '25/25',
+              'PASS',
+              'Por quê?',
+              'Minha carteira',
+          )
+          missing = [marker for marker in required if marker not in text]
+          if missing:
+              print('MOBILE_BROWSER_RENDER=FAIL')
+              print('Missing runtime markers: ' + ', '.join(missing))
+              print('Safe DOM state: skeleton=' + str('aria-busy="true"' in rendered) + ', text_length=' + str(len(text)))
+              print('Visible text prefix: ' + text[:700])
+              raise SystemExit(1)
+
+          if 'Enter URL of HTML file to preview' in text:
+              print('MOBILE_BROWSER_RENDER=FAIL')
+              print('Preview host did not load the requested source')
+              raise SystemExit(1)
+
+          print('MOBILE_BROWSER_RENDER=PASS')
+          PY
+          STATUS=$?
+          set -e
+          if [ "$STATUS" -ne 0 ]; then
+            echo '--- BROWSER DIAGNOSTICS ---' >&2
+            grep -E 'ERROR|Error|error|CONSOLE|Console|Refused|blocked|Failed|failed' /tmp/browser.log | tail -n 120 >&2 || true
+            exit "$STATUS"
+          fi
