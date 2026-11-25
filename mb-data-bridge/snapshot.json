@@ -4,8 +4,8 @@
   "status": "ERROR",
   "source": "MERCADO_BITCOIN",
   "pair": "BTC-BRL",
-  "fetched_at": "2026-11-25T11:27:49.651715Z",
-  "source_timestamp": "2026-11-25T11:27:49.651715Z",
+  "fetched_at": "2026-11-25T20:34:26.902761Z",
+  "source_timestamp": "2026-11-25T20:34:26.902761Z",
   "ticker": {
     "valid": false,
     "attempts": 2,
