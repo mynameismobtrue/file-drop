@@ -1,21 +1,8 @@
 name: Update Mercado Bitcoin snapshot
 
+# Automatic triggers disabled at the repository owner's request on 2026-11-26.
+# This workflow can only be started by an explicit manual dispatch.
 on:
-  push:
-    branches: ["main"]
-    paths:
-      - "mb-data-bridge/fetch_mb_snapshot.py"
-      - "mb-data-bridge/archive_portfolio_mark.py"
-      - ".github/workflows/mb-data-bridge.yml"
-  schedule:
-    # Snapshot regular para auditoria/fallback.
-    - cron: "*/5 * * * *"
-    # Janelas redundantes ao redor de 16:30 BRT = 19:30 UTC.
-    - cron: "5 19 * * *"
-    - cron: "15 19 * * *"
-    - cron: "25 19 * * *"
-    # Arquivo diário do Portfolio Tracker após o cutoff exato de 16:30 BRT.
-    - cron: "32 19 * * *"
   workflow_dispatch:
 
 permissions:
