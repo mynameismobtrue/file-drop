@@ -1,17 +1,8 @@
 name: BTC Visualize public health
 
+# Automatic triggers disabled at the repository owner's request on 2026-11-26.
+# This workflow can only be started by an explicit manual dispatch.
 on:
-  pull_request:
-    paths:
-      - "btc-committee/**"
-      - ".github/workflows/btc-visualize-health.yml"
-  push:
-    branches: ["main"]
-    paths:
-      - "btc-committee/**"
-      - ".github/workflows/btc-visualize-health.yml"
-  schedule:
-    - cron: "17,47 * * * *"
   workflow_dispatch:
 
 permissions:
